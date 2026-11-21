@@ -112,7 +112,7 @@ export const logisticsBuildings: BuildingDef[] = [
     rotates: true,
     unlock: 'start',
     items: 10,
-    bridge: { range: 4, rate: 11 },
+    bridge: { range: 4, rate: 20 },
     art: {},
   },
   {

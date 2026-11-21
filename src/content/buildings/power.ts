@@ -1,15 +1,15 @@
 import type { BuildingDef } from '../types';
 
 /**
- * Power makers, stores and nodes. Units are per second; the core makes 4 (so the first two or three powered
- * machines run on it, the rest need generators from about minute 5-10). A combustion generator burns a coal
- * (4 s) for 8 units: 32 units per coal.
+ * Power makers, stores and nodes. Power is a rate, written "8 power/s" in every text (stores: "1,000 power
+ * stored"); the core makes 4 power/s (so the first two or three powered machines run on it, the rest need
+ * generators from about minute 5-10). A combustion generator burns a coal (4 s) for 8 power/s: 32 power per coal.
  */
 export const powerBuildings: BuildingDef[] = [
   {
     id: 'combustion-generator',
     name: 'Combustion Generator',
-    description: 'Burns coal (or anything that burns) for power: 8 units.',
+    description: 'Burns coal (or anything that burns) for 8 power/s.',
     category: 'power',
     behaviour: 'generator',
     size: 1,
@@ -28,7 +28,7 @@ export const powerBuildings: BuildingDef[] = [
   {
     id: 'solar-panel',
     name: 'Solar Panel',
-    description: 'Power from the sun, forever: 1 unit, no fuel and no belts. Eight make a generator.',
+    description: 'Power from the sun, forever: 1 power/s, no fuel and no belts. Eight make a generator.',
     category: 'power',
     behaviour: 'solar',
     size: 1,
@@ -45,7 +45,7 @@ export const powerBuildings: BuildingDef[] = [
   {
     id: 'large-solar',
     name: 'Large Solar Panel',
-    description: 'A field of cells: 12 units from the sun, no fuel.',
+    description: 'A field of cells: 12 power/s from the sun, no fuel.',
     category: 'power',
     behaviour: 'solar',
     size: 3,
@@ -63,7 +63,7 @@ export const powerBuildings: BuildingDef[] = [
   {
     id: 'wind-turbine',
     name: 'Wind Turbine',
-    description: 'Turns in the wind for 4 units, twice that on windy maps.',
+    description: 'Turns in the wind for 4 power/s, twice that on windy maps.',
     category: 'power',
     behaviour: 'generator',
     size: 2,
@@ -82,7 +82,7 @@ export const powerBuildings: BuildingDef[] = [
   {
     id: 'oil-generator',
     name: 'Oil Generator',
-    description: 'Burns oil, fuel or gas from conduits next to it: 20 units.',
+    description: 'Burns oil, fuel or gas from conduits next to it for 20 power/s.',
     category: 'power',
     behaviour: 'generator',
     size: 2,
@@ -101,7 +101,7 @@ export const powerBuildings: BuildingDef[] = [
   {
     id: 'battery',
     name: 'Battery',
-    description: 'Stores spare power for later.',
+    description: 'Keeps spare power for later: 1,000 power stored.',
     category: 'power',
     behaviour: 'battery',
     size: 1,
@@ -118,7 +118,7 @@ export const powerBuildings: BuildingDef[] = [
   {
     id: 'large-battery',
     name: 'Large Battery',
-    description: 'Stores seven times as much as a battery.',
+    description: 'Seven batteries in one: 7,000 power stored.',
     category: 'power',
     behaviour: 'battery',
     size: 2,

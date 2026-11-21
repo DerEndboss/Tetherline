@@ -58,6 +58,26 @@ export interface Memory {
   stalls: number;
   /** The stall the rescue step last answered. */
   rescued: number;
+  /** Tiles kept clear around the liquid parts of an annex (re-added whenever `reserved` is rebuilt). */
+  keep: Set<number>;
+  /** Liquid parts taken down because their network held the wrong liquid; placed again once they are gone. */
+  refit: PlanSpec[];
+  /**
+   * Tiles held for the particle accelerator, its coolant plant and its output belt since the late chain began
+   * (undefined: not planned yet, empty: built or given up); `siteTry` is when the last search ran.
+   */
+  site?: number[];
+  siteTry: number;
+  /** The ore the bot told the drones to mine (null: their own choice); kept here, the worker sees no drone orders. */
+  mining?: string | null;
+  /** The plan the site was held for: used as it stands when a new plan finds no way out of the grown base. */
+  siteBatch?: Batch;
+  /** When the trunk upgrade last looked (tick). */
+  trunkAt?: number;
+  /** When the bot last changed the accelerator's recipe (tick). */
+  accelAt?: number;
+  /** Items a holding step lacks, and the tick it last said so: the drones make them first. */
+  wanting?: Map<string, number>;
 }
 
 export interface Batch {
@@ -261,10 +281,12 @@ function apart(tiles: Tile[], count: number): Tile[] {
   return picked;
 }
 
-export function spots(ctx: Ctx, size: number, around: Tile, min: number, max: number, count = 12): Tile[] {
+export function spots(ctx: Ctx, size: number, around: Tile, min: number, max: number, count = 12, ring = true): Tile[] {
   const core = ctx.world.core;
   const rect = core ? { x: core.x, y: core.y, size: ctx.world.def(core).size } : { x: around.x, y: around.y, size: 1 };
-  const room = (x: number, y: number): boolean => ctx.space.freeRect(x, y, size) && ctx.space.inBandMode(() => ctx.space.freeRect(x - 1, y - 1, size + 2));
+  const edge = (x: number, y: number): boolean => (ring ? ctx.space.inBandMode(() => ctx.space.freeRect(x - 1, y - 1, size + 2)) : quiet(ctx, x, y, size));
+  // stations and loose buildings keep off the late ores (they are scarce; the lines come later)
+  const room = (x: number, y: number): boolean => ctx.space.freeRect(x, y, size) && !ctx.space.coversRareOre(x, y, size) && edge(x, y);
   const out: { t: Tile; d: number }[] = [];
   for (let y = around.y - max - 6; y <= around.y + max + 6; y += 1) {
     for (let x = around.x - max - 6; x <= around.x + max + 6; x += 1) {
@@ -276,13 +298,21 @@ export function spots(ctx: Ctx, size: number, around: Tile, min: number, max: nu
   return apart(out.map((o) => o.t), count);
 }
 
+/** Whether nothing that pushes items out stands beside a footprint (a loose spot without a free ring). */
+function quiet(ctx: Ctx, x: number, y: number, size: number): boolean {
+  for (let i = 0; i < size; i++) {
+    if (ctx.space.nearEmitter(x + i, y) || ctx.space.nearEmitter(x + i, y + size - 1) || ctx.space.nearEmitter(x, y + i) || ctx.space.nearEmitter(x + size - 1, y + i)) return false;
+  }
+  return true;
+}
+
 /** Free spots (with a free ring) within `radius` of a tile (an ore patch), about six tiles off it first, so the
  * drills keep the ore. */
 function spotsNear(ctx: Ctx, size: number, at: Tile, radius: number): Tile[] {
   const out: { t: Tile; d: number }[] = [];
   for (let y = Math.round(at.y) - radius; y <= at.y + radius; y++) {
     for (let x = Math.round(at.x) - radius; x <= at.x + radius; x++) {
-      if (ctx.space.freeRect(x, y, size) && ctx.space.inBandMode(() => ctx.space.freeRect(x - 1, y - 1, size + 2))) out.push({ t: { x, y }, d: Math.abs(Math.hypot(x - at.x, y - at.y) - 6) });
+      if (ctx.space.freeRect(x, y, size) && !ctx.space.coversRareOre(x, y, size) && ctx.space.inBandMode(() => ctx.space.freeRect(x - 1, y - 1, size + 2))) out.push({ t: { x, y }, d: Math.abs(Math.hypot(x - at.x, y - at.y) - 6) });
     }
   }
   out.sort((a, b) => a.d - b.d);

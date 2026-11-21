@@ -27,7 +27,7 @@ const { values } = parseArgs({
   },
 });
 
-const KEY = ['copper-ore', 'copper-wire', 'coal', 'sand', 'iron-bar', 'graphite', 'silicon', 'glass', 'steel', 'titanium-plate', 'circuit', 'plastic', 'battery-cell', 'frame', 'motor', 'core-chip', 'star-alloy', 'singularity'];
+const KEY = ['copper-ore', 'titanium-ore', 'tungsten-ore', 'emberite', 'verdite', 'frostine', 'copper-wire', 'coal', 'sand', 'iron-bar', 'graphite', 'silicon', 'glass', 'steel', 'titanium-plate', 'circuit', 'plastic', 'battery-cell', 'frame', 'motor', 'core-chip', 'star-alloy', 'singularity'];
 
 const stockOf = (w: World, id: string): number => Math.floor(w.state.stock[w.content.materials.indexOf(id)] ?? 0);
 
@@ -85,6 +85,21 @@ function fleet(w: World): string {
   return `power ${made.toFixed(0)}/${wanted.toFixed(0)} drones ${acts}`;
 }
 
+/** What a building holds: items by id and its liquid, for the late machines that tend to stand still. */
+function holding(w: World, kind: string): string {
+  return w.state.buildings
+    .filter((b) => w.def(b).id === kind && w.ready(b))
+    .map((b) => {
+      const items = b.items.map((n, i) => [w.content.materials.list[i]?.id, Math.floor(n ?? 0)] as const).filter(([, n]) => n > 0);
+      const liquid = b.liquid > 0.5 ? ` ${w.content.liquids.list[b.liquidId]?.id ?? '?'}=${b.liquid.toFixed(0)}` : '';
+      return `${kind}#${b.id} r${b.config} ${items.map(([id, n]) => `${id}=${n}`).join(' ')}${liquid}`;
+    })
+    .join(' | ');
+}
+
+/** The late machines' contents (`--trace`): where a finale that stands still waits. */
+const LATE_KINDS = ['particle-accelerator', 'coolant-mixer', 'space-elevator'];
+
 /** Worst look of the bot in the current minute. */
 const timing = { max: 0, looks: 0, worst: 0 };
 
@@ -116,7 +131,10 @@ function report(r: Round): void {
     console.log(`${head} [${activeOrder(w)}] ${stocks} | ${fleet(w)} | ${r.bot.log.at(-1) ?? '-'} | ${cost}`);
   }
   if (minute === Number(values.map)) console.log(asciiMap(w, 34));
-  if (values.trace && !values.quiet) for (const [k, v] of r.bot.trace) console.log(`    ${k}: ${v}`);
+  if (values.trace && !values.quiet) {
+    for (const [k, v] of r.bot.trace) console.log(`    ${k}: ${v}`);
+    for (const kind of LATE_KINDS) if (r.world.state.buildings.some((b) => r.world.def(b).id === kind)) console.log(`    = ${holding(w, kind)}`);
+  }
   timing.max = 0;
   timing.looks = 0;
 }

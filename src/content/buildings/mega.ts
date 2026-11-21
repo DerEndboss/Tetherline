@@ -5,7 +5,7 @@ export const megaBuildings: BuildingDef[] = [
   {
     id: 'fusion-reactor',
     name: 'Fusion Reactor',
-    description: 'Burns lithium for 100 units. Needs coolant pumped in, or the fire dies.',
+    description: 'Burns lithium for 100 power/s. Needs coolant pumped in, or the fire dies.',
     category: 'mega',
     behaviour: 'generator',
     size: 4,

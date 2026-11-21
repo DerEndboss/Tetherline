@@ -18,7 +18,7 @@ function play(seed: number, minutes: number): { w: World; bot: Bot } {
 
 /** The long run is opt-in (BOT_LONG=1): the test config types no `process`, so it is read through globalThis. */
 const LONG_MINUTES = 90;
-const LONG_STALL = 20;
+const LONG_STALL = 15;
 const LONG = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env?.BOT_LONG === '1';
 
 const made = (w: World, id: string): number => w.state.stats.made[w.content.materials.indexOf(id)] ?? 0;
@@ -43,7 +43,8 @@ describe('autopilot', () => {
 
   // The long round is opt-in (npm run test:bot): a whole round takes one to three real minutes. After the balance
   // for a one-hour round seed 1 wins at minute 70 with no stall over 12 minutes; before, it reached 28
-  // of 34 orders by minute 120 (the old bar was 26 orders in 120 minutes).
+  // of 34 orders by minute 120 (the old bar was 26 orders in 120 minutes). The stall bar was 20 minutes until the
+  // trunk, valve and supply-mark fixes, now 15.
   it.skipIf(!LONG)(`wins seed 1 within ${LONG_MINUTES} minutes, never ${LONG_STALL} minutes without progress`, () => {
     const r = playRound(content, { seed: 1, minutes: LONG_MINUTES });
     expect(r.orders.length).toBe(content.orders.list.length);

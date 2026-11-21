@@ -29,6 +29,10 @@ export interface BuildingFacts {
   recipes: RecipeFact[];
 }
 
+/** Power in every text ("8 units", "8/s" and "8 power" used to be mixed): a rate, or what a battery holds. */
+export const powerRate = (n: number): string => `${num(n)} power/s`;
+export const powerStored = (n: number): string => `${n.toLocaleString('en-US')} power stored`;
+
 /** Trims a number for display: 4, 1.5, 0.25. */
 export function num(n: number): string {
   return String(Math.round(n * 100) / 100);
@@ -58,9 +62,9 @@ const row = (label: string, value: string): FactLine => ({ label, value });
 
 /** One entry per spec of a building: the tooltip shows the ones it has. */
 const LINES: LineMaker[] = [
-  (_c, d) => (d.power?.use ? row('Uses power', `${num(d.power.use)}/s`) : null),
-  (_c, d) => (d.power?.make ? row('Makes power', `${num(d.power.make)}/s`) : null),
-  (_c, d) => (d.power?.store ? row('Stores', `${num(d.power.store)} power`) : null),
+  (_c, d) => (d.power?.use ? row('Uses power', powerRate(d.power.use)) : null),
+  (_c, d) => (d.power?.make ? row('Makes power', powerRate(d.power.make)) : null),
+  (_c, d) => (d.power?.store ? row('Battery', powerStored(d.power.store)) : null),
   (_c, d) => (d.power?.laserRange ? row('Laser range', `${num(d.power.laserRange)} tiles`) : null),
   (_c, d) => (d.power?.maxLinks ? row('Links', `up to ${d.power.maxLinks}`) : null),
   (_c, d) => (d.drill ? row('Mines', `drill tier ${d.drill.tier}, ${num(60 / d.drill.seconds)}/min on full ore`) : null),

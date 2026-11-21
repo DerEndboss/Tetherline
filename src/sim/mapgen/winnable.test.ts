@@ -3,6 +3,9 @@ import { content } from '../../content';
 import { generateMap } from './index';
 import { flood } from './land';
 import { deepFloors, walkable } from './reach';
+import { createRng } from '../rng';
+import { OPEN_RADIUS, openingShort } from './opening';
+import { openingPatch } from './resources';
 import { missingForWin } from './winnable';
 
 /**
@@ -34,6 +37,8 @@ describe('every map can be won', () => {
         const { map, core } = generateMap(content, { seed, size, theme });
         const label = `${size}/${theme}/${seed}`;
         expect(missingForWin(content, map), label).toEqual([]);
+        // the opening: copper and iron near the core with room for a first line of drills and its belt
+        expect(openingShort(content, map, { x: core.x + 1.5, y: core.y + 1.5 }), label).toEqual([]);
         const reached = flood(map.w, map.h, (core.y + 1) * map.w + core.x + 1, walkable(map, deep));
         for (const s of content.spawns.filter((x) => x.nearStart && content.floors.get(x.floor).ore)) {
           const f = content.floors.indexOf(s.floor) + 1;
@@ -54,6 +59,21 @@ describe('every map can be won', () => {
       }
     }, 60_000);
   }
+
+  it('a start ore without room near the core is found and gets a new patch', () => {
+    const { map, core } = generateMap(content, { seed: 4, size: 'small', theme: 'green-meadow' });
+    const centre = { x: core.x + 1.5, y: core.y + 1.5 };
+    const copper = content.floors.indexOf('ore-copper') + 1;
+    map.floor.forEach((f, i) => {
+      const x = i % map.w;
+      const y = Math.floor(i / map.w);
+      if (f === copper && Math.hypot(x - centre.x, y - centre.y) < OPEN_RADIUS + 2) map.floor[i] = 0;
+    });
+    expect(openingShort(content, map, centre)).toEqual(['ore-copper']);
+    const ctx = { content, map, rng: createRng(4), seed: 4, centre, props: [], reach: map.w / 2 };
+    openingPatch(ctx, 'ore-copper', OPEN_RADIUS);
+    expect(openingShort(content, map, centre)).toEqual([]);
+  });
 
   it('the check itself finds a missing ore', () => {
     const { map } = generateMap(content, { seed: 4, size: 'medium', theme: 'rust-desert' });

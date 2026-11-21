@@ -7,17 +7,20 @@ import {
   lineBatch,
   mergeGoals,
   patchesFor,
+  spots,
   ringGoals,
   type Batch,
   type Ctx,
   type Feeder,
   type Memory,
 } from './bot-build';
-import { ensurePower, layDock, layLoose, layPlant, layStation, ringRoom, type Station } from './bot-hub';
-import { condenserAnnex, coolantAnnex } from './bot-late';
-import { patchesOf, Space, type RouteGoal } from './bot-space';
+import { ensurePower, layDock, layPlant, layStation, livePowerNets, ringRoom, type Station } from './bot-hub';
+import { condenserAnnex, coolantAnnex, keepClear } from './bot-late';
+import { orderNeeds, orderTree } from './bot-supply';
+import { patchesOf, Space, type RouteGoal, type Tile } from './bot-space';
 import type { Command, PlanSpec } from './commands';
 import { placementProblem } from './placement';
+import { powerGraph } from './power';
 import type { BuildingDef } from '../content/types';
 import type { Building } from './state';
 import type { World } from './world';
@@ -34,9 +37,18 @@ function byOrder(def: BuildingDef, w: World): boolean {
 }
 
 /** What a build step can ask of the bot: the facts of the run and the planners, bound to one decision. */
+/**
+ * Buildings that take items from any neighbour and hand them to any neighbour. A loose one keeps a free ring: a mass
+ * driver beside a coal bridge shot coal to its partner in the middle of the base, which sprayed it into ten product
+ * belts, and the refinery's plastic never reached the core (M1 green: the cells order waited 40 minutes).
+ */
+const SPRAYS = new Set(['mass-driver']);
+
 export class Brain {
   readonly ctx: Ctx;
   private readonly pend = new Map<string, number>();
+  /** The last accelerator plan of this look (its coolant plant's surroundings are kept clear once it is paid). */
+  private planned: Batch | null = null;
 
   constructor(
     readonly world: World,
@@ -128,7 +140,7 @@ export class Brain {
     return { id: 'electric-drill', tier: 3 };
   }
 
-  private hardness(item: string): number {
+  hardness(item: string): number {
     const f = this.world.content.floors.list.find((o) => o.ore === item);
     return f?.hardness ?? 1;
   }
@@ -149,7 +161,21 @@ export class Brain {
 
   /** Raw ore into the core. Copper has its own lines (it fills the core first); other ores share theirs. */
   rawLine(item: string, maxDrills: number, direct = false): Batch | null {
-    return this.lineWith(item, maxDrills, true, direct) ?? this.lineWith(item, maxDrills, false, direct);
+    const line = (): Batch | null => this.lineWith(item, maxDrills, true, direct) ?? this.lineWith(item, maxDrills, false, direct);
+    return line() ?? (this.lines(item) < 1 ? this.throughHub(line) : null);
+  }
+
+  /**
+   * A first line or pod may cross the hub zone when nothing else reaches the core: on a small map the start ores
+   * can lie south-east of the core, inside the L kept for stations, and the opening never laid a copper line
+   * (S4: 400 copper burned on pods, 5 orders in two hours). A station planned later simply goes elsewhere.
+   */
+  private throughHub(plan: () => Batch | null): Batch | null {
+    if (this.space.allowHub) return null;
+    this.space.allowHub = true;
+    const out = plan();
+    this.space.allowHub = false;
+    return out;
   }
 
   /** `direct`: straight into the core, never merged into another line (a busy trunk starves a side merge). */
@@ -184,10 +210,7 @@ export class Brain {
   /** A crafter fed by a mining trunk; the product goes to the core (or joins other products). */
   pod(crafter: string, recipe: string, ore: string, maxDrills: number): Batch | null {
     const def = this.world.content.buildings.get(crafter);
-    const f = this.feeder(ore, maxDrills);
-    const config = Math.max(0, (def.recipes ?? []).indexOf(recipe));
-    const near = { x: this.core().x, y: this.core().y };
-    const pod = layPod(this.ctx, { crafter, size: def.size, config, item: f.item, drill: f.drill, dsize: f.size, tier: f.tier, maxDrills, goals: this.goalsFor('products'), cls: 'products', near });
+    const pod = this.podLaid(crafter, recipe, ore, maxDrills);
     // no room for the crafter at the end of a trunk (small patches near rock): the same crafter by the core, fed by a line
     const batch = pod ?? this.terminal(crafter, recipe, [[ore, maxDrills]]) ?? this.byCore(crafter, recipe, ore);
     if (!pod || !batch || !def.power?.use) return batch;
@@ -196,6 +219,16 @@ export class Brain {
     if (!power) return null;
     batch.plans.push(...power);
     return batch;
+  }
+
+  /** The pod itself: crafter at the end of a trunk; the first of its kind may cross the hub zone. */
+  private podLaid(crafter: string, recipe: string, ore: string, maxDrills: number): Batch | null {
+    const def = this.world.content.buildings.get(crafter);
+    const f = this.feeder(ore, maxDrills);
+    const config = Math.max(0, (def.recipes ?? []).indexOf(recipe));
+    const near = { x: this.core().x, y: this.core().y };
+    const lay = (): Batch | null => layPod(this.ctx, { crafter, size: def.size, config, item: f.item, drill: f.drill, dsize: f.size, tier: f.tier, maxDrills, goals: this.goalsFor('products'), cls: 'products', near });
+    return lay() ?? (this.count(crafter) < 1 ? this.throughHub(lay) : null);
   }
 
   /** Last resort for an opening crafter: a station by the core fed from the core's stock, once there is some. */
@@ -301,7 +334,53 @@ export class Brain {
   /** The particle accelerator (star alloy first) with its coolant plant. */
   accelerator(): Batch | null {
     const mix = this.hasOre('frostine') ? 'mix-coolant-frost' : 'mix-coolant';
-    return this.supplied('particle-accelerator', this.starAlloy() ?? 'compress-singularity', coolantAnnex(this.recipeIndex('coolant-mixer', mix)));
+    this.planned = this.supplied('particle-accelerator', this.starAlloy() ?? 'compress-singularity', coolantAnnex(this.recipeIndex('coolant-mixer', mix)));
+    return this.planned;
+  }
+
+  /**
+   * Plans on the held accelerator site: its tiles are free for this plan only (they stay held until the step is
+   * paid, see `releaseSite`).
+   */
+  onSite(plan: () => Batch | null): Batch | null {
+    const site = this.mem.site ?? [];
+    if (!site.length) return plan();
+    const before = this.ctx.space;
+    for (const t of site) this.mem.reserved.delete(t);
+    this.ctx.space = new Space(this.world, this.mem.reserved, this.mem.hub);
+    const out = plan() ?? this.heldPlan();
+    for (const t of site) this.mem.reserved.add(t);
+    // the rest of this look plans in the space that still holds the site (plus what was just planned)
+    this.ctx.space = before;
+    if (out) claimBatch(before, this.world, out);
+    return out;
+  }
+
+  /**
+   * The plan the site was held for, when every tile of it is still free: a fresh plan can fail where the held one
+   * still works (its output joined a products line that later counted as full; S9 rust stopped at stage 3).
+   */
+  private heldPlan(): Batch | null {
+    const held = this.mem.siteBatch;
+    if (!held) return null;
+    const { space, world } = this;
+    space.allowHub = true;
+    space.allowBand = true;
+    const fits = held.plans.every((p) => space.freeRect(p.x, p.y, world.content.buildings.get(p.kind).size));
+    space.allowBand = false;
+    if (!fits) return null;
+    const batch: Batch = { ...held, plans: held.plans.map((p) => ({ ...p })), lines: [...held.lines], lanes: [...(held.lanes ?? [])], feed: [...(held.feed ?? [])] };
+    claimBatch(space, world, batch);
+    this.planned = batch;
+    return batch;
+  }
+
+  /** The accelerator is placed: its held site is free again (its ghosts stand there now), and the tiles around its
+   * coolant plant are kept clear for good. */
+  releaseSite(): void {
+    for (const t of this.mem.site ?? []) if (!this.mem.keep.has(t)) this.mem.reserved.delete(t);
+    this.mem.site = [];
+    if (this.planned) keepClear(this.ctx, this.planned.plans);
   }
 
   /** The star alloy recipe of this world's ore, or null when the map has none. */
@@ -346,16 +425,48 @@ export class Brain {
     return layDock(this.ctx, kind);
   }
 
-  loose(kind: string, min?: number, max?: number): Batch | null {
-    const batch = layLoose(this.ctx, kind, -1, min, max);
+  loose(kind: string, min = 5, max = 14): Batch | null {
     const def = this.world.content.buildings.get(kind);
-    if (batch && def.behaviour === 'mega') batch.feed = [batch.plans[0]!];
-    if (!batch || !def.power?.use) return batch;
-    const at = batch.plans[0]!;
-    const power = ensurePower(this.ctx, { x: at.x, y: at.y, size: def.size }, 8);
-    if (!power) return null;
-    batch.plans.push(...power);
-    return batch;
+    const c = this.core();
+    const centre = { x: c.x + Math.floor(this.world.def(c).size / 2), y: c.y + Math.floor(this.world.def(c).size / 2) };
+    this.space.allowHub = true;
+    // several spots, farther after a stall: the nearest one may have no way for its power (S5 ice waited 90
+    // minutes for a mass driver whose only spot had no node chain)
+    const far = max + this.mem.stalls * 6;
+    const ringed = this.looseAt(def, spots(this.ctx, def.size, centre, min, far).slice(0, 8));
+    if (ringed || SPRAYS.has(def.behaviour)) return ringed;
+    // a full small map has no 8x8 left for the elevator (S5 rust waited 80 minutes): a spot without a free ring
+    // will do for what needs no belt, as long as nothing pushes items into it
+    return this.looseAt(def, spots(this.ctx, def.size, centre, min, far, 12, false).slice(0, 8));
+  }
+
+  /** The first of these spots with a way for its power: the building and its node chain. */
+  private looseAt(def: BuildingDef, at: Tile[]): Batch | null {
+    for (const t of at) {
+      const local: Ctx = { ...this.ctx, space: this.space.clone() };
+      local.space.claim(t.x, t.y, def.size, def.behaviour);
+      const power = def.power?.use ? ensurePower(local, { x: t.x, y: t.y, size: def.size }, 8) : [];
+      if (!power) continue;
+      const batch: Batch = { plans: [{ kind: def.id, x: t.x, y: t.y, rot: 0, config: -1 }, ...power], lines: [], note: def.id };
+      if (def.behaviour === 'mega') batch.feed = [batch.plans[0]!];
+      claimBatch(this.space, this.world, batch);
+      if (SPRAYS.has(def.behaviour)) this.keepRing(t, def.size);
+      return batch;
+    }
+    return null;
+  }
+
+  /** The ring around a footprint stays free for good (nothing is built there later). */
+  private keepRing(at: Tile, size: number): void {
+    const W = this.space.W;
+    for (let y = at.y - 1; y <= at.y + size; y++) {
+      for (let x = at.x - 1; x <= at.x + size; x++) {
+        const inside = x >= at.x && y >= at.y && x < at.x + size && y < at.y + size;
+        if (inside || !this.world.inBounds(x, y)) continue;
+        this.mem.keep.add(y * W + x);
+        this.mem.reserved.add(y * W + x);
+      }
+    }
   }
 
   /** The core upgrade, when its footprint is free. */
@@ -443,6 +554,92 @@ export class Brain {
     const idx = Math.max(0, (w.defs[k]?.recipes ?? []).indexOf(recipe));
     const mine = [...w.state.buildings.filter((b) => !b.removing).map((b) => ({ kind: b.kind, config: this.mem.paused.get(b.id) ?? b.config })), ...w.state.plans.map((p) => ({ kind: p.kind, config: p.config }))];
     return mine.filter((b) => b.kind === k && Math.max(0, b.config ?? 0) === idx).length;
+  }
+
+  /**
+   * A finished machine of the late chain (mega buildings, the machines the drones feed, pumps) whose power network
+   * cannot carry it (see `livePowerNets`): its node chain never joined the grid, or it joined an island. S8 ice:
+   * the accelerator, its coolant annex and a printer sat on a network of their own for an hour with the crown two
+   * singularities short.
+   */
+  unpowered(): Building | null {
+    const w = this.world;
+    const g = powerGraph(w);
+    const live = livePowerNets(w);
+    for (const b of w.state.buildings) {
+      if (!this.needsGrid(b)) continue;
+      const net = g.netOf.get(b.id);
+      if (net !== undefined && !live.has(net)) return b;
+    }
+    return null;
+  }
+
+  /** A finished machine that uses power and matters for the finale (see `unpowered`). */
+  private needsGrid(b: Building): boolean {
+    const w = this.world;
+    const def = w.def(b);
+    if (!(def.power?.use ?? 0) || !w.ready(b) || b.removing) return false;
+    return def.category === 'mega' || def.behaviour === 'pump' || this.mem.feed.has(b.y * w.state.map.w + b.x);
+  }
+
+  /** A node chain from a machine to the grid (see `unpowered`). */
+  repower(b: Building): Batch | null {
+    this.space.allowHub = true;
+    // a live node in reach is not enough: a finished building links only when it is built, so a network that lost
+    // its maker stays dark beside the grid (S2 green: the elevator, a printer and two foundries for an hour). A new
+    // node links to both sides.
+    const plans = ensurePower(this.ctx, { x: b.x, y: b.y, size: this.world.def(b).size }, 12, [], true);
+    return plans?.length ? { plans, lines: [], note: 'repower' } : null;
+  }
+
+  /**
+   * A late ore whose line could not be laid (the base walled the way to the far patch: S2 ice, S5, M5 waited
+   * an hour for tungsten): the helper drones mine it into the core instead, once their holds can take it.
+   * Each entry: the ore, and whether its line step is wanted and keeps failing.
+   */
+  droneOre(): string | null {
+    // an ore the running order waits for comes first, then the chosen one sticks (the watchdog clears the
+    // failures), but only while something still wants it: iron mined for the motors stuck for 35 minutes while
+    // carbide waited for tungsten (S5 rust), and star alloy for emberite or frostine (S4 rust, S2 ice)
+    const starved = this.mem.stalls > 0 ? this.starvedOre() : null;
+    if (starved) return starved;
+    const now = this.mem.mining;
+    if (now && this.stock(now) < 300 && this.stillMined(now)) return now;
+    return this.linelessOre();
+  }
+
+  /** A late ore whose line step keeps failing and that no line brings. */
+  private linelessOre(): string | null {
+    const failing = (step: string): boolean => (this.mem.fails.get(step) ?? 0) >= 2;
+    const want: [string | null, boolean][] = [
+      ['tungsten-ore', failing('tungsten')],
+      [this.worldOre(), failing('world-ore')],
+      ['titanium-ore', failing('ti-line') || failing('ti-more')],
+    ];
+    const hit = want.find(([ore, fails]) => ore !== null && fails && this.hasOre(ore) && this.lines(ore) < 1 && this.stock(ore) < 300);
+    return hit?.[0] ?? null;
+  }
+
+  /** Whether an ore the drones mine is still wanted: a late ore no line brings, or one a running order eats. */
+  private stillMined(ore: string): boolean {
+    const late = ['tungsten-ore', 'titanium-ore', this.worldOre()].includes(ore) && this.lines(ore) < 1;
+    return late || this.orderOres().includes(ore);
+  }
+
+  /** The ores the running orders' products are made of (see `orderTree`), nearest first. */
+  orderOres(): string[] {
+    return orderTree(this.world).filter((id) => this.hasOre(id));
+  }
+
+  /**
+   * After a stall: an ore the running order's product is made of that the core is out of (M5 ice: a tungsten line
+   * stood, but its ore never got through a full shared belt, and carbide sat at 9 of 24 for an hour). What it goes
+   * into must run short too: iron ore is always scarce in the core (the smelters stand on its lines), and mining it
+   * for the accelerator's steel while its glass waited for sand cost S7 rust 23 minutes.
+   */
+  private starvedOre(): string | null {
+    const low = (id: string): boolean => this.stock(id) < 50;
+    return orderNeeds(this.world).find((n) => this.hasOre(n.item) && low(n.item) && (n.into === null || low(n.into)))?.item ?? null;
   }
 
   /** Whether the map has an ore at all (patches of it). */

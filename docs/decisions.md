@@ -269,6 +269,13 @@ to an earlier game design that no longer exists are not listed. Where code and t
 - **`npm run test:bot`** asks for a win of seed 1 within 90 game minutes with no stall over 20 minutes (it wins at 70, longest
   stall 11). `npm run autopilot` prints the kinds of building each round used.
 
+- **Small maps are won:** the map check also tests the opening (copper and iron near the core with room for a drill and a
+  belt), the finale can no longer hang on coolant, far ores are fetched by drones when no line gets through, and the
+  bot keeps its own lines intact.
+- **Trunks become fast conveyors:** a belt that carries three or more lines is upgraded, so a line joining from the side
+  is not locked out of a full trunk; bridges move 20 items/s and are no longer the narrowest point.
+- **Drones mine what an order waits for,** and supply marks are served in order of need, not of build order.
+- **The long-run bot test** allows a stall of at most 15 minutes (it was 20).
 ## Tutorial
 
 - **While the guide runs it is the one instruction:** `html[data-tutorial]` shrinks the order card to its header and silences the

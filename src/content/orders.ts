@@ -51,7 +51,7 @@ const touchdown: Entry[] = [
   },
   {
     id: 'power-core', chapter: 'Touchdown', title: 'First power',
-    radio: 'The core makes 4 units of power. Anything touching it gets some. Try a wire mill.',
+    radio: 'The core makes 4 power/s. Anything touching it gets some. Try a wire mill.',
     goal: { kind: 'build', building: 'wire-mill', n: 1 },
     tutorial: T('Place a Wire Mill so it touches the core: it runs on the core\'s power.', 'wire-mill'),
   },
@@ -93,7 +93,7 @@ const foothold: Entry[] = [
   },
   {
     id: 'generator', chapter: 'Foothold', title: 'Burn for power',
-    radio: 'Four units will not last. A combustion generator eats coal and gives power. Link it with a node.',
+    radio: '4 power/s will not last. A combustion generator eats coal and gives power. Link it with a node.',
     goal: { kind: 'build', building: 'combustion-generator', n: 1 },
     unlocks: ['power-node', 'battery'],
   },
@@ -179,7 +179,7 @@ const industry: Entry[] = [
   },
   {
     id: 'oil-power', chapter: 'Industry', title: 'Fuel to power',
-    radio: 'A refinery on oil makes fuel as well. An oil generator burns fuel, oil or gas for 20 units.',
+    radio: 'A refinery on oil makes fuel as well. An oil generator burns fuel, oil or gas for 20 power/s.',
     goal: { kind: 'build', building: 'oil-generator', n: 1 },
   },
   {

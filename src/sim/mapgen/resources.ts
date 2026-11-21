@@ -144,6 +144,21 @@ function startPatch(ctx: Ctx, p: Plan, aim: number): void {
   }
 }
 
+/**
+ * One more start patch of a start ore whose opening fell short (`openingShort` in opening.ts): middle size, within
+ * the opening radius, anywhere around the core. Placed after ridges and boulders, so the room it finds is real.
+ */
+export function openingPatch(ctx: Ctx, floorId: string, within: number): void {
+  const spawn = ctx.content.spawns.find((s) => s.floor === floorId && s.nearStart);
+  if (!spawn) return;
+  const def = ctx.content.floors.get(floorId);
+  const radius = Math.ceil((spawn.radius[0] + spawn.radius[1]) / 2);
+  for (const r of [radius, radius - 1, spawn.radius[0]]) {
+    const at = findSpot(ctx, r, CORE_CLEAR + r + 1, within - r);
+    if (at) return stamp(ctx, def, ctx.content.floors.indexOf(floorId) + 1, at, r, 331);
+  }
+}
+
 /** Tiles a needed ore must have on the map: a small map rolled one 6-tile tungsten patch, too thin for a drill. */
 const NEEDED_TILES = 16;
 

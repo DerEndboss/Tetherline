@@ -1,8 +1,10 @@
 import { Brain } from './bot-brain';
 import type { Batch, Memory } from './bot-build';
-import { STEPS, type Step } from './bot-script';
+import { late, STEPS, type Step } from './bot-script';
+import { coolantRefit, keepClear } from './bot-late';
 import { oreValves, siliconSwitch, supplyMarks, surplusValves } from './bot-supply';
 import { Space } from './bot-space';
+import { trunkUpgrades } from './bot-trunk';
 import type { Command, SimEvent } from './commands';
 import { orderProgress } from './progression';
 import type { World } from './world';
@@ -24,6 +26,8 @@ const POOR_WAIT = 200;
 const PLANS_PER_LOOK = 3;
 /** How far the hub zone reaches east and south of the core. */
 const HUB_REACH = 22;
+/** Ticks between two searches for the accelerator's site while none is held. */
+const SITE_RETRY = 1200;
 /** Game ticks without progress after which the watchdog changes the plan (4 minutes). */
 const STALL_TICKS = 4 * 1200;
 
@@ -33,7 +37,7 @@ const STALL_TICKS = 4 * 1200;
  * decision is derived from the world, so a bot started on a half-built run carries on.
  */
 export class Bot {
-  readonly mem: Memory = { reserved: new Set(), hub: new Set(), lines: [], lanes: [], bad: new Map(), feed: new Set(), fails: new Map(), paused: new Map(), downed: [], reordered: 0, stage: new Map(), needs: new Map(), progress: { at: 0, score: -1 }, stalls: 0, rescued: 0 };
+  readonly mem: Memory = { reserved: new Set(), hub: new Set(), lines: [], lanes: [], bad: new Map(), feed: new Set(), fails: new Map(), paused: new Map(), downed: [], reordered: 0, stage: new Map(), needs: new Map(), progress: { at: 0, score: -1 }, stalls: 0, rescued: 0, keep: new Set(), refit: [], siteTry: -Infinity };
   log: string[] = [];
   private zoneFor = 0;
   private last = -THINK_EVERY;
@@ -63,6 +67,7 @@ export class Bot {
     const size = this.world.def(core).size;
     this.zoneFor = size;
     this.mem.reserved.clear();
+    for (const t of [...this.mem.keep, ...(this.mem.site ?? [])]) this.mem.reserved.add(t);
     this.reserveHub(core.x, core.y, W);
     if (size >= 4) return; // the Nucleus is not worth its price here: no further growth to protect
     for (let i = -1; i <= size + 1; i++) {
@@ -93,7 +98,7 @@ export class Bot {
     const w = this.world;
     if (!w.core || w.state.tick - this.last < THINK_EVERY) return [];
     this.last = w.state.tick;
-    const marks = [...surplusValves(w, this.mem), ...oreValves(w, this.mem), ...siliconSwitch(w, this.mem), ...supplyMarks(w, this.mem)];
+    const marks = [...surplusValves(w, this.mem), ...oreValves(w, this.mem), ...siliconSwitch(w, this.mem), ...coolantRefit(w, this.mem), ...supplyMarks(w, this.mem), ...trunkUpgrades(w, this.mem)];
     if (marks.length) return marks;
     this.watch();
     if (w.state.plans.length > QUEUE_MAX) return [];
@@ -103,7 +108,9 @@ export class Bot {
 
   /** The first step in priority order that is wanted, has room and can be paid. */
   private next(): Command[] {
-    const k = new Brain(this.world, this.mem);
+    let k = new Brain(this.world, this.mem);
+    // a site held now must be in this look's space too (an ingot pod laid its belt on it in the same look)
+    if (this.mem.site === undefined && late(k) && this.holdSite(k)) k = new Brain(this.world, this.mem);
     const short: Reserve = new Map();
     let tries = 0;
     for (const step of STEPS) {
@@ -113,6 +120,34 @@ export class Bot {
       if (++tries >= PLANS_PER_LOOK) break;
     }
     return [];
+  }
+
+  /**
+   * Holds room for the accelerator as soon as the late chain begins: by the time the elevator stood, a small map
+   * had no free corner for a 5x5 machine with its coolant plant and a belt to the core (S2 ice, S9 rust: the run
+   * stopped at "Stage 3: Counterweight"). The plan is made on a copy and only its tiles are kept.
+   */
+  private holdSite(k: Brain): boolean {
+    const w = this.world;
+    if (w.state.tick - this.mem.siteTry < SITE_RETRY || k.count('particle-accelerator') > 0 || k.starAlloy() === null) return false;
+    this.mem.siteTry = w.state.tick;
+    const trial = new Brain(w, { ...this.mem, reserved: new Set(this.mem.reserved), keep: new Set(this.mem.keep) });
+    const batch = trial.accelerator();
+    if (!batch) return false;
+    keepClear(trial.ctx, batch.plans);
+    const W = w.state.map.w;
+    const tiles = new Set<number>([...trial.mem.keep].filter((t) => !this.mem.keep.has(t)));
+    // every piece, plus the ring around the accelerator itself (a station spot needs one, and its belt starts there)
+    batch.plans.forEach((p, i) => {
+      const size = w.content.buildings.get(p.kind).size;
+      const m = i === 0 ? 1 : 0;
+      for (let y = p.y - m; y < p.y + size + m; y++) for (let x = p.x - m; x < p.x + size + m; x++) if (w.inBounds(x, y)) tiles.add(y * W + x);
+    });
+    this.mem.site = [...tiles];
+    this.mem.siteBatch = batch;
+    for (const t of tiles) this.mem.reserved.add(t);
+    this.log.push(`t${w.state.tick} accelerator site held (${tiles.size} tiles)`);
+    return true;
   }
 
   /**
@@ -151,8 +186,17 @@ export class Bot {
     if (!need) return false;
     const lacking = lackingOf(k, need, short);
     if (!lacking.length) return false;
-    reserve(short, need, holds(k, step) ? [...need.keys()] : lacking);
+    this.short(k, step, need, lacking, short);
     return true;
+  }
+
+  /** Sets aside what a step that cannot be paid needs; a holding step also tells the drones what it lacks. */
+  private short(k: Brain, step: Step, need: ReadonlyMap<string, number>, lacking: string[], short: Reserve): void {
+    const hold = holds(k, step);
+    reserve(short, need, hold ? [...need.keys()] : lacking);
+    if (!hold) return;
+    const wanting = (this.mem.wanting ??= new Map());
+    for (const id of lacking) wanting.set(id, this.world.state.tick);
   }
 
   private resting(step: Step): boolean {
@@ -177,7 +221,7 @@ export class Bot {
     const need = needOf(k, step, batch);
     const lacking = lackingOf(k, need, short);
     if (lacking.length) {
-      reserve(short, need, holds(k, step) ? [...need.keys()] : lacking);
+      this.short(k, step, need, lacking, short);
       this.trace.set(step.name, `t${w.state.tick} short ${lacking.join(',')}`);
       this.mem.bad.set(step.name, w.state.tick + POOR_WAIT);
       this.mem.needs.set(step.name, need);

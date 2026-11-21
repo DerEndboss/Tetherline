@@ -251,7 +251,8 @@ describe('items crossing a bridge', () => {
     const waiting = drawn(w, a)[0]!;
     expect(waiting.gx).toBeCloseTo(4.5); // waiting on the sender, on top of it
     expect(waiting.scale).toBe(1);
-    run(w, 2); // the sender's rate lets it go in the second tick
+    // the sender's rate decides the tick it lets go; do not hard-code it
+    for (let i = 0; i < 10 && a.queue[0]!.length > 0; i++) step(w);
     expect(a.queue[0]).toHaveLength(0);
     // the flight starts on the sender and reaches the partner at its end
     const start = drawn(w, a)[0]!;

@@ -292,7 +292,9 @@ function bestStation(ctx: Ctx, st: Station, size: number): Attempt | null {
   const centre = { x: core.x + Math.floor(world.def(core).size / 2), y: core.y + Math.floor(world.def(core).size / 2) };
   let best: Attempt | null = null;
   // a big base fills the near ring: supplied stations look farther out, and farther after each watchdog stall
-  const [near, far, count] = st.supplied ? [3, Math.min(60, 26 + ctx.mem.stalls * 8), 18] : [2, 16, 14];
+  // a station with an annex (the accelerator's coolant plant) needs a big free corner: it searches the whole range
+  // at once (S2 ice found no room in 12 spots near the core and never built the accelerator)
+  const [near, far, count] = st.annex ? [3, 60, 48] : st.supplied ? [3, Math.min(60, 26 + ctx.mem.stalls * 8), 18] : [2, 16, 14];
   let found = 0;
   for (const spot of spots(ctx, size, centre, near, far, count)) {
     const a = tryAt(ctx, st, spot, size, items);
@@ -321,28 +323,6 @@ export function layStation(ctx: Ctx, st: Station): Batch | null {
   const power = def.power?.use ? ensurePower(ctx, { x: first.x, y: first.y, size: def.size }) : [];
   if (!power) return null;
   batch.plans.push(...power);
-  return batch;
-}
-
-/* ---------- Loose buildings near the core: power nodes, solar panels, containers ---------- */
-
-/** A free spot for a building of `size` around the core, nearest first, away from pushers and the ring. */
-export function looseSpot(ctx: Ctx, size: number, min = 5, max = 14): Tile | null {
-  const core = ctx.world.core;
-  if (!core) return null;
-  const c = core.x + Math.floor(ctx.world.def(core).size / 2);
-  const cy = core.y + Math.floor(ctx.world.def(core).size / 2);
-  const found = spots(ctx, size, { x: c, y: cy }, min, max);
-  return found[0] ?? null;
-}
-
-export function layLoose(ctx: Ctx, kind: string, config = -1, min?: number, max?: number): Batch | null {
-  const def = ctx.world.content.buildings.get(kind);
-  if (max !== undefined) ctx.space.allowHub = true;
-  const at = looseSpot(ctx, def.size, min, max);
-  if (!at) return null;
-  const batch: Batch = { plans: [{ kind, x: at.x, y: at.y, rot: 0, config }], lines: [], note: kind };
-  claimBatch(ctx.space, ctx.world, batch);
   return batch;
 }
 
@@ -424,13 +404,26 @@ export function layPlant(ctx: Ctx, n: number, fuel: string): Batch | null {
 const NODE_REACH = 5.5;
 
 /**
- * Power networks with something that makes power in them. A node on an island of nodes powers nothing: seed 6's
- * particle accelerator and coolant pumps hung on such an island, and the crown never came.
+ * Power networks that can carry what hangs on them: something makes power there, and it makes at least half of
+ * what the network's users take (by their ratings, which the worker's snapshot knows), or it is the network that
+ * makes the most. A node on an island of nodes powers nothing: seed 6's particle accelerator and coolant pumps hung
+ * on such an island, and the crown never came. An island with one small solar panel is no better:
+ * S2 rust's two plate rollers ran at 4 % for 40 minutes while the accelerator waited for 40 plates.
  */
-function livePowerNets(world: World): Set<number> {
+export function livePowerNets(world: World): Set<number> {
   const out = new Set<number>();
-  powerGraph(world).nets.forEach((net, i) => {
-    if (net.members.some((m) => (world.def(m).power?.make ?? 0) > 0)) out.add(i);
+  const rated = powerGraph(world).nets.map((net) => {
+    let make = 0;
+    let use = 0;
+    for (const m of net.members) {
+      make += world.def(m).power?.make ?? 0;
+      use += world.def(m).power?.use ?? 0;
+    }
+    return { make, use };
+  });
+  const most = rated.reduce((best, r, i) => (r.make > (rated[best]?.make ?? 0) ? i : best), 0);
+  rated.forEach((r, i) => {
+    if (r.make > 0 && (r.make * 2 >= r.use || i === most)) out.add(i);
   });
   return out;
 }
@@ -482,11 +475,11 @@ function nodeToward(ctx: Ctx, from: Rect, grid: Rect[]): { t: Tile; toGrid: numb
 /**
  * Power nodes so a consumer at `rect` joins the grid: none when a node already reaches it, else a short chain of
  * plain nodes towards the core (each new node links to what is in its range when it is built). Null when the
- * chain does not fit.
+ * chain does not fit. `relink` lays at least one node: for a finished building whose network went dark.
  */
-export function ensurePower(ctx: Ctx, rect: Rect, hops = 5, extra: readonly Rect[] = []): PlanSpec[] | null {
+export function ensurePower(ctx: Ctx, rect: Rect, hops = 5, extra: readonly Rect[] = [], relink = false): PlanSpec[] | null {
   const grid = [...powerRects(ctx), ...extra];
-  if (grid.slice(1).some((n) => gapBetween(n, rect) <= NODE_REACH)) return [];
+  if (!relink && grid.slice(1).some((n) => gapBetween(n, rect) <= NODE_REACH)) return [];
   const plans: PlanSpec[] = [];
   let at = rect;
   for (let hop = 0; hop < hops; hop++) {

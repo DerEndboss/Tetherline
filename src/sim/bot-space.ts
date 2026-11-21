@@ -109,6 +109,18 @@ export function patchesOf(world: World): Patch[] {
   return out;
 }
 
+const rareCache = new WeakMap<object, Set<number>>();
+
+/** Floor bytes of the ores the order chain cannot do without (the spawn table's `needed` groups). */
+function rareFloors(world: World): Set<number> {
+  const hit = rareCache.get(world.content);
+  if (hit) return hit;
+  const out = new Set<number>();
+  for (const s of world.content.spawns) if (s.needed && world.content.floors.has(s.floor)) out.add(world.content.floors.indexOf(s.floor) + 1);
+  rareCache.set(world.content, out);
+  return out;
+}
+
 /** The map and everything the bot may not build on right now (buildings, ghosts, its own reservations). */
 export class Space {
   readonly W: number;
@@ -272,6 +284,18 @@ export class Space {
   freeRect(x: number, y: number, size: number): boolean {
     for (let ty = y; ty < y + size; ty++) for (let tx = x; tx < x + size; tx++) if (!this.free(tx, ty)) return false;
     return true;
+  }
+
+  /**
+   * Whether a square covers ore the round mines late and cannot do without (titanium, tungsten, lead or tin, the
+   * world ore: the spawn table's `needed` groups). S5 ice: a printer and a foundry stood on the map's only tungsten
+   * patch, no electric drill fitted any more, and the run stopped at "carbide".
+   */
+  coversRareOre(x: number, y: number, size: number): boolean {
+    const rare = rareFloors(this.world);
+    const { floor } = this.world.state.map;
+    for (let ty = y; ty < y + size; ty++) for (let tx = x; tx < x + size; tx++) if (this.in(tx, ty) && rare.has(floor[ty * this.W + tx]!)) return true;
+    return false;
   }
 
   /** Whether something that pushes items out stands next to this tile. */
@@ -546,20 +570,31 @@ class Search {
 function visit(s: Search): BeltStep[] | null {
   const index = s.heap.pop();
   const n = s.nodes[index]!;
-  if (n.end) return build(s, s.nodes[n.end.parent]!, n.end.dir, n.end.store);
+  if (n.end) return once(build(s, s.nodes[n.end.parent]!, n.end.dir, n.end.store));
   if (n.g !== undefined && n.g > s.costAt(s.key(n.x, n.y, n.d))) return null;
-  const end = s.finish(n);
-  if (end?.cost) {
-    s.nodes.push({ ...n, end: { dir: end.dir, parent: index, store: end.store === true } });
-    s.heap.push(s.costAt(s.key(n.x, n.y, n.d)) + end.cost, s.nodes.length - 1);
-  } else if (end) {
-    return build(s, n, end.dir, end.store === true);
-  }
+  const line = arrive(s, n, index);
+  if (line) return line;
   const g = s.costAt(s.key(n.x, n.y, n.d));
   for (let nd = 0; nd < 4; nd++) {
     if (n.d === 4 || nd !== opposite(heading(n.d))) expand(s, n, nd as Dir, g, index);
   }
   return null;
+}
+
+/** At a goal: the line when it is free, else the goal queued at its price (null while the search goes on). */
+function arrive(s: Search, n: Node, index: number): BeltStep[] | null {
+  const end = s.finish(n);
+  if (!end) return null;
+  if (!end.cost) return once(build(s, n, end.dir, end.store === true));
+  s.nodes.push({ ...n, end: { dir: end.dir, parent: index, store: end.store === true } });
+  s.heap.push(s.costAt(s.key(n.x, n.y, n.d)) + end.cost, s.nodes.length - 1);
+  return null;
+}
+
+/** The line, or null when it crosses itself (a tile twice makes a ring that holds its items for good). */
+function once(steps: BeltStep[]): BeltStep[] | null {
+  const seen = new Set(steps.map((t) => t.y * 65536 + t.x));
+  return seen.size === steps.length ? steps : null;
 }
 
 /** Shortest belt (few turns, no pickup from emitters) from any start to any goal; null when none exists. */
@@ -602,14 +637,21 @@ function tileCost(s: Search, x: number, y: number): number {
   return (s.req.cost ? s.req.cost(x, y) : 0) + (s.req.allow?.has(y * s.space.W + x) ? ALLOW_COST : 0);
 }
 
-/** Crossing a belt that runs across the line: a junction, then on to the tile beyond. */
+/**
+ * Crossing a belt that runs across the line: a junction, then on to the tile beyond. The belt before the junction
+ * may turn into it (a belt faces the next tile, however it was entered); only a bridge end cannot turn. When it had
+ * to arrive straight, the search looped round a 2x2 square to enter that tile heading the right way, and the line
+ * crossed itself: a ring of four belts that three product lines fed and that never let go (S5 rust, plastic stood
+ * at 0 for 90 minutes).
+ */
 function crossStep(s: Search, n: Node, nd: Dir, g: number, prev: number): void {
   const nx = n.x + DX[nd]!;
   const ny = n.y + DY[nd]!;
-  if (!s.req.cross || n.d !== nd || !crossable(s.space, nx, ny, nd)) return;
+  if (!s.req.cross || n.d === 4 || (n.d >= 5 && heading(n.d) !== nd) || !crossable(s.space, nx, ny, nd)) return;
   const bx = nx + DX[nd]!;
   const by = ny + DY[nd]!;
-  if (s.usable(bx, by)) s.push({ x: bx, y: by, d: nd }, g + 6, prev);
+  const turn = heading(n.d) !== nd ? 0.5 : 0;
+  if (s.usable(bx, by)) s.push({ x: bx, y: by, d: nd }, g + 6 + turn, prev);
 }
 
 function expand(s: Search, n: Node, nd: Dir, g: number, prev: number): void {

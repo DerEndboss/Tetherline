@@ -6,14 +6,16 @@ import { placeBoulders, placeRidges, placeWrecks } from './features';
 import { MARGIN, shapeLand } from './land';
 import { rollProperties } from './props';
 import { connect, deepFloors } from './reach';
-import { placeResources, type Ctx } from './resources';
+import { openingShort, OPEN_RADIUS } from './opening';
+import { openingPatch, placeResources, type Ctx } from './resources';
 
 /**
  * The map generator. One seed gives one map, always the same:
  *  - organic land: several noisy pieces joined by land bridges, never narrower than `size.minWidth`, in one
  *    piece with the start;
  *  - the start: the core on solid ground with a clear ring, copper, iron, sand, coal and shallow water around
- *    it (in different directions), so the first minutes always work;
+ *    it (in different directions), so the first minutes always work; copper, iron, coal and sand are checked for
+ *    room for their first drills (opening.ts) and get one more patch when they fall short;
  *  - mostly empty: ore patches, lakes with shallow rims, oil seeps, slag fields (rolled per seed: not
  *    everything everywhere), rock ridges with gaps, dust boulders in clusters, wrecks with blueprints;
  *  - map properties (Dusty, Windy, Geothermal ...) rolled so that no two change the same thing;
@@ -77,6 +79,9 @@ export function generateMap(content: ContentRegistry, opts: MapOptions): Generat
   placeRidges(ctx, coast, size.minWidth, style.gen.ridges);
   placeBoulders(ctx, theme.boulders.length, style.gen.boulders);
   placeWrecks(ctx, Math.max(2, Math.round(size.diameter / 45)));
+  // the opening: copper, iron, coal and sand with room for their first drills (checked after ridges and boulders)
+  for (let round = 0; round < 3; round++) for (const f of openingShort(content, map, ctx.centre)) openingPatch(ctx, f, OPEN_RADIUS);
+  for (let i = 0; i < map.boulder.length; i++) if (map.floor[i]) map.boulder[i] = 0; // a new patch clears its boulders
   // the core and a one-tile ring: plain, buildable, free of everything
   for (let y = core.y - 1; y <= core.y + coreSize; y++) {
     for (let x = core.x - 1; x <= core.x + coreSize; x++) {

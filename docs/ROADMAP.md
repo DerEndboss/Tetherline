@@ -6,10 +6,11 @@ An honest list of what is still rough, and where the project could go next. Noth
 
 1. **A full round played by a person, measured.** Every balance number so far comes from the autopilot; the pace of a
    human (estimated at 60 to 80 minutes) and the feel of the first half hour are the most valuable feedback missing.
-2. **Make small maps and the finale robust.** On small maps the autopilot wins only about 4 of 10 rounds: the finale
-   (particle accelerator and coolant) can get stuck, and some rounds have pauses over 20 minutes. Medium maps are fine
-   (58 to 82 minutes).
-3. **Phones.** Playable, but tight, especially in landscape; touch has had far less testing than mouse and keyboard.
+2. **Small maps, the last mile.** The autopilot now wins every small map it was measured on (seeds 1 to 10), eight of
+   ten within 90 minutes; two ice maps take a little longer because wire and circuit chains find little room late in a
+   round. Medium and large maps win in about 58 to 79 minutes.
+3. **Touch on a real device.** Phone layouts keep more than half of the screen for the map, but they are tested with an
+   emulated touch screen only.
 4. **Packaging.** A desktop build (for example Electron) would let the game ship as an app as well as a web page.
 
 ## Balance and content
@@ -19,7 +20,6 @@ An honest list of what is still rough, and where the project could go next. Noth
   maps, so a round never forces them.
 - **The autopilot's planning is slow on large maps:** up to 8 s per look in its worker (it never blocks the game, but it
   reacts late). Its pace varies from 58 to 78 minutes per map.
-- **Hotbar slots do not remember a recipe;** the pipette (Q) does carry a building's setting.
 
 ## Interface
 
@@ -27,15 +27,16 @@ An honest list of what is still rough, and where the project could go next. Noth
   the core's own network. Both are right, but nothing explains it.
 - **No hint when the core store is full** ("core full, burning"): surplus is burned silently.
 - **Tutorial:** the hover card can lie over the tutorial card, the belt step does not zoom out when the drill and the core
-  are far apart, and power units in texts are not written the same way everywhere.
-- **Touch:** decoration cannot be removed by touch.
+  are far apart.
+- **Phone tray:** picking a tool from the quick bar instead of the tray leaves the tray open (it should fold like it does
+  after a pick in the tray).
 
 ## Look
 
-- Ridge rock shows seams between the blocks.
-- Large ore fields look scattered rather than dense.
+- Rock massifs have cliffs on their open east and south edges only; west and north edges end as a plain stepped edge,
+  which shows most in the steep and top views.
+- Lithium salt looks busy in the steep view (many thin crystals).
 - Wrecks look a little soft from close up.
-- Items inside junctions, routers and bridges are not drawn.
 - Solar panels, storage and liquid parts have no work animation.
 
 ## Technical

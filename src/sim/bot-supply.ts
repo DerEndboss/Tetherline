@@ -1,7 +1,8 @@
 import { recipeOf } from './blocks/production';
+import type { RecipeDef } from '../content/types';
 import type { Memory } from './bot-build';
 import { SUPPLY } from './bot-hub';
-import type { Command } from './commands';
+import type { Command, PlanSpec } from './commands';
 import { droneCommand } from './drones';
 import type { Building } from './state';
 import { storageInfo } from './storage';
@@ -64,21 +65,130 @@ function stageReady(w: World, mem: Memory, b: Building, marked: boolean): boolea
  * printer stopped at its usual mark of 50: the run sat at 73 for two hours.
  */
 function stageWants(w: World, item: string): boolean {
-  return w.state.buildings.some((b) => {
-    if (w.def(b).behaviour !== 'mega' || !w.ready(b)) return false;
+  return stageShare(w, item) < 1;
+}
+
+/**
+ * How much of what a mega building's stage needs of an item the core holds (the least over the mega buildings;
+ * 1 when none wants it). The emptiest goes first: with marks tied by id, three plate rollers took every trip of
+ * the three drones while the steel foundries behind them got nothing and the tower waited 20 minutes for steel
+ * (M1 rust).
+ */
+function stageShare(w: World, item: string): number {
+  let share = 1;
+  for (const b of w.state.buildings) {
+    if (w.def(b).behaviour !== 'mega' || !w.ready(b)) continue;
     const need = recipeOf(w, b)?.inputs.find((s) => s.item === item)?.n ?? 0;
-    return stockOf(w, item) < need;
-  });
+    if (need > 0) share = Math.min(share, stockOf(w, item) / need);
+  }
+  return share;
+}
+
+/**
+ * Whether the drones were told to mine an ore the core has almost none of. Helpers mine only when no marked machine
+ * has room, so with fifteen marks they never did: M5 rust waited 25 minutes for emberite (star alloy) while the
+ * helpers kept topping up presses and printers. While a running order's product waits for it, only machines for the
+ * running orders, for what goes into their products and for the megastructure's stage keep their marks.
+ */
+function mining(w: World, mem: Memory): boolean {
+  const ore = mem.mining;
+  // only for an ore a running order's product is made of (mining for later must not starve the machines), also
+  // two steps away: the coolant mixer's titanium ore for the crown's singularities (S8 green)
+  return ore != null && stockOf(w, ore) < MINED_LOW && orderTree(w).includes(ore);
+}
+
+/** One item of the order tree and the item it goes into (null for what the order itself asks for). */
+export interface Need {
+  item: string;
+  into: string | null;
+}
+
+/**
+ * What the running orders ask for and what that is made of, two recipes deep and through liquids, nearest first:
+ * the crown waits for singularities, they for coolant, and the coolant mixer for titanium ore (S4 rust and S8 green
+ * waited half an hour with no titanium in the core while the drones only hauled).
+ */
+export function orderNeeds(w: World, depth = 2): Need[] {
+  // the ordered item itself first: "Dig sand" asks for an ore (S7 rust: no sand line found room, and the drones
+  // never mined it, so the round stood at 6 of 80 sand for 44 minutes); a building to build asks for its price
+  const roots = w.state.progress.active
+    .map((a) => w.content.orders.get(a.id).goal)
+    .flatMap((g) => (g.kind === 'build' ? w.content.buildings.get(g.building).cost.map((c) => c.item) : [g.item]));
+  let level: Need[] = roots.map((item) => ({ item, into: null }));
+  const out: Need[] = [...level];
+  for (let d = 0; d < depth; d++) {
+    level = level.flatMap((n) => w.content.recipes.list.filter((r) => r.outputs.some((o) => o.item === n.item)).flatMap((r) => inputsOf(w, r).map((item) => ({ item, into: n.item }))));
+    for (const n of level) if (!out.some((o) => o.item === n.item && o.into === n.into)) out.push(n);
+  }
+  return out;
+}
+
+/** The items of `orderNeeds`, each once. */
+export function orderTree(w: World, depth = 2): string[] {
+  return [...new Set(orderNeeds(w, depth).map((n) => n.item))];
+}
+
+/** A recipe's input items, and the inputs of the recipes that make its input liquids. */
+function inputsOf(w: World, r: RecipeDef): string[] {
+  const liquids = (r.liquidIn ?? []).map((l) => l.liquid);
+  const makers = w.content.recipes.list.filter((m) => m.liquidOut?.some((l) => liquids.includes(l.liquid)));
+  return [...r.inputs, ...makers.flatMap((m) => m.inputs)].map((i) => i.item);
+}
+
+/** Whether an item goes straight into a running order's product (the steel and chips of star alloy, its ore). */
+function orderInput(w: World, item: string): boolean {
+  return orderTree(w, 1).includes(item);
+}
+
+const MINED_LOW = 100;
+
+/** How long a holding step's want counts after it last said so (ticks). */
+const WANT_FOR = 1200;
+
+/** What the holding steps lacked within the last WANT_FOR ticks. */
+function wanted(w: World, mem: Memory): string[] {
+  return [...(mem.wanting ?? [])].filter(([, at]) => w.state.tick - at <= WANT_FOR).map(([id]) => id);
+}
+
+/**
+ * What a running build order's building, or a holding step (a drone upgrade, the plastic works ...), needs more of
+ * than the core holds. The drones make those first, and machines that would eat them wait: the accelerator
+ * (Stage 3) waited half an hour for 40 circuits while three marked chip printers turned every circuit into core
+ * chips the run already had (S8 ice, S8 rust), and the cargo hold the drones need to mine tungsten waited an hour
+ * for 10 plastic the cell assemblers ate (S2 ice).
+ */
+function buildShort(w: World, mem: Memory): Set<string> {
+  const short = new Set<string>();
+  for (const a of w.state.progress.active) {
+    const g = w.content.orders.get(a.id).goal;
+    if (g.kind !== 'build') continue;
+    for (const c of w.content.buildings.get(g.building).cost) if (stockOf(w, c.item) < c.n) short.add(c.item);
+  }
+  // the step counts what the steps above it set aside, so the core can hold its price and it is still short: S3
+  // rust's plastic works waited for 25 steel with 48 in the core while the drones mined coal and fed no foundry
+  for (const id of wanted(w, mem)) short.add(id);
+  return short;
+}
+
+/** -2 for a machine that makes what an order asks for or a build order lacks, Infinity for one that eats what a
+ * build order lacks, else null. */
+function forOrders(w: World, b: Building, product: string, short: ReadonlySet<string>): number | null {
+  if (ordered(w, product) || short.has(product)) return -2;
+  if (!short.size) return null;
+  const eats = recipeOf(w, b)?.inputs.some((s) => short.has(s.item)) ?? false;
+  return eats && !stageWants(w, product) ? Infinity : null;
 }
 
 /** Lower is more urgent; Infinity = not wanted at all. */
-function urgency(w: World, mem: Memory, b: Building, marked: boolean): number {
+function urgency(w: World, mem: Memory, b: Building, marked: boolean, short: ReadonlySet<string>): number {
   if (!stageReady(w, mem, b, marked)) return Infinity;
   const product = recipeOf(w, b)?.outputs[0]?.item;
   if (!product) return -1;
-  if (ordered(w, product)) return -2;
-  if (stageWants(w, product)) return -1.5;
-  return byStock(stockOf(w, product), SMALL[product] ?? LOW, marked);
+  const pull = forOrders(w, b, product, short);
+  if (pull !== null) return pull;
+  if (stageWants(w, product)) return -1.5 + stageShare(w, product) * 0.4;
+  const keep = !mining(w, mem) || orderInput(w, product);
+  return keep ? byStock(stockOf(w, product), SMALL[product] ?? LOW, marked) : Infinity;
 }
 
 /** A product below its mark is wanted (the emptier the sooner); a marked machine keeps going up to twice that. */
@@ -89,7 +199,8 @@ function byStock(have: number, low: number, marked: boolean): number {
 export function supplyMarks(w: World, mem: Memory): Command[] {
   const marked = new Set(w.state.droneOps?.supply ?? []);
   const fed = w.state.buildings.filter((b) => mem.feed.has(b.y * w.state.map.w + b.x) && w.ready(b) && SUPPLY.has(w.def(b).behaviour));
-  const ranked = fed.map((b) => ({ b, u: urgency(w, mem, b, marked.has(b.id)) }));
+  const short = buildShort(w, mem);
+  const ranked = fed.map((b) => ({ b, u: urgency(w, mem, b, marked.has(b.id), short) }));
   ranked.sort((a, b) => a.u - b.u || a.b.id - b.b.id);
   const toggles = ranked.filter((r) => Number.isFinite(r.u) !== marked.has(r.b.id)).map((r) => r.b.id);
   if (toggles.length) return toggles.map((id) => droneCommand('drone-supply', { id }));
@@ -100,13 +211,16 @@ export function supplyMarks(w: World, mem: Memory): Command[] {
 const REORDER = 600;
 
 /**
- * Puts the marks in order of urgency when the most urgent machine is not first: each mark is toggled off and on
+ * Puts the marks in order of urgency when they are out of it: each mark is toggled off and on
  * again, which moves it to the end, in the wanted order. At most every REORDER ticks, so a drone on its way keeps
  * its target and the order does not churn.
  */
 function reorder(w: World, mem: Memory, want: number[]): Command[] {
   const now = (w.state.droneOps?.supply ?? []).filter((id) => want.includes(id));
-  if (!want.length || now[0] === want[0] || w.state.tick - mem.reordered < REORDER) return [];
+  // the whole order counts, not only the first: with the ordered motor printer first, two plate rollers above
+  // their mark kept the drones while six steel foundries behind them got nothing for 25 minutes (S8 green)
+  const same = now.length === want.length && want.every((id, i) => now[i] === id);
+  if (!want.length || same || w.state.tick - mem.reordered < REORDER) return [];
   mem.reordered = w.state.tick;
   return want.flatMap((id) => [droneCommand('drone-supply', { id }), droneCommand('drone-supply', { id })]);
 }
@@ -117,8 +231,13 @@ function reorder(w: World, mem: Memory, want: number[]): Command[] {
  * whose product is near the cap is switched to a recipe its ore line cannot feed, so it idles; it gets its recipe
  * back when the stock has dropped. A crafter with a single recipe is taken down and put back instead.
  */
-const FULL = 0.95;
-const RESUME = 0.6;
+/**
+ * Ore lines pause at half the cap too (they used to pause at 95 %): the full core burns what does not fit,
+ * so the only harm left is the belt, and a coal line at 78 % of the cap filled the trunk the refinery's plastic
+ * needed, so the cells order waited 40 minutes (M1 green).
+ */
+const FULL = 0.5;
+const RESUME = 0.3;
 /**
  * Crafters pause earlier than ore lines: a product line into the core is shared, and five wire mills kept a line
  * full of wire at 94 % of the cap, so the silicon and steel behind it stood still (seen in balance runs).
@@ -172,12 +291,33 @@ function takeDown(w: World, mem: Memory, b: Building, product: string): Command 
   return { type: 'remove', x0: b.x, y0: b.y, x1: b.x + size - 1, y1: b.y + size - 1 };
 }
 
-/** Crafters taken down by the valve whose product has dropped again: their ghosts. */
+/**
+ * Whether a taken-down building can go back where it stood: nothing else was built on its footprint since (a belt
+ * laid there would be torn out by it). The building itself, still on its way out, does not count.
+ */
+function freeFor(w: World, p: PlanSpec): boolean {
+  const kind = w.content.buildings.indexOf(p.kind);
+  const size = w.content.buildings.get(p.kind).size;
+  for (let y = p.y; y < p.y + size; y++) {
+    for (let x = p.x; x < p.x + size; x++) {
+      const b = w.at(x, y);
+      if (b && !(b.kind === kind && b.x === p.x && b.y === p.y)) return false;
+    }
+  }
+  return true;
+}
+
+/**
+ * Crafters taken down by the valve whose product has dropped again: their ghosts. One whose old spot is built over
+ * is forgotten (the planners build anew where there is room): a graphite press put back on the accelerator's output
+ * belt cut it, and the crown waited an hour for the two singularities inside (M5 rust).
+ */
 function putBack(w: World, mem: Memory, cap: number): Command[] {
   const back = mem.downed.filter((d) => stockOf(w, d.product) < cap * CRAFT_RESUME || ordered(w, d.product));
   if (!back.length) return [];
   mem.downed = mem.downed.filter((d) => !back.includes(d));
-  return [{ type: 'place-many', plans: back.map((d) => d.plan) }];
+  const plans = back.map((d) => d.plan).filter((p) => freeFor(w, p));
+  return plans.length ? [{ type: 'place-many', plans }] : [];
 }
 
 export function surplusValves(w: World, mem: Memory): Command[] {
@@ -238,7 +378,9 @@ function oreValve(w: World, line: Memory['lines'][number], cap: number): Command
   }
   if (line.idle && (have < cap * RESUME || wanted)) {
     line.idle = false;
-    return [{ type: 'place-many', plans: line.drills! }];
+    // a drill whose spot was built over in the meantime stays away (it would tear out what stands there now)
+    line.drills = line.drills!.filter((d) => freeFor(w, d));
+    return [{ type: 'place-many', plans: line.drills }];
   }
   return null;
 }

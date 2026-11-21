@@ -2,6 +2,8 @@ import type { Brain } from './bot-brain';
 import type { Batch } from './bot-build';
 import type { Command } from './commands';
 import { droneCommand, helperPrice, nextPrice, type DroneTrack } from './drones';
+import { isLiquidMember } from './liquids';
+import type { Building } from './state';
 
 /** One thing the bot wants, in priority order: `plan` runs only when `when` says something is missing. */
 export interface Step {
@@ -30,7 +32,7 @@ function upgradeCost(k: Brain): Record<string, number> {
 const have = (k: Brain, id: string, n: number): boolean => k.stock(id) >= n;
 
 /** The late chain may start once the core is upgraded and steel is cast. */
-const late = (k: Brain): boolean => k.coreSize() >= 4 && k.countRecipe('steel-foundry', 'cast-steel') > 0;
+export const late = (k: Brain): boolean => k.coreSize() >= 4 && k.countRecipe('steel-foundry', 'cast-steel') > 0;
 
 const priceOf = (list: { item: string; n: number }[] | null): Record<string, number> => Object.fromEntries((list ?? []).map((p) => [p.item, p.n]));
 
@@ -80,19 +82,86 @@ function stageNeed(k: Brain, item: string): number {
   return n;
 }
 
-/** The accelerator's recipe should change: singularities once there is star alloy for them, then alloy again. */
+/**
+ * Whether coolant reaches the accelerator: it holds some, or a pipe beside it does. In alloy mode it draws none,
+ * so the full pipe is the sign.
+ */
+function coolantAt(k: Brain, acc: Building): boolean {
+  const w = k.world;
+  const coolant = w.content.liquids.indexOf('coolant');
+  const wet = (b: Building): boolean => b.liquidId === coolant && b.liquid > 1;
+  return wet(acc) || w.neighbours(acc).some((n) => isLiquidMember(w, n) && wet(n));
+}
+
+/**
+ * The accelerator's recipe should change: singularities once there is star alloy for them and coolant to press
+ * them, then alloy again. Without coolant it stays on (or goes back to) alloy: in singularity mode it took 24
+ * star alloy as input and pressed nothing, and the crown waited for the alloy locked inside (S8 ice).
+ */
 function accelMode(k: Brain): Command | null {
   const acc = k.built('particle-accelerator')[0];
   const alloy = k.starAlloy();
   if (!acc || !alloy) return null;
-  const sing = k.made('singularity') < stageNeed(k, 'singularity') && k.stock('star-alloy') >= 2 && (k.done('elevator-5') || k.made('star-alloy') >= 30);
+  const sing = k.made('singularity') < stageNeed(k, 'singularity') && k.stock('star-alloy') >= 2 && (k.done('elevator-5') || k.made('star-alloy') >= 30) && coolantAt(k, acc);
   const want = k.recipeIndex('particle-accelerator', sing ? 'compress-singularity' : alloy);
-  return acc.config === want ? null : { type: 'configure', id: acc.id, value: want };
+  if (acc.config === want || staysPressing(k, acc)) return null;
+  return { type: 'configure', id: acc.id, value: want };
+}
+
+/** Ticks the accelerator keeps pressing singularities before it may go back to alloy. */
+const PRESS_FOR = 1200;
+
+/**
+ * Pressing singularities goes on for a while once begun, as long as coolant reaches the machine. The drones carry
+ * the core's star alloy into it, the core runs under 2, and in alloy mode the machine hands that alloy straight
+ * back: the mode flipped every few seconds and no singularity was pressed for 19 minutes (S2 ice). The bot cannot
+ * see what the machine holds (the worker snapshot has no machine contents), so it is a time.
+ */
+function staysPressing(k: Brain, acc: Building): boolean {
+  const pressing = acc.config === k.recipeIndex('particle-accelerator', 'compress-singularity');
+  return pressing && coolantAt(k, acc) && k.world.state.tick - (k.mem.accelAt ?? -Infinity) < PRESS_FOR;
+}
+
+/** The cargo level whose drones can mine an ore this hard (drone hardness is 1, +1 at cargo 2, +1 at cargo 3). */
+const cargoFor = (hardness: number): number => (hardness <= 1 ? 0 : hardness === 2 ? 2 : 3);
+
+/** The ore the drones should mine now (see `Brain.droneOre`), once their holds can take it. */
+function mineOrder(k: Brain): string | null {
+  const ore = k.droneOre();
+  return ore !== null && (k.world.state.droneTech?.cargo ?? 0) >= cargoFor(k.hardness(ore)) ? ore : null;
+}
+
+/** A cargo upgrade the drones need to mine the ore no line reaches. */
+function mineCargo(level: number): Step {
+  const step = upgrade('cargo', level, (k) => {
+    const ore = k.droneOre();
+    return ore !== null && cargoFor(k.hardness(ore)) >= level;
+  });
+  return { ...step, name: `mine-cargo-${level}`, hold: true };
 }
 
 /** The late chain (after titanium plates): plastic, cells, the printer, carbide, fusion, the elevator, the crown. */
 const LATE: Step[] = [
-  { name: 'accel-mode', when: (k) => accelMode(k) !== null, plan: (k) => accelMode(k) },
+  {
+    name: 'accel-mode',
+    when: (k) => accelMode(k) !== null,
+    plan: (k) => accelMode(k),
+    paid: (k) => {
+      k.mem.accelAt = k.world.state.tick;
+    },
+  },
+  // an ore whose line finds no way through the base: the drones mine it (they need bigger holds for hard ore)
+  mineCargo(1),
+  mineCargo(2),
+  mineCargo(3),
+  {
+    name: 'drone-mine',
+    when: (k) => mineOrder(k) !== (k.mem.mining ?? null),
+    plan: (k) => droneCommand('drone-mine', { item: mineOrder(k) ?? 'auto' }),
+    paid: (k) => {
+      k.mem.mining = mineOrder(k);
+    },
+  },
   // motors first: they buy the helper drones that carry everything the supplied machines eat
   { name: 'motors', hold: true, when: (k) => k.countRecipe('3d-printer', 'print-motor') < 1 && late(k) && have(k, 'circuit', 40), plan: (k) => k.supplied('3d-printer', 'print-motor') },
   helper('helper', (k) => k.world.state.drones.length < 3),
@@ -162,7 +231,13 @@ const LATE: Step[] = [
     when: (k) => k.worldOre() !== null && k.lines(k.worldOre()!) < 1 && late(k) && have(k, 'silicon', 60),
     plan: (k) => k.rawLine(k.worldOre()!, 4),
   },
-  { name: 'accelerator', when: (k) => k.count('particle-accelerator') < 1 && k.done('elevator-3') && k.starAlloy() !== null, hold: true, plan: (k) => k.accelerator() },
+  {
+    name: 'accelerator',
+    when: (k) => k.count('particle-accelerator') < 1 && k.done('elevator-3') && k.starAlloy() !== null,
+    hold: true,
+    plan: (k) => k.onSite(() => k.accelerator()),
+    paid: (k) => k.releaseSite(),
+  },
   // after the story steps: its lacking motors were set aside first, and the accelerator waited 20 minutes for 8
   helper('helper-late', (k) => k.world.state.drones.length >= 3),
 ];
@@ -259,6 +334,7 @@ export const STEPS: Step[] = [
   },
   // what a story order asks for and no planner below makes on its way (a sorter, bridges, a pump, batteries ...)
   { name: 'order-build', hold: true, when: (k) => k.orderWants() !== null, plan: (k) => k.forOrder(k.orderWants()!) },
+  { name: 'repower', when: (k) => k.unpowered() !== null, plan: (k) => k.repower(k.unpowered()!) },
   { name: 'order-ore', when: (k) => k.orderedOre() !== null, plan: (k) => k.rawLine(k.orderedOre()!, 4, true) ?? k.rawLine(k.orderedOre()!, 4) },
   { name: 'copper-1', when: (k) => k.rate('copper-ore') < 2.4, plan: (k) => k.rawLine('copper-ore', 6) },
   { name: 'iron-pod-1', when: (k) => k.count('smelter') < 1, plan: (k) => k.pod('smelter', 'smelt-iron', 'iron-ore', 3) },

@@ -5,7 +5,7 @@ export const coreBuildings: BuildingDef[] = [
   {
     id: 'core-shard',
     name: 'Core: Shard',
-    description: 'Your landing core. Stores everything, powers its neighbours with 4 units.',
+    description: 'Your landing core. Stores everything, powers its neighbours with 4 power/s.',
     category: 'core',
     behaviour: 'core',
     size: 3,
