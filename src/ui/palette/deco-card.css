@@ -1,0 +1,18 @@
+/* The touch card of a tapped decoration piece (DecoCard.tsx): name, Remove, close. Bottom centre; above the quick
+   bar where that sits at the bottom centre too (same rule as the pause badge). On a phone it stands in the open map
+   above the quick bar row (--ph-open-bottom, hud-stack.css), on its side at the left, the palette being at the right. */
+.deco-card {
+  position: absolute; left: 50%; bottom: calc(var(--safe-bottom, 0px) + var(--space-lg)); transform: translateX(-50%);
+  display: flex; align-items: center; gap: var(--space-sm); width: max-content; max-width: calc(100vw - 2 * var(--space-md));
+  padding: var(--space-xs) var(--space-xs) var(--space-xs) var(--space-sm);
+}
+.hud:has(.hotbar.wide) .deco-card { bottom: calc(var(--safe-bottom, 0px) + var(--space-sm) + 62px + var(--space-sm)); }
+.deco-icon { display: grid; place-items: center; flex: none; width: 36px; height: 36px; color: var(--k-edge); }
+.deco-text { display: grid; min-width: 0; }
+.deco-name { font-size: var(--text-md); font-weight: 800; line-height: 1.2; text-shadow: 0 1px 0 var(--color-press-shade); }
+.deco-sub { font-size: var(--text-xs); color: var(--color-muted); }
+.deco-remove { flex: none; min-height: var(--hit-min); padding-inline: var(--space-md); }
+.deco-close { flex: none; display: grid; place-items: center; width: var(--hit-min); height: var(--hit-min); }
+[data-hud-stack="phone"] .hud .deco-card { bottom: var(--ph-open-bottom); }
+[data-hud-stack="landscape"] .hud .deco-card { left: calc(var(--safe-left) + var(--ph-edge)); bottom: var(--ph-open-bottom); transform: none; }
+.deco-close { padding: 0; }

@@ -193,6 +193,12 @@ to an earlier game design that no longer exists are not listed. Where code and t
   sprite collect is the cost, not the simulation at 0.1 ms. A building's picture is chosen before its sprite is taken from the
   pool, so each sprite gets one texture per frame (600 working machines cost about 4 ms when set twice).
   Drone under-lights are one additive layer, off-screen and parked drones are hidden, and the stats memo key is a number.
+- **Ore fields are clusters, not tiles:** up to three small clusters per tile at hashed spots, denser in the middle and
+  smaller at a ragged rim; far out (below zoom 0.55) one bigger cluster per tile keeps the sprite count down.
+- **Rock ridges are one massif:** top sheets with equal rim height overlap by 0.025 tile, only open east and south edges get
+  a cliff, boulders cross tile borders. No seams, no inner side walls.
+- **Items show inside logistics blocks:** an item glides through a junction in the sim's own delay, waits in the middle of
+  a router or sorter and arcs over a bridge span (`hub-items.ts`, a pure function of sim state and clock).
 
 ## UI
 
@@ -209,6 +215,11 @@ to an earlier game design that no longer exists are not listed. Where code and t
 - **Panel sub-tabs wrap onto a second row** instead of a clipped, fade-masked scroll row.
 - **Game speeds 1x, 2x, 3x, 5x and 10x in the HUD;** `.` and `,` step through them and stop at the ends (a click wraps round).
 - **Quick Round asks before it replaces a save slot,** there is a single "Resume", and Esc closes the menu.
+- **Phones keep the map:** on both phone formats more than half the screen stays map, every control is a 44 px thumb
+  target and no two cards overlap (`hud-stack.css`); windows are sheets from below (portrait) or the right (landscape).
+- **Touch can remove decoration:** a tap shows a card with Remove, a long press removes at once.
+- **A hotbar slot keeps a recipe:** a machine picked with Q (with its recipe or item) and dropped on a slot keeps that
+  setting; the slot shows a small icon of it.
 
 ## Audio
 

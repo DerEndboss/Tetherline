@@ -58,6 +58,9 @@
 .app-layer { position: fixed; inset: 0; pointer-events: none; }
 .app-layer > * { pointer-events: auto; }
 .app-layer-hud > .hud { pointer-events: none; }
+/* A fixed layer is a stacking context of its own: without a level the whole HUD ranked below the tutorial's ground rings
+ * (.tut-layer, z-hud - 1 at the root) and the rings were drawn over the cards. The HUD's level is what the tutorial sheet means. */
+.app-layer-hud { z-index: var(--z-hud); }
 .app-layer-menu { z-index: var(--z-dialog); }
 .app-layer-menu[data-presence="open"] .menu { --k-s: var(--pop-scale); --k-y: 12px; animation: k-in var(--dur-emph) var(--ease-out) 40ms backwards; }
 .app-layer-menu[data-presence="closing"] .menu { --k-s-out: 0.97; --k-y-out: 6px; animation: k-out var(--dur-exit) var(--ease-in) forwards; }

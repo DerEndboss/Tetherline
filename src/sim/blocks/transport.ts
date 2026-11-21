@@ -3,6 +3,7 @@ import { offer } from '../items';
 import type { Building } from '../state';
 import { heldBy, isCoreStock, takeFrom } from '../storage';
 import type { World } from '../world';
+import { noteHop } from './transit';
 import type { BlockBehaviour, TickContext } from './types';
 
 /** Items waiting in a bridge or mass driver (queue 0, flat item indices). */
@@ -37,14 +38,16 @@ function dumpFront(w: World, b: Building): void {
   }
 }
 
-/** Moves up to `n` items from `b` into its partner while the partner has room. */
-function send(w: World, b: Building, p: Building, n: number): number {
+/** Moves up to `n` items from `b` into its partner while the partner has room; `seen` logs each hop for the picture. */
+function send(w: World, b: Building, p: Building, n: number, seen = false): number {
   const from = held(b);
   const to = held(p);
   const cap = w.def(p).items ?? 10;
   let moved = 0;
   while (moved < n && from.length && to.length < cap) {
-    to.push(from.shift()!);
+    const item = from.shift()!;
+    to.push(item);
+    if (seen) noteHop(b, 1, w.state.tick, item, 0, 0);
     moved++;
   }
   return moved;
@@ -63,7 +66,7 @@ export const bridge: BlockBehaviour = {
     const p = partnerOf(w, b);
     if (!p) return dumpFront(w, b);
     b.work = Math.min(b.work + (w.def(b).bridge?.rate ?? 10) * ctx.dt, 2);
-    const moved = send(w, b, p, Math.floor(b.work));
+    const moved = send(w, b, p, Math.floor(b.work), true);
     b.work -= moved;
   },
   built: (w, b) => autoLinkInLine(w, b),

@@ -3,10 +3,11 @@ import { asDir, opposite, sideOf, turnLeft, turnRight } from '../grid';
 import { accepts, dump, offer } from '../items';
 import type { Building, Dir } from '../state';
 import type { World } from '../world';
+import { noteHop } from './transit';
 import type { BlockBehaviour } from './types';
 
-/** Ticks an item waits inside a junction or router. */
-function delayOf(w: World, b: Building): number {
+/** Ticks an item waits inside a junction or router (the renderer glides it across in the same time). */
+export function delayOf(w: World, b: Building): number {
   return Math.max(1, Math.ceil(TICK_HZ / (w.def(b).conveyor?.speed ?? 8)));
 }
 
@@ -44,7 +45,12 @@ export const router: BlockBehaviour = {
   update: (w, b) => {
     const q = b.queue[0];
     if (!q?.length || q[2]! > w.state.tick) return;
-    if (dump(w, b, q[0]!, q[1]!)) b.queue[0] = [];
+    if (!dump(w, b, q[0]!, q[1]!)) return;
+    b.queue[0] = [];
+    // for the picture only: the neighbour that took it is the one before the round-robin pointer now
+    const ns = w.neighbours(b);
+    const taker = ns[(b.rr + ns.length - 1) % ns.length];
+    if (taker) noteHop(b, 1, w.state.tick, q[0]!, 0, sideOf(w.rect(b), w.rect(taker)));
   },
 };
 
@@ -66,7 +72,10 @@ function passThrough(pick: Pick): BlockBehaviour {
     accept: (w, b, item, source) => pick(w, b, item, source) !== undefined,
     handle: (w, b, item, source) => {
       const to = pick(w, b, item, source);
-      if (to && offer(w, b, to, item)) b.rr++;
+      if (!to || !offer(w, b, to, item)) return;
+      b.rr++;
+      // for the picture only: which sides it came in on and left by (see transit.ts)
+      noteHop(b, 0, w.state.tick, item, sideOf(w.rect(b), w.rect(source)), sideOf(w.rect(b), w.rect(to)));
     },
   };
 }

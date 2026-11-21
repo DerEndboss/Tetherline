@@ -254,3 +254,8 @@
 .hover-stacks { display: flex; flex-wrap: wrap; gap: 4px; margin-top: var(--space-xs); }
 .hover-stack { display: inline-flex; align-items: center; gap: 4px; padding: 1px 9px 1px 2px; border-radius: var(--radius-pill); background: linear-gradient(180deg, var(--k-slot), var(--k-slot-2)); box-shadow: var(--k-recessed); }
 .hover-hint { margin-top: var(--space-xs); padding-top: 6px; border-top: 1px solid var(--color-rule-soft); font-size: var(--text-xs); }
+
+/* The setting a quick bar slot remembers (a recipe's product, a sorter's item): a small plaque in the corner opposite the key cap. */
+.hot-set { position: absolute; right: 2px; bottom: 2px; z-index: 2; display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--k-slot); box-shadow: inset 0 0 0 1px var(--k-edge-soft), 0 1px 0 var(--k-lip); pointer-events: none; }
+.hot-set .game-icon, .hot-set .item-chip { flex: none; }
+.hot-set-drop { width: 9px; height: 9px; border-radius: 50% 50% 50% 0; rotate: -45deg; }

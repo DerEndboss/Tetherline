@@ -243,8 +243,22 @@ function ridgeTexel(p: Paint, u: number, v: number, i: number, lx: number, ly: n
   if (f & (RIGHT | DOWN) && sideDistance(f & (RIGHT | DOWN), lx, ly) < 3) blend(p, p.ridgeShade, 0.75);
 }
 
-/** How strongly an ore field tints the ground (the 3D chunks of ores-layer.ts lie on top; far out they hide). */
-const ORE_TINT = 0.32;
+/** How strongly an ore field tints the ground (the 3D pieces of ores-layer.ts lie on top; far out they hide). */
+const ORE_TINT = 0.5;
+
+/** Smooth value noise at (u, v) texels with `cell` texels per lattice step, 0..1: the ragged rim of a field. */
+function valueNoise(p: Paint, u: number, v: number, cell: number): number {
+  const fx = u / cell;
+  const fy = v / cell;
+  const x0 = Math.floor(fx);
+  const y0 = Math.floor(fy);
+  const tx = fx - x0;
+  const ty = fy - y0;
+  const at = (i: number, j: number): number => (hash2(i * 7919 + p.seed, j * 104729 + 17) & 1023) / 1023;
+  const ex = tx * tx * (3 - 2 * tx);
+  const ey = ty * ty * (3 - 2 * ty);
+  return (at(x0, y0) * (1 - ex) + at(x0 + 1, y0) * ex) * (1 - ey) + (at(x0, y0 + 1) * (1 - ex) + at(x0 + 1, y0 + 1) * ex) * ey;
+}
 
 /** Share of ore around a grid point (bilinear between tile centres, 0..1) and the ore floor that has most of it. */
 function oreShare(p: Paint, gx: number, gy: number): number {
@@ -270,15 +284,32 @@ function oreShare(p: Paint, gx: number, gy: number): number {
   return sum;
 }
 
-/** Ore fields: a soft tint of the ore colour with darker gravel flecks, edges blended over half a tile. */
+/** A soft fleck of gravel: one dot per `cell` texels square, in 45 % of the cells (round, never a hard block). */
+function gravel(p: Paint, u: number, v: number, cell: number, salt: number): number {
+  const cx = Math.floor(u / cell);
+  const cy = Math.floor(v / cell);
+  const h = hash2(cx * 131 + p.seed + salt, cy * 7 + salt);
+  if ((h & 1023) / 1024 >= 0.45) return 0;
+  return dot(u, v, cx * cell + 2 + ((h >>> 10) % (cell - 4)), cy * cell + 2 + ((h >>> 14) % (cell - 4)), 2.1);
+}
+
+/**
+ * Ore fields: a bed of the ore's colour under the 3D pieces, with a ragged rim (a slow noise moves the edge by up
+ * to a third of a tile, so the field is no tile diamond), darker and ore-coloured gravel flecks in it.
+ */
 function oreTexel(p: Paint, u: number, v: number): void {
   const share = oreShare(p, u / TEXELS, v / TEXELS);
   if (share <= 0) return;
-  const k = share * share * (3 - 2 * share);
-  blend(p, p.floors[p.oreFloor - 1]!, ORE_TINT * k);
-  const h = hash2(Math.floor(u / 2) * 29 + p.seed + 5, Math.floor(v / 2) * 3 + 1);
-  if ((h & 7) === 0) scale(p, 1 - 0.18 * k);
-  else if ((h & 7) === 1) blend(p, p.floors[p.oreFloor - 1]!, 0.35 * k);
+  const rough = (valueNoise(p, u, v, TEXELS * 1.4) - 0.5) * 0.7 + (valueNoise(p, u, v, TEXELS * 0.5) - 0.5) * 0.25;
+  const edge = Math.min(1, Math.max(0, (share - 0.5) * 2.4 + 0.5 + rough));
+  const k = edge * edge * (3 - 2 * edge);
+  const ore = p.floors[p.oreFloor - 1]!;
+  blend(p, ore, ORE_TINT * k);
+  scale(p, 1 - 0.1 * k);
+  const dark = gravel(p, u, v, 6, 5);
+  const bright = gravel(p, u, v, 7, 91);
+  if (dark > 0) scale(p, 1 - 0.2 * k * dark);
+  if (bright > 0) blend(p, ore, 0.5 * k * bright);
 }
 
 /** Under the liquid layer (water.ts paints the liquid, its soft rim and the wet band): plain ground, no tile steps. */
@@ -307,7 +338,7 @@ function landTexel(p: Paint, i: number, u: number, v: number, tone: number): voi
   const lx = u % TEXELS;
   const ly = v % TEXELS;
   const shade = sideDistance(p.rock[i]! & (LEFT | UP), lx, ly);
-  if (shade < 4) scale(p, 0.62 + shade * 0.08);
+  if (shade < 5) scale(p, 0.5 + shade * 0.1);
 }
 
 /** The colour of one texel into `p.out`; false for void. */

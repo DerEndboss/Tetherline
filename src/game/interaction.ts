@@ -54,7 +54,8 @@ const AXIS_LOCK = 2;
  *   the cursor, or clears the dust boulder or decoration there; right click does the same with no tool in hand
  *   (a ghost is cancelled, a building demolished; Ctrl+Z brings it back);
  * - a plain click with no tool selects the building, salvages the wreck or selects the decoration piece under the
- *   pointer (it stays highlighted; Backspace / Delete / right click removes it);
+ *   pointer (it stays highlighted; Backspace / Delete / right click removes it; on touch the deco card's Remove
+ *   button, `removeSelectedDeco`, or a long press, the sink's `hold`, does);
  * - R rotates the ghost, the blueprint in hand or the building under the cursor, Q picks what is under the cursor;
  * - B / Ctrl+C selects an area to copy as a blueprint, Ctrl+V pastes it (R / F turn and mirror it);
  * - Ctrl+Z / Ctrl+Shift+Z undo and redo placing, demolishing and rotating.
@@ -171,14 +172,20 @@ export class Interaction {
 
   /* ---------- Tools ---------- */
 
-  startPlacing(building: Id): void {
+  /** Puts a building in hand; `config` is the setting it carries (recipe, sorter item: the quick bar remembers it), -1 = none. */
+  startPlacing(building: Id, config = -1): void {
     this.mode = { kind: 'place', building };
     this.autoTurn = true;
-    this.toolConfig = -1;
+    this.toolConfig = config;
     this.selected = -1;
     this.selectedDeco = null;
     this.drag = null;
     this.changed();
+  }
+
+  /** The setting the tool in hand carries (what Q took from a building, or the quick bar gave back), -1 = none. */
+  get toolSetting(): number {
+    return this.toolConfig;
   }
 
   /** X: the demolish tool (drag a rectangle, or click one building). */
@@ -359,9 +366,34 @@ export class Interaction {
     }
   }
 
+  /**
+   * The touch way to remove the selected decoration piece (the card's Remove button): what Backspace does for it.
+   * Whether there was one.
+   */
+  removeSelectedDeco(): boolean {
+    if (!this.selectedDeco) return false;
+    this.removeDeco(this.selectedDeco);
+    return true;
+  }
+
+  /** A finger held on a tile: a dust boulder or decoration piece goes, a building or anything else stays. */
+  private holdAt(w: World, t: Tile): boolean {
+    if (!w.inBounds(t.x, t.y) || w.at(t.x, t.y)) return false;
+    const { map } = w.state;
+    if (!map.boulder[t.y * map.w + t.x] && probes.decoAt?.(t.x, t.y) !== true) return false;
+    return this.clearAt(w, t);
+  }
+
   /* ---------- Right mouse button (no tool in hand) ---------- */
 
   private readonly secondary: SecondarySink = {
+    hold: (x, y) => {
+      if (this.mode.kind !== 'none' || !this.holdAt(this.sync(), { x, y })) return false;
+      this.selected = -1;
+      this.selectedDeco = null;
+      this.changed();
+      return true;
+    },
     tap: (x, y) => {
       if (this.mode.kind !== 'none') return false;
       const w = this.sync();

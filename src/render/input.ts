@@ -8,6 +8,8 @@ import { worldToTile } from './iso';
 /** Movement (screen px) after which a press counts as a drag, not a tap. */
 const TAP_SLOP = 8;
 const WHEEL_ZOOM = 0.0015;
+/** A finger held this long (ms) without moving is a long press: it removes decoration, like a right click. */
+const LONG_PRESS_MS = 550;
 /** Pointer this close to a window edge (px) scrolls the map when edge scrolling is on. */
 const EDGE_ZONE = 14;
 
@@ -47,7 +49,8 @@ export interface InputOptions {
  * drag pans (unless the world takes the drag: moving a ghost, drawing belts), middle mouse drag always pans,
  * right drag pans while a tool is in hand and sweeps boulders away otherwise (game/tools/sink.ts), a right click
  * clears the boulder or decoration on a tile (or lets go of the tool), the wheel zooms at the cursor with a glide
- * (camera-motion.ts), two fingers pinch-zoom and pan, a still press taps. The mouse at the window edge scrolls
+ * (camera-motion.ts), two fingers pinch-zoom and pan, a still press taps, a finger held still for a moment (long
+ * press, touch only) takes away the decoration or boulder under it like a right click (never a building). The mouse at the window edge scrolls
  * the map when that setting is on. Arrow keys / WASD pan and + / - zoom with momentum while no text field has focus.
  * Returns a detach function.
  */
@@ -57,6 +60,8 @@ export function attachCameraInput(el: HTMLElement, camera: Camera, options: Inpu
   let pinched = false;
   let captured = false;
   let swept = false;
+  let longPressed = false;
+  let holdTimer = 0;
   const keys = new KeyMotion(camera);
   const local = (e: PointerEvent | WheelEvent): { x: number; y: number } => {
     const r = el.getBoundingClientRect();
@@ -73,11 +78,32 @@ export function attachCameraInput(el: HTMLElement, camera: Camera, options: Inpu
       pinched = false;
       captured = false;
       swept = false;
+      longPressed = false;
+      if (!mouse) armHold(e.pointerId);
     } else {
       pinched = true;
+      disarmHold();
       if (captured) options.onDragEnd?.(p.x, p.y);
       captured = false;
     }
+  };
+
+  const disarmHold = (): void => {
+    window.clearTimeout(holdTimer);
+    holdTimer = 0;
+  };
+
+  /** A finger or pen goes down: if it stays put, the long press takes away the decoration or boulder under it. */
+  const armHold = (id: number): void => {
+    disarmHold();
+    holdTimer = window.setTimeout(() => {
+      holdTimer = 0;
+      const ptr = pointers.get(id);
+      if (!ptr || dragged || pinched || pointers.size !== 1) return;
+      const t = (options.pointTile ?? tile)(ptr.x, ptr.y);
+      longPressed = secondarySink.current?.hold?.(t.x, t.y) === true;
+      if (longPressed) navigator.vibrate?.(14);
+    }, LONG_PRESS_MS);
   };
 
   const tile = (x: number, y: number): { x: number; y: number } => {
@@ -92,6 +118,7 @@ export function attachCameraInput(el: HTMLElement, camera: Camera, options: Inpu
 
   const startDrag = (ptr: Pointer): void => {
     dragged = true;
+    disarmHold();
     captured = !ptr.panOnly && (options.onDragStart?.(ptr.startX, ptr.startY) ?? false);
     const t = tile(ptr.startX, ptr.startY);
     swept = ptr.secondary && (secondarySink.current?.dragStart(t.x, t.y, camera.screenToWorld(ptr.startX, ptr.startY)) ?? false);
@@ -122,7 +149,7 @@ export function attachCameraInput(el: HTMLElement, camera: Camera, options: Inpu
     ptr.y = p.y;
   };
 
-  const isTap = (ptr: Pointer, e: PointerEvent): boolean => pointers.size === 0 && !dragged && !pinched && e.type === 'pointerup' && !ptr.panOnly;
+  const isTap = (ptr: Pointer, e: PointerEvent): boolean => pointers.size === 0 && !dragged && !pinched && !longPressed && e.type === 'pointerup' && !ptr.panOnly;
 
   const isSecondaryTap = (ptr: Pointer, e: PointerEvent): boolean =>
     pointers.size === 0 && !dragged && !pinched && e.type === 'pointerup' && ptr.panOnly && e.button === 2;
@@ -130,6 +157,7 @@ export function attachCameraInput(el: HTMLElement, camera: Camera, options: Inpu
   const up = (e: PointerEvent): void => {
     const ptr = pointers.get(e.pointerId);
     pointers.delete(e.pointerId);
+    disarmHold();
     if (!ptr) return;
     if (captured && pointers.size === 0) {
       captured = false;
@@ -171,6 +199,7 @@ export function attachCameraInput(el: HTMLElement, camera: Camera, options: Inpu
   el.addEventListener('contextmenu', noMenu);
   keys.attach();
   return () => {
+    disarmHold();
     el.removeEventListener('pointerdown', down);
     el.removeEventListener('pointermove', move);
     el.removeEventListener('pointerup', up);

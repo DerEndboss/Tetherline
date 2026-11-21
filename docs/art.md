@@ -244,9 +244,13 @@ Other owners: `art3d/kit/` and `scripts/art.mjs` (pipeline), `src/render/` (runt
   glass as a glowing pane, alloys as ingots, plates and blocks with their input colours, slag as a sad blob, frames as a
   truss, conductors as a copper coil, circuits as a chip, cores as an energy orb. Colours come from content
   (`content.materials`, `color`, `accent`).
-- **Ores:** `field-<floor id>-{0..3}` for the 16 ore floors of `src/content/floors.ts` (sand and the scrap heap too). One
-  sprite fills one tile with a cluster of the ore's chunks spread over the whole tile (so a field joins up), rendered at
-  4 px per world px (ground detail; keeps the repository small: 5.2 MB for all three views). Each ore is three builders in
+- **Ores:** `field-<floor id>-<v>` pieces for the 16 ore floors of `src/content/floors.ts` (sand and the scrap heap
+  too): six small clusters and one big outcrop per ore (ids in `src/render/world/ore-art.ts`). A piece is about a third of
+  a tile wide; the ore layer lays up to three per tile at hashed spots, denser in a field's rich middle and smaller at its
+  ragged rim, so fields have no tile grid in them. Sand is a soft rippled sheet with a few pebbles. Rock ridges are
+  `ridge-top-<mask>-<v>` top sheets (the cliff of the open east and south edges baked in, so neighbouring tiles join into
+  one massif) plus boulders that cross tile borders. Rendered at 3 px per world px (ground detail; about 6 MB for all
+  three views). Each ore is three builders in
   `art3d/ores/looks.ts` (`chunk` = the silhouette of its icon, `spike` = its upright form, `grit`); the layout of a tile and
   **the style switch** live in `layout.ts` and `style.ts` (`ORE_STYLE`: `flat`, `crystal`, `mixed`; `mixed` is the one in
   the game, see `docs/screenshots/ore-styles.png`). Preview a style without touching `public/art`:

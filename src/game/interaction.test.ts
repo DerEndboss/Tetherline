@@ -343,6 +343,72 @@ describe('decoration pieces', () => {
   });
 });
 
+describe('decoration on touch (no right button, no keyboard)', () => {
+  afterEach(() => {
+    delete probes.decoAt;
+    delete probes.decoTap;
+  });
+
+  const idx = (world: ReturnType<typeof setup>['world'], x: number, y: number): number => y * world.state.map.w + x;
+
+  it('a tap selects the piece and the card\'s Remove button takes exactly that piece away', () => {
+    const { world, ia, run, core } = setup();
+    const a = { x: core.x - 8, y: core.y - 8 };
+    const b = { x: core.x + 8, y: core.y - 8 };
+    withDeco(a, b);
+    expect(ia.removeSelectedDeco()).toBe(false); // nothing selected yet
+    ia.tap(a.x, a.y);
+    expect(ia.getView().decoSelected).toEqual(a);
+    expect(ia.removeSelectedDeco()).toBe(true);
+    run(1);
+    expect(world.state.deco.removed).toEqual([idx(world, a.x, a.y)]);
+    expect(ia.getView().decoSelected).toBeNull();
+    expect(ia.removeSelectedDeco()).toBe(false);
+  });
+
+  it('a long press (the sink\'s hold) removes the piece or boulder under the finger, nothing else', () => {
+    const { world, run, core } = setup();
+    const piece = { x: core.x - 8, y: core.y - 8 };
+    const rock = { x: core.x - 9, y: core.y - 9 };
+    withDeco(piece);
+    world.state.map.boulder[idx(world, rock.x, rock.y)] = 1;
+    const sink = secondarySink.current!;
+    expect(sink.hold?.(piece.x + 2, piece.y)).toBe(false); // bare ground: nothing to take away
+    expect(sink.hold?.(rock.x, rock.y)).toBe(true);
+    run(1);
+    expect(world.state.map.boulder[idx(world, rock.x, rock.y)]).toBe(0);
+    expect(sink.hold?.(piece.x, piece.y)).toBe(true);
+    run(1);
+    expect(world.state.deco.removed).toEqual([idx(world, piece.x, piece.y)]);
+  });
+
+  it('a long press never demolishes a building (even with a piece under it) and does nothing with a tool in hand', () => {
+    const { world, ia, run, core } = setup();
+    const piece = { x: core.x - 8, y: core.y - 8 };
+    withDeco(piece, { x: core.x, y: core.y });
+    const sink = secondarySink.current!;
+    const buildings = world.state.buildings.length;
+    expect(sink.hold?.(core.x, core.y)).toBe(false);
+    run(2);
+    expect(world.state.buildings.length).toBe(buildings);
+    expect(world.state.deco.removed).toEqual([]);
+    ia.startPlacing('conveyor');
+    expect(sink.hold?.(piece.x, piece.y)).toBe(false);
+    run(1);
+    expect(world.state.deco.removed).toEqual([]);
+  });
+
+  it('a long press also lets go of a selected piece or building', () => {
+    const { ia, core } = setup();
+    const piece = { x: core.x - 8, y: core.y - 8 };
+    withDeco(piece);
+    ia.tap(piece.x, piece.y);
+    expect(ia.getView().decoSelected).toEqual(piece);
+    secondarySink.current!.hold?.(piece.x, piece.y);
+    expect(ia.getView().decoSelected).toBeNull();
+  });
+});
+
 /** Screen-aligned drag areas (iso): the pointer sits at a tile's middle, in world px, next to its tile. */
 const pt = (x: number, y: number) => gridToWorld(x + 0.5, y + 0.5);
 const tilesOf = (x0: number, y0: number, n: number): { x: number; y: number }[] => Array.from({ length: n * n }, (_, i) => ({ x: x0 + (i % n), y: y0 + Math.floor(i / n) }));

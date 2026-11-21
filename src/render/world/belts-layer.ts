@@ -13,6 +13,7 @@ import { gridToWorld, heightScale, tileInView, worldX, worldY, type Rect } from 
 import { depthKey, SpritePool } from '../sprite-pool';
 import { beltCell, BeltArt, PHASES, TREADS } from './belt-art';
 import { feedMask, feedMaskOf, nextPositions, pathPoint, worldProbe, type Probe, type TileProbe } from './belt-shape';
+import { HUB_BEHAVIOURS, HubItems } from './hub-items';
 import { FILLS, flowCell, liquidCell, PipeArt } from './pipe-art';
 import { flowReversed, pipeArms, pipeShape } from './pipe-shape';
 
@@ -76,8 +77,9 @@ function itemPitch(slots: number): number {
  * shape (straight, bends, merges) and heading with animated treads; items ride the exact path of their tile and
  * glide between sim ticks using the sim's own move rule; conduits are a glass tube with the liquid in it at its
  * fill level and flowing highlights. Ghosts of belts and conduits (queued plans and the cursor preview) are drawn
- * here too, with bends computed across the whole ghost line. Culled, pooled, no per-frame allocation (ghost
- * lines aside).
+ * here too, with bends computed across the whole ghost line. The items inside junctions, routers, sorters, overflow
+ * gates and bridges are drawn through the same item pool by hub-items.ts. Culled, pooled, no per-frame allocation
+ * (ghost lines aside).
  */
 /** Below this zoom only the front item of a belt is drawn (simpler far out). */
 const FAR_ZOOM = 0.16;
@@ -92,6 +94,8 @@ export class BeltsLayer {
   private readonly pipeTopPool: SpritePool;
   private readonly ghostPool: SpritePool;
   private readonly items: SpritePool;
+  /** The items inside junctions, routers, sorters, gates and bridges. */
+  private readonly hub: HubItems;
   private readonly art: BeltArt;
   private readonly pipeArt: PipeArt;
   private readonly belts: Baked[];
@@ -118,6 +122,15 @@ export class BeltsLayer {
   private readonly ghostTiles = new Map<number, TileProbe>();
   private readonly probes: TileProbe[] = [];
 
+  /** One item sprite at a grid point: the belt items' size, lifted over the tile; `z` is its sort key. */
+  private readonly putItem = (item: number, gx: number, gy: number, lift: number, scale: number, z: number): void => {
+    const baked = this.itemSprite(item);
+    if (!baked) return;
+    const s = this.items.next(baked, worldX(gx, gy), worldY(gx, gy) - lift);
+    s.scale.set((scale * this.itemPx) / baked.texture.orig.width);
+    s.zIndex = z;
+  };
+
   constructor(
     objects: Container,
     renderer: Renderer,
@@ -137,6 +150,7 @@ export class BeltsLayer {
     this.ground.addChild(...layers);
     [this.beltPool, this.pipeBasePool, this.pipeLiquidPool, this.pipeFlowPool, this.pipeTopPool, this.ghostPool] = layers.map((l) => new SpritePool(l)) as [SpritePool, SpritePool, SpritePool, SpritePool, SpritePool, SpritePool];
     this.items = new SpritePool(objects);
+    this.hub = new HubItems(this.putItem);
     this.itemPx = Math.min(tileWidth * ITEM_SHARE, itemPitch(content.rules.beltSlots) * ITEM_PITCH);
     this.liquidColors = content.liquids.list.map((l) => pipeTint(hexToNumber(l.color)));
     this.streakColors = this.liquidColors.map((c) => mixWhite(c, 0.55));
@@ -166,6 +180,7 @@ export class BeltsLayer {
     this.lastT = t;
     // far out an item is a few pixels: one per belt still shows the flow at a third of the cost
     const most = camera.zoom < FAR_ZOOM ? 1 : BELT_SLOTS;
+    this.hub.begin(view, MARGIN);
     for (const b of w.state.buildings) this.line(w, b, view, t, alpha, blend, most);
     this.beltPool.end();
     for (const pool of this.pipePools()) pool.end();
@@ -189,6 +204,11 @@ export class BeltsLayer {
   /** One belt (with its items) or conduit, when it is in view. */
   private line(w: World, b: Building, view: Rect, t: number, alpha: number, blend: boolean, most: number): void {
     const beh = w.def(b).behaviour;
+    // the blocks between belts hold their items in other ways; far out they are a few pixels and skipped
+    if (HUB_BEHAVIOURS.has(beh)) {
+      if (most > 1 && b.build >= 1 && !b.removing) this.hub.draw(w, b, beh, w.state.tick + alpha);
+      return;
+    }
     if ((beh !== 'conveyor' && beh !== 'conduit') || !tileInView(b.x, b.y, view, MARGIN)) return;
     if (beh === 'conduit') {
       this.pipe(w, b, t, blend);
@@ -303,8 +323,6 @@ export class BeltsLayer {
     const { at } = this;
     const lift = 10 * heightScale();
     for (let i = 0; i < n; i++) {
-      const baked = this.itemSprite(store.item[base + i]!);
-      if (!baked) continue;
       const p = store.pos[base + i]!;
       const from = store.from[base + i]!;
       const pos = shownPos(from, p + (this.next[i]! - p) * alpha);
@@ -313,10 +331,8 @@ export class BeltsLayer {
       const d = sideDir(from, b.rot);
       const gx = b.x + 0.5 + at.x + DX[d]! * side;
       const gy = b.y + 0.5 + at.y + DY[d]! * side;
-      const s = this.items.next(baked, worldX(gx, gy), worldY(gx, gy) - lift);
-      s.scale.set(this.itemPx / baked.texture.orig.width);
       // by the item's own spot, so a nearer item covers the one behind it also inside a tile
-      s.zIndex = depthKey(gx - 0.5, gy - 0.5) + 0.5;
+      this.putItem(store.item[base + i]!, gx, gy, lift, 1, depthKey(gx - 0.5, gy - 0.5) + 0.5);
     }
   }
 

@@ -1,7 +1,8 @@
 import { CylinderGeometry, Mesh, type Material, type Object3D } from 'three';
-import { at, bevelBox, crystal, crystalMat, cylinder, emissive, group, hull, lathe, rock, smooth, surface, turn, type V } from '../kit';
+import { at, bevelBox, crystal, crystalMat, cylinder, emissive, group, hull, rock, surface, turn, type V } from '../kit';
 import { ball, darker, lighter, metal, stone } from '../icons/parts';
 import type { Part } from './layout';
+import { sandSheet } from './sheet';
 
 /**
  * The ores' own parts (docs/art.md, category ores). Every ore is three builders: `chunk` (its lump, the same
@@ -17,6 +18,8 @@ export interface Look {
   chunk: (rnd: Rand, p: Part) => Object3D;
   spike: (rnd: Rand, p: Part) => Object3D;
   grit: Material;
+  /** A soft surface laid under the parts of every piece (sand): the field reads as ground, not as lumps. */
+  sheet?: (rnd: Rand) => Object3D;
   /** Glowing ores light the ground around them in this colour. */
   spill?: string;
 }
@@ -99,19 +102,16 @@ function coal(t: Tones): Look {
 }
 
 function sand(t: Tones): Look {
-  const body = surface(t.color, { rough: 0.9 });
-  const crest = surface(lighter(t.color, 0.2), { rough: 0.85 });
+  const body = surface(darker(t.color, 0.3), { rough: 0.9 });
+  const crest = surface(darker(t.color, 0.12), { rough: 0.85 });
   const grain = surface(t.accent, { rough: 0.3, coat: 1 });
-  const dune = (p: Part, mat: Material, sides: number): Object3D => {
-    const r = p.r * 1.45;
-    const m = lathe([[r, 0], [r * 0.75, p.h * 0.16], [r * 0.4, p.h * 0.42], [0, p.h * 0.52]], sides, mat);
-    m.scale.set(1.35, 1, 0.42);
-    return group(smooth(m));
-  };
+  /** A little pebble of packed sand lying on the sheet. */
+  const pebble = (rnd: Rand, p: Part, mat: Material): Mesh => rock(rnd, p.r * 0.7, p.h * 0.6, mat, 9, 0.4);
   return {
-    chunk: (_rnd, p) => dune(p, p.pick > 0.5 ? crest : body, 28),
-    spike: (_rnd, p) => dune({ ...p, r: p.r * 1.6, h: p.h * 0.55 }, crest, 24),
+    chunk: (rnd, p) => pebble(rnd, p, p.pick > 0.5 ? crest : body),
+    spike: (rnd, p) => pebble(rnd, { ...p, r: p.r * 0.8, h: p.h * 0.5 }, crest),
     grit: grain,
+    sheet: (rnd) => sandSheet(rnd, t.color),
   };
 }
 

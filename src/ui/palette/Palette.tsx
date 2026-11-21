@@ -1,15 +1,18 @@
 import { memo, useEffect, useMemo, type CSSProperties } from 'react';
 import type { BuildCategory, BuildingDef } from '../../content/types';
 import { Icon } from '../components/Icon';
+import { ToolIcon } from '../tools/icons';
 import { useInteraction, useServices, useSnapshot } from '../context';
 import { CATEGORIES, categoryList, nextCoreId } from './categories';
 import { CategoryIcon } from './CategoryIcon';
 import { setDragging } from './drag-store';
 import { ItemIcon } from './ItemIcon';
-import { keyLabel, useViewportWidth } from './keys';
+import { keyLabel, useViewportHeight, useViewportWidth } from './keys';
 import { PHONE_WIDTH } from './phone';
+import { keptSetting, settingMark } from './setting';
 import { usePaletteState } from './store';
 import { Thumb } from './Thumb';
+import { isPhoneStack, setTrayFolded, useGuideOn, useTrayFolded } from './tab-store';
 import { tipStore, useTip } from './tip-store';
 import { canAfford, isUnlocked } from './unlock';
 
@@ -59,8 +62,10 @@ const Cell = memo(function Cell({ def, index, picked, locked, poor, keyCap }: Ce
       onBlur={(e) => tipStore.leave(e.currentTarget)}
       onClick={() => {
         if (locked) return;
-        if (picked) interaction.cancel();
-        else interaction.startPlacing(def.id);
+        if (picked) return interaction.cancel();
+        interaction.startPlacing(def.id);
+        // a phone: the map needs the room now, the tray folds to its tabs (and the price of what is in hand)
+        if (isPhoneStack()) setTrayFolded(true);
       }}
     >
       <span className="pal-thumb">
@@ -76,35 +81,63 @@ const Cell = memo(function Cell({ def, index, picked, locked, poor, keyCap }: Ce
   );
 });
 
-/** What the entry under the mouse (or the one in your hand) costs, at a glance and on touch screens, which have no tooltip. */
-function InfoStrip({ def }: { def: BuildingDef | null }) {
+/** The price of a building as chips: each amount with its material, coral while the core is short of it. */
+function Cost({ def }: { def: BuildingDef }) {
   const { game } = useServices();
   const snap = useSnapshot();
+  const c = game.content;
+  return (
+    <span className="pal-info-cost">
+      {def.cost.map((s) => {
+        const mat = c.materials.find(s.item);
+        const short = (snap.stock[c.materials.indexOf(s.item)] ?? 0) < s.n;
+        return (
+          <span key={s.item} className={`pal-cost${short ? ' short' : ''}`} data-tip={mat?.name ?? s.item}>
+            {mat && <ItemIcon def={mat} size={18} />}
+            <b className="num">{s.n}</b>
+          </span>
+        );
+      })}
+      {!def.cost.length && <span className="muted">Free</span>}
+    </span>
+  );
+}
+
+/** A phone has no R key: a building that turns gets a Rotate button next to its price while it is in hand. */
+function RotateButton() {
+  const { interaction } = useServices();
+  return (
+    <button type="button" className="button ibtn pal-rotate" aria-label="Rotate" data-tip="Turn it a quarter" onClick={() => interaction.rotate()}>
+      <ToolIcon name="rotate" size={20} />
+    </button>
+  );
+}
+
+/**
+ * What the entry under the mouse (or the one in your hand) costs, at a glance and on touch screens, which have no tooltip.
+ * A Smelter that carries a recipe says which.
+ */
+function InfoStrip({ def }: { def: BuildingDef | null }) {
+  const { game, interaction } = useServices();
+  const view = useInteraction();
   const { hotbar } = usePaletteState();
   const phone = useViewportWidth() < PHONE_WIDTH;
-  const c = game.content;
   if (!def) return <p className="pal-info pal-info-empty">{hotbar && !phone ? 'Pick a building. Drag it onto the quick bar to keep it.' : 'Pick a building.'}</p>;
+  const held = view.mode.kind === 'place' && view.mode.building === def.id;
+  const mark = held ? settingMark(game.content, def, keptSetting(def, interaction.toolSetting)) : null;
   return (
     <div className="pal-info" key={def.id}>
       <span className="pal-info-head">
-        <span className="pal-info-name">{def.name}</span>
+        <span className="pal-info-name">
+          {def.name}
+          {mark && <span className="muted"> · {mark.name}</span>}
+        </span>
         <span className="k-chip num">
           {def.size}x{def.size}
         </span>
       </span>
-      <span className="pal-info-cost">
-        {def.cost.map((s) => {
-          const mat = c.materials.find(s.item);
-          const short = (snap.stock[c.materials.indexOf(s.item)] ?? 0) < s.n;
-          return (
-            <span key={s.item} className={`pal-cost${short ? ' short' : ''}`} data-tip={mat?.name ?? s.item}>
-              {mat && <ItemIcon def={mat} size={18} />}
-              <b className="num">{s.n}</b>
-            </span>
-          );
-        })}
-        {!def.cost.length && <span className="muted">Free</span>}
-      </span>
+      <Cost def={def} />
+      {held && def.rotates && isPhoneStack() && <RotateButton />}
     </div>
   );
 }
@@ -115,14 +148,22 @@ interface TabsProps {
   counts: Record<string, number>;
 }
 
-/** The category tabs: a lit plate glides to the chosen one (transform only), the labels fade their colour. */
-function Tabs({ tab, onTab, counts }: TabsProps) {
+/**
+ * The category tabs: a lit plate glides to the chosen one (transform only), the labels fade their colour. On a phone the
+ * open tab is also the fold: tapping it again folds the buildings away, tapping any tab opens them (the guide keeps them open).
+ */
+function Tabs({ tab, onTab, counts, folded, foldable }: TabsProps & { folded: boolean; foldable: boolean }) {
   const index = Math.max(0, CATEGORIES.findIndex((c) => c.id === tab));
+  const choose = (id: BuildCategory): void => {
+    if (id === tab && foldable && isPhoneStack()) return setTrayFolded(!folded);
+    onTab(id);
+    setTrayFolded(false);
+  };
   return (
-    <div className="pal-tabs" role="tablist" aria-orientation="vertical" style={{ '--i': index, '--n': CATEGORIES.length } as CSSProperties}>
+    <div className="pal-tabs" role="tablist" aria-orientation={isPhoneStack() ? 'horizontal' : 'vertical'} style={{ '--i': index, '--n': CATEGORIES.length } as CSSProperties}>
       <span className="pal-glide" aria-hidden="true" />
       {CATEGORIES.map((c) => (
-        <button key={c.id} type="button" role="tab" className="pal-tab" data-category={c.id} aria-selected={tab === c.id} onClick={() => onTab(c.id)}>
+        <button key={c.id} type="button" role="tab" className="pal-tab" data-category={c.id} aria-selected={tab === c.id} aria-label={c.name} onClick={() => choose(c.id)}>
           <CategoryIcon id={c.id} size={16} />
           <span className="pal-tab-name">{c.name}</span>
           <span className="pal-tab-n num">{counts[c.id] || ''}</span>
@@ -139,34 +180,41 @@ function Tabs({ tab, onTab, counts }: TabsProps) {
  * hotbar is off. Drag an entry onto a hotbar slot to keep it there. Opening a tab raises its entries one after another.
  */
 export function Palette({ tab, onTab }: { tab: BuildCategory; onTab: (t: BuildCategory) => void }) {
-  const { game } = useServices();
+  const { game, interaction } = useServices();
   const view = useInteraction();
   const snap = useSnapshot();
   const ps = usePaletteState();
   const width = useViewportWidth();
+  const height = useViewportHeight();
   const { hover } = useTip();
   const world = game.world;
   const all = game.content.buildings.list;
   const nextCore = nextCoreId(world);
   const list = useMemo(() => categoryList(all, tab, nextCore), [all, tab, nextCore]);
   const counts = useMemo(() => Object.fromEntries(CATEGORIES.map((c) => [c.id, categoryList(all, c.id, nextCore).length])), [all, nextCore]);
-  const picked = view.mode.kind === 'place' ? view.mode.building : null;
+  // an entry is "in hand" only while it is the plain building: one that carries a setting (a Q pick, a quick bar slot) is not this entry
+  const picked = view.mode.kind === 'place' && interaction.toolSetting < 0 ? view.mode.building : null;
   const cells = Math.max(MIN_CELLS, Math.ceil(list.length / COLUMNS) * COLUMNS);
   // The tip hangs on an entry that a tab change removes: let it go with it.
   useEffect(() => tipStore.reset(), [tab]);
-  const pickedDef = picked ? game.content.buildings.find(picked) : null;
+  const guide = useGuideOn();
+  // the guide keeps the buildings in sight while nothing is in hand (its ring points at one); with a tool in hand the map is what it needs
+  const foldable = !guide || view.mode.kind !== 'none';
+  const folded = useTrayFolded() && foldable;
+  const heldId = view.mode.kind === 'place' ? view.mode.building : null;
+  const pickedDef = heldId ? game.content.buildings.find(heldId) : null;
 
   return (
-    <section className="hud-card palette k-enter" data-from="right" aria-label="Build">
+    <section className="hud-card palette k-enter" data-from="right" aria-label="Build" data-collapsed={folded || undefined}>
       <div className="pal-grid k-enter" data-from="fade" role="tabpanel" key={tab}>
         {Array.from({ length: cells }, (_, i) => {
           const def = list[i];
           if (!def) return <span key={`e${i}`} className="pal-item pal-empty-cell k-follow" style={{ '--k-delay': `${i * STAGGER_MS}ms` } as CSSProperties} aria-hidden="true" />;
-          return <Cell key={def.id} def={def} index={i} keyCap={keyLabel(ps, width, def.id, i)} picked={picked === def.id} locked={!isUnlocked(world, def)} poor={!canAfford(world, def, snap.stock)} />;
+          return <Cell key={def.id} def={def} index={i} keyCap={keyLabel(ps, width, height, def.id, i)} picked={picked === def.id} locked={!isUnlocked(world, def)} poor={!canAfford(world, def, snap.stock)} />;
         })}
       </div>
       <InfoStrip def={hover ?? pickedDef ?? null} />
-      <Tabs tab={tab} onTab={onTab} counts={counts} />
+      <Tabs tab={tab} onTab={onTab} counts={counts} folded={folded} foldable={foldable} />
     </section>
   );
 }

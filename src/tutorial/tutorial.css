@@ -67,10 +67,14 @@
 /* The drone and blueprint windows lie over the palette: the ring around a palette entry would shine through them, so it
  * steps back while one is open, and on phones (where the window takes the bottom of the screen) the card does too. */
 body:has(.dr-panel, .bp-panel) .tut-ui-ring { opacity: 0; }
+/* The tray steps back while the recipe panel or the tool menu is open: the ring around one of its entries has nothing to ring. */
+body:has(.cfg-panel, .tb-menu) .tut-ui-ring[data-arrow="true"] { opacity: 0; }
 @media (hover: none), (max-width: 760px) {
   .tut-card { transition: opacity var(--dur-exit) var(--ease-in); }
   body:has(.dr-panel, .bp-panel) .tut-card { opacity: 0; pointer-events: none; }
 }
+/* A folded tray (a phone with a tool in hand) has no entry to ring: the ring would stay behind where the entry was. */
+body:has(.palette[data-collapsed]) .tut-ui-ring { opacity: 0; visibility: hidden; }
 .tut-marker[data-off="true"] .tut-ring { display: none; }
 .tut-marker[data-off="true"] .tut-label { top: 18px; }
 .tut-marker[data-arrow="false"] .tut-arrow { display: none; }

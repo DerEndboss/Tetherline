@@ -2,21 +2,23 @@ import { PointLight, type Object3D } from 'three';
 import { content } from '../../src/content';
 import { ORE_VARIANTS, oreFieldId, oreFloors } from '../../src/render/world/ore-art';
 import { at, group, lightPool, plan, rand, rock, sprite, turn } from '../kit';
-import { layout, type Part } from './layout';
+import { isOutcrop, layout, OUTCROP_REACH, SCATTER_REACH, type Part } from './layout';
 import { lookOf, type Look } from './looks';
 import { activeStyle } from './style';
 import './ridges';
 
 /**
- * Ore fields (docs/art.md, category `ores`): for every ore floor ORE_VARIANTS tile sprites
- * `field-<floor id>-<v>`, a cluster of the ore's own low-poly chunks spread over the whole tile, so a field
- * of them joins up. Not in the start atlas: the ore layer (src/render/world/ores-layer.ts) loads
- * public/art/ores/manifest.json itself and bakes only the ores a map has. Never mirrored (light from the left);
- * variety comes from the variants and a small offset per tile in the game.
+ * Ore fields (docs/art.md, category `ores`): for every ore floor ORE_VARIANTS pieces `field-<floor id>-<v>`,
+ * each a small cluster of the ore's own low-poly chunks (a few lumps, crystals and grit; sand adds a rippled
+ * sheet). A piece is about a third of a tile wide: the ore layer (src/render/world/ores-layer.ts) lays up to
+ * three per tile at hashed spots, so pieces overlap across tile borders and a field is a mat of clusters with
+ * no tile grid in it. Not in the start atlas: the layer loads public/art/ores/manifest.json itself and bakes
+ * only the ores a map has. Never mirrored (light from the left); variety comes from the variants, the spots
+ * and a scale per piece in the game.
  */
 
-/** Output px per world px: ground detail, a little under the buildings' 5 (keeps the repo small). */
-const ORE_SCALE = 4;
+/** Output px per world px: ground detail, under the buildings' 5 (a field is a lot of small pieces; keeps the repo small). */
+const ORE_SCALE = 3;
 
 const seedOf = (id: string): number => [...id].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7);
 
@@ -26,15 +28,20 @@ function partOf(look: Look, rnd: () => number, p: Part): Object3D {
   return at(rock(rnd, p.r, p.h, look.grit, 8, 0.4), p.x, -0.008, p.z);
 }
 
-function tile(look: Look, floor: string, variant: number): Object3D {
+/** One piece (a cluster of the ore's parts, plus a sheet for sand); the ore layer lays up to three per tile. */
+function piece(look: Look, floor: string, variant: number): Object3D {
   const seed = seedOf(floor);
   const rnd = rand(seed + variant * 7919);
-  const parts = layout(activeStyle(), variant, seed).map((p) => partOf(look, rnd, p));
-  if (!look.spill) return group(...parts);
+  // on a sheet (sand) a few pebbles are enough: the sheet is the field
+  const laid = layout(activeStyle(), variant, seed).filter((p, i) => !look.sheet || (p.kind !== 'spike' && (p.kind !== 'grit' || i % 3 === 0)));
+  const parts = laid.map((p) => partOf(look, rnd, p));
+  const bed = look.sheet ? [look.sheet(rnd)] : [];
+  if (!look.spill) return group(...bed, ...parts);
   // glowing ores light the ground and their neighbours a little
   const spill = new PointLight(look.spill, 0.7, 0.7, 1.6);
   spill.position.set(0.05, 0.22, 0.1);
-  return group(lightPool(0.48, look.spill, 0.16), ...parts, spill);
+  const reach = isOutcrop(variant) ? OUTCROP_REACH : SCATTER_REACH;
+  return group(lightPool(reach * 1.1, look.spill, 0.14), ...bed, ...parts, spill);
 }
 
 const floors = oreFloors(content.floors.list);
@@ -45,7 +52,7 @@ for (const f of floors) {
   for (let v = 0; v < ORE_VARIANTS; v++) {
     const id = oreFieldId(f.id, v);
     ids.push(id);
-    sprite({ id, build: () => tile(look, f.id, v), scale: ORE_SCALE, shadow: 0.42, bloom: look.spill ? 0.3 : 0 });
+    sprite({ id, build: () => piece(look, f.id, v), scale: ORE_SCALE, shadow: 0.42, bloom: look.spill ? 0.3 : 0 });
   }
 }
 plan(ids);

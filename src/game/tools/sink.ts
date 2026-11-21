@@ -12,6 +12,11 @@ export interface SecondarySink {
   dragStart(x: number, y: number, at?: WorldPt): boolean;
   drag(x: number, y: number, at?: WorldPt): void;
   dragEnd(x: number, y: number, at?: WorldPt): void;
+  /**
+   * A finger held still on a tile (touch has no right button): with no tool in hand it takes away the decoration
+   * piece or dust boulder there, never a building. True = something went (the press is then no tap).
+   */
+  hold?(x: number, y: number): boolean;
 }
 
 export const secondarySink: { current: SecondarySink | null } = { current: null };

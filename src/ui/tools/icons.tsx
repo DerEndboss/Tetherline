@@ -21,6 +21,7 @@ const PATHS = {
   reach: 'M4 20 13 11m3.5-7.5 1.1 2.9 2.9 1.1-2.9 1.1-1.1 2.9-1.1-2.9-2.9-1.1 2.9-1.1 1.1-2.9Z',
   drone: 'M9 11.5a3 3 0 0 1 6 0v1.5a3 3 0 0 1-6 0v-1.5Zm3 6.5v2M9 12H5.5m9.5 0h3.5M3 9.5h5M16 9.5h5M12 14.2h.01',
   plus: 'M12 5v14M5 12h14',
+  rotate: 'M19.5 12a7.5 7.5 0 1 1-2.4-5.5M19.5 4v4.5H15',
 } as const;
 
 export type ToolIconName = keyof typeof PATHS;
