@@ -6,7 +6,7 @@ Runs are saved on your device, with no account, backend or telemetry.
 
 [Play in the browser](https://tetherline.pixel-cursor.com)
 
-![A base at night: the core, a smelter, belts and decoration cables](docs/screenshots/base-at-night.png)
+![A base at night: the core, a smelter and drills, belts, power nodes and the first tutorial cards](docs/screenshots/base-at-night.png)
 
 You land on a small stretch of alien ground with a core, a few resources and one build drone. Drills dig ore,
 belts carry it, smelters and factories turn it into bars, alloys and parts, and a chain of orders walks you from
@@ -27,9 +27,12 @@ Tetherline is inspired by Mindustry. It copies how belts and logistics behave, n
 - **Guided first round:** an eight-step tutorial with a card, a glowing ring on the map and "Show me where". If a
   belt cannot work, it tells you why.
 - **Drone building:** ghosts, holographic construction, belts that grow along your line, blueprints, area
-  demolish, undo and redo, and a hotbar.
-- **Procedural maps:** organic landmasses with lakes, oil, slag, rock ridges and wrecks that unlock blueprints.
-  Every map is winnable: it always holds the ores the order chain needs.
+  demolish, undo and redo, and a hotbar that also remembers a machine's recipe.
+- **Logistics like Mindustry:** wide belts that join cleanly at bends and merges, side inputs that feed in mid-belt,
+  a junction laid by itself where a new line crosses a belt, and line ends that turn into their target. Items glide
+  through junctions, wait in routers and sorters and arc over bridges.
+- **Procedural maps:** organic landmasses with lakes, oil, slag, rock massifs and wrecks that unlock blueprints.
+  Every map is winnable: it always holds the ores the order chain needs and room for the opening.
 - **Autopilot:** a bot plays the round with the same commands a player uses. Combined with game speeds up to 10x
   it also serves as the balance test.
 - **Meta tree:** orders and victories pay "Blueprints", which buy head starts and unlock buildings.
@@ -43,18 +46,15 @@ Tetherline is inspired by Mindustry. It copies how belts and logistics behave, n
 
 | | |
 |---|---|
-| ![The first tutorial step: drill for copper](docs/screenshots/tutorial.png) | ![Belts with curves, merges and items](docs/screenshots/belts.png) |
-| The tutorial asks for a drill on copper ore. | Belts bend, merge and carry visible items. |
-| ![Choosing a recipe for a smelter](docs/screenshots/recipe-panel.png) | ![The drone panel with upgrades](docs/screenshots/drone-panel.png) |
-| Factories with several recipes get a setting panel. | The drone panel with its upgrades. |
-
-![Three styles of ore fields: flat chunks, crystals and the mixed style that ships](docs/screenshots/ore-styles.png)
-
-The ore field styles that were compared; the mixed style (C) is the one in the game.
+| ![A drill on a copper field between rock massifs, its belt running to the core](docs/screenshots/ore-field.png) | ![A router and a junction with items passing through](docs/screenshots/logistics.png) |
+| A drill on a copper field between rock massifs. | A router and a junction: items stay visible all the way. |
+| ![Choosing a recipe for a smelter](docs/screenshots/recipe-panel.png) | ![The game on a phone in portrait](docs/screenshots/phone.png) |
+| Factories with several recipes get a setting panel. | On a phone the HUD reflows and the map stays in view. |
 
 ## Playing
 
-Mouse and keyboard come first; touch controls are still basic. The Settings window (gear, top right) holds the
+Mouse and keyboard come first. On phones and tablets the HUD reflows for touch (tap to build, drag lines, long-press to
+remove decoration); touch is tested in device emulation so far. The Settings window (gear, top right) holds the
 camera view, game speed, autopilot, volumes, decoration and lighting.
 
 | Input | What it does |
