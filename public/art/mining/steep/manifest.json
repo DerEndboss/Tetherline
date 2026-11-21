@@ -1,0 +1,6735 @@
+{
+ "version": 1,
+ "category": "mining",
+ "sprites": {
+  "building-electric-drill": {
+   "file": "building-electric-drill.webp",
+   "w": 305,
+   "h": 249,
+   "ax": 0.49836,
+   "ay": 0.5261,
+   "scale": 5,
+   "hash": "91f64aa3d4",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": -76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -67.9
+     }
+    ],
+    "goods": {
+     "x": 96,
+     "y": 54.4
+    },
+    "wire": {
+     "x": 69.1,
+     "y": -63.3
+    }
+   },
+   "body": {
+    "x": -140.2,
+    "y": -129.8,
+    "w": 280.4,
+    "h": 236.2
+   }
+  },
+  "building-electric-drill-w0": {
+   "file": "building-electric-drill-w0.webp",
+   "w": 45,
+   "h": 29,
+   "ax": 0.22222,
+   "ay": 2.58621,
+   "scale": 5,
+   "hash": "53979aad7c",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": -76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -67.9
+     }
+    ],
+    "goods": {
+     "x": 96,
+     "y": 54.4
+    },
+    "wire": {
+     "x": 69.1,
+     "y": -63.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -9.599999999999994,
+    "y": -74.4,
+    "w": 44,
+    "h": 27.8
+   }
+  },
+  "building-electric-drill-w1": {
+   "file": "building-electric-drill-w1.webp",
+   "w": 44,
+   "h": 28,
+   "ax": 0.22727,
+   "ay": 2.75,
+   "scale": 5,
+   "hash": "47c07bfeda",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": -76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -67.9
+     }
+    ],
+    "goods": {
+     "x": 96,
+     "y": 54.4
+    },
+    "wire": {
+     "x": 69.1,
+     "y": -63.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -9.599999999999994,
+    "y": -77,
+    "w": 43.4,
+    "h": 28
+   }
+  },
+  "building-electric-drill-w10": {
+   "file": "building-electric-drill-w10.webp",
+   "w": 38,
+   "h": 33,
+   "ax": 0.57895,
+   "ay": 2.66667,
+   "scale": 5,
+   "hash": "465abe95a5",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": -76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -67.9
+     }
+    ],
+    "goods": {
+     "x": 96,
+     "y": 54.4
+    },
+    "wire": {
+     "x": 69.1,
+     "y": -63.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -21.400000000000006,
+    "y": -87.2,
+    "w": 36.6,
+    "h": 31.6
+   }
+  },
+  "building-electric-drill-w11": {
+   "file": "building-electric-drill-w11.webp",
+   "w": 38,
+   "h": 32,
+   "ax": 0.65789,
+   "ay": 2.71875,
+   "scale": 5,
+   "hash": "750dcf1c88",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": -76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -67.9
+     }
+    ],
+    "goods": {
+     "x": 96,
+     "y": 54.4
+    },
+    "wire": {
+     "x": 69.1,
+     "y": -63.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -24.80000000000001,
+    "y": -86.6,
+    "w": 37.6,
+    "h": 31
+   }
+  },
+  "building-electric-drill-w2": {
+   "file": "building-electric-drill-w2.webp",
+   "w": 44,
+   "h": 30,
+   "ax": 0.22727,
+   "ay": 2.66667,
+   "scale": 5,
+   "hash": "488be79819",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": -76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -67.9
+     }
+    ],
+    "goods": {
+     "x": 96,
+     "y": 54.4
+    },
+    "wire": {
+     "x": 69.1,
+     "y": -63.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -9.599999999999994,
+    "y": -79.2,
+    "w": 43.6,
+    "h": 28.8
+   }
+  },
+  "building-electric-drill-w3": {
+   "file": "building-electric-drill-w3.webp",
+   "w": 44,
+   "h": 28,
+   "ax": 0.22727,
+   "ay": 2.89286,
+   "scale": 5,
+   "hash": "e6812655c0",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": -76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -67.9
+     }
+    ],
+    "goods": {
+     "x": 96,
+     "y": 54.4
+    },
+    "wire": {
+     "x": 69.1,
+     "y": -63.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -9.599999999999994,
+    "y": -81,
+    "w": 43.2,
+    "h": 28
+   }
+  },
+  "building-electric-drill-w4": {
+   "file": "building-electric-drill-w4.webp",
+   "w": 42,
+   "h": 30,
+   "ax": 0.2381,
+   "ay": 2.76667,
+   "scale": 5,
+   "hash": "053e0c947f",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": -76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -67.9
+     }
+    ],
+    "goods": {
+     "x": 96,
+     "y": 54.4
+    },
+    "wire": {
+     "x": 69.1,
+     "y": -63.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -9.599999999999994,
+    "y": -83,
+    "w": 41.4,
+    "h": 29.6
+   }
+  },
+  "building-electric-drill-w5": {
+   "file": "building-electric-drill-w5.webp",
+   "w": 39,
+   "h": 30,
+   "ax": 0.25641,
+   "ay": 2.83333,
+   "scale": 5,
+   "hash": "145413359f",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": -76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -67.9
+     }
+    ],
+    "goods": {
+     "x": 96,
+     "y": 54.4
+    },
+    "wire": {
+     "x": 69.1,
+     "y": -63.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -9.599999999999994,
+    "y": -84.4,
+    "w": 38.6,
+    "h": 28.8
+   }
+  },
+  "building-electric-drill-w6": {
+   "file": "building-electric-drill-w6.webp",
+   "w": 40,
+   "h": 31,
+   "ax": 0.275,
+   "ay": 2.77419,
+   "scale": 5,
+   "hash": "23adaf0a73",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": -76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -67.9
+     }
+    ],
+    "goods": {
+     "x": 96,
+     "y": 54.4
+    },
+    "wire": {
+     "x": 69.1,
+     "y": -63.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -10.800000000000011,
+    "y": -85.2,
+    "w": 39.6,
+    "h": 29.6
+   }
+  },
+  "building-electric-drill-w7": {
+   "file": "building-electric-drill-w7.webp",
+   "w": 39,
+   "h": 32,
+   "ax": 0.33333,
+   "ay": 2.71875,
+   "scale": 5,
+   "hash": "bf4a9831b8",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": -76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -67.9
+     }
+    ],
+    "goods": {
+     "x": 96,
+     "y": 54.4
+    },
+    "wire": {
+     "x": 69.1,
+     "y": -63.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -12.599999999999994,
+    "y": -86.6,
+    "w": 38,
+    "h": 31
+   }
+  },
+  "building-electric-drill-w8": {
+   "file": "building-electric-drill-w8.webp",
+   "w": 38,
+   "h": 33,
+   "ax": 0.42105,
+   "ay": 2.66667,
+   "scale": 5,
+   "hash": "1883dc2735",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": -76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -67.9
+     }
+    ],
+    "goods": {
+     "x": 96,
+     "y": 54.4
+    },
+    "wire": {
+     "x": 69.1,
+     "y": -63.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -15.400000000000006,
+    "y": -87.2,
+    "w": 37.4,
+    "h": 31.6
+   }
+  },
+  "building-electric-drill-w9": {
+   "file": "building-electric-drill-w9.webp",
+   "w": 38,
+   "h": 33,
+   "ax": 0.5,
+   "ay": 2.66667,
+   "scale": 5,
+   "hash": "938996a2f8",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": -76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -67.9
+     }
+    ],
+    "goods": {
+     "x": 96,
+     "y": 54.4
+    },
+    "wire": {
+     "x": 69.1,
+     "y": -63.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -18.80000000000001,
+    "y": -87.2,
+    "w": 37.2,
+    "h": 31.6
+   }
+  },
+  "building-electric-drill-wb": {
+   "file": "building-electric-drill-wb.webp",
+   "w": 305,
+   "h": 249,
+   "ax": 0.49836,
+   "ay": 0.5261,
+   "scale": 5,
+   "hash": "4b583de7d5",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": -76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -127.9,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": 76.8,
+      "y": -10.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -67.9
+     }
+    ],
+    "goods": {
+     "x": 96,
+     "y": 54.4
+    },
+    "wire": {
+     "x": 69.1,
+     "y": -63.3
+    }
+   },
+   "body": {
+    "x": -140.2,
+    "y": -129.8,
+    "w": 280.4,
+    "h": 236.2
+   }
+  },
+  "building-ground-pump": {
+   "file": "building-ground-pump.webp",
+   "w": 210,
+   "h": 198,
+   "ax": 0.49524,
+   "ay": 0.59091,
+   "scale": 5,
+   "hash": "da3ef9425d",
+   "meta": {
+    "top": 86,
+    "lights": [
+     {
+      "x": 0,
+      "y": -64.2,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -12.3
+     }
+    ]
+   },
+   "body": {
+    "x": -92.2,
+    "y": -116,
+    "w": 184.4,
+    "h": 185.6
+   }
+  },
+  "building-ground-pump-w0": {
+   "file": "building-ground-pump-w0.webp",
+   "w": 173,
+   "h": 180,
+   "ax": 0.50867,
+   "ay": 0.65,
+   "scale": 5,
+   "hash": "9198bdf8be",
+   "meta": {
+    "top": 86,
+    "lights": [
+     {
+      "x": 0,
+      "y": -64.2,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -12.3
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -87.6,
+    "y": -116,
+    "w": 171.8,
+    "h": 178.6
+   }
+  },
+  "building-ground-pump-w1": {
+   "file": "building-ground-pump-w1.webp",
+   "w": 173,
+   "h": 182,
+   "ax": 0.50867,
+   "ay": 0.65385,
+   "scale": 5,
+   "hash": "78c8a704ba",
+   "meta": {
+    "top": 86,
+    "lights": [
+     {
+      "x": 0,
+      "y": -64.2,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -12.3
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -87.6,
+    "y": -118.8,
+    "w": 172,
+    "h": 181.2
+   }
+  },
+  "building-ground-pump-w10": {
+   "file": "building-ground-pump-w10.webp",
+   "w": 173,
+   "h": 174,
+   "ax": 0.50867,
+   "ay": 0.63793,
+   "scale": 5,
+   "hash": "d62c448047",
+   "meta": {
+    "top": 86,
+    "lights": [
+     {
+      "x": 0,
+      "y": -64.2,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -12.3
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -87.6,
+    "y": -110.2,
+    "w": 171.8,
+    "h": 173
+   }
+  },
+  "building-ground-pump-w11": {
+   "file": "building-ground-pump-w11.webp",
+   "w": 173,
+   "h": 176,
+   "ax": 0.50867,
+   "ay": 0.64205,
+   "scale": 5,
+   "hash": "d1039edf4c",
+   "meta": {
+    "top": 86,
+    "lights": [
+     {
+      "x": 0,
+      "y": -64.2,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -12.3
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -87.6,
+    "y": -112.8,
+    "w": 171.8,
+    "h": 175.4
+   }
+  },
+  "building-ground-pump-w2": {
+   "file": "building-ground-pump-w2.webp",
+   "w": 174,
+   "h": 184,
+   "ax": 0.50575,
+   "ay": 0.65761,
+   "scale": 5,
+   "hash": "df857fc7a4",
+   "meta": {
+    "top": 86,
+    "lights": [
+     {
+      "x": 0,
+      "y": -64.2,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -12.3
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -87.6,
+    "y": -120.4,
+    "w": 173.6,
+    "h": 183
+   }
+  },
+  "building-ground-pump-w3": {
+   "file": "building-ground-pump-w3.webp",
+   "w": 174,
+   "h": 175,
+   "ax": 0.50575,
+   "ay": 0.69143,
+   "scale": 5,
+   "hash": "03f879126d",
+   "meta": {
+    "top": 86,
+    "lights": [
+     {
+      "x": 0,
+      "y": -64.2,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -12.3
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -87.4,
+    "y": -121,
+    "w": 173.4,
+    "h": 175
+   }
+  },
+  "building-ground-pump-w4": {
+   "file": "building-ground-pump-w4.webp",
+   "w": 174,
+   "h": 184,
+   "ax": 0.50575,
+   "ay": 0.65761,
+   "scale": 5,
+   "hash": "df857fc7a4",
+   "meta": {
+    "top": 86,
+    "lights": [
+     {
+      "x": 0,
+      "y": -64.2,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -12.3
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -87.6,
+    "y": -120.4,
+    "w": 173.6,
+    "h": 183
+   }
+  },
+  "building-ground-pump-w5": {
+   "file": "building-ground-pump-w5.webp",
+   "w": 173,
+   "h": 182,
+   "ax": 0.50867,
+   "ay": 0.65385,
+   "scale": 5,
+   "hash": "78c8a704ba",
+   "meta": {
+    "top": 86,
+    "lights": [
+     {
+      "x": 0,
+      "y": -64.2,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -12.3
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -87.6,
+    "y": -118.8,
+    "w": 172,
+    "h": 181.2
+   }
+  },
+  "building-ground-pump-w6": {
+   "file": "building-ground-pump-w6.webp",
+   "w": 173,
+   "h": 180,
+   "ax": 0.50867,
+   "ay": 0.65,
+   "scale": 5,
+   "hash": "9198bdf8be",
+   "meta": {
+    "top": 86,
+    "lights": [
+     {
+      "x": 0,
+      "y": -64.2,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -12.3
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -87.6,
+    "y": -116,
+    "w": 171.8,
+    "h": 178.6
+   }
+  },
+  "building-ground-pump-w7": {
+   "file": "building-ground-pump-w7.webp",
+   "w": 173,
+   "h": 176,
+   "ax": 0.50867,
+   "ay": 0.64205,
+   "scale": 5,
+   "hash": "d1039edf4c",
+   "meta": {
+    "top": 86,
+    "lights": [
+     {
+      "x": 0,
+      "y": -64.2,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -12.3
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -87.6,
+    "y": -112.8,
+    "w": 171.8,
+    "h": 175.4
+   }
+  },
+  "building-ground-pump-w8": {
+   "file": "building-ground-pump-w8.webp",
+   "w": 173,
+   "h": 174,
+   "ax": 0.50867,
+   "ay": 0.63793,
+   "scale": 5,
+   "hash": "d62c448047",
+   "meta": {
+    "top": 86,
+    "lights": [
+     {
+      "x": 0,
+      "y": -64.2,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -12.3
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -87.6,
+    "y": -110.2,
+    "w": 171.8,
+    "h": 173
+   }
+  },
+  "building-ground-pump-w9": {
+   "file": "building-ground-pump-w9.webp",
+   "w": 173,
+   "h": 173,
+   "ax": 0.50867,
+   "ay": 0.63584,
+   "scale": 5,
+   "hash": "42dce043c4",
+   "meta": {
+    "top": 86,
+    "lights": [
+     {
+      "x": 0,
+      "y": -64.2,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -12.3
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -87.6,
+    "y": -109.2,
+    "w": 171.8,
+    "h": 172
+   }
+  },
+  "building-ground-pump-wb": {
+   "file": "building-ground-pump-wb.webp",
+   "w": 209,
+   "h": 180,
+   "ax": 0.49282,
+   "ay": 0.55,
+   "scale": 5,
+   "hash": "65f14643d8",
+   "meta": {
+    "top": 86,
+    "lights": [
+     {
+      "x": 0,
+      "y": -64.2,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -12.3
+     }
+    ]
+   },
+   "body": {
+    "x": -92.2,
+    "y": -97.4,
+    "w": 184.4,
+    "h": 167
+   }
+  },
+  "building-laser-drill": {
+   "file": "building-laser-drill.webp",
+   "w": 450,
+   "h": 310,
+   "ax": 0.45556,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "60f9bb4114",
+   "meta": {
+    "top": 117,
+    "lights": [
+     {
+      "x": 0,
+      "y": -114.8,
+      "color": "#ff6b6b",
+      "r": 12,
+      "phase": 0.3
+     },
+     {
+      "x": -121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -37
+     }
+    ],
+    "goods": {
+     "x": 140.8,
+     "y": 96.1
+    },
+    "wire": {
+     "x": 79.4,
+     "y": 54.3
+    }
+   },
+   "body": {
+    "x": -188.2,
+    "y": -147.4,
+    "w": 376.4,
+    "h": 290.6
+   }
+  },
+  "building-laser-drill-w0": {
+   "file": "building-laser-drill-w0.webp",
+   "w": 112,
+   "h": 116,
+   "ax": 0.28571,
+   "ay": 0.75862,
+   "scale": 5,
+   "hash": "8ad57947af",
+   "meta": {
+    "top": 117,
+    "lights": [
+     {
+      "x": 0,
+      "y": -114.8,
+      "color": "#ff6b6b",
+      "r": 12,
+      "phase": 0.3
+     },
+     {
+      "x": -121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -37
+     }
+    ],
+    "goods": {
+     "x": 140.8,
+     "y": 96.1
+    },
+    "wire": {
+     "x": 79.4,
+     "y": 54.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -31.599999999999994,
+    "y": -87.4,
+    "w": 111.2,
+    "h": 114.6
+   }
+  },
+  "building-laser-drill-w1": {
+   "file": "building-laser-drill-w1.webp",
+   "w": 112,
+   "h": 115,
+   "ax": 0.28571,
+   "ay": 0.75652,
+   "scale": 5,
+   "hash": "f424c92f5e",
+   "meta": {
+    "top": 117,
+    "lights": [
+     {
+      "x": 0,
+      "y": -114.8,
+      "color": "#ff6b6b",
+      "r": 12,
+      "phase": 0.3
+     },
+     {
+      "x": -121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -37
+     }
+    ],
+    "goods": {
+     "x": 140.8,
+     "y": 96.1
+    },
+    "wire": {
+     "x": 79.4,
+     "y": 54.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -31.599999999999994,
+    "y": -86.19999999999999,
+    "w": 111.2,
+    "h": 113.4
+   }
+  },
+  "building-laser-drill-w10": {
+   "file": "building-laser-drill-w10.webp",
+   "w": 117,
+   "h": 115,
+   "ax": 0.31624,
+   "ay": 0.75652,
+   "scale": 5,
+   "hash": "bf3418a3f7",
+   "meta": {
+    "top": 117,
+    "lights": [
+     {
+      "x": 0,
+      "y": -114.8,
+      "color": "#ff6b6b",
+      "r": 12,
+      "phase": 0.3
+     },
+     {
+      "x": -121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -37
+     }
+    ],
+    "goods": {
+     "x": 140.8,
+     "y": 96.1
+    },
+    "wire": {
+     "x": 79.4,
+     "y": 54.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -37,
+    "y": -86.19999999999999,
+    "w": 116.6,
+    "h": 113.4
+   }
+  },
+  "building-laser-drill-w11": {
+   "file": "building-laser-drill-w11.webp",
+   "w": 112,
+   "h": 115,
+   "ax": 0.28571,
+   "ay": 0.75652,
+   "scale": 5,
+   "hash": "a9bcd4861a",
+   "meta": {
+    "top": 117,
+    "lights": [
+     {
+      "x": 0,
+      "y": -114.8,
+      "color": "#ff6b6b",
+      "r": 12,
+      "phase": 0.3
+     },
+     {
+      "x": -121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -37
+     }
+    ],
+    "goods": {
+     "x": 140.8,
+     "y": 96.1
+    },
+    "wire": {
+     "x": 79.4,
+     "y": 54.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -31.599999999999994,
+    "y": -86.19999999999999,
+    "w": 111.2,
+    "h": 113.4
+   }
+  },
+  "building-laser-drill-w2": {
+   "file": "building-laser-drill-w2.webp",
+   "w": 112,
+   "h": 115,
+   "ax": 0.28571,
+   "ay": 0.75652,
+   "scale": 5,
+   "hash": "e58748dfcc",
+   "meta": {
+    "top": 117,
+    "lights": [
+     {
+      "x": 0,
+      "y": -114.8,
+      "color": "#ff6b6b",
+      "r": 12,
+      "phase": 0.3
+     },
+     {
+      "x": -121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -37
+     }
+    ],
+    "goods": {
+     "x": 140.8,
+     "y": 96.1
+    },
+    "wire": {
+     "x": 79.4,
+     "y": 54.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -31.599999999999994,
+    "y": -86.19999999999999,
+    "w": 111.2,
+    "h": 113.4
+   }
+  },
+  "building-laser-drill-w3": {
+   "file": "building-laser-drill-w3.webp",
+   "w": 112,
+   "h": 115,
+   "ax": 0.28571,
+   "ay": 0.75652,
+   "scale": 5,
+   "hash": "2f699bc802",
+   "meta": {
+    "top": 117,
+    "lights": [
+     {
+      "x": 0,
+      "y": -114.8,
+      "color": "#ff6b6b",
+      "r": 12,
+      "phase": 0.3
+     },
+     {
+      "x": -121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -37
+     }
+    ],
+    "goods": {
+     "x": 140.8,
+     "y": 96.1
+    },
+    "wire": {
+     "x": 79.4,
+     "y": 54.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -31.599999999999994,
+    "y": -86.19999999999999,
+    "w": 111.2,
+    "h": 113.4
+   }
+  },
+  "building-laser-drill-w4": {
+   "file": "building-laser-drill-w4.webp",
+   "w": 112,
+   "h": 115,
+   "ax": 0.28571,
+   "ay": 0.75652,
+   "scale": 5,
+   "hash": "7b765d679e",
+   "meta": {
+    "top": 117,
+    "lights": [
+     {
+      "x": 0,
+      "y": -114.8,
+      "color": "#ff6b6b",
+      "r": 12,
+      "phase": 0.3
+     },
+     {
+      "x": -121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -37
+     }
+    ],
+    "goods": {
+     "x": 140.8,
+     "y": 96.1
+    },
+    "wire": {
+     "x": 79.4,
+     "y": 54.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -31.599999999999994,
+    "y": -86.19999999999999,
+    "w": 111.2,
+    "h": 113.4
+   }
+  },
+  "building-laser-drill-w5": {
+   "file": "building-laser-drill-w5.webp",
+   "w": 112,
+   "h": 115,
+   "ax": 0.28571,
+   "ay": 0.75652,
+   "scale": 5,
+   "hash": "6bab028f23",
+   "meta": {
+    "top": 117,
+    "lights": [
+     {
+      "x": 0,
+      "y": -114.8,
+      "color": "#ff6b6b",
+      "r": 12,
+      "phase": 0.3
+     },
+     {
+      "x": -121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -37
+     }
+    ],
+    "goods": {
+     "x": 140.8,
+     "y": 96.1
+    },
+    "wire": {
+     "x": 79.4,
+     "y": 54.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -31.599999999999994,
+    "y": -86.19999999999999,
+    "w": 111.2,
+    "h": 113.4
+   }
+  },
+  "building-laser-drill-w6": {
+   "file": "building-laser-drill-w6.webp",
+   "w": 112,
+   "h": 115,
+   "ax": 0.28571,
+   "ay": 0.75652,
+   "scale": 5,
+   "hash": "7467ef0caa",
+   "meta": {
+    "top": 117,
+    "lights": [
+     {
+      "x": 0,
+      "y": -114.8,
+      "color": "#ff6b6b",
+      "r": 12,
+      "phase": 0.3
+     },
+     {
+      "x": -121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -37
+     }
+    ],
+    "goods": {
+     "x": 140.8,
+     "y": 96.1
+    },
+    "wire": {
+     "x": 79.4,
+     "y": 54.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -31.599999999999994,
+    "y": -86.19999999999999,
+    "w": 111.2,
+    "h": 113.4
+   }
+  },
+  "building-laser-drill-w7": {
+   "file": "building-laser-drill-w7.webp",
+   "w": 112,
+   "h": 115,
+   "ax": 0.28571,
+   "ay": 0.75652,
+   "scale": 5,
+   "hash": "9c07a474be",
+   "meta": {
+    "top": 117,
+    "lights": [
+     {
+      "x": 0,
+      "y": -114.8,
+      "color": "#ff6b6b",
+      "r": 12,
+      "phase": 0.3
+     },
+     {
+      "x": -121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -37
+     }
+    ],
+    "goods": {
+     "x": 140.8,
+     "y": 96.1
+    },
+    "wire": {
+     "x": 79.4,
+     "y": 54.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -31.599999999999994,
+    "y": -86.19999999999999,
+    "w": 111.2,
+    "h": 113.4
+   }
+  },
+  "building-laser-drill-w8": {
+   "file": "building-laser-drill-w8.webp",
+   "w": 112,
+   "h": 115,
+   "ax": 0.28571,
+   "ay": 0.75652,
+   "scale": 5,
+   "hash": "7ed4bdcaa5",
+   "meta": {
+    "top": 117,
+    "lights": [
+     {
+      "x": 0,
+      "y": -114.8,
+      "color": "#ff6b6b",
+      "r": 12,
+      "phase": 0.3
+     },
+     {
+      "x": -121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -37
+     }
+    ],
+    "goods": {
+     "x": 140.8,
+     "y": 96.1
+    },
+    "wire": {
+     "x": 79.4,
+     "y": 54.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -31.599999999999994,
+    "y": -86.19999999999999,
+    "w": 111.2,
+    "h": 113.4
+   }
+  },
+  "building-laser-drill-w9": {
+   "file": "building-laser-drill-w9.webp",
+   "w": 112,
+   "h": 115,
+   "ax": 0.28571,
+   "ay": 0.75652,
+   "scale": 5,
+   "hash": "fc18bbec26",
+   "meta": {
+    "top": 117,
+    "lights": [
+     {
+      "x": 0,
+      "y": -114.8,
+      "color": "#ff6b6b",
+      "r": 12,
+      "phase": 0.3
+     },
+     {
+      "x": -121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -37
+     }
+    ],
+    "goods": {
+     "x": 140.8,
+     "y": 96.1
+    },
+    "wire": {
+     "x": 79.4,
+     "y": 54.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -31.599999999999994,
+    "y": -86.19999999999999,
+    "w": 111.2,
+    "h": 113.4
+   }
+  },
+  "building-laser-drill-wb": {
+   "file": "building-laser-drill-wb.webp",
+   "w": 450,
+   "h": 310,
+   "ax": 0.45556,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "3d9618626e",
+   "meta": {
+    "top": 117,
+    "lights": [
+     {
+      "x": 0,
+      "y": -114.8,
+      "color": "#ff6b6b",
+      "r": 12,
+      "phase": 0.3
+     },
+     {
+      "x": -121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 121.6,
+      "y": -109.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": -112.9,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.25,
+      "work": true
+     },
+     {
+      "x": -115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.5,
+      "work": true
+     },
+     {
+      "x": 115.2,
+      "y": 63.6,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0.75,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -37
+     }
+    ],
+    "goods": {
+     "x": 140.8,
+     "y": 96.1
+    },
+    "wire": {
+     "x": 79.4,
+     "y": 54.3
+    }
+   },
+   "body": {
+    "x": -188.2,
+    "y": -147.4,
+    "w": 376.4,
+    "h": 290.6
+   }
+  },
+  "building-mechanical-drill": {
+   "file": "building-mechanical-drill.webp",
+   "w": 205,
+   "h": 174,
+   "ax": 0.50732,
+   "ay": 0.55747,
+   "scale": 5,
+   "hash": "004494d32a",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 42.2,
+      "y": -55.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -24.7
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    }
+   },
+   "body": {
+    "x": -92.2,
+    "y": -96.4,
+    "w": 184.4,
+    "h": 166
+   }
+  },
+  "building-mechanical-drill-w0": {
+   "file": "building-mechanical-drill-w0.webp",
+   "w": 137,
+   "h": 108,
+   "ax": 0.67883,
+   "ay": 0.88889,
+   "scale": 5,
+   "hash": "c7c2b7d86a",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 42.2,
+      "y": -55.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -24.7
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -70,
+    "y": -95.8,
+    "w": 113.2,
+    "h": 107.2
+   }
+  },
+  "building-mechanical-drill-w1": {
+   "file": "building-mechanical-drill-w1.webp",
+   "w": 135,
+   "h": 106,
+   "ax": 0.68889,
+   "ay": 0.90566,
+   "scale": 5,
+   "hash": "31dbf47ad2",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 42.2,
+      "y": -55.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -24.7
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -70,
+    "y": -95.8,
+    "w": 111.6,
+    "h": 105.2
+   }
+  },
+  "building-mechanical-drill-w10": {
+   "file": "building-mechanical-drill-w10.webp",
+   "w": 135,
+   "h": 106,
+   "ax": 0.68889,
+   "ay": 0.90566,
+   "scale": 5,
+   "hash": "ebc4752eb2",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 42.2,
+      "y": -55.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -24.7
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -70,
+    "y": -95.8,
+    "w": 111.6,
+    "h": 105.2
+   }
+  },
+  "building-mechanical-drill-w11": {
+   "file": "building-mechanical-drill-w11.webp",
+   "w": 135,
+   "h": 108,
+   "ax": 0.68889,
+   "ay": 0.88889,
+   "scale": 5,
+   "hash": "55a0cdc18e",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 42.2,
+      "y": -55.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -24.7
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -69.8,
+    "y": -95.8,
+    "w": 111.8,
+    "h": 107
+   }
+  },
+  "building-mechanical-drill-w2": {
+   "file": "building-mechanical-drill-w2.webp",
+   "w": 135,
+   "h": 108,
+   "ax": 0.68889,
+   "ay": 0.88889,
+   "scale": 5,
+   "hash": "38ec897eaf",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 42.2,
+      "y": -55.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -24.7
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -69.8,
+    "y": -95.8,
+    "w": 111.8,
+    "h": 107
+   }
+  },
+  "building-mechanical-drill-w3": {
+   "file": "building-mechanical-drill-w3.webp",
+   "w": 137,
+   "h": 108,
+   "ax": 0.67883,
+   "ay": 0.88889,
+   "scale": 5,
+   "hash": "4105e57131",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 42.2,
+      "y": -55.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -24.7
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -70,
+    "y": -95.8,
+    "w": 113.2,
+    "h": 107.2
+   }
+  },
+  "building-mechanical-drill-w4": {
+   "file": "building-mechanical-drill-w4.webp",
+   "w": 135,
+   "h": 106,
+   "ax": 0.68889,
+   "ay": 0.90566,
+   "scale": 5,
+   "hash": "ebc4752eb2",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 42.2,
+      "y": -55.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -24.7
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -70,
+    "y": -95.8,
+    "w": 111.6,
+    "h": 105.2
+   }
+  },
+  "building-mechanical-drill-w5": {
+   "file": "building-mechanical-drill-w5.webp",
+   "w": 135,
+   "h": 108,
+   "ax": 0.68889,
+   "ay": 0.88889,
+   "scale": 5,
+   "hash": "55a0cdc18e",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 42.2,
+      "y": -55.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -24.7
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -69.8,
+    "y": -95.8,
+    "w": 111.8,
+    "h": 107
+   }
+  },
+  "building-mechanical-drill-w6": {
+   "file": "building-mechanical-drill-w6.webp",
+   "w": 137,
+   "h": 108,
+   "ax": 0.67883,
+   "ay": 0.88889,
+   "scale": 5,
+   "hash": "c7c2b7d86a",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 42.2,
+      "y": -55.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -24.7
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -70,
+    "y": -95.8,
+    "w": 113.2,
+    "h": 107.2
+   }
+  },
+  "building-mechanical-drill-w7": {
+   "file": "building-mechanical-drill-w7.webp",
+   "w": 135,
+   "h": 106,
+   "ax": 0.68889,
+   "ay": 0.90566,
+   "scale": 5,
+   "hash": "31dbf47ad2",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 42.2,
+      "y": -55.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -24.7
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -70,
+    "y": -95.8,
+    "w": 111.6,
+    "h": 105.2
+   }
+  },
+  "building-mechanical-drill-w8": {
+   "file": "building-mechanical-drill-w8.webp",
+   "w": 135,
+   "h": 108,
+   "ax": 0.68889,
+   "ay": 0.88889,
+   "scale": 5,
+   "hash": "38ec897eaf",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 42.2,
+      "y": -55.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -24.7
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -69.8,
+    "y": -95.8,
+    "w": 111.8,
+    "h": 107
+   }
+  },
+  "building-mechanical-drill-w9": {
+   "file": "building-mechanical-drill-w9.webp",
+   "w": 137,
+   "h": 108,
+   "ax": 0.67883,
+   "ay": 0.88889,
+   "scale": 5,
+   "hash": "4105e57131",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 42.2,
+      "y": -55.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -24.7
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -70,
+    "y": -95.8,
+    "w": 113.2,
+    "h": 107.2
+   }
+  },
+  "building-mechanical-drill-wb": {
+   "file": "building-mechanical-drill-wb.webp",
+   "w": 204,
+   "h": 174,
+   "ax": 0.5049,
+   "ay": 0.55747,
+   "scale": 5,
+   "hash": "43f92fe93a",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 42.2,
+      "y": -55.8,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -24.7
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    }
+   },
+   "body": {
+    "x": -92.2,
+    "y": -96.4,
+    "w": 184.4,
+    "h": 166
+   }
+  },
+  "building-mechanical-pump": {
+   "file": "building-mechanical-pump.webp",
+   "w": 108,
+   "h": 86,
+   "ax": 0.48148,
+   "ay": 0.51163,
+   "scale": 5,
+   "hash": "ccb1273e83",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": -21.1,
+      "y": -34.7,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -30.9
+     }
+    ]
+   },
+   "body": {
+    "x": -44.2,
+    "y": -43,
+    "w": 88.4,
+    "h": 75.8
+   }
+  },
+  "building-mechanical-pump-w0": {
+   "file": "building-mechanical-pump-w0.webp",
+   "w": 25,
+   "h": 23,
+   "ax": 0.16,
+   "ay": 1.6087,
+   "scale": 5,
+   "hash": "207e259150",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": -21.1,
+      "y": -34.7,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -30.9
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -3.799999999999997,
+    "y": -36.6,
+    "w": 24.4,
+    "h": 22.2
+   }
+  },
+  "building-mechanical-pump-w1": {
+   "file": "building-mechanical-pump-w1.webp",
+   "w": 25,
+   "h": 22,
+   "ax": 0.16,
+   "ay": 1.77273,
+   "scale": 5,
+   "hash": "22d93b5104",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": -21.1,
+      "y": -34.7,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -30.9
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -3.799999999999997,
+    "y": -38.4,
+    "w": 24,
+    "h": 21
+   }
+  },
+  "building-mechanical-pump-w10": {
+   "file": "building-mechanical-pump-w10.webp",
+   "w": 25,
+   "h": 23,
+   "ax": 0.8,
+   "ay": 1.47826,
+   "scale": 5,
+   "hash": "63d5fdc754",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": -21.1,
+      "y": -34.7,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -30.9
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -20,
+    "y": -34,
+    "w": 24.4,
+    "h": 22.8
+   }
+  },
+  "building-mechanical-pump-w11": {
+   "file": "building-mechanical-pump-w11.webp",
+   "w": 25,
+   "h": 23,
+   "ax": 0.76,
+   "ay": 1.3913,
+   "scale": 5,
+   "hash": "900288d4eb",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": -21.1,
+      "y": -34.7,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -30.9
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -19,
+    "y": -31.799999999999997,
+    "w": 24.2,
+    "h": 22.6
+   }
+  },
+  "building-mechanical-pump-w2": {
+   "file": "building-mechanical-pump-w2.webp",
+   "w": 24,
+   "h": 19,
+   "ax": 0.20833,
+   "ay": 2.05263,
+   "scale": 5,
+   "hash": "508f4149c6",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": -21.1,
+      "y": -34.7,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -30.9
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -4.799999999999997,
+    "y": -38.8,
+    "w": 23.8,
+    "h": 18.6
+   }
+  },
+  "building-mechanical-pump-w3": {
+   "file": "building-mechanical-pump-w3.webp",
+   "w": 26,
+   "h": 20,
+   "ax": 0.30769,
+   "ay": 2,
+   "scale": 5,
+   "hash": "0f49517c2e",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": -21.1,
+      "y": -34.7,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -30.9
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -7.799999999999997,
+    "y": -39.2,
+    "w": 25,
+    "h": 18.4
+   }
+  },
+  "building-mechanical-pump-w4": {
+   "file": "building-mechanical-pump-w4.webp",
+   "w": 26,
+   "h": 20,
+   "ax": 0.46154,
+   "ay": 2,
+   "scale": 5,
+   "hash": "d278bfa7e9",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": -21.1,
+      "y": -34.7,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -30.9
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -11.600000000000001,
+    "y": -39.4,
+    "w": 25.4,
+    "h": 18.6
+   }
+  },
+  "building-mechanical-pump-w5": {
+   "file": "building-mechanical-pump-w5.webp",
+   "w": 26,
+   "h": 20,
+   "ax": 0.57692,
+   "ay": 2,
+   "scale": 5,
+   "hash": "98f31d6c9c",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": -21.1,
+      "y": -34.7,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -30.9
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -15,
+    "y": -39.4,
+    "w": 25.8,
+    "h": 18.6
+   }
+  },
+  "building-mechanical-pump-w6": {
+   "file": "building-mechanical-pump-w6.webp",
+   "w": 26,
+   "h": 20,
+   "ax": 0.69231,
+   "ay": 2,
+   "scale": 5,
+   "hash": "e6d8113a8d",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": -21.1,
+      "y": -34.7,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -30.9
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -17.6,
+    "y": -39.4,
+    "w": 25.4,
+    "h": 18.6
+   }
+  },
+  "building-mechanical-pump-w7": {
+   "file": "building-mechanical-pump-w7.webp",
+   "w": 24,
+   "h": 19,
+   "ax": 0.79167,
+   "ay": 2.05263,
+   "scale": 5,
+   "hash": "a1ccea8d66",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": -21.1,
+      "y": -34.7,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -30.9
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -19,
+    "y": -38.8,
+    "w": 23.8,
+    "h": 18.6
+   }
+  },
+  "building-mechanical-pump-w8": {
+   "file": "building-mechanical-pump-w8.webp",
+   "w": 24,
+   "h": 22,
+   "ax": 0.83333,
+   "ay": 1.77273,
+   "scale": 5,
+   "hash": "c2c380c795",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": -21.1,
+      "y": -34.7,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -30.9
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -19.799999999999997,
+    "y": -38.2,
+    "w": 23.6,
+    "h": 20.8
+   }
+  },
+  "building-mechanical-pump-w9": {
+   "file": "building-mechanical-pump-w9.webp",
+   "w": 25,
+   "h": 23,
+   "ax": 0.84,
+   "ay": 1.6087,
+   "scale": 5,
+   "hash": "9c26dea4bb",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": -21.1,
+      "y": -34.7,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -30.9
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -20.200000000000003,
+    "y": -36.6,
+    "w": 24,
+    "h": 22.6
+   }
+  },
+  "building-mechanical-pump-wb": {
+   "file": "building-mechanical-pump-wb.webp",
+   "w": 108,
+   "h": 86,
+   "ax": 0.48148,
+   "ay": 0.51163,
+   "scale": 5,
+   "hash": "c4c7ff9491",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": -21.1,
+      "y": -34.7,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -30.9
+     }
+    ]
+   },
+   "body": {
+    "x": -44.2,
+    "y": -43,
+    "w": 88.4,
+    "h": 75.8
+   }
+  },
+  "building-oil-derrick": {
+   "file": "building-oil-derrick.webp",
+   "w": 319,
+   "h": 267,
+   "ax": 0.49216,
+   "ay": 0.55431,
+   "scale": 5,
+   "hash": "d0799c5996",
+   "meta": {
+    "top": 111,
+    "lights": [
+     {
+      "x": 0,
+      "y": -75.3,
+      "color": "#ff6b6b",
+      "r": 11,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 33.6,
+      "y": -22.4
+     }
+    ],
+    "goods": {
+     "x": 52.8,
+     "y": 34.3
+    }
+   },
+   "body": {
+    "x": -140.2,
+    "y": -147.6,
+    "w": 280.4,
+    "h": 254
+   }
+  },
+  "building-oil-derrick-w0": {
+   "file": "building-oil-derrick-w0.webp",
+   "w": 263,
+   "h": 250,
+   "ax": 0.38403,
+   "ay": 0.592,
+   "scale": 5,
+   "hash": "fcc74513af",
+   "meta": {
+    "top": 111,
+    "lights": [
+     {
+      "x": 0,
+      "y": -75.3,
+      "color": "#ff6b6b",
+      "r": 11,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 33.6,
+      "y": -22.4
+     }
+    ],
+    "goods": {
+     "x": 52.8,
+     "y": 34.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -100.2,
+    "y": -147.6,
+    "w": 240,
+    "h": 248.8
+   }
+  },
+  "building-oil-derrick-w1": {
+   "file": "building-oil-derrick-w1.webp",
+   "w": 262,
+   "h": 246,
+   "ax": 0.39313,
+   "ay": 0.58537,
+   "scale": 5,
+   "hash": "aef0e69f9c",
+   "meta": {
+    "top": 111,
+    "lights": [
+     {
+      "x": 0,
+      "y": -75.3,
+      "color": "#ff6b6b",
+      "r": 11,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 33.6,
+      "y": -22.4
+     }
+    ],
+    "goods": {
+     "x": 52.8,
+     "y": 34.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -102.8,
+    "y": -143.6,
+    "w": 242.4,
+    "h": 244.8
+   }
+  },
+  "building-oil-derrick-w10": {
+   "file": "building-oil-derrick-w10.webp",
+   "w": 267,
+   "h": 256,
+   "ax": 0.37453,
+   "ay": 0.60938,
+   "scale": 5,
+   "hash": "35cd1c3e49",
+   "meta": {
+    "top": 111,
+    "lights": [
+     {
+      "x": 0,
+      "y": -75.3,
+      "color": "#ff6b6b",
+      "r": 11,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 33.6,
+      "y": -22.4
+     }
+    ],
+    "goods": {
+     "x": 52.8,
+     "y": 34.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -99.4,
+    "y": -155,
+    "w": 239.2,
+    "h": 254.2
+   }
+  },
+  "building-oil-derrick-w11": {
+   "file": "building-oil-derrick-w11.webp",
+   "w": 265,
+   "h": 252,
+   "ax": 0.37736,
+   "ay": 0.60317,
+   "scale": 5,
+   "hash": "30a711224c",
+   "meta": {
+    "top": 111,
+    "lights": [
+     {
+      "x": 0,
+      "y": -75.3,
+      "color": "#ff6b6b",
+      "r": 11,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 33.6,
+      "y": -22.4
+     }
+    ],
+    "goods": {
+     "x": 52.8,
+     "y": 34.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -99.6,
+    "y": -152,
+    "w": 239.4,
+    "h": 251.6
+   }
+  },
+  "building-oil-derrick-w2": {
+   "file": "building-oil-derrick-w2.webp",
+   "w": 257,
+   "h": 243,
+   "ax": 0.39689,
+   "ay": 0.58025,
+   "scale": 5,
+   "hash": "b51c35c7d3",
+   "meta": {
+    "top": 111,
+    "lights": [
+     {
+      "x": 0,
+      "y": -75.3,
+      "color": "#ff6b6b",
+      "r": 11,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 33.6,
+      "y": -22.4
+     }
+    ],
+    "goods": {
+     "x": 52.8,
+     "y": 34.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -101.8,
+    "y": -140.2,
+    "w": 241.2,
+    "h": 241.4
+   }
+  },
+  "building-oil-derrick-w3": {
+   "file": "building-oil-derrick-w3.webp",
+   "w": 255,
+   "h": 242,
+   "ax": 0.4,
+   "ay": 0.57851,
+   "scale": 5,
+   "hash": "68b5692f2c",
+   "meta": {
+    "top": 111,
+    "lights": [
+     {
+      "x": 0,
+      "y": -75.3,
+      "color": "#ff6b6b",
+      "r": 11,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 33.6,
+      "y": -22.4
+     }
+    ],
+    "goods": {
+     "x": 52.8,
+     "y": 34.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -101.8,
+    "y": -139,
+    "w": 241,
+    "h": 240.2
+   }
+  },
+  "building-oil-derrick-w4": {
+   "file": "building-oil-derrick-w4.webp",
+   "w": 257,
+   "h": 243,
+   "ax": 0.39689,
+   "ay": 0.58025,
+   "scale": 5,
+   "hash": "44ffcbfee0",
+   "meta": {
+    "top": 111,
+    "lights": [
+     {
+      "x": 0,
+      "y": -75.3,
+      "color": "#ff6b6b",
+      "r": 11,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 33.6,
+      "y": -22.4
+     }
+    ],
+    "goods": {
+     "x": 52.8,
+     "y": 34.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -101.8,
+    "y": -140.2,
+    "w": 241.2,
+    "h": 241.4
+   }
+  },
+  "building-oil-derrick-w5": {
+   "file": "building-oil-derrick-w5.webp",
+   "w": 262,
+   "h": 246,
+   "ax": 0.39313,
+   "ay": 0.58537,
+   "scale": 5,
+   "hash": "347c205082",
+   "meta": {
+    "top": 111,
+    "lights": [
+     {
+      "x": 0,
+      "y": -75.3,
+      "color": "#ff6b6b",
+      "r": 11,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 33.6,
+      "y": -22.4
+     }
+    ],
+    "goods": {
+     "x": 52.8,
+     "y": 34.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -102.8,
+    "y": -143.6,
+    "w": 242.4,
+    "h": 244.8
+   }
+  },
+  "building-oil-derrick-w6": {
+   "file": "building-oil-derrick-w6.webp",
+   "w": 263,
+   "h": 250,
+   "ax": 0.38403,
+   "ay": 0.592,
+   "scale": 5,
+   "hash": "fec39c586b",
+   "meta": {
+    "top": 111,
+    "lights": [
+     {
+      "x": 0,
+      "y": -75.3,
+      "color": "#ff6b6b",
+      "r": 11,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 33.6,
+      "y": -22.4
+     }
+    ],
+    "goods": {
+     "x": 52.8,
+     "y": 34.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -100.2,
+    "y": -147.6,
+    "w": 240,
+    "h": 248.8
+   }
+  },
+  "building-oil-derrick-w7": {
+   "file": "building-oil-derrick-w7.webp",
+   "w": 265,
+   "h": 252,
+   "ax": 0.37736,
+   "ay": 0.60317,
+   "scale": 5,
+   "hash": "6728be8a0e",
+   "meta": {
+    "top": 111,
+    "lights": [
+     {
+      "x": 0,
+      "y": -75.3,
+      "color": "#ff6b6b",
+      "r": 11,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 33.6,
+      "y": -22.4
+     }
+    ],
+    "goods": {
+     "x": 52.8,
+     "y": 34.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -99.6,
+    "y": -152,
+    "w": 239.4,
+    "h": 251.6
+   }
+  },
+  "building-oil-derrick-w8": {
+   "file": "building-oil-derrick-w8.webp",
+   "w": 267,
+   "h": 256,
+   "ax": 0.37453,
+   "ay": 0.60938,
+   "scale": 5,
+   "hash": "ed5032863b",
+   "meta": {
+    "top": 111,
+    "lights": [
+     {
+      "x": 0,
+      "y": -75.3,
+      "color": "#ff6b6b",
+      "r": 11,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 33.6,
+      "y": -22.4
+     }
+    ],
+    "goods": {
+     "x": 52.8,
+     "y": 34.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -99.4,
+    "y": -155,
+    "w": 239.2,
+    "h": 254.2
+   }
+  },
+  "building-oil-derrick-w9": {
+   "file": "building-oil-derrick-w9.webp",
+   "w": 268,
+   "h": 257,
+   "ax": 0.37313,
+   "ay": 0.61089,
+   "scale": 5,
+   "hash": "25a12dbcc5",
+   "meta": {
+    "top": 111,
+    "lights": [
+     {
+      "x": 0,
+      "y": -75.3,
+      "color": "#ff6b6b",
+      "r": 11,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 33.6,
+      "y": -22.4
+     }
+    ],
+    "goods": {
+     "x": 52.8,
+     "y": 34.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -99.4,
+    "y": -156,
+    "w": 239.2,
+    "h": 255.2
+   }
+  },
+  "building-oil-derrick-wb": {
+   "file": "building-oil-derrick-wb.webp",
+   "w": 304,
+   "h": 232,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "4cd205d55c",
+   "meta": {
+    "top": 111,
+    "lights": [
+     {
+      "x": 0,
+      "y": -75.3,
+      "color": "#ff6b6b",
+      "r": 11,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 33.6,
+      "y": -22.4
+     }
+    ],
+    "goods": {
+     "x": 52.8,
+     "y": 34.3
+    }
+   },
+   "body": {
+    "x": -140.2,
+    "y": -113.6,
+    "w": 280.4,
+    "h": 220
+   }
+  },
+  "building-pneumatic-drill": {
+   "file": "building-pneumatic-drill.webp",
+   "w": 203,
+   "h": 160,
+   "ax": 0.50246,
+   "ay": 0.51875,
+   "scale": 5,
+   "hash": "01d9480ac5",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 40.3,
+      "y": -53.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -53.1
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 18.3
+    }
+   },
+   "body": {
+    "x": -92.2,
+    "y": -82.2,
+    "w": 184.4,
+    "h": 151.8
+   }
+  },
+  "building-pneumatic-drill-w0": {
+   "file": "building-pneumatic-drill-w0.webp",
+   "w": 127,
+   "h": 100,
+   "ax": 0.37008,
+   "ay": 0.83,
+   "scale": 5,
+   "hash": "ab6c705f8d",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 40.3,
+      "y": -53.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -53.1
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 18.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -46.6,
+    "y": -82.2,
+    "w": 126.2,
+    "h": 99.2
+   }
+  },
+  "building-pneumatic-drill-w1": {
+   "file": "building-pneumatic-drill-w1.webp",
+   "w": 127,
+   "h": 99,
+   "ax": 0.37795,
+   "ay": 0.82828,
+   "scale": 5,
+   "hash": "9eb8e379b6",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 40.3,
+      "y": -53.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -53.1
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 18.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -47.2,
+    "y": -81.6,
+    "w": 126.2,
+    "h": 98.6
+   }
+  },
+  "building-pneumatic-drill-w10": {
+   "file": "building-pneumatic-drill-w10.webp",
+   "w": 127,
+   "h": 131,
+   "ax": 0.37795,
+   "ay": 0.61832,
+   "scale": 5,
+   "hash": "b1d98b40e1",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 40.3,
+      "y": -53.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -53.1
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 18.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -47.2,
+    "y": -80.2,
+    "w": 125.4,
+    "h": 129.4
+   }
+  },
+  "building-pneumatic-drill-w11": {
+   "file": "building-pneumatic-drill-w11.webp",
+   "w": 127,
+   "h": 99,
+   "ax": 0.37795,
+   "ay": 0.82828,
+   "scale": 5,
+   "hash": "e9a05c54c0",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 40.3,
+      "y": -53.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -53.1
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 18.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -47.2,
+    "y": -81.6,
+    "w": 126.2,
+    "h": 98.6
+   }
+  },
+  "building-pneumatic-drill-w2": {
+   "file": "building-pneumatic-drill-w2.webp",
+   "w": 127,
+   "h": 131,
+   "ax": 0.37795,
+   "ay": 0.61832,
+   "scale": 5,
+   "hash": "74053ef28f",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 40.3,
+      "y": -53.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -53.1
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 18.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -47.2,
+    "y": -80.2,
+    "w": 125.4,
+    "h": 129.4
+   }
+  },
+  "building-pneumatic-drill-w3": {
+   "file": "building-pneumatic-drill-w3.webp",
+   "w": 125,
+   "h": 129,
+   "ax": 0.384,
+   "ay": 0.6124,
+   "scale": 5,
+   "hash": "0e4f2fbdb6",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 40.3,
+      "y": -53.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -53.1
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 18.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -47.2,
+    "y": -78.2,
+    "w": 123.6,
+    "h": 127.4
+   }
+  },
+  "building-pneumatic-drill-w4": {
+   "file": "building-pneumatic-drill-w4.webp",
+   "w": 123,
+   "h": 130,
+   "ax": 0.39024,
+   "ay": 0.59231,
+   "scale": 5,
+   "hash": "b0b2110530",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 40.3,
+      "y": -53.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -53.1
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 18.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -47.8,
+    "y": -76.2,
+    "w": 122.6,
+    "h": 128.6
+   }
+  },
+  "building-pneumatic-drill-w5": {
+   "file": "building-pneumatic-drill-w5.webp",
+   "w": 123,
+   "h": 128,
+   "ax": 0.39024,
+   "ay": 0.58594,
+   "scale": 5,
+   "hash": "b63255b067",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 40.3,
+      "y": -53.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -53.1
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 18.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -47.8,
+    "y": -74.6,
+    "w": 122.4,
+    "h": 127
+   }
+  },
+  "building-pneumatic-drill-w6": {
+   "file": "building-pneumatic-drill-w6.webp",
+   "w": 122,
+   "h": 132,
+   "ax": 0.39344,
+   "ay": 0.56818,
+   "scale": 5,
+   "hash": "ba9744598e",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 40.3,
+      "y": -53.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -53.1
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 18.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -47.8,
+    "y": -74.2,
+    "w": 121,
+    "h": 131.2
+   }
+  },
+  "building-pneumatic-drill-w7": {
+   "file": "building-pneumatic-drill-w7.webp",
+   "w": 123,
+   "h": 128,
+   "ax": 0.39024,
+   "ay": 0.58594,
+   "scale": 5,
+   "hash": "92101bc5cd",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 40.3,
+      "y": -53.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -53.1
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 18.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -47.8,
+    "y": -74.6,
+    "w": 122.4,
+    "h": 127
+   }
+  },
+  "building-pneumatic-drill-w8": {
+   "file": "building-pneumatic-drill-w8.webp",
+   "w": 123,
+   "h": 130,
+   "ax": 0.39024,
+   "ay": 0.59231,
+   "scale": 5,
+   "hash": "423120786e",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 40.3,
+      "y": -53.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -53.1
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 18.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -47.8,
+    "y": -76.2,
+    "w": 122.6,
+    "h": 128.6
+   }
+  },
+  "building-pneumatic-drill-w9": {
+   "file": "building-pneumatic-drill-w9.webp",
+   "w": 125,
+   "h": 129,
+   "ax": 0.384,
+   "ay": 0.6124,
+   "scale": 5,
+   "hash": "f3daa1d2f0",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 40.3,
+      "y": -53.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -53.1
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 18.3
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -47.2,
+    "y": -78.2,
+    "w": 123.6,
+    "h": 127.4
+   }
+  },
+  "building-pneumatic-drill-wb": {
+   "file": "building-pneumatic-drill-wb.webp",
+   "w": 203,
+   "h": 154,
+   "ax": 0.50246,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "15962fe6c4",
+   "meta": {
+    "top": 59,
+    "lights": [
+     {
+      "x": 40.3,
+      "y": -53.3,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -53.1
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 18.3
+    }
+   },
+   "body": {
+    "x": -92.2,
+    "y": -73.8,
+    "w": 184.4,
+    "h": 143.4
+   }
+  },
+  "building-salvage-drill": {
+   "file": "building-salvage-drill.webp",
+   "w": 205,
+   "h": 189,
+   "ax": 0.50244,
+   "ay": 0.59259,
+   "scale": 5,
+   "hash": "a595ab20e3",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": 48,
+      "y": -61.5,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": -108.4,
+      "color": "#ff6b6b",
+      "r": 10,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -27.2
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    }
+   },
+   "body": {
+    "x": -92.2,
+    "y": -110.4,
+    "w": 184.4,
+    "h": 180
+   }
+  },
+  "building-salvage-drill-w0": {
+   "file": "building-salvage-drill-w0.webp",
+   "w": 123,
+   "h": 90,
+   "ax": 0.30894,
+   "ay": 0.63333,
+   "scale": 5,
+   "hash": "4428c08b50",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": 48,
+      "y": -61.5,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": -108.4,
+      "color": "#ff6b6b",
+      "r": 10,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -27.2
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -38,
+    "y": -56.400000000000006,
+    "w": 122.6,
+    "h": 89.2
+   }
+  },
+  "building-salvage-drill-w1": {
+   "file": "building-salvage-drill-w1.webp",
+   "w": 123,
+   "h": 90,
+   "ax": 0.30894,
+   "ay": 0.63333,
+   "scale": 5,
+   "hash": "d2e1cb8b17",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": 48,
+      "y": -61.5,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": -108.4,
+      "color": "#ff6b6b",
+      "r": 10,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -27.2
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -38,
+    "y": -56.400000000000006,
+    "w": 122.6,
+    "h": 89.2
+   }
+  },
+  "building-salvage-drill-w10": {
+   "file": "building-salvage-drill-w10.webp",
+   "w": 123,
+   "h": 90,
+   "ax": 0.30894,
+   "ay": 0.63333,
+   "scale": 5,
+   "hash": "9655dd3eaa",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": 48,
+      "y": -61.5,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": -108.4,
+      "color": "#ff6b6b",
+      "r": 10,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -27.2
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -38,
+    "y": -56.400000000000006,
+    "w": 122.4,
+    "h": 89.2
+   }
+  },
+  "building-salvage-drill-w11": {
+   "file": "building-salvage-drill-w11.webp",
+   "w": 123,
+   "h": 89,
+   "ax": 0.30894,
+   "ay": 0.64045,
+   "scale": 5,
+   "hash": "e624aafd2f",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": 48,
+      "y": -61.5,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": -108.4,
+      "color": "#ff6b6b",
+      "r": 10,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -27.2
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -38,
+    "y": -56.400000000000006,
+    "w": 122.4,
+    "h": 88.2
+   }
+  },
+  "building-salvage-drill-w2": {
+   "file": "building-salvage-drill-w2.webp",
+   "w": 123,
+   "h": 90,
+   "ax": 0.30894,
+   "ay": 0.63333,
+   "scale": 5,
+   "hash": "5f487e5691",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": 48,
+      "y": -61.5,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": -108.4,
+      "color": "#ff6b6b",
+      "r": 10,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -27.2
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -38,
+    "y": -56.400000000000006,
+    "w": 122.6,
+    "h": 88.8
+   }
+  },
+  "building-salvage-drill-w3": {
+   "file": "building-salvage-drill-w3.webp",
+   "w": 123,
+   "h": 88,
+   "ax": 0.30894,
+   "ay": 0.64773,
+   "scale": 5,
+   "hash": "7fea584017",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": 48,
+      "y": -61.5,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": -108.4,
+      "color": "#ff6b6b",
+      "r": 10,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -27.2
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -38,
+    "y": -56.400000000000006,
+    "w": 122.4,
+    "h": 87.2
+   }
+  },
+  "building-salvage-drill-w4": {
+   "file": "building-salvage-drill-w4.webp",
+   "w": 123,
+   "h": 90,
+   "ax": 0.30894,
+   "ay": 0.63333,
+   "scale": 5,
+   "hash": "8aa92d4f2b",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": 48,
+      "y": -61.5,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": -108.4,
+      "color": "#ff6b6b",
+      "r": 10,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -27.2
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -38,
+    "y": -56.400000000000006,
+    "w": 122.4,
+    "h": 89.2
+   }
+  },
+  "building-salvage-drill-w5": {
+   "file": "building-salvage-drill-w5.webp",
+   "w": 123,
+   "h": 89,
+   "ax": 0.30894,
+   "ay": 0.64045,
+   "scale": 5,
+   "hash": "40b759eb89",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": 48,
+      "y": -61.5,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": -108.4,
+      "color": "#ff6b6b",
+      "r": 10,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -27.2
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -38,
+    "y": -56.400000000000006,
+    "w": 122.4,
+    "h": 88.2
+   }
+  },
+  "building-salvage-drill-w6": {
+   "file": "building-salvage-drill-w6.webp",
+   "w": 123,
+   "h": 90,
+   "ax": 0.30894,
+   "ay": 0.63333,
+   "scale": 5,
+   "hash": "e0fff290c1",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": 48,
+      "y": -61.5,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": -108.4,
+      "color": "#ff6b6b",
+      "r": 10,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -27.2
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -38,
+    "y": -56.400000000000006,
+    "w": 122.6,
+    "h": 89.2
+   }
+  },
+  "building-salvage-drill-w7": {
+   "file": "building-salvage-drill-w7.webp",
+   "w": 123,
+   "h": 90,
+   "ax": 0.30894,
+   "ay": 0.63333,
+   "scale": 5,
+   "hash": "eea825605a",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": 48,
+      "y": -61.5,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": -108.4,
+      "color": "#ff6b6b",
+      "r": 10,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -27.2
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -38,
+    "y": -56.400000000000006,
+    "w": 122.6,
+    "h": 89.2
+   }
+  },
+  "building-salvage-drill-w8": {
+   "file": "building-salvage-drill-w8.webp",
+   "w": 123,
+   "h": 90,
+   "ax": 0.30894,
+   "ay": 0.63333,
+   "scale": 5,
+   "hash": "d6952cba18",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": 48,
+      "y": -61.5,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": -108.4,
+      "color": "#ff6b6b",
+      "r": 10,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -27.2
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -38,
+    "y": -56.400000000000006,
+    "w": 122.6,
+    "h": 88.8
+   }
+  },
+  "building-salvage-drill-w9": {
+   "file": "building-salvage-drill-w9.webp",
+   "w": 123,
+   "h": 88,
+   "ax": 0.30894,
+   "ay": 0.64773,
+   "scale": 5,
+   "hash": "4a1dd39a99",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": 48,
+      "y": -61.5,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": -108.4,
+      "color": "#ff6b6b",
+      "r": 10,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -27.2
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -38,
+    "y": -56.400000000000006,
+    "w": 122.4,
+    "h": 87.2
+   }
+  },
+  "building-salvage-drill-wb": {
+   "file": "building-salvage-drill-wb.webp",
+   "w": 204,
+   "h": 189,
+   "ax": 0.5049,
+   "ay": 0.59259,
+   "scale": 5,
+   "hash": "9779079d72",
+   "meta": {
+    "top": 71,
+    "lights": [
+     {
+      "x": 48,
+      "y": -61.5,
+      "color": "#6fe8dc",
+      "r": 9,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": -108.4,
+      "color": "#ff6b6b",
+      "r": 10,
+      "phase": 0.2
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -27.2
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 15.8
+    }
+   },
+   "body": {
+    "x": -92.2,
+    "y": -110.4,
+    "w": 184.4,
+    "h": 180
+   }
+  },
+  "building-slag-tap": {
+   "file": "building-slag-tap.webp",
+   "w": 225,
+   "h": 183,
+   "ax": 0.46222,
+   "ay": 0.56284,
+   "scale": 5,
+   "hash": "85b245320f",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": 7.4,
+      "color": "#ff8a3d",
+      "r": 18,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": 23.2,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -92.6
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 30.6
+    }
+   },
+   "body": {
+    "x": -92.2,
+    "y": -102.2,
+    "w": 184.4,
+    "h": 171.8
+   }
+  },
+  "building-slag-tap-w0": {
+   "file": "building-slag-tap-w0.webp",
+   "w": 90,
+   "h": 73,
+   "ax": 0.5,
+   "ay": 0.83562,
+   "scale": 5,
+   "hash": "911b4fffce",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": 7.4,
+      "color": "#ff8a3d",
+      "r": 18,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": 23.2,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -92.6
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 30.6
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -44.599999999999994,
+    "y": -60.2,
+    "w": 89,
+    "h": 71.4
+   }
+  },
+  "building-slag-tap-w1": {
+   "file": "building-slag-tap-w1.webp",
+   "w": 90,
+   "h": 73,
+   "ax": 0.5,
+   "ay": 0.83562,
+   "scale": 5,
+   "hash": "a68287985c",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": 7.4,
+      "color": "#ff8a3d",
+      "r": 18,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": 23.2,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -92.6
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 30.6
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -44.599999999999994,
+    "y": -60.2,
+    "w": 89,
+    "h": 71.4
+   }
+  },
+  "building-slag-tap-w10": {
+   "file": "building-slag-tap-w10.webp",
+   "w": 90,
+   "h": 73,
+   "ax": 0.5,
+   "ay": 0.83562,
+   "scale": 5,
+   "hash": "e7818ac3fe",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": 7.4,
+      "color": "#ff8a3d",
+      "r": 18,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": 23.2,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -92.6
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 30.6
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -44.599999999999994,
+    "y": -60.2,
+    "w": 89,
+    "h": 71.4
+   }
+  },
+  "building-slag-tap-w11": {
+   "file": "building-slag-tap-w11.webp",
+   "w": 90,
+   "h": 73,
+   "ax": 0.5,
+   "ay": 0.83562,
+   "scale": 5,
+   "hash": "a68287985c",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": 7.4,
+      "color": "#ff8a3d",
+      "r": 18,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": 23.2,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -92.6
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 30.6
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -44.599999999999994,
+    "y": -60.2,
+    "w": 89,
+    "h": 71.4
+   }
+  },
+  "building-slag-tap-w2": {
+   "file": "building-slag-tap-w2.webp",
+   "w": 90,
+   "h": 73,
+   "ax": 0.5,
+   "ay": 0.83562,
+   "scale": 5,
+   "hash": "0a69d0b753",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": 7.4,
+      "color": "#ff8a3d",
+      "r": 18,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": 23.2,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -92.6
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 30.6
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -44.599999999999994,
+    "y": -60.2,
+    "w": 89,
+    "h": 71.4
+   }
+  },
+  "building-slag-tap-w3": {
+   "file": "building-slag-tap-w3.webp",
+   "w": 90,
+   "h": 73,
+   "ax": 0.5,
+   "ay": 0.83562,
+   "scale": 5,
+   "hash": "85cfb4faa6",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": 7.4,
+      "color": "#ff8a3d",
+      "r": 18,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": 23.2,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -92.6
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 30.6
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -44.599999999999994,
+    "y": -60.2,
+    "w": 89,
+    "h": 71.4
+   }
+  },
+  "building-slag-tap-w4": {
+   "file": "building-slag-tap-w4.webp",
+   "w": 90,
+   "h": 73,
+   "ax": 0.5,
+   "ay": 0.83562,
+   "scale": 5,
+   "hash": "4a9efa82e2",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": 7.4,
+      "color": "#ff8a3d",
+      "r": 18,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": 23.2,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -92.6
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 30.6
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -44.8,
+    "y": -60.2,
+    "w": 89.4,
+    "h": 71.4
+   }
+  },
+  "building-slag-tap-w5": {
+   "file": "building-slag-tap-w5.webp",
+   "w": 90,
+   "h": 73,
+   "ax": 0.5,
+   "ay": 0.83562,
+   "scale": 5,
+   "hash": "f3ee93fbe0",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": 7.4,
+      "color": "#ff8a3d",
+      "r": 18,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": 23.2,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -92.6
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 30.6
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -44.8,
+    "y": -60.2,
+    "w": 89.4,
+    "h": 71.6
+   }
+  },
+  "building-slag-tap-w6": {
+   "file": "building-slag-tap-w6.webp",
+   "w": 90,
+   "h": 73,
+   "ax": 0.5,
+   "ay": 0.83562,
+   "scale": 5,
+   "hash": "69907f2695",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": 7.4,
+      "color": "#ff8a3d",
+      "r": 18,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": 23.2,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -92.6
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 30.6
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -44.8,
+    "y": -60.2,
+    "w": 89.4,
+    "h": 71.6
+   }
+  },
+  "building-slag-tap-w7": {
+   "file": "building-slag-tap-w7.webp",
+   "w": 90,
+   "h": 73,
+   "ax": 0.5,
+   "ay": 0.83562,
+   "scale": 5,
+   "hash": "f3ee93fbe0",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": 7.4,
+      "color": "#ff8a3d",
+      "r": 18,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": 23.2,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -92.6
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 30.6
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -44.8,
+    "y": -60.2,
+    "w": 89.4,
+    "h": 71.6
+   }
+  },
+  "building-slag-tap-w8": {
+   "file": "building-slag-tap-w8.webp",
+   "w": 90,
+   "h": 73,
+   "ax": 0.5,
+   "ay": 0.83562,
+   "scale": 5,
+   "hash": "4a9efa82e2",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": 7.4,
+      "color": "#ff8a3d",
+      "r": 18,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": 23.2,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -92.6
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 30.6
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -44.8,
+    "y": -60.2,
+    "w": 89.4,
+    "h": 71.4
+   }
+  },
+  "building-slag-tap-w9": {
+   "file": "building-slag-tap-w9.webp",
+   "w": 90,
+   "h": 73,
+   "ax": 0.5,
+   "ay": 0.83562,
+   "scale": 5,
+   "hash": "85cfb4faa6",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": 7.4,
+      "color": "#ff8a3d",
+      "r": 18,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": 23.2,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -92.6
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 30.6
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -44.599999999999994,
+    "y": -60.2,
+    "w": 89,
+    "h": 71.4
+   }
+  },
+  "building-slag-tap-wb": {
+   "file": "building-slag-tap-wb.webp",
+   "w": 225,
+   "h": 183,
+   "ax": 0.46222,
+   "ay": 0.56284,
+   "scale": 5,
+   "hash": "e31143bad4",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": 7.4,
+      "color": "#ff8a3d",
+      "r": 18,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": -48,
+      "y": 23.2,
+      "color": "#6fe8dc",
+      "r": 8,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -92.6
+     }
+    ],
+    "goods": {
+     "x": 48,
+     "y": 30.6
+    }
+   },
+   "body": {
+    "x": -92.2,
+    "y": -102.2,
+    "w": 184.4,
+    "h": 171.8
+   }
+  },
+  "building-water-extractor": {
+   "file": "building-water-extractor.webp",
+   "w": 317,
+   "h": 251,
+   "ax": 0.49527,
+   "ay": 0.51793,
+   "scale": 5,
+   "hash": "16550bd0d0",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": -86.4,
+      "color": "#6fe8dc",
+      "r": 12,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 57.6,
+      "y": 45.8,
+      "color": "#7fdcff",
+      "r": 9,
+      "phase": 0.5
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -80.2
+     }
+    ],
+    "wire": {
+     "x": 96,
+     "y": 24.2
+    }
+   },
+   "body": {
+    "x": -140.2,
+    "y": -129.6,
+    "w": 280.4,
+    "h": 236
+   }
+  },
+  "building-water-extractor-w0": {
+   "file": "building-water-extractor-w0.webp",
+   "w": 244,
+   "h": 189,
+   "ax": 0.48361,
+   "ay": 0.56614,
+   "scale": 5,
+   "hash": "daf825a03b",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": -86.4,
+      "color": "#6fe8dc",
+      "r": 12,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 57.6,
+      "y": 45.8,
+      "color": "#7fdcff",
+      "r": 9,
+      "phase": 0.5
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -80.2
+     }
+    ],
+    "wire": {
+     "x": 96,
+     "y": 24.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -117.8,
+    "y": -106.2,
+    "w": 243,
+    "h": 187.4
+   }
+  },
+  "building-water-extractor-w1": {
+   "file": "building-water-extractor-w1.webp",
+   "w": 244,
+   "h": 189,
+   "ax": 0.48361,
+   "ay": 0.56614,
+   "scale": 5,
+   "hash": "173d96e05a",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": -86.4,
+      "color": "#6fe8dc",
+      "r": 12,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 57.6,
+      "y": 45.8,
+      "color": "#7fdcff",
+      "r": 9,
+      "phase": 0.5
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -80.2
+     }
+    ],
+    "wire": {
+     "x": 96,
+     "y": 24.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -117.8,
+    "y": -106.2,
+    "w": 243,
+    "h": 187.4
+   }
+  },
+  "building-water-extractor-w10": {
+   "file": "building-water-extractor-w10.webp",
+   "w": 244,
+   "h": 189,
+   "ax": 0.48361,
+   "ay": 0.56614,
+   "scale": 5,
+   "hash": "647d8bdf62",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": -86.4,
+      "color": "#6fe8dc",
+      "r": 12,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 57.6,
+      "y": 45.8,
+      "color": "#7fdcff",
+      "r": 9,
+      "phase": 0.5
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -80.2
+     }
+    ],
+    "wire": {
+     "x": 96,
+     "y": 24.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -117.8,
+    "y": -106.2,
+    "w": 243,
+    "h": 187.4
+   }
+  },
+  "building-water-extractor-w11": {
+   "file": "building-water-extractor-w11.webp",
+   "w": 244,
+   "h": 189,
+   "ax": 0.48361,
+   "ay": 0.56614,
+   "scale": 5,
+   "hash": "81c91d9a01",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": -86.4,
+      "color": "#6fe8dc",
+      "r": 12,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 57.6,
+      "y": 45.8,
+      "color": "#7fdcff",
+      "r": 9,
+      "phase": 0.5
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -80.2
+     }
+    ],
+    "wire": {
+     "x": 96,
+     "y": 24.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -117.8,
+    "y": -106.2,
+    "w": 243,
+    "h": 187.4
+   }
+  },
+  "building-water-extractor-w2": {
+   "file": "building-water-extractor-w2.webp",
+   "w": 244,
+   "h": 189,
+   "ax": 0.48361,
+   "ay": 0.56614,
+   "scale": 5,
+   "hash": "88cbeddab5",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": -86.4,
+      "color": "#6fe8dc",
+      "r": 12,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 57.6,
+      "y": 45.8,
+      "color": "#7fdcff",
+      "r": 9,
+      "phase": 0.5
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -80.2
+     }
+    ],
+    "wire": {
+     "x": 96,
+     "y": 24.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -117.8,
+    "y": -106.2,
+    "w": 243,
+    "h": 187.4
+   }
+  },
+  "building-water-extractor-w3": {
+   "file": "building-water-extractor-w3.webp",
+   "w": 244,
+   "h": 189,
+   "ax": 0.48361,
+   "ay": 0.56614,
+   "scale": 5,
+   "hash": "17edebb54d",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": -86.4,
+      "color": "#6fe8dc",
+      "r": 12,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 57.6,
+      "y": 45.8,
+      "color": "#7fdcff",
+      "r": 9,
+      "phase": 0.5
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -80.2
+     }
+    ],
+    "wire": {
+     "x": 96,
+     "y": 24.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -117.8,
+    "y": -106.2,
+    "w": 243,
+    "h": 187.4
+   }
+  },
+  "building-water-extractor-w4": {
+   "file": "building-water-extractor-w4.webp",
+   "w": 244,
+   "h": 189,
+   "ax": 0.48361,
+   "ay": 0.56614,
+   "scale": 5,
+   "hash": "16796f0712",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": -86.4,
+      "color": "#6fe8dc",
+      "r": 12,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 57.6,
+      "y": 45.8,
+      "color": "#7fdcff",
+      "r": 9,
+      "phase": 0.5
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -80.2
+     }
+    ],
+    "wire": {
+     "x": 96,
+     "y": 24.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -117.8,
+    "y": -106.2,
+    "w": 243,
+    "h": 187.4
+   }
+  },
+  "building-water-extractor-w5": {
+   "file": "building-water-extractor-w5.webp",
+   "w": 244,
+   "h": 189,
+   "ax": 0.48361,
+   "ay": 0.56614,
+   "scale": 5,
+   "hash": "a74f38d292",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": -86.4,
+      "color": "#6fe8dc",
+      "r": 12,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 57.6,
+      "y": 45.8,
+      "color": "#7fdcff",
+      "r": 9,
+      "phase": 0.5
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -80.2
+     }
+    ],
+    "wire": {
+     "x": 96,
+     "y": 24.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -118,
+    "y": -106.2,
+    "w": 243.2,
+    "h": 187.4
+   }
+  },
+  "building-water-extractor-w6": {
+   "file": "building-water-extractor-w6.webp",
+   "w": 244,
+   "h": 189,
+   "ax": 0.48361,
+   "ay": 0.56614,
+   "scale": 5,
+   "hash": "95ee60ffcb",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": -86.4,
+      "color": "#6fe8dc",
+      "r": 12,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 57.6,
+      "y": 45.8,
+      "color": "#7fdcff",
+      "r": 9,
+      "phase": 0.5
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -80.2
+     }
+    ],
+    "wire": {
+     "x": 96,
+     "y": 24.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -118,
+    "y": -106.2,
+    "w": 243.2,
+    "h": 187.4
+   }
+  },
+  "building-water-extractor-w7": {
+   "file": "building-water-extractor-w7.webp",
+   "w": 244,
+   "h": 189,
+   "ax": 0.48361,
+   "ay": 0.56614,
+   "scale": 5,
+   "hash": "1f1cea14ba",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": -86.4,
+      "color": "#6fe8dc",
+      "r": 12,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 57.6,
+      "y": 45.8,
+      "color": "#7fdcff",
+      "r": 9,
+      "phase": 0.5
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -80.2
+     }
+    ],
+    "wire": {
+     "x": 96,
+     "y": 24.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -118,
+    "y": -106.2,
+    "w": 243.2,
+    "h": 187.4
+   }
+  },
+  "building-water-extractor-w8": {
+   "file": "building-water-extractor-w8.webp",
+   "w": 244,
+   "h": 189,
+   "ax": 0.48361,
+   "ay": 0.56614,
+   "scale": 5,
+   "hash": "d63c73417c",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": -86.4,
+      "color": "#6fe8dc",
+      "r": 12,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 57.6,
+      "y": 45.8,
+      "color": "#7fdcff",
+      "r": 9,
+      "phase": 0.5
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -80.2
+     }
+    ],
+    "wire": {
+     "x": 96,
+     "y": 24.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -117.8,
+    "y": -106.2,
+    "w": 243,
+    "h": 187.4
+   }
+  },
+  "building-water-extractor-w9": {
+   "file": "building-water-extractor-w9.webp",
+   "w": 244,
+   "h": 189,
+   "ax": 0.48361,
+   "ay": 0.56614,
+   "scale": 5,
+   "hash": "208e93f887",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": -86.4,
+      "color": "#6fe8dc",
+      "r": 12,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 57.6,
+      "y": 45.8,
+      "color": "#7fdcff",
+      "r": 9,
+      "phase": 0.5
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -80.2
+     }
+    ],
+    "wire": {
+     "x": 96,
+     "y": 24.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -117.8,
+    "y": -106.2,
+    "w": 243,
+    "h": 187.4
+   }
+  },
+  "building-water-extractor-wb": {
+   "file": "building-water-extractor-wb.webp",
+   "w": 317,
+   "h": 251,
+   "ax": 0.49527,
+   "ay": 0.51793,
+   "scale": 5,
+   "hash": "0d990c3783",
+   "meta": {
+    "top": 93,
+    "lights": [
+     {
+      "x": 0,
+      "y": -86.4,
+      "color": "#6fe8dc",
+      "r": 12,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 57.6,
+      "y": 45.8,
+      "color": "#7fdcff",
+      "r": 9,
+      "phase": 0.5
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -80.2
+     }
+    ],
+    "wire": {
+     "x": 96,
+     "y": 24.2
+    }
+   },
+   "body": {
+    "x": -140.2,
+    "y": -129.6,
+    "w": 280.4,
+    "h": 236
+   }
+  }
+ },
+ "view": "steep"
+}

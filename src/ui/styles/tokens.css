@@ -1,0 +1,95 @@
+/* Design tokens. Every colour and font in the UI goes through these (docs/art-direction.md, "UI"). */
+:root {
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px;
+  --text-xs: 0.75rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.125rem; --text-xl: 1.375rem; --text-2xl: 1.625rem;
+  /* Motion (kit.css "Motion"; src/ui/motion.ts MOTION mirrors the ms). Appear with ease-out, leave shorter with
+   * ease-in, press at once. Only transform and opacity move; reduced motion cuts every duration (base.css). */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-pop: cubic-bezier(0.34, 1.45, 0.64, 1);
+  --dur-instant: 70ms; --dur-micro: 120ms; --dur-short: 220ms; --dur-enter: 220ms; --dur-exit: 150ms; --dur-emph: 260ms; --dur-pulse: 1800ms;
+  --slide: 18px; --slide-exit: 10px; --pop-scale: 0.94;
+  --lift: -1px; --press: 2px;
+  --z-hud: 10; --z-panel: 20; --z-dock: 30; --z-dev: 40; --z-dialog: 50; --z-toast: 55; --z-tip: 60;
+
+  /* Surfaces: the dusk sky's deep navy. Glass = HUD over the world, translucent with a light top edge. */
+  --color-paper: oklch(17% 0.055 266);
+  --color-paper-2: oklch(21% 0.06 266 / 0.94);
+  --color-paper-3: oklch(22% 0.06 266 / 0.97);
+  --color-glass: oklch(19% 0.06 268 / 0.72);
+  --color-glass-strong: oklch(19% 0.06 268 / 0.88);
+  --color-glass-edge: oklch(100% 0 0 / 0.14);
+  --color-ink: oklch(97% 0.01 250);
+  --color-ink-2: oklch(87% 0.025 250);
+  --color-muted: oklch(72% 0.035 260);
+  --color-rule: oklch(40% 0.05 266);
+  --color-rule-soft: oklch(100% 0 0 / 0.08);
+  --color-icon-well: oklch(100% 0 0 / 0.12);
+  /* Accent = the base's tech teal. Marks the primary action, the current selection and state only. */
+  --color-accent: oklch(86% 0.12 182);
+  --color-accent-ink: oklch(22% 0.06 220);
+  --color-accent-soft: oklch(86% 0.12 182 / 0.16);
+  --color-accent-glow: oklch(86% 0.12 182 / 0.45);
+  --color-focus: oklch(87% 0.15 80);
+  --color-error: oklch(72% 0.16 28);
+  /* Short of a price, a full store, a spot that does not work: soft coral, readable on navy. */
+  --color-short: oklch(76% 0.13 30);
+  --color-short-soft: oklch(76% 0.13 30 / 0.14);
+  --color-track: oklch(100% 0 0 / 0.16);
+  /* Advice that is not a blocker (no power here yet): warm amber, softer than the coral of a problem. */
+  --color-warn: oklch(85% 0.13 85);
+  /* Power: the build-mode wires and reach (render/art/tech.ts TECH.power). */
+  --color-power: oklch(88% 0.12 85);
+  /* The small map: open ground, ground under fog, and its rim. */
+  --color-map-ground: oklch(47% 0.07 20);
+  --color-map-fog: oklch(26% 0.06 290);
+  --color-map-edge: oklch(62% 0.06 290);
+  --color-success: oklch(80% 0.14 155);
+  --color-shadow: oklch(8% 0.04 268 / 0.55);
+  /* Rarity colours (relics). */
+  --color-rarity-common: oklch(84% 0.02 250);
+  --color-rarity-rare: oklch(80% 0.12 230);
+  --color-rarity-legendary: oklch(84% 0.14 75);
+  /* The prestige currency (Prisms, content currencies colour #d79bff): the reward and the skill balance. */
+  --color-prism: oklch(80% 0.13 312);
+  /* Behind the launch confirmation, and the soft flash of light when a new expedition launches. */
+  --color-scrim: oklch(8% 0.04 268 / 0.66);
+  --color-launch-flash: oklch(95% 0.04 300 / 0.88);
+
+  /* Kit light and depth (kit.css): the sheen a pressable shows on hover, the plate of cards, tooltips and toasts,
+   * the lit (pressed/selected) glass of toggles and the deep drop shadow under floating plates. */
+  --color-sheen: oklch(100% 0 0 / 0.18);
+  --color-sheen-0: oklch(100% 0 0 / 0);
+  --color-plate-top: oklch(28% 0.075 250 / 0.95);
+  --color-plate-bot: oklch(16% 0.055 263 / 0.96);
+  --color-tip-top: oklch(30% 0.075 248 / 0.98);
+  --color-tip-bot: oklch(19% 0.06 260 / 0.98);
+  --color-lit-top: oklch(40% 0.1 205 / 0.75);
+  --color-lit-bot: oklch(26% 0.08 228 / 0.8);
+  --color-outline-dark: oklch(8% 0.04 268 / 0.9);
+  --color-drop: oklch(5% 0.03 268 / 0.55);
+  --color-press-shade: oklch(0% 0 0 / 0.4);
+
+  --font-display: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-control: 12px; --radius-card: 18px; --radius-panel: 18px; --radius-pill: 999px;
+  --rule-hair: 1px;
+  --shadow-panel: 0 8px 24px var(--color-shadow);
+  --shadow-hud: 0 4px 16px var(--color-shadow);
+
+  /* Sizes. Every hit area is at least --hit-min (44 px); HUD controls on the world are one height. */
+  --hit-min: 44px;
+  --hud-control: 48px;
+  --resource-cell: 3.75rem;
+  --dock-size: 64px;
+  --rail-size: 72px;
+  --panel-width: min(380px, 48vw);
+  --thumb: 56px;
+  --ctx-width: min(300px, calc(100vw - 24px));
+  --ctx-wide: min(352px, calc(100vw - 24px));
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+}

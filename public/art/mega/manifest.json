@@ -1,0 +1,3385 @@
+{
+ "version": 1,
+ "category": "mega",
+ "sprites": {
+  "building-fusion-reactor": {
+   "file": "building-fusion-reactor.webp",
+   "w": 547,
+   "h": 322,
+   "ax": 0.48812,
+   "ay": 0.57143,
+   "scale": 5,
+   "hash": "70eac7fdc3",
+   "meta": {
+    "top": 162,
+    "lights": [
+     {
+      "x": 0,
+      "y": -17.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0
+     },
+     {
+      "x": -172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.25
+     },
+     {
+      "x": 0,
+      "y": -189.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.5
+     },
+     {
+      "x": 172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.75
+     },
+     {
+      "x": 0,
+      "y": -198.3,
+      "color": "#ff6b6b",
+      "r": 18,
+      "phase": 0.2
+     },
+     {
+      "x": 80,
+      "y": -56.4,
+      "color": "#6fe8dc",
+      "r": 28,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 249.6,
+      "y": -107.4
+     },
+     {
+      "x": -249.6,
+      "y": -107.4
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -202.2
+    }
+   },
+   "body": {
+    "x": -249.6,
+    "y": -183.4,
+    "w": 499.4,
+    "h": 307.2
+   }
+  },
+  "building-fusion-reactor-w0": {
+   "file": "building-fusion-reactor-w0.webp",
+   "w": 217,
+   "h": 130,
+   "ax": 0.48848,
+   "ay": 0.99231,
+   "scale": 5,
+   "hash": "f78dc0c385",
+   "meta": {
+    "top": 162,
+    "lights": [
+     {
+      "x": 0,
+      "y": -17.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0
+     },
+     {
+      "x": -172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.25
+     },
+     {
+      "x": 0,
+      "y": -189.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.5
+     },
+     {
+      "x": 172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.75
+     },
+     {
+      "x": 0,
+      "y": -198.3,
+      "color": "#ff6b6b",
+      "r": 18,
+      "phase": 0.2
+     },
+     {
+      "x": 80,
+      "y": -56.4,
+      "color": "#6fe8dc",
+      "r": 28,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 249.6,
+      "y": -107.4
+     },
+     {
+      "x": -249.6,
+      "y": -107.4
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -202.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -105.6,
+    "y": -128.2,
+    "w": 216.4,
+    "h": 128.6
+   }
+  },
+  "building-fusion-reactor-w1": {
+   "file": "building-fusion-reactor-w1.webp",
+   "w": 217,
+   "h": 130,
+   "ax": 0.48848,
+   "ay": 0.99231,
+   "scale": 5,
+   "hash": "1e98b88fef",
+   "meta": {
+    "top": 162,
+    "lights": [
+     {
+      "x": 0,
+      "y": -17.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0
+     },
+     {
+      "x": -172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.25
+     },
+     {
+      "x": 0,
+      "y": -189.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.5
+     },
+     {
+      "x": 172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.75
+     },
+     {
+      "x": 0,
+      "y": -198.3,
+      "color": "#ff6b6b",
+      "r": 18,
+      "phase": 0.2
+     },
+     {
+      "x": 80,
+      "y": -56.4,
+      "color": "#6fe8dc",
+      "r": 28,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 249.6,
+      "y": -107.4
+     },
+     {
+      "x": -249.6,
+      "y": -107.4
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -202.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -105.6,
+    "y": -128.2,
+    "w": 216.4,
+    "h": 128.6
+   }
+  },
+  "building-fusion-reactor-w10": {
+   "file": "building-fusion-reactor-w10.webp",
+   "w": 217,
+   "h": 130,
+   "ax": 0.48848,
+   "ay": 0.99231,
+   "scale": 5,
+   "hash": "a2f1bd8ab2",
+   "meta": {
+    "top": 162,
+    "lights": [
+     {
+      "x": 0,
+      "y": -17.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0
+     },
+     {
+      "x": -172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.25
+     },
+     {
+      "x": 0,
+      "y": -189.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.5
+     },
+     {
+      "x": 172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.75
+     },
+     {
+      "x": 0,
+      "y": -198.3,
+      "color": "#ff6b6b",
+      "r": 18,
+      "phase": 0.2
+     },
+     {
+      "x": 80,
+      "y": -56.4,
+      "color": "#6fe8dc",
+      "r": 28,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 249.6,
+      "y": -107.4
+     },
+     {
+      "x": -249.6,
+      "y": -107.4
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -202.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -105.6,
+    "y": -128.2,
+    "w": 216.4,
+    "h": 128.6
+   }
+  },
+  "building-fusion-reactor-w11": {
+   "file": "building-fusion-reactor-w11.webp",
+   "w": 217,
+   "h": 130,
+   "ax": 0.48848,
+   "ay": 0.99231,
+   "scale": 5,
+   "hash": "6c49eea248",
+   "meta": {
+    "top": 162,
+    "lights": [
+     {
+      "x": 0,
+      "y": -17.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0
+     },
+     {
+      "x": -172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.25
+     },
+     {
+      "x": 0,
+      "y": -189.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.5
+     },
+     {
+      "x": 172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.75
+     },
+     {
+      "x": 0,
+      "y": -198.3,
+      "color": "#ff6b6b",
+      "r": 18,
+      "phase": 0.2
+     },
+     {
+      "x": 80,
+      "y": -56.4,
+      "color": "#6fe8dc",
+      "r": 28,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 249.6,
+      "y": -107.4
+     },
+     {
+      "x": -249.6,
+      "y": -107.4
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -202.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -105.6,
+    "y": -128.2,
+    "w": 216.4,
+    "h": 128.6
+   }
+  },
+  "building-fusion-reactor-w2": {
+   "file": "building-fusion-reactor-w2.webp",
+   "w": 217,
+   "h": 130,
+   "ax": 0.48848,
+   "ay": 0.99231,
+   "scale": 5,
+   "hash": "cc68cd2b02",
+   "meta": {
+    "top": 162,
+    "lights": [
+     {
+      "x": 0,
+      "y": -17.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0
+     },
+     {
+      "x": -172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.25
+     },
+     {
+      "x": 0,
+      "y": -189.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.5
+     },
+     {
+      "x": 172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.75
+     },
+     {
+      "x": 0,
+      "y": -198.3,
+      "color": "#ff6b6b",
+      "r": 18,
+      "phase": 0.2
+     },
+     {
+      "x": 80,
+      "y": -56.4,
+      "color": "#6fe8dc",
+      "r": 28,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 249.6,
+      "y": -107.4
+     },
+     {
+      "x": -249.6,
+      "y": -107.4
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -202.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -105.6,
+    "y": -128.2,
+    "w": 216.4,
+    "h": 128.6
+   }
+  },
+  "building-fusion-reactor-w3": {
+   "file": "building-fusion-reactor-w3.webp",
+   "w": 217,
+   "h": 130,
+   "ax": 0.48848,
+   "ay": 0.99231,
+   "scale": 5,
+   "hash": "a7b9291921",
+   "meta": {
+    "top": 162,
+    "lights": [
+     {
+      "x": 0,
+      "y": -17.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0
+     },
+     {
+      "x": -172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.25
+     },
+     {
+      "x": 0,
+      "y": -189.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.5
+     },
+     {
+      "x": 172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.75
+     },
+     {
+      "x": 0,
+      "y": -198.3,
+      "color": "#ff6b6b",
+      "r": 18,
+      "phase": 0.2
+     },
+     {
+      "x": 80,
+      "y": -56.4,
+      "color": "#6fe8dc",
+      "r": 28,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 249.6,
+      "y": -107.4
+     },
+     {
+      "x": -249.6,
+      "y": -107.4
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -202.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -105.6,
+    "y": -128.2,
+    "w": 216.4,
+    "h": 128.6
+   }
+  },
+  "building-fusion-reactor-w4": {
+   "file": "building-fusion-reactor-w4.webp",
+   "w": 217,
+   "h": 130,
+   "ax": 0.48848,
+   "ay": 0.99231,
+   "scale": 5,
+   "hash": "c44626afef",
+   "meta": {
+    "top": 162,
+    "lights": [
+     {
+      "x": 0,
+      "y": -17.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0
+     },
+     {
+      "x": -172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.25
+     },
+     {
+      "x": 0,
+      "y": -189.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.5
+     },
+     {
+      "x": 172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.75
+     },
+     {
+      "x": 0,
+      "y": -198.3,
+      "color": "#ff6b6b",
+      "r": 18,
+      "phase": 0.2
+     },
+     {
+      "x": 80,
+      "y": -56.4,
+      "color": "#6fe8dc",
+      "r": 28,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 249.6,
+      "y": -107.4
+     },
+     {
+      "x": -249.6,
+      "y": -107.4
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -202.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -105.6,
+    "y": -128.2,
+    "w": 216.4,
+    "h": 128.6
+   }
+  },
+  "building-fusion-reactor-w5": {
+   "file": "building-fusion-reactor-w5.webp",
+   "w": 217,
+   "h": 130,
+   "ax": 0.48848,
+   "ay": 0.99231,
+   "scale": 5,
+   "hash": "0390e199e1",
+   "meta": {
+    "top": 162,
+    "lights": [
+     {
+      "x": 0,
+      "y": -17.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0
+     },
+     {
+      "x": -172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.25
+     },
+     {
+      "x": 0,
+      "y": -189.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.5
+     },
+     {
+      "x": 172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.75
+     },
+     {
+      "x": 0,
+      "y": -198.3,
+      "color": "#ff6b6b",
+      "r": 18,
+      "phase": 0.2
+     },
+     {
+      "x": 80,
+      "y": -56.4,
+      "color": "#6fe8dc",
+      "r": 28,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 249.6,
+      "y": -107.4
+     },
+     {
+      "x": -249.6,
+      "y": -107.4
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -202.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -105.6,
+    "y": -128.2,
+    "w": 216.4,
+    "h": 128.6
+   }
+  },
+  "building-fusion-reactor-w6": {
+   "file": "building-fusion-reactor-w6.webp",
+   "w": 217,
+   "h": 131,
+   "ax": 0.48848,
+   "ay": 0.99237,
+   "scale": 5,
+   "hash": "bf0895d3a2",
+   "meta": {
+    "top": 162,
+    "lights": [
+     {
+      "x": 0,
+      "y": -17.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0
+     },
+     {
+      "x": -172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.25
+     },
+     {
+      "x": 0,
+      "y": -189.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.5
+     },
+     {
+      "x": 172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.75
+     },
+     {
+      "x": 0,
+      "y": -198.3,
+      "color": "#ff6b6b",
+      "r": 18,
+      "phase": 0.2
+     },
+     {
+      "x": 80,
+      "y": -56.4,
+      "color": "#6fe8dc",
+      "r": 28,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 249.6,
+      "y": -107.4
+     },
+     {
+      "x": -249.6,
+      "y": -107.4
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -202.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -105.6,
+    "y": -128.2,
+    "w": 216.4,
+    "h": 128.6
+   }
+  },
+  "building-fusion-reactor-w7": {
+   "file": "building-fusion-reactor-w7.webp",
+   "w": 217,
+   "h": 131,
+   "ax": 0.48848,
+   "ay": 0.99237,
+   "scale": 5,
+   "hash": "08280195f1",
+   "meta": {
+    "top": 162,
+    "lights": [
+     {
+      "x": 0,
+      "y": -17.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0
+     },
+     {
+      "x": -172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.25
+     },
+     {
+      "x": 0,
+      "y": -189.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.5
+     },
+     {
+      "x": 172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.75
+     },
+     {
+      "x": 0,
+      "y": -198.3,
+      "color": "#ff6b6b",
+      "r": 18,
+      "phase": 0.2
+     },
+     {
+      "x": 80,
+      "y": -56.4,
+      "color": "#6fe8dc",
+      "r": 28,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 249.6,
+      "y": -107.4
+     },
+     {
+      "x": -249.6,
+      "y": -107.4
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -202.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -105.6,
+    "y": -128.2,
+    "w": 216.4,
+    "h": 128.6
+   }
+  },
+  "building-fusion-reactor-w8": {
+   "file": "building-fusion-reactor-w8.webp",
+   "w": 217,
+   "h": 131,
+   "ax": 0.48848,
+   "ay": 0.99237,
+   "scale": 5,
+   "hash": "048e4dcb65",
+   "meta": {
+    "top": 162,
+    "lights": [
+     {
+      "x": 0,
+      "y": -17.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0
+     },
+     {
+      "x": -172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.25
+     },
+     {
+      "x": 0,
+      "y": -189.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.5
+     },
+     {
+      "x": 172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.75
+     },
+     {
+      "x": 0,
+      "y": -198.3,
+      "color": "#ff6b6b",
+      "r": 18,
+      "phase": 0.2
+     },
+     {
+      "x": 80,
+      "y": -56.4,
+      "color": "#6fe8dc",
+      "r": 28,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 249.6,
+      "y": -107.4
+     },
+     {
+      "x": -249.6,
+      "y": -107.4
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -202.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -105.6,
+    "y": -128.4,
+    "w": 216.4,
+    "h": 128.8
+   }
+  },
+  "building-fusion-reactor-w9": {
+   "file": "building-fusion-reactor-w9.webp",
+   "w": 217,
+   "h": 131,
+   "ax": 0.48848,
+   "ay": 0.99237,
+   "scale": 5,
+   "hash": "fe89099931",
+   "meta": {
+    "top": 162,
+    "lights": [
+     {
+      "x": 0,
+      "y": -17.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0
+     },
+     {
+      "x": -172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.25
+     },
+     {
+      "x": 0,
+      "y": -189.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.5
+     },
+     {
+      "x": 172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.75
+     },
+     {
+      "x": 0,
+      "y": -198.3,
+      "color": "#ff6b6b",
+      "r": 18,
+      "phase": 0.2
+     },
+     {
+      "x": 80,
+      "y": -56.4,
+      "color": "#6fe8dc",
+      "r": 28,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 249.6,
+      "y": -107.4
+     },
+     {
+      "x": -249.6,
+      "y": -107.4
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -202.2
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -105.6,
+    "y": -128.2,
+    "w": 216.4,
+    "h": 128.6
+   }
+  },
+  "building-fusion-reactor-wb": {
+   "file": "building-fusion-reactor-wb.webp",
+   "w": 547,
+   "h": 322,
+   "ax": 0.48812,
+   "ay": 0.57143,
+   "scale": 5,
+   "hash": "a834598863",
+   "meta": {
+    "top": 162,
+    "lights": [
+     {
+      "x": 0,
+      "y": -17.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0
+     },
+     {
+      "x": -172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.25
+     },
+     {
+      "x": 0,
+      "y": -189.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.5
+     },
+     {
+      "x": 172,
+      "y": -103.5,
+      "color": "#6fe8dc",
+      "r": 16,
+      "phase": 0.75
+     },
+     {
+      "x": 0,
+      "y": -198.3,
+      "color": "#ff6b6b",
+      "r": 18,
+      "phase": 0.2
+     },
+     {
+      "x": 80,
+      "y": -56.4,
+      "color": "#6fe8dc",
+      "r": 28,
+      "phase": 0,
+      "work": true
+     }
+    ],
+    "vents": [
+     {
+      "x": 249.6,
+      "y": -107.4
+     },
+     {
+      "x": -249.6,
+      "y": -107.4
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -202.2
+    }
+   },
+   "body": {
+    "x": -249.6,
+    "y": -183.4,
+    "w": 499.4,
+    "h": 307.2
+   }
+  },
+  "building-particle-accelerator": {
+   "file": "building-particle-accelerator.webp",
+   "w": 672,
+   "h": 381,
+   "ax": 0.49256,
+   "ay": 0.55643,
+   "scale": 5,
+   "hash": "b163da64fa",
+   "meta": {
+    "top": 99,
+    "lights": [
+     {
+      "x": 131.2,
+      "y": 4.5,
+      "color": "#6fe8dc",
+      "r": 30,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 0,
+      "y": -119.9,
+      "color": "#ff6b6b",
+      "r": 16,
+      "phase": 0.4
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -251.7
+     },
+     {
+      "x": 0,
+      "y": 68.3
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -119.9
+    }
+   },
+   "body": {
+    "x": -313.6,
+    "y": -211.4,
+    "w": 627.4,
+    "h": 367.2
+   }
+  },
+  "building-particle-accelerator-w0": {
+   "file": "building-particle-accelerator-w0.webp",
+   "w": 354,
+   "h": 194,
+   "ax": 0.49435,
+   "ay": 0.62887,
+   "scale": 5,
+   "hash": "7c2495b567",
+   "meta": {
+    "top": 99,
+    "lights": [
+     {
+      "x": 131.2,
+      "y": 4.5,
+      "color": "#6fe8dc",
+      "r": 30,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 0,
+      "y": -119.9,
+      "color": "#ff6b6b",
+      "r": 16,
+      "phase": 0.4
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -251.7
+     },
+     {
+      "x": 0,
+      "y": 68.3
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -119.9
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -174.6,
+    "y": -121.6,
+    "w": 353,
+    "h": 193.2
+   }
+  },
+  "building-particle-accelerator-w1": {
+   "file": "building-particle-accelerator-w1.webp",
+   "w": 354,
+   "h": 194,
+   "ax": 0.49435,
+   "ay": 0.62887,
+   "scale": 5,
+   "hash": "aa8dc23d1c",
+   "meta": {
+    "top": 99,
+    "lights": [
+     {
+      "x": 131.2,
+      "y": 4.5,
+      "color": "#6fe8dc",
+      "r": 30,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 0,
+      "y": -119.9,
+      "color": "#ff6b6b",
+      "r": 16,
+      "phase": 0.4
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -251.7
+     },
+     {
+      "x": 0,
+      "y": 68.3
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -119.9
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -174.6,
+    "y": -121.6,
+    "w": 353,
+    "h": 193.2
+   }
+  },
+  "building-particle-accelerator-w10": {
+   "file": "building-particle-accelerator-w10.webp",
+   "w": 354,
+   "h": 194,
+   "ax": 0.49435,
+   "ay": 0.62887,
+   "scale": 5,
+   "hash": "860eed0c9c",
+   "meta": {
+    "top": 99,
+    "lights": [
+     {
+      "x": 131.2,
+      "y": 4.5,
+      "color": "#6fe8dc",
+      "r": 30,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 0,
+      "y": -119.9,
+      "color": "#ff6b6b",
+      "r": 16,
+      "phase": 0.4
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -251.7
+     },
+     {
+      "x": 0,
+      "y": 68.3
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -119.9
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -174.6,
+    "y": -121.6,
+    "w": 353,
+    "h": 193.2
+   }
+  },
+  "building-particle-accelerator-w11": {
+   "file": "building-particle-accelerator-w11.webp",
+   "w": 354,
+   "h": 194,
+   "ax": 0.49435,
+   "ay": 0.62887,
+   "scale": 5,
+   "hash": "face8866d2",
+   "meta": {
+    "top": 99,
+    "lights": [
+     {
+      "x": 131.2,
+      "y": 4.5,
+      "color": "#6fe8dc",
+      "r": 30,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 0,
+      "y": -119.9,
+      "color": "#ff6b6b",
+      "r": 16,
+      "phase": 0.4
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -251.7
+     },
+     {
+      "x": 0,
+      "y": 68.3
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -119.9
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -174.6,
+    "y": -121.6,
+    "w": 353,
+    "h": 193.2
+   }
+  },
+  "building-particle-accelerator-w2": {
+   "file": "building-particle-accelerator-w2.webp",
+   "w": 354,
+   "h": 194,
+   "ax": 0.49435,
+   "ay": 0.62887,
+   "scale": 5,
+   "hash": "6f1b4ed2e5",
+   "meta": {
+    "top": 99,
+    "lights": [
+     {
+      "x": 131.2,
+      "y": 4.5,
+      "color": "#6fe8dc",
+      "r": 30,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 0,
+      "y": -119.9,
+      "color": "#ff6b6b",
+      "r": 16,
+      "phase": 0.4
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -251.7
+     },
+     {
+      "x": 0,
+      "y": 68.3
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -119.9
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -174.6,
+    "y": -121.6,
+    "w": 353,
+    "h": 193.2
+   }
+  },
+  "building-particle-accelerator-w3": {
+   "file": "building-particle-accelerator-w3.webp",
+   "w": 354,
+   "h": 194,
+   "ax": 0.49435,
+   "ay": 0.62887,
+   "scale": 5,
+   "hash": "7e62f2657e",
+   "meta": {
+    "top": 99,
+    "lights": [
+     {
+      "x": 131.2,
+      "y": 4.5,
+      "color": "#6fe8dc",
+      "r": 30,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 0,
+      "y": -119.9,
+      "color": "#ff6b6b",
+      "r": 16,
+      "phase": 0.4
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -251.7
+     },
+     {
+      "x": 0,
+      "y": 68.3
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -119.9
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -174.6,
+    "y": -121.6,
+    "w": 353,
+    "h": 193.2
+   }
+  },
+  "building-particle-accelerator-w4": {
+   "file": "building-particle-accelerator-w4.webp",
+   "w": 354,
+   "h": 194,
+   "ax": 0.49435,
+   "ay": 0.62887,
+   "scale": 5,
+   "hash": "e872b5ef14",
+   "meta": {
+    "top": 99,
+    "lights": [
+     {
+      "x": 131.2,
+      "y": 4.5,
+      "color": "#6fe8dc",
+      "r": 30,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 0,
+      "y": -119.9,
+      "color": "#ff6b6b",
+      "r": 16,
+      "phase": 0.4
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -251.7
+     },
+     {
+      "x": 0,
+      "y": 68.3
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -119.9
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -174.6,
+    "y": -121.6,
+    "w": 353,
+    "h": 193.2
+   }
+  },
+  "building-particle-accelerator-w5": {
+   "file": "building-particle-accelerator-w5.webp",
+   "w": 354,
+   "h": 194,
+   "ax": 0.49435,
+   "ay": 0.62887,
+   "scale": 5,
+   "hash": "83cd69942b",
+   "meta": {
+    "top": 99,
+    "lights": [
+     {
+      "x": 131.2,
+      "y": 4.5,
+      "color": "#6fe8dc",
+      "r": 30,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 0,
+      "y": -119.9,
+      "color": "#ff6b6b",
+      "r": 16,
+      "phase": 0.4
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -251.7
+     },
+     {
+      "x": 0,
+      "y": 68.3
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -119.9
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -174.6,
+    "y": -121.6,
+    "w": 353,
+    "h": 193.2
+   }
+  },
+  "building-particle-accelerator-w6": {
+   "file": "building-particle-accelerator-w6.webp",
+   "w": 354,
+   "h": 194,
+   "ax": 0.49435,
+   "ay": 0.62887,
+   "scale": 5,
+   "hash": "e8c600279c",
+   "meta": {
+    "top": 99,
+    "lights": [
+     {
+      "x": 131.2,
+      "y": 4.5,
+      "color": "#6fe8dc",
+      "r": 30,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 0,
+      "y": -119.9,
+      "color": "#ff6b6b",
+      "r": 16,
+      "phase": 0.4
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -251.7
+     },
+     {
+      "x": 0,
+      "y": 68.3
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -119.9
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -174.6,
+    "y": -121.80000000000001,
+    "w": 353,
+    "h": 193.4
+   }
+  },
+  "building-particle-accelerator-w7": {
+   "file": "building-particle-accelerator-w7.webp",
+   "w": 354,
+   "h": 196,
+   "ax": 0.49435,
+   "ay": 0.63265,
+   "scale": 5,
+   "hash": "800dc2244b",
+   "meta": {
+    "top": 99,
+    "lights": [
+     {
+      "x": 131.2,
+      "y": 4.5,
+      "color": "#6fe8dc",
+      "r": 30,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 0,
+      "y": -119.9,
+      "color": "#ff6b6b",
+      "r": 16,
+      "phase": 0.4
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -251.7
+     },
+     {
+      "x": 0,
+      "y": 68.3
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -119.9
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -174.6,
+    "y": -123.19999999999999,
+    "w": 353,
+    "h": 194.8
+   }
+  },
+  "building-particle-accelerator-w8": {
+   "file": "building-particle-accelerator-w8.webp",
+   "w": 354,
+   "h": 196,
+   "ax": 0.49435,
+   "ay": 0.63265,
+   "scale": 5,
+   "hash": "3024255d3f",
+   "meta": {
+    "top": 99,
+    "lights": [
+     {
+      "x": 131.2,
+      "y": 4.5,
+      "color": "#6fe8dc",
+      "r": 30,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 0,
+      "y": -119.9,
+      "color": "#ff6b6b",
+      "r": 16,
+      "phase": 0.4
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -251.7
+     },
+     {
+      "x": 0,
+      "y": 68.3
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -119.9
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -174.6,
+    "y": -123.4,
+    "w": 353,
+    "h": 195
+   }
+  },
+  "building-particle-accelerator-w9": {
+   "file": "building-particle-accelerator-w9.webp",
+   "w": 354,
+   "h": 195,
+   "ax": 0.49435,
+   "ay": 0.63077,
+   "scale": 5,
+   "hash": "5bfa55a52c",
+   "meta": {
+    "top": 99,
+    "lights": [
+     {
+      "x": 131.2,
+      "y": 4.5,
+      "color": "#6fe8dc",
+      "r": 30,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 0,
+      "y": -119.9,
+      "color": "#ff6b6b",
+      "r": 16,
+      "phase": 0.4
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -251.7
+     },
+     {
+      "x": 0,
+      "y": 68.3
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -119.9
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -174.6,
+    "y": -122.19999999999999,
+    "w": 353,
+    "h": 193.8
+   }
+  },
+  "building-particle-accelerator-wb": {
+   "file": "building-particle-accelerator-wb.webp",
+   "w": 672,
+   "h": 381,
+   "ax": 0.49256,
+   "ay": 0.55643,
+   "scale": 5,
+   "hash": "54ea85416f",
+   "meta": {
+    "top": 99,
+    "lights": [
+     {
+      "x": 131.2,
+      "y": 4.5,
+      "color": "#6fe8dc",
+      "r": 30,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 0,
+      "y": -119.9,
+      "color": "#ff6b6b",
+      "r": 16,
+      "phase": 0.4
+     }
+    ],
+    "vents": [
+     {
+      "x": 0,
+      "y": -251.7
+     },
+     {
+      "x": 0,
+      "y": 68.3
+     }
+    ],
+    "wire": {
+     "x": 0,
+     "y": -119.9
+    }
+   },
+   "body": {
+    "x": -313.6,
+    "y": -211.4,
+    "w": 627.4,
+    "h": 367.2
+   }
+  },
+  "building-space-elevator": {
+   "file": "building-space-elevator.webp",
+   "w": 860,
+   "h": 687,
+   "ax": 0.4593,
+   "ay": 0.70306,
+   "scale": 5,
+   "hash": "f5e49b0cca",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -90,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    }
+   },
+   "body": {
+    "x": -377.6,
+    "y": -482.6,
+    "w": 755.2,
+    "h": 670.4
+   }
+  },
+  "building-space-elevator-s1": {
+   "file": "building-space-elevator-s1.webp",
+   "w": 782,
+   "h": 393,
+   "ax": 0.5,
+   "ay": 0.50127,
+   "scale": 5,
+   "hash": "a0a65921fa",
+   "meta": {
+    "top": 65,
+    "lights": [
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    }
+   },
+   "body": {
+    "x": -377.6,
+    "y": -196.6,
+    "w": 755.2,
+    "h": 384.4
+   }
+  },
+  "building-space-elevator-s2": {
+   "file": "building-space-elevator-s2.webp",
+   "w": 784,
+   "h": 393,
+   "ax": 0.5,
+   "ay": 0.50127,
+   "scale": 5,
+   "hash": "ef93b2a130",
+   "meta": {
+    "top": 193,
+    "lights": [
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    }
+   },
+   "body": {
+    "x": -377.6,
+    "y": -196.6,
+    "w": 755.2,
+    "h": 384.4
+   }
+  },
+  "building-space-elevator-s3": {
+   "file": "building-space-elevator-s3.webp",
+   "w": 784,
+   "h": 512,
+   "ax": 0.5,
+   "ay": 0.61719,
+   "scale": 5,
+   "hash": "c18afeebc7",
+   "meta": {
+    "top": 312,
+    "lights": [
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    }
+   },
+   "body": {
+    "x": -377.6,
+    "y": -315.2,
+    "w": 755.2,
+    "h": 503
+   }
+  },
+  "building-space-elevator-w0": {
+   "file": "building-space-elevator-w0.webp",
+   "w": 6,
+   "h": 4,
+   "ax": -3.66667,
+   "ay": 20.25,
+   "scale": 5,
+   "hash": "b4aa965a70",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -95.6,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": 22.399999999999977,
+    "y": -80.79999999999995,
+    "w": 5.4,
+    "h": 3.4
+   }
+  },
+  "building-space-elevator-w1": {
+   "file": "building-space-elevator-w1.webp",
+   "w": 1,
+   "h": 1,
+   "ax": -3,
+   "ay": 97,
+   "scale": 5,
+   "hash": "e5843bb599",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -106.7,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": 3.1999999999999886,
+    "y": -97,
+    "w": 0.2,
+    "h": 0.2
+   }
+  },
+  "building-space-elevator-w10": {
+   "file": "building-space-elevator-w10.webp",
+   "w": 52,
+   "h": 34,
+   "ax": 0.5,
+   "ay": 6.29412,
+   "scale": 5,
+   "hash": "09b9e81882",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -206.6,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -25.399999999999977,
+    "y": -213.8,
+    "w": 51.4,
+    "h": 33.6
+   }
+  },
+  "building-space-elevator-w11": {
+   "file": "building-space-elevator-w11.webp",
+   "w": 52,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 6.75,
+   "scale": 5,
+   "hash": "f68635d7f5",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -217.7,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -25.19999999999999,
+    "y": -215.2,
+    "w": 50.8,
+    "h": 30.4
+   }
+  },
+  "building-space-elevator-w12": {
+   "file": "building-space-elevator-w12.webp",
+   "w": 50,
+   "h": 56,
+   "ax": 0.5,
+   "ay": 4.32143,
+   "scale": 5,
+   "hash": "5c91bcf10f",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -228.8,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -24.19999999999999,
+    "y": -242,
+    "w": 49,
+    "h": 55.6
+   }
+  },
+  "building-space-elevator-w13": {
+   "file": "building-space-elevator-w13.webp",
+   "w": 46,
+   "h": 57,
+   "ax": 0.5,
+   "ay": 4.29825,
+   "scale": 5,
+   "hash": "acbe4d54ec",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -239.9,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -22.19999999999999,
+    "y": -245,
+    "w": 45,
+    "h": 56.4
+   }
+  },
+  "building-space-elevator-w14": {
+   "file": "building-space-elevator-w14.webp",
+   "w": 48,
+   "h": 36,
+   "ax": 0.5,
+   "ay": 7.25,
+   "scale": 5,
+   "hash": "91d6d47ed2",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -251,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -23.19999999999999,
+    "y": -260.8,
+    "w": 46.8,
+    "h": 35.2
+   }
+  },
+  "building-space-elevator-w15": {
+   "file": "building-space-elevator-w15.webp",
+   "w": 47,
+   "h": 35,
+   "ax": 0.48936,
+   "ay": 7.57143,
+   "scale": 5,
+   "hash": "9329ef27d6",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -262.1,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -23,
+    "y": -264.2,
+    "w": 46.4,
+    "h": 33.4
+   }
+  },
+  "building-space-elevator-w16": {
+   "file": "building-space-elevator-w16.webp",
+   "w": 191,
+   "h": 251,
+   "ax": 0.12042,
+   "ay": 1.15936,
+   "scale": 5,
+   "hash": "58b53cc2b0",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -273.2,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -22.600000000000023,
+    "y": -290.2,
+    "w": 189.8,
+    "h": 249.4
+   }
+  },
+  "building-space-elevator-w17": {
+   "file": "building-space-elevator-w17.webp",
+   "w": 205,
+   "h": 259,
+   "ax": 0.1122,
+   "ay": 1.14672,
+   "scale": 5,
+   "hash": "118af9ad17",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -284.3,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -22.19999999999999,
+    "y": -296.6,
+    "w": 203.6,
+    "h": 257.8
+   }
+  },
+  "building-space-elevator-w18": {
+   "file": "building-space-elevator-w18.webp",
+   "w": 212,
+   "h": 269,
+   "ax": 0.10849,
+   "ay": 1.14498,
+   "scale": 5,
+   "hash": "f392cf3e5d",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -295.4,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -22.19999999999999,
+    "y": -307.2,
+    "w": 211.2,
+    "h": 268.2
+   }
+  },
+  "building-space-elevator-w19": {
+   "file": "building-space-elevator-w19.webp",
+   "w": 221,
+   "h": 300,
+   "ax": 0.10407,
+   "ay": 1.06333,
+   "scale": 5,
+   "hash": "88f6349dae",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -306.5,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -22.399999999999977,
+    "y": -318.8,
+    "w": 220.4,
+    "h": 299.2
+   }
+  },
+  "building-space-elevator-w2": {
+   "file": "building-space-elevator-w2.webp",
+   "w": 60,
+   "h": 20,
+   "ax": 0.5,
+   "ay": 5.6,
+   "scale": 5,
+   "hash": "40b90a66c2",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -117.8,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -29.600000000000023,
+    "y": -111.20000000000005,
+    "w": 59.6,
+    "h": 18.8
+   }
+  },
+  "building-space-elevator-w20": {
+   "file": "building-space-elevator-w20.webp",
+   "w": 240,
+   "h": 304,
+   "ax": 0.09583,
+   "ay": 1.13158,
+   "scale": 5,
+   "hash": "341acc726b",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -317.7,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -22.19999999999999,
+    "y": -342.8,
+    "w": 239,
+    "h": 302.8
+   }
+  },
+  "building-space-elevator-w21": {
+   "file": "building-space-elevator-w21.webp",
+   "w": 249,
+   "h": 333,
+   "ax": 0.09237,
+   "ay": 1.06306,
+   "scale": 5,
+   "hash": "25f770b54c",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -328.8,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -22.19999999999999,
+    "y": -353.8,
+    "w": 248.2,
+    "h": 332
+   }
+  },
+  "building-space-elevator-w22": {
+   "file": "building-space-elevator-w22.webp",
+   "w": 251,
+   "h": 344,
+   "ax": 0.09163,
+   "ay": 1.06395,
+   "scale": 5,
+   "hash": "89e2d6d3f9",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -339.9,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -22.19999999999999,
+    "y": -365.2,
+    "w": 249.8,
+    "h": 342.8
+   }
+  },
+  "building-space-elevator-w23": {
+   "file": "building-space-elevator-w23.webp",
+   "w": 253,
+   "h": 354,
+   "ax": 0.08696,
+   "ay": 1.06497,
+   "scale": 5,
+   "hash": "63beed27ab",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -351,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -22,
+    "y": -376.2,
+    "w": 252.2,
+    "h": 352.8
+   }
+  },
+  "building-space-elevator-w3": {
+   "file": "building-space-elevator-w3.webp",
+   "w": 59,
+   "h": 17,
+   "ax": 0.49153,
+   "ay": 6.52941,
+   "scale": 5,
+   "hash": "8889b31558",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -128.9,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -28.600000000000023,
+    "y": -110.79999999999995,
+    "w": 57.8,
+    "h": 16
+   }
+  },
+  "building-space-elevator-w4": {
+   "file": "building-space-elevator-w4.webp",
+   "w": 8,
+   "h": 26,
+   "ax": -2.125,
+   "ay": 4.84615,
+   "scale": 5,
+   "hash": "36c1624dd7",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -140,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": 17.600000000000023,
+    "y": -125.39999999999998,
+    "w": 6.6,
+    "h": 25.4
+   }
+  },
+  "building-space-elevator-w5": {
+   "file": "building-space-elevator-w5.webp",
+   "w": 41,
+   "h": 26,
+   "ax": 0.63415,
+   "ay": 6.46154,
+   "scale": 5,
+   "hash": "333f532faf",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -151.1,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -26,
+    "y": -167.79999999999995,
+    "w": 40.2,
+    "h": 25
+   }
+  },
+  "building-space-elevator-w6": {
+   "file": "building-space-elevator-w6.webp",
+   "w": 56,
+   "h": 31,
+   "ax": 0.5,
+   "ay": 5.45161,
+   "scale": 5,
+   "hash": "753a18290e",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -162.2,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -27.399999999999977,
+    "y": -168.39999999999998,
+    "w": 55.2,
+    "h": 30.2
+   }
+  },
+  "building-space-elevator-w7": {
+   "file": "building-space-elevator-w7.webp",
+   "w": 56,
+   "h": 33,
+   "ax": 0.5,
+   "ay": 5.18182,
+   "scale": 5,
+   "hash": "545f0b3c7b",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -173.3,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -27.399999999999977,
+    "y": -170.79999999999995,
+    "w": 55,
+    "h": 32
+   }
+  },
+  "building-space-elevator-w8": {
+   "file": "building-space-elevator-w8.webp",
+   "w": 45,
+   "h": 49,
+   "ax": 0.4,
+   "ay": 3.87755,
+   "scale": 5,
+   "hash": "92e0dba32c",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -184.4,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -17.19999999999999,
+    "y": -190,
+    "w": 43.6,
+    "h": 48.2
+   }
+  },
+  "building-space-elevator-w9": {
+   "file": "building-space-elevator-w9.webp",
+   "w": 37,
+   "h": 31,
+   "ax": 0.35135,
+   "ay": 6.32258,
+   "scale": 5,
+   "hash": "9cfacde8e0",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -195.5,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -12.600000000000023,
+    "y": -195.39999999999998,
+    "w": 36.6,
+    "h": 30
+   }
+  },
+  "building-space-elevator-wb": {
+   "file": "building-space-elevator-wb.webp",
+   "w": 860,
+   "h": 687,
+   "ax": 0.4593,
+   "ay": 0.70306,
+   "scale": 5,
+   "hash": "64a6dbaff0",
+   "meta": {
+    "top": 482,
+    "lights": [
+     {
+      "x": 0,
+      "y": -486.8,
+      "color": "#ff6b6b",
+      "r": 20,
+      "phase": 0.3
+     },
+     {
+      "x": -12.8,
+      "y": -95.6,
+      "color": "#6fe8dc",
+      "r": 14,
+      "phase": 0,
+      "work": true
+     },
+     {
+      "x": 73.6,
+      "y": -1.6,
+      "color": "#6fe8dc",
+      "r": 20,
+      "phase": 0.1
+     }
+    ],
+    "vents": [
+     {
+      "x": 96,
+      "y": -74.7
+     }
+    ],
+    "goods": {
+     "x": -80,
+     "y": -25.1
+    },
+    "wire": {
+     "x": 0,
+     "y": -480.5
+    }
+   },
+   "body": {
+    "x": -377.6,
+    "y": -482.6,
+    "w": 755.2,
+    "h": 670.4
+   }
+  }
+ }
+}

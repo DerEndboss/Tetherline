@@ -1,0 +1,256 @@
+/* Palette: core window (top left), palette + quick bar (bottom right), tooltip, hover card. The top right belongs to progression (orders, radio).
+ * Built on the kit (kit.css): .hud-card plates, .k-head/.k-title, .k-chip, .k-plaque, .k-rule, .k-press (hover lift + sheen, press sinks)
+ * and the motion keyframes (k-in / k-follow / k-in-fade). This file loads after kit.css, so a rule of equal specificity here wins.
+ * Only transform-like properties (translate, scale, opacity) move; reduced motion cuts every duration (base.css). */
+
+/* ---------- Shared: a recessed slot for a building (palette entry and quick bar slot) ---------- */
+.pal-item, .hot-slot {
+  position: relative; display: grid; place-items: center; padding: 0; overflow: hidden; cursor: pointer;
+  border: 1px solid var(--k-edge-faint); border-radius: var(--radius-control);
+  background:
+    radial-gradient(ellipse 62% 44% at 50% 80%, var(--color-drop), transparent 75%),
+    radial-gradient(70% 62% at 50% 56%, var(--k-glow-soft), transparent 80%),
+    linear-gradient(180deg, var(--k-slot-2), var(--k-slot));
+  box-shadow: var(--k-recessed);
+  transition:
+    translate var(--dur-micro) var(--ease-out),
+    scale var(--dur-micro) var(--ease-pop),
+    box-shadow var(--dur-micro) var(--ease-out),
+    border-color var(--dur-micro) var(--ease-out),
+    opacity var(--dur-micro) var(--ease-out);
+}
+.pal-thumb, .hot-thumb { display: grid; place-items: center; transition: scale var(--dur-micro) var(--ease-pop); }
+@media (hover: hover) {
+  .pal-item:hover:not(.locked), .hot-slot:hover:not(.empty) { border-color: var(--k-edge-soft); box-shadow: var(--k-recessed), inset 0 0 18px var(--k-glow-soft); }
+  .hot-slot:hover .hot-thumb { scale: 1.12; }
+}
+.hot-slot:active .hot-thumb { scale: 0.94; transition-duration: var(--dur-instant); }
+/* Cannot be paid yet (placing is still fine, the drone waits for the material): the picture dims and a thin amber line
+   sits under it. Quiet on purpose: most of a fresh base cannot be paid, so a loud badge would only be noise. */
+.pal-item.poor, .hot-slot.poor { box-shadow: var(--k-recessed), inset 0 -2px 0 color-mix(in oklch, var(--color-warn) 45%, transparent); }
+.pal-item.poor .pal-thumb, .hot-slot.poor .hot-thumb { opacity: 0.55; transition: opacity var(--dur-micro) var(--ease-out), scale var(--dur-micro) var(--ease-pop); }
+.pal-item.poor[aria-pressed="true"] .pal-thumb, .hot-slot.poor[aria-pressed="true"] .hot-thumb, .pal-item.poor:hover .pal-thumb, .hot-slot.poor:hover .hot-thumb { opacity: 0.9; }
+/* In hand / chosen: lit from inside, with a bright bar under the picture that grows in. */
+.pal-item[aria-pressed="true"], .hot-slot[aria-pressed="true"] { z-index: 1; border-color: var(--k-edge); box-shadow: var(--k-recessed), inset 0 0 18px var(--k-glow), 0 0 14px var(--k-glow); }
+.pal-item::before, .hot-slot::before {
+  content: ""; position: absolute; left: 22%; right: 22%; bottom: 3px; height: 3px; border-radius: 3px; pointer-events: none;
+  background: var(--k-edge); box-shadow: 0 0 8px var(--k-glow); opacity: 0; scale: 0.3 1;
+  transition: opacity var(--dur-micro) var(--ease-out), scale var(--dur-enter) var(--ease-pop);
+}
+.pal-item[aria-pressed="true"]::before, .hot-slot[aria-pressed="true"]::before { opacity: 1; scale: 1 1; }
+.pal-letter { display: grid; place-items: center; font-weight: 800; font-size: var(--text-sm); color: var(--color-ink-2); }
+.item-chip { display: inline-block; border-radius: var(--radius-pill); }
+/* Key caps sit in the top left corner and light up with their entry. */
+.pal-item .keycap, .hot-slot .keycap { left: 3px; top: 3px; bottom: auto; min-width: 15px; height: 16px; padding: 0 4px; border-radius: 5px; font-size: 0.625rem; transition: color var(--dur-micro) var(--ease-out); }
+.pal-item[aria-pressed="true"] .keycap, .hot-slot[aria-pressed="true"] .keycap { border-color: var(--k-edge); background: linear-gradient(180deg, var(--k-cta-top), var(--k-cta-bot)); color: var(--k-ink-dark); }
+
+/* ---------- Core window: header with the power chip, two columns of wells ---------- */
+.resources { position: fixed; top: calc(var(--safe-top) + var(--space-sm)); left: calc(var(--safe-left) + var(--space-sm)); width: 212px; padding-bottom: 6px; }
+/* The window never grows taller than four rows (the drone panel sits right under it, top: 224px, drones.css): "more" widens it to four columns, the list scrolls past that. */
+.resources[data-open] { width: 384px; }
+.res-head.k-head { padding: 6px 8px 6px 12px; border-radius: var(--radius-card) var(--radius-card) 0 0; }
+.res-head .k-title { font-size: var(--text-xs); letter-spacing: 0.16em; }
+.res-power { gap: 3px; padding: 2px 8px 2px 6px; color: var(--color-power); transition: color var(--dur-emph) var(--ease-out), box-shadow var(--dur-emph) var(--ease-out); }
+.res-power.short { color: var(--color-short); box-shadow: var(--k-recessed), inset 0 0 0 1px color-mix(in oklch, var(--color-short) 50%, transparent); }
+.res-slash { color: var(--color-muted); }
+.res-list {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 0; padding: 8px var(--space-xs) 2px; list-style: none;
+  max-height: 142px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--k-edge-soft) transparent;
+}
+.resources[data-open] .res-list { grid-template-columns: repeat(4, 1fr); }
+.res {
+  position: relative; display: flex; align-items: center; gap: 5px; min-height: 30px; padding: 2px 6px 5px 2px; overflow: hidden;
+  border: 1px solid var(--k-edge-faint); border-radius: 10px; background: linear-gradient(180deg, var(--k-slot), var(--k-slot-2)); box-shadow: var(--k-recessed);
+  font-size: var(--text-sm); font-weight: 800; transition: border-color var(--dur-emph) var(--ease-out), box-shadow var(--dur-emph) var(--ease-out);
+}
+.res-plaque { display: grid; place-items: center; flex: none; width: 24px; height: 24px; border-radius: 8px; background: radial-gradient(circle at 50% 62%, var(--k-glow), transparent 72%); }
+.res-n { min-width: 0; text-shadow: 0 1px 0 var(--color-press-shade); }
+/* The fill meter: how much of the core's room this material takes (scaleX, so it never re-lays out). */
+.res-fill { position: absolute; left: 4px; right: 4px; bottom: 2px; height: 2px; border-radius: 2px; background: var(--k-edge); opacity: 0.55; transform-origin: 0 50%; transform: scaleX(var(--fill, 0)); transition: transform var(--dur-emph) var(--ease-out), background-color var(--dur-emph) var(--ease-out), opacity var(--dur-emph) var(--ease-out); }
+.res.full { border-color: color-mix(in oklch, var(--color-warn) 55%, transparent); box-shadow: var(--k-recessed), inset 0 0 12px color-mix(in oklch, var(--color-warn) 16%, transparent); }
+.res.full .res-n { color: var(--color-warn); }
+.res.full .res-fill { background: var(--color-warn); opacity: 1; }
+.res-empty { grid-column: 1 / -1; padding: 10px; border: 1px dashed var(--k-edge-faint); border-radius: 10px; color: var(--color-muted); font-size: var(--text-xs); font-weight: 700; text-align: center; }
+.res-foot { display: flex; align-items: center; justify-content: space-between; gap: var(--space-xs); padding: 4px var(--space-xs) 0; }
+.res-cap { color: var(--color-muted); }
+.res-more {
+  min-height: 24px; padding: 0 var(--space-sm); border: 1px solid var(--k-edge-faint); border-radius: var(--radius-pill);
+  background: linear-gradient(180deg, var(--k-face-2), var(--k-face)); box-shadow: inset 0 1px 0 var(--k-hi), 0 2px 0 var(--k-lip);
+  color: var(--color-ink-2); font-size: var(--text-xs); font-weight: 800; letter-spacing: 0.04em;
+}
+.res-more[aria-expanded="true"] { border-color: var(--k-edge-soft); background: linear-gradient(180deg, var(--color-lit-bot), var(--color-lit-top)); color: var(--k-edge); box-shadow: inset 0 2px 5px var(--color-press-shade), 0 1px 0 var(--k-lip); }
+
+/* ---------- Palette: grid and cost strip left, category tabs right ---------- */
+.dock-palette { position: absolute; right: calc(var(--safe-right) + var(--space-sm)); bottom: calc(var(--safe-bottom) + var(--space-sm)); display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-xs); max-width: calc(100vw - 2 * var(--space-sm)); }
+.palette {
+  --pal-cell: 54px; --pal-gap: 4px; --pal-thumb-scale: 1;
+  position: relative; display: grid; grid-template-columns: auto 128px; grid-template-areas: "grid tabs" "info tabs"; gap: var(--space-xs); padding: var(--space-xs);
+}
+.pal-grid { grid-area: grid; display: grid; grid-template-columns: repeat(5, var(--pal-cell)); grid-auto-rows: var(--pal-cell); gap: var(--pal-gap); align-content: start; }
+.pal-item { width: var(--pal-cell); height: var(--pal-cell); }
+.pal-thumb { scale: var(--pal-thumb-scale); }
+@media (hover: hover) {
+  .pal-item:hover:not(.locked) .pal-thumb { scale: calc(var(--pal-thumb-scale) * 1.12); }
+}
+.pal-item:active:not(.locked) .pal-thumb { scale: calc(var(--pal-thumb-scale) * 0.94); }
+/* Not yet usable: the picture greys out, a small lock sits in the corner. No hover, no lift. */
+.pal-item.locked { cursor: not-allowed; }
+.pal-item.locked .pal-thumb { opacity: 0.3; filter: grayscale(1); }
+.pal-lock { position: absolute; right: 4px; top: 4px; display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--k-slot); color: var(--color-muted); box-shadow: inset 0 0 0 1px var(--k-edge-faint); pointer-events: none; }
+/* The room left in a short tab: a quiet recessed well, like an empty slot in an inventory. A dashed outline read as an unfinished
+   placeholder. */
+.pal-empty-cell { cursor: default; border-color: transparent; background: var(--k-slot); box-shadow: var(--k-recessed); opacity: 0.3; pointer-events: none; }
+.pal-empty-cell::before { display: none; }
+
+/* Cost strip: the name and price of what the mouse rests on, else of what is in hand. The only place a touch screen sees a price. */
+.pal-info {
+  grid-area: info; display: grid; align-content: center; gap: 3px; min-height: 54px; padding: 6px 10px; contain: inline-size;
+  border: 1px solid var(--k-edge-faint); border-radius: var(--radius-control); background: linear-gradient(180deg, var(--k-slot), var(--k-slot-2)); box-shadow: var(--k-recessed);
+  animation: k-in-fade var(--dur-micro) var(--ease-out) backwards;
+}
+.pal-info-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-xs); min-width: 0; }
+.pal-info-name { min-width: 0; overflow: hidden; font-size: var(--text-sm); font-weight: 800; line-height: 1.25; text-overflow: ellipsis; white-space: nowrap; }
+.pal-info-head .k-chip { flex: none; }
+.pal-info-cost { display: flex; flex-wrap: wrap; gap: 2px var(--space-sm); font-size: var(--text-sm); font-weight: 800; }
+.pal-cost { display: inline-flex; align-items: center; gap: 3px; }
+.pal-cost.short { color: var(--color-short); }
+.pal-info-empty { color: var(--color-muted); font-size: var(--text-xs); font-weight: 600; line-height: 1.35; text-wrap: balance; }
+
+/* Tabs: a recessed track; one lit plate glides to the chosen tab (translate only), the labels change colour on top of it. */
+.pal-tabs {
+  grid-area: tabs; position: relative; display: flex; flex-direction: column; gap: 3px; padding: 4px;
+  border: 1px solid var(--k-edge-faint); border-radius: calc(var(--radius-control) + 4px); background: linear-gradient(180deg, var(--k-slot), var(--k-slot-2)); box-shadow: var(--k-recessed);
+}
+.pal-glide {
+  position: absolute; left: 4px; right: 4px; top: 4px; height: calc((100% - 8px - (var(--n) - 1) * 3px) / var(--n)); pointer-events: none;
+  border: 1px solid var(--k-edge); border-radius: var(--radius-control); background: linear-gradient(180deg, var(--k-cta-top), var(--k-cta-bot));
+  box-shadow: inset 0 1px 0 color-mix(in oklch, var(--color-ink) 55%, transparent), 0 2px 0 var(--k-cta-lip), 0 0 14px var(--k-glow);
+  translate: 0 calc(var(--i) * (100% + 3px)); transition: translate var(--dur-enter) var(--ease-pop);
+}
+.pal-tab {
+  position: relative; z-index: 1; display: flex; align-items: center; gap: 7px; flex: 1 1 0; min-height: 30px; padding: 0 8px;
+  border: 0; border-radius: var(--radius-control); background: transparent; color: var(--color-muted);
+  font-size: var(--text-xs); font-weight: 800; letter-spacing: 0.02em; text-align: left; cursor: pointer;
+  transition: color var(--dur-micro) var(--ease-out), background-color var(--dur-micro) var(--ease-out), scale var(--dur-micro) var(--ease-out);
+}
+.pal-tab svg { flex: none; }
+.pal-tab-name { flex: 1 1 auto; }
+.pal-tab-n { min-width: 14px; text-align: right; font-size: 0.6875rem; opacity: 0.75; }
+.pal-tab:hover { color: var(--color-ink); background: var(--color-rule-soft); }
+.pal-tab:active { scale: 0.97; transition-duration: var(--dur-instant); }
+.pal-tab[aria-selected="true"], .pal-tab[aria-selected="true"]:hover { background: transparent; color: var(--k-ink-dark); text-shadow: 0 1px 0 color-mix(in oklch, var(--color-ink) 30%, transparent); }
+
+/* ---------- Tooltip (palette and quick bar): one card, placed by Tooltip.tsx, comes in from its side ---------- */
+.build-tip {
+  --tip-arrow: 50%;
+  position: fixed; left: 0; top: 0; z-index: var(--z-tip); width: 316px; max-width: calc(100vw - 16px); pointer-events: none;
+  border: 1px solid var(--k-edge-soft); border-radius: var(--radius-card);
+  background: var(--k-card-light), var(--k-grain), linear-gradient(180deg, var(--color-tip-top), var(--color-tip-bot));
+  box-shadow: var(--k-card-shadow), 0 0 22px var(--k-glow-soft);
+  font-size: var(--text-sm); transition: transform var(--dur-micro) var(--ease-out);
+}
+.build-tip[data-presence="open"] { --k-x: 10px; --k-y: 0px; }
+.build-tip[data-presence="open"][data-from="up"] { --k-x: 0px; --k-y: 8px; }
+.build-tip[data-presence="closing"] { --k-x-out: 6px; --k-y-out: 0px; }
+.build-tip[data-presence="closing"][data-from="up"] { --k-x-out: 0px; --k-y-out: 4px; }
+.build-tip::after { content: ""; position: absolute; left: 100%; top: var(--tip-arrow); width: 10px; height: 10px; translate: -50% -50%; rotate: 45deg; border: solid var(--k-edge-soft); border-width: 1px 1px 0 0; border-radius: 0 2px 0 0; background: var(--color-tip-top); }
+.build-tip[data-side="top"]::after { left: var(--tip-arrow); top: 100%; border-width: 0 1px 1px 0; border-radius: 0 0 2px 0; background: var(--color-tip-bot); }
+.build-tip[data-side="bottom"]::after { left: var(--tip-arrow); top: 0; border-width: 1px 0 0 1px; border-radius: 2px 0 0 0; }
+.build-tip[data-side="right"]::after { left: 0; top: var(--tip-arrow); border-width: 0 0 1px 1px; border-radius: 0 0 0 2px; }
+.tip-body { display: grid; gap: 7px; max-height: calc(100dvh - 18px); padding: 10px 12px 12px; overflow: hidden; border-radius: inherit; animation: k-in-fade var(--dur-micro) var(--ease-out) backwards; }
+.tip-body[data-cut="true"] { -webkit-mask-image: linear-gradient(180deg, #000 calc(100% - 30px), transparent); mask-image: linear-gradient(180deg, #000 calc(100% - 30px), transparent); }
+.tip-more { color: var(--color-muted); font-size: var(--text-xs); font-weight: 700; }
+.tip-head { display: flex; align-items: center; gap: 10px; }
+.tip-plaque { width: 52px; height: 52px; }
+.tip-title { display: grid; flex: 1 1 auto; min-width: 0; gap: 1px; }
+.tip-name { font-size: var(--text-md); font-weight: 800; line-height: 1.2; }
+.tip-sub { color: var(--k-edge); font-size: 0.6875rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.tip-size { flex: none; }
+.tip-desc { color: var(--color-ink-2); line-height: 1.4; }
+.tip-banner { display: flex; align-items: flex-start; gap: 8px; padding: 7px 9px; border-radius: 10px; font-size: var(--text-xs); font-weight: 700; line-height: 1.4; }
+.tip-banner svg { flex: none; margin-top: 1px; }
+.tip-banner[data-kind="locked"] { background: color-mix(in oklch, var(--color-warn) 12%, transparent); box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-warn) 40%, transparent); color: var(--color-warn); }
+.tip-banner[data-kind="short"] { background: var(--color-short-soft); box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-short) 40%, transparent); color: var(--color-short); }
+.tip-body .k-rule { margin: 1px 0; }
+.tip-label { color: var(--k-edge); font-size: 0.6875rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.tip-row { display: flex; flex-wrap: wrap; gap: 5px; }
+.tip-amount { display: inline-flex; align-items: center; gap: 5px; padding: 2px 10px 2px 3px; border-radius: var(--radius-pill); background: linear-gradient(180deg, var(--k-slot), var(--k-slot-2)); box-shadow: var(--k-recessed); font-weight: 700; }
+.tip-amount.short { color: var(--color-short); box-shadow: var(--k-recessed), inset 0 0 0 1px color-mix(in oklch, var(--color-short) 45%, transparent); }
+.tip-facts { display: grid; margin: 0; }
+.tip-facts div { display: flex; justify-content: space-between; gap: var(--space-sm); padding: 4px 0; border-bottom: 1px solid var(--color-rule-soft); }
+.tip-facts div:last-child { border-bottom: 0; }
+.tip-facts dt { color: var(--color-muted); }
+.tip-facts dd { margin: 0; font-weight: 700; text-align: right; }
+.tip-recipes { display: grid; gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
+.tip-recipe { display: grid; gap: 3px; }
+.tip-recipe-io { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
+.tip-arrow { display: grid; place-items: center; color: var(--k-edge); }
+.tip-rate { font-size: var(--text-xs); }
+
+/* ---------- Quick bar: stacks above the palette, centres at the bottom on wide screens ---------- */
+.hotbar { position: relative; display: flex; gap: var(--space-2xs); padding: 5px; }
+.hotbar.wide { position: fixed; left: 50%; bottom: calc(var(--safe-bottom) + var(--space-sm)); transform: translateX(-50%); }
+.hot-slot { width: 50px; height: 50px; }
+.hot-slot.empty { border-style: dashed; background: transparent; box-shadow: none; }
+/* An empty slot that can take what is in your hand: a plus, brighter edge. */
+.hot-slot.fillable { border-color: var(--k-edge-soft); }
+.hot-slot.fillable::before { left: 0; right: 0; top: 0; bottom: 0; width: 14px; height: 14px; margin: auto; border-radius: 0; opacity: 0.7; scale: 1 1; background: linear-gradient(var(--k-edge), var(--k-edge)) center / 100% 2px no-repeat, linear-gradient(var(--k-edge), var(--k-edge)) center / 2px 100% no-repeat; box-shadow: none; }
+/* While a building is dragged: every slot shows itself as a place to drop; the one under it lights up. */
+.hotbar[data-dragging] .hot-slot { border-style: dashed; border-color: var(--k-edge-soft); }
+.hot-slot.over, .hotbar[data-dragging] .hot-slot.over { z-index: 1; scale: 1.1; border-style: solid; border-color: var(--k-edge); box-shadow: var(--k-recessed), inset 0 0 18px var(--k-glow), 0 0 14px var(--k-glow); }
+.hot-slot[aria-pressed="true"] { scale: 1.08; }
+.hot-slot .hot-key { z-index: 2; }
+
+/* A phone: the orders take the top, so the core window joins the bottom right column as a strip of one row. */
+@media (max-width: 640px) {
+  .resources, .resources[data-open] { position: relative; top: auto; left: auto; align-self: stretch; width: auto; }
+  .res-list, .resources[data-open] .res-list { grid-template-columns: repeat(4, 1fr); }
+  .res { gap: 3px; padding-right: 4px; }
+}
+@media (max-width: 560px) {
+  .palette { --pal-cell: 44px; --pal-gap: 3px; --pal-thumb-scale: 0.8; grid-template-columns: auto 100px; }
+  .hot-slot { width: 44px; height: 44px; }
+  .pal-tab { padding: 0 7px; gap: 6px; }
+  .pal-tab-n { display: none; }
+}
+
+/* Short windows (a phone on its side, a small laptop window): smaller cells, no filler plates, no cost strip. */
+@media (max-height: 520px) {
+  .palette { --pal-cell: 38px; --pal-gap: 3px; --pal-thumb-scale: 0.7; grid-template-columns: auto 106px; grid-template-areas: "grid tabs"; }
+  .pal-tab-n { display: none; }
+  .pal-grid { grid-template-columns: repeat(5, var(--pal-cell)); }
+  .pal-info { display: none; }
+  .pal-item .keycap { transform: scale(0.85); transform-origin: left top; }
+  .pal-empty-cell { display: none; }
+  .pal-tab { min-height: 24px; }
+  .hot-slot { width: 38px; height: 38px; }
+}
+
+/* ---------- Hover card: follows the mouse over the map (HoverCard.tsx owns what it says; this is only its look) ---------- */
+.hover-card {
+  --k-y: 5px; --k-s: 0.96;
+  position: fixed; left: 0; top: 0; z-index: var(--z-toast); width: max-content; max-width: 290px; padding: 9px 12px 10px; pointer-events: none;
+  border: 1px solid var(--k-edge-soft); border-radius: var(--radius-card);
+  background: var(--k-card-light), var(--k-grain), linear-gradient(180deg, var(--color-plate-top), var(--color-plate-bot));
+  box-shadow: var(--k-card-shadow); font-size: var(--text-sm); will-change: transform;
+  animation: k-in var(--dur-micro) var(--ease-out) backwards;
+}
+.hover-head { display: flex; align-items: center; gap: 9px; padding-bottom: 8px; background: linear-gradient(90deg, transparent, var(--k-edge-soft) 20%, var(--k-edge-soft) 80%, transparent) left bottom / 100% 1px no-repeat; }
+.hover-head > :first-child { flex: none; margin: 3px; border-radius: 9px; background: radial-gradient(circle at 50% 62%, var(--k-glow), transparent 72%), linear-gradient(180deg, var(--k-slot-2), var(--k-slot)); box-shadow: 0 0 0 2px var(--k-slot), 0 0 0 3px var(--k-edge-soft); }
+.hover-title { font-size: var(--text-md); font-weight: 800; line-height: 1.2; text-shadow: 0 1px 0 var(--color-press-shade); }
+.hover-status { margin-left: auto; padding: 2px 9px; border-radius: var(--radius-pill); background: linear-gradient(180deg, var(--k-slot), var(--k-slot-2)); box-shadow: var(--k-recessed); font-size: var(--text-xs); font-weight: 800; white-space: nowrap; }
+.hover-status.good { color: var(--color-success); box-shadow: var(--k-recessed), inset 0 0 0 1px color-mix(in oklch, var(--color-success) 45%, transparent); }
+.hover-status.warn { color: var(--color-warn); box-shadow: var(--k-recessed), inset 0 0 0 1px color-mix(in oklch, var(--color-warn) 45%, transparent); }
+.hover-status.bad { color: var(--color-short); box-shadow: var(--k-recessed), inset 0 0 0 1px color-mix(in oklch, var(--color-short) 45%, transparent); }
+.hover-lines { display: grid; margin: 4px 0 0; }
+.hover-lines div { display: flex; justify-content: space-between; gap: var(--space-md); padding: 3px 0; border-bottom: 1px solid var(--color-rule-soft); }
+.hover-lines div:last-child { border-bottom: 0; }
+.hover-lines dt { color: var(--color-muted); }
+.hover-lines dd { margin: 0; font-weight: 700; text-align: right; }
+.hover-lines .good dd { color: var(--color-success); }
+.hover-lines .warn dd { color: var(--color-warn); }
+.hover-lines .bad dd { color: var(--color-short); }
+.hover-recipe { margin-top: var(--space-xs); padding: 6px 9px; border-radius: 10px; background: linear-gradient(180deg, var(--k-slot), var(--k-slot-2)); box-shadow: var(--k-recessed); font-weight: 700; }
+.hover-stacks { display: flex; flex-wrap: wrap; gap: 4px; margin-top: var(--space-xs); }
+.hover-stack { display: inline-flex; align-items: center; gap: 4px; padding: 1px 9px 1px 2px; border-radius: var(--radius-pill); background: linear-gradient(180deg, var(--k-slot), var(--k-slot-2)); box-shadow: var(--k-recessed); }
+.hover-hint { margin-top: var(--space-xs); padding-top: 6px; border-top: 1px solid var(--color-rule-soft); font-size: var(--text-xs); }

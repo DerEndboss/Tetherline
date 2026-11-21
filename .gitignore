@@ -1,0 +1,13 @@
+node_modules
+dist/
+.env
+.env.*
+!.env.example
+/.vite/
+/.vitest/
+/coverage/
+/tmp/
+*.log
+.DS_Store
+# Output of `npm run shots` (curated screenshots are added by hand)
+/docs/screenshots/shot-*.png

@@ -1,0 +1,704 @@
+{
+ "version": 1,
+ "category": "nature",
+ "sprites": {
+  "fx-leaf": {
+   "file": "fx-leaf.webp",
+   "w": 16,
+   "h": 16,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "df132dbbfa",
+   "meta": {
+    "top": 4
+   },
+   "body": {
+    "x": -4.5,
+    "y": -3.875,
+    "w": 10,
+    "h": 6.875
+   }
+  },
+  "fx-shard-0": {
+   "file": "fx-shard-0.webp",
+   "w": 16,
+   "h": 16,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "fb3d09d945",
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -4,
+    "y": -3.5,
+    "w": 7.75,
+    "h": 8.375
+   }
+  },
+  "fx-shard-1": {
+   "file": "fx-shard-1.webp",
+   "w": 16,
+   "h": 16,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "8fb6a8b3a5",
+   "meta": {
+    "top": 5
+   },
+   "body": {
+    "x": -3.75,
+    "y": -5.875,
+    "w": 7.125,
+    "h": 9.125
+   }
+  },
+  "fx-shard-2": {
+   "file": "fx-shard-2.webp",
+   "w": 16,
+   "h": 16,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "ac9c152ca9",
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -3.5,
+    "y": -1.375,
+    "w": 9.125,
+    "h": 5.5
+   }
+  },
+  "fx-shard-3": {
+   "file": "fx-shard-3.webp",
+   "w": 16,
+   "h": 16,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "f59333a0e7",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -5.75,
+    "y": -3.5,
+    "w": 9.5,
+    "h": 7
+   }
+  },
+  "obstacle-boulder-0": {
+   "file": "obstacle-boulder-0.webp",
+   "w": 113,
+   "h": 87,
+   "ax": 0.51327,
+   "ay": 0.67816,
+   "scale": 5,
+   "hash": "baf1e30232",
+   "meta": {
+    "top": 52
+   },
+   "body": {
+    "x": -48,
+    "y": -58,
+    "w": 91,
+    "h": 85
+   }
+  },
+  "obstacle-boulder-1": {
+   "file": "obstacle-boulder-1.webp",
+   "w": 101,
+   "h": 91,
+   "ax": 0.53465,
+   "ay": 0.68132,
+   "scale": 5,
+   "hash": "94c030ed06",
+   "meta": {
+    "top": 50
+   },
+   "body": {
+    "x": -49.4,
+    "y": -61.6,
+    "w": 93.2,
+    "h": 85.8
+   }
+  },
+  "obstacle-boulder-2": {
+   "file": "obstacle-boulder-2.webp",
+   "w": 123,
+   "h": 108,
+   "ax": 0.4878,
+   "ay": 0.74074,
+   "scale": 5,
+   "hash": "5ab0844755",
+   "meta": {
+    "top": 73
+   },
+   "body": {
+    "x": -47.2,
+    "y": -79.2,
+    "w": 88.4,
+    "h": 103
+   }
+  },
+  "obstacle-boulder-3": {
+   "file": "obstacle-boulder-3.webp",
+   "w": 104,
+   "h": 92,
+   "ax": 0.52885,
+   "ay": 0.69565,
+   "scale": 5,
+   "hash": "feaaa56234",
+   "meta": {
+    "top": 54
+   },
+   "body": {
+    "x": -46.6,
+    "y": -63.6,
+    "w": 87.4,
+    "h": 91
+   }
+  },
+  "obstacle-crystal-rubble-0": {
+   "file": "obstacle-crystal-rubble-0.webp",
+   "w": 133,
+   "h": 122,
+   "ax": 0.53383,
+   "ay": 0.7623,
+   "scale": 5,
+   "hash": "505b6dab07",
+   "meta": {
+    "top": 88,
+    "glints": [
+     {
+      "x": 3.5,
+      "y": -92.3
+     },
+     {
+      "x": -33.3,
+      "y": -59.8
+     },
+     {
+      "x": 9.3,
+      "y": -28.1
+     },
+     {
+      "x": -27.8,
+      "y": -23.6
+     },
+     {
+      "x": 30.9,
+      "y": -35.8
+     },
+     {
+      "x": -11.5,
+      "y": -41.4
+     }
+    ]
+   },
+   "body": {
+    "x": -37,
+    "y": -92.2,
+    "w": 68,
+    "h": 112.6
+   }
+  },
+  "obstacle-crystal-rubble-0-glow": {
+   "file": "obstacle-crystal-rubble-0-glow.webp",
+   "w": 73,
+   "h": 118,
+   "ax": 0.53425,
+   "ay": 0.79661,
+   "scale": 5,
+   "hash": "1c20dd6a60"
+  },
+  "obstacle-crystal-rubble-1": {
+   "file": "obstacle-crystal-rubble-1.webp",
+   "w": 134,
+   "h": 104,
+   "ax": 0.52239,
+   "ay": 0.68269,
+   "scale": 5,
+   "hash": "a0396046a4",
+   "meta": {
+    "top": 63,
+    "glints": [
+     {
+      "x": 3.8,
+      "y": -70
+     },
+     {
+      "x": 15.5,
+      "y": -41.4
+     },
+     {
+      "x": -37.8,
+      "y": -52.5
+     },
+     {
+      "x": 34.5,
+      "y": -49.7
+     },
+     {
+      "x": -1,
+      "y": -9.4
+     },
+     {
+      "x": -25.6,
+      "y": -34.6
+     }
+    ]
+   },
+   "body": {
+    "x": -38.4,
+    "y": -70.2,
+    "w": 76.6,
+    "h": 88
+   }
+  },
+  "obstacle-crystal-rubble-1-glow": {
+   "file": "obstacle-crystal-rubble-1-glow.webp",
+   "w": 81,
+   "h": 91,
+   "ax": 0.50617,
+   "ay": 0.78022,
+   "scale": 5,
+   "hash": "29a7839e68"
+  },
+  "obstacle-crystal-rubble-2": {
+   "file": "obstacle-crystal-rubble-2.webp",
+   "w": 135,
+   "h": 106,
+   "ax": 0.4963,
+   "ay": 0.74528,
+   "scale": 5,
+   "hash": "39385c15c7",
+   "meta": {
+    "top": 74,
+    "glints": [
+     {
+      "x": -19.8,
+      "y": -78.7
+     },
+     {
+      "x": 24.8,
+      "y": -63
+     },
+     {
+      "x": -22.4,
+      "y": -26.1
+     },
+     {
+      "x": 6.9,
+      "y": -10.8
+     },
+     {
+      "x": -4.5,
+      "y": -42.5
+     }
+    ]
+   },
+   "body": {
+    "x": -41.2,
+    "y": -78.2,
+    "w": 72.8,
+    "h": 97.4
+   }
+  },
+  "obstacle-crystal-rubble-2-glow": {
+   "file": "obstacle-crystal-rubble-2-glow.webp",
+   "w": 75,
+   "h": 98,
+   "ax": 0.57333,
+   "ay": 0.80612,
+   "scale": 5,
+   "hash": "dd5141a51d"
+  },
+  "obstacle-crystal-rubble-3": {
+   "file": "obstacle-crystal-rubble-3.webp",
+   "w": 108,
+   "h": 82,
+   "ax": 0.46296,
+   "ay": 0.63415,
+   "scale": 5,
+   "hash": "ff66c1618e",
+   "meta": {
+    "top": 52,
+    "glints": [
+     {
+      "x": 21.8,
+      "y": -36
+     },
+     {
+      "x": -6.2,
+      "y": -51
+     },
+     {
+      "x": -20.6,
+      "y": -26.1
+     },
+     {
+      "x": 32.4,
+      "y": -30.8
+     },
+     {
+      "x": -31.5,
+      "y": -33
+     },
+     {
+      "x": -0.1,
+      "y": -5.4
+     },
+     {
+      "x": 10.1,
+      "y": -35.1
+     }
+    ]
+   },
+   "body": {
+    "x": -36.8,
+    "y": -51,
+    "w": 69.4,
+    "h": 71.4
+   }
+  },
+  "obstacle-crystal-rubble-3-glow": {
+   "file": "obstacle-crystal-rubble-3-glow.webp",
+   "w": 71,
+   "h": 75,
+   "ax": 0.47887,
+   "ay": 0.69333,
+   "scale": 5,
+   "hash": "2a6182af59"
+  },
+  "obstacle-monolith-0": {
+   "file": "obstacle-monolith-0.webp",
+   "w": 195,
+   "h": 199,
+   "ax": 0.45128,
+   "ay": 0.73367,
+   "scale": 5,
+   "hash": "f3036b6093",
+   "meta": {
+    "top": 151
+   },
+   "body": {
+    "x": -44.6,
+    "y": -145.4,
+    "w": 80.4,
+    "h": 169.8
+   }
+  },
+  "obstacle-monolith-0-glow": {
+   "file": "obstacle-monolith-0-glow.webp",
+   "w": 37,
+   "h": 117,
+   "ax": 0.81081,
+   "ay": 1.02564,
+   "scale": 5,
+   "hash": "08bd8c5ef3"
+  },
+  "obstacle-monolith-1": {
+   "file": "obstacle-monolith-1.webp",
+   "w": 201,
+   "h": 205,
+   "ax": 0.43781,
+   "ay": 0.74146,
+   "scale": 5,
+   "hash": "a94f393151",
+   "meta": {
+    "top": 156
+   },
+   "body": {
+    "x": -46.6,
+    "y": -151.2,
+    "w": 83.6,
+    "h": 175.4
+   }
+  },
+  "obstacle-monolith-1-glow": {
+   "file": "obstacle-monolith-1-glow.webp",
+   "w": 43,
+   "h": 127,
+   "ax": 0.76744,
+   "ay": 1.01575,
+   "scale": 5,
+   "hash": "ee1483e393"
+  },
+  "obstacle-monolith-2": {
+   "file": "obstacle-monolith-2.webp",
+   "w": 204,
+   "h": 210,
+   "ax": 0.43137,
+   "ay": 0.74762,
+   "scale": 5,
+   "hash": "6f6b7880cf",
+   "meta": {
+    "top": 162
+   },
+   "body": {
+    "x": -45.8,
+    "y": -156.2,
+    "w": 80.8,
+    "h": 180.2
+   }
+  },
+  "obstacle-monolith-2-glow": {
+   "file": "obstacle-monolith-2-glow.webp",
+   "w": 42,
+   "h": 125,
+   "ax": 0.7619,
+   "ay": 1.024,
+   "scale": 5,
+   "hash": "e429553361"
+  },
+  "obstacle-monolith-3": {
+   "file": "obstacle-monolith-3.webp",
+   "w": 210,
+   "h": 215,
+   "ax": 0.41905,
+   "ay": 0.75349,
+   "scale": 5,
+   "hash": "56a0321cdc",
+   "meta": {
+    "top": 168
+   },
+   "body": {
+    "x": -46.6,
+    "y": -161.8,
+    "w": 87.4,
+    "h": 185.6
+   }
+  },
+  "obstacle-monolith-3-glow": {
+   "file": "obstacle-monolith-3-glow.webp",
+   "w": 47,
+   "h": 98,
+   "ax": 0.7234,
+   "ay": 1.02041,
+   "scale": 5,
+   "hash": "efc1abd313"
+  },
+  "obstacle-scrub-0": {
+   "file": "obstacle-scrub-0.webp",
+   "w": 130,
+   "h": 98,
+   "ax": 0.53077,
+   "ay": 0.68367,
+   "scale": 5,
+   "hash": "efba779b0e",
+   "meta": {
+    "top": 55
+   },
+   "body": {
+    "x": -50.8,
+    "y": -64.8,
+    "w": 108.2,
+    "h": 87.8
+   }
+  },
+  "obstacle-scrub-0-glow": {
+   "file": "obstacle-scrub-0-glow.webp",
+   "w": 27,
+   "h": 23,
+   "ax": 1.25926,
+   "ay": 3.04348,
+   "scale": 5,
+   "hash": "0a1475963e"
+  },
+  "obstacle-scrub-1": {
+   "file": "obstacle-scrub-1.webp",
+   "w": 133,
+   "h": 99,
+   "ax": 0.49624,
+   "ay": 0.67677,
+   "scale": 5,
+   "hash": "153fcb8503",
+   "meta": {
+    "top": 55
+   },
+   "body": {
+    "x": -50.4,
+    "y": -64.8,
+    "w": 110.4,
+    "h": 86.4
+   }
+  },
+  "obstacle-scrub-1-glow": {
+   "file": "obstacle-scrub-1-glow.webp",
+   "w": 27,
+   "h": 23,
+   "ax": 1.25926,
+   "ay": 3.04348,
+   "scale": 5,
+   "hash": "0a1475963e"
+  },
+  "obstacle-scrub-2": {
+   "file": "obstacle-scrub-2.webp",
+   "w": 122,
+   "h": 100,
+   "ax": 0.53279,
+   "ay": 0.67,
+   "scale": 5,
+   "hash": "4a936890cb",
+   "meta": {
+    "top": 55
+   },
+   "body": {
+    "x": -59.2,
+    "y": -64.8,
+    "w": 110.2,
+    "h": 89.8
+   }
+  },
+  "obstacle-scrub-2-glow": {
+   "file": "obstacle-scrub-2-glow.webp",
+   "w": 27,
+   "h": 23,
+   "ax": 1.25926,
+   "ay": 3.04348,
+   "scale": 5,
+   "hash": "0a1475963e"
+  },
+  "obstacle-scrub-3": {
+   "file": "obstacle-scrub-3.webp",
+   "w": 122,
+   "h": 100,
+   "ax": 0.4918,
+   "ay": 0.67,
+   "scale": 5,
+   "hash": "1764b54d10",
+   "meta": {
+    "top": 60
+   },
+   "body": {
+    "x": -52.6,
+    "y": -64.8,
+    "w": 101.2,
+    "h": 85
+   }
+  },
+  "obstacle-scrub-3-glow": {
+   "file": "obstacle-scrub-3-glow.webp",
+   "w": 65,
+   "h": 38,
+   "ax": 0.52308,
+   "ay": 1.84211,
+   "scale": 5,
+   "hash": "3dd639cc5f"
+  },
+  "obstacle-wreck-0": {
+   "file": "obstacle-wreck-0.webp",
+   "w": 95,
+   "h": 74,
+   "ax": 0.51579,
+   "ay": 0.62162,
+   "scale": 5,
+   "hash": "ef267532a0",
+   "meta": {
+    "top": 42
+   },
+   "body": {
+    "x": -41.8,
+    "y": -45.8,
+    "w": 83.2,
+    "h": 69.2
+   }
+  },
+  "obstacle-wreck-0-glow": {
+   "file": "obstacle-wreck-0-glow.webp",
+   "w": 14,
+   "h": 13,
+   "ax": 0.42857,
+   "ay": 3.61538,
+   "scale": 5,
+   "hash": "5e56ca8be0"
+  },
+  "obstacle-wreck-1": {
+   "file": "obstacle-wreck-1.webp",
+   "w": 121,
+   "h": 76,
+   "ax": 0.54545,
+   "ay": 0.60526,
+   "scale": 5,
+   "hash": "30b014e712",
+   "meta": {
+    "top": 43
+   },
+   "body": {
+    "x": -50.4,
+    "y": -45.2,
+    "w": 98,
+    "h": 71.8
+   }
+  },
+  "obstacle-wreck-1-glow": {
+   "file": "obstacle-wreck-1-glow.webp",
+   "w": 16,
+   "h": 16,
+   "ax": 2.1875,
+   "ay": 2.75,
+   "scale": 5,
+   "hash": "922e81ba92"
+  },
+  "obstacle-wreck-2": {
+   "file": "obstacle-wreck-2.webp",
+   "w": 135,
+   "h": 102,
+   "ax": 0.47407,
+   "ay": 0.65686,
+   "scale": 5,
+   "hash": "3225b9ef04",
+   "meta": {
+    "top": 49
+   },
+   "body": {
+    "x": -41,
+    "y": -66.4,
+    "w": 84.6,
+    "h": 88
+   }
+  },
+  "obstacle-wreck-2-glow": {
+   "file": "obstacle-wreck-2-glow.webp",
+   "w": 16,
+   "h": 15,
+   "ax": 0.5,
+   "ay": 3.53333,
+   "scale": 5,
+   "hash": "e909ad9f19"
+  },
+  "obstacle-wreck-3": {
+   "file": "obstacle-wreck-3.webp",
+   "w": 114,
+   "h": 85,
+   "ax": 0.47368,
+   "ay": 0.63529,
+   "scale": 5,
+   "hash": "4887487153",
+   "meta": {
+    "top": 49
+   },
+   "body": {
+    "x": -48.6,
+    "y": -54,
+    "w": 93.4,
+    "h": 75.6
+   }
+  },
+  "obstacle-wreck-3-glow": {
+   "file": "obstacle-wreck-3-glow.webp",
+   "w": 15,
+   "h": 15,
+   "ax": -0.53333,
+   "ay": 0.8,
+   "scale": 5,
+   "hash": "0689ae769c"
+  }
+ }
+}

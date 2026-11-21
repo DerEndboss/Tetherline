@@ -1,0 +1,468 @@
+/* progression: orders and radio (HUD, top right, left of the corner buttons), notices, the main menu with its slots,
+ * Customize and Settings, the Blueprint tree window, the loading screen and the victory moment.
+ * Built on the kit (styles/kit.css, loaded before this file): surfaces .k-chip .k-badge .k-plaque .k-well .k-head
+ * .k-title .k-toast, the press feel (.button, .k-press), motion (Presence + k-enter + k-follow). Motion here moves
+ * only translate/scale/rotate/opacity; the bars are scaleX, never a width. */
+
+/* This part's surfaces, mixed from the kit's tokens (no colour of its own): cards and wells are the kit's faces seen a
+ * little through, so the plate's dot grid shows; --p-hi-* are two strengths of the kit's top light. */
+:root {
+  --p-card-top: color-mix(in oklch, var(--k-face-2) 76%, transparent);
+  --p-card-bot: color-mix(in oklch, var(--k-slot-2) 80%, transparent);
+  --p-well-top: color-mix(in oklch, var(--k-face) 72%, transparent);
+  --p-well-bot: color-mix(in oklch, var(--k-slot-2) 80%, transparent);
+  --p-hi-1: color-mix(in oklch, var(--k-hi) 40%, transparent);
+  --p-hi-2: color-mix(in oklch, var(--k-hi) 62%, transparent);
+}
+
+/* ---------- Orders and radio (HUD, top right) ---------- */
+.dock-orders { position: absolute; top: calc(var(--safe-top) + var(--space-sm)); right: calc(var(--safe-right) + var(--corner-w) + 2 * var(--space-sm)); display: grid; gap: var(--space-xs); justify-items: end; width: 260px; max-width: min(260px, calc(100vw - 2 * var(--space-sm))); }
+.dock-orders > * { width: 100%; }
+.orders { overflow: hidden; padding-bottom: var(--space-xs); }
+.orders-head { display: flex; align-items: center; gap: var(--space-xs); width: 100%; min-height: var(--hit-min); padding: 0 var(--space-sm); border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.orders-head:focus-visible { outline-offset: -3px; border-radius: var(--radius-card); }
+.orders-chapter { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--text-xs); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--k-edge); text-shadow: 0 0 10px var(--k-glow); }
+.orders-count { font-size: 0.6875rem; }
+.orders-chev { display: grid; place-items: center; color: var(--color-muted); transition: rotate var(--dur-short) var(--ease-out), color var(--dur-micro) var(--ease-out); }
+.orders-chev[data-open="false"] { rotate: -90deg; }
+.orders-head:hover .orders-chev { color: var(--color-ink); }
+.orders-meter { height: 4px; margin: 0 var(--space-sm); overflow: hidden; border-radius: var(--radius-pill); background: linear-gradient(180deg, var(--k-slot), var(--k-slot-2)); box-shadow: var(--k-recessed); }
+.orders-meter-fill, .order-fill { display: block; height: 100%; border-radius: inherit; transform-origin: left; transform: scaleX(var(--p, 0)); transition: transform 600ms var(--ease-out); background: linear-gradient(90deg, var(--k-cta-bot), var(--k-cta-top)); }
+.orders-body { display: grid; gap: var(--space-xs); padding: var(--space-xs) var(--space-sm) 0; }
+.stages { display: flex; justify-content: space-between; align-items: center; gap: var(--space-sm); font-size: var(--text-xs); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); }
+.stages-pips { display: flex; gap: 4px; }
+.stage-pip { width: 18px; height: 8px; border-radius: 2px; background: linear-gradient(180deg, var(--k-slot), var(--k-slot-2)); box-shadow: var(--k-recessed); transform: skewX(-18deg); }
+.stage-pip[data-done="true"] { background: linear-gradient(180deg, var(--k-cta-top), var(--k-cta-bot)); box-shadow: 0 0 8px var(--k-glow); animation: pip-on var(--dur-emph) var(--ease-pop) backwards; }
+@keyframes pip-on { from { scale: 1 2; opacity: 0.3; } }
+.order-list { display: grid; gap: var(--space-2xs); margin: 0; padding: 0; list-style: none; }
+.order {
+  position: relative; display: grid; grid-template-columns: 1fr auto; gap: 3px var(--space-xs); align-items: baseline; overflow: hidden;
+  padding: var(--space-xs) var(--space-sm); border: 1px solid var(--k-edge-faint); border-radius: var(--radius-control);
+  background: linear-gradient(180deg, var(--k-slot-2), var(--k-slot)); box-shadow: var(--k-recessed);
+  transition: border-color var(--dur-emph) var(--ease-out), background-color var(--dur-emph) var(--ease-out);
+}
+.order-title { min-width: 0; font-size: var(--text-sm); font-weight: 800; line-height: 1.25; overflow-wrap: anywhere; transition: color var(--dur-emph) var(--ease-out); }
+.order-count { font-size: var(--text-xs); font-weight: 800; color: var(--color-ink-2); white-space: nowrap; }
+.order-bar { grid-column: 1 / -1; display: block; height: 5px; margin-top: 2px; overflow: hidden; border-radius: var(--radius-pill); background: var(--color-track); }
+/* A finished order: green, a check pops in, a light sweeps across once, then it slides away (Orders.tsx holds it a moment). */
+.order[data-done="true"] { border-color: color-mix(in oklch, var(--color-success) 65%, transparent); }
+.order[data-done="true"] .order-title, .order-done-mark { color: var(--color-success); }
+.order[data-done="true"] .order-fill { background: var(--color-success); }
+.order[data-done="true"]::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(100deg, transparent 25%, color-mix(in oklch, var(--color-success) 40%, transparent) 50%, transparent 75%); animation: order-sweep 760ms var(--ease-out) both; }
+@keyframes order-sweep { from { translate: -100% 0; } to { translate: 100% 0; } }
+.order-done-mark { --k-s: 0.5; display: inline-flex; align-items: center; gap: 4px; animation: k-in var(--dur-emph) var(--ease-pop) both; }
+.order-won { display: flex; align-items: center; gap: var(--space-xs); color: var(--color-success); font-size: var(--text-sm); font-weight: 800; }
+
+/* Radio: a card with an antenna mark; a small wave moves while the text types. */
+.radio { padding-bottom: var(--space-xs); }
+.radio-head { display: flex; align-items: center; gap: var(--space-xs); min-height: 40px; padding: 0 var(--space-2xs) 0 var(--space-xs); }
+.radio-mark { display: grid; place-items: center; width: 26px; height: 26px; flex: none; border-radius: 8px; color: var(--k-edge); background: linear-gradient(180deg, var(--k-slot-2), var(--k-slot)); box-shadow: var(--k-recessed); }
+.radio-from { font-size: var(--text-xs); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--k-edge); text-shadow: 0 0 10px var(--k-glow); }
+.radio-wave { display: inline-flex; align-items: flex-end; gap: 2px; flex: 1; height: 12px; opacity: 0; transition: opacity var(--dur-micro) var(--ease-out); }
+.radio-wave i { display: block; width: 3px; height: 100%; border-radius: 2px; background: var(--k-edge); transform-origin: bottom; scale: 1 0.25; }
+.radio[data-typing="true"] .radio-wave { opacity: 0.9; }
+.radio[data-typing="true"] .radio-wave i { animation: radio-wave 520ms var(--ease-in-out) infinite alternate; }
+.radio-wave i:nth-child(2) { animation-delay: -160ms; }
+.radio-wave i:nth-child(3) { animation-delay: -320ms; }
+.radio-wave i:nth-child(4) { animation-delay: -80ms; }
+@keyframes radio-wave { to { scale: 1 1; } }
+.radio-x { display: grid; place-items: center; width: 32px; height: 32px; flex: none; padding: 0; border: 1px solid transparent; border-radius: var(--radius-control); background: none; color: var(--color-muted); cursor: pointer; }
+.radio-x:hover { color: var(--color-ink); background: var(--p-hi-1); border-color: var(--k-edge-faint); }
+@media (pointer: coarse) { .radio-x { width: var(--hit-min); height: var(--hit-min); margin: -6px -4px; } }
+.radio-text { position: relative; margin: 0; padding: 0 var(--space-sm); font-size: var(--text-sm); line-height: 1.45; color: var(--color-ink); }
+/* The full text sits in the layout (so the card never grows while typing) and is invisible; the typed text lies over it. */
+.radio-full { color: transparent; }
+.radio-typed { position: absolute; inset: 0 var(--space-sm); }
+.radio[data-typing="true"] .radio-typed::after { content: ""; display: inline-block; width: 2px; height: 1em; margin-left: 2px; vertical-align: -0.12em; background: var(--k-edge); animation: radio-caret 700ms steps(2, jump-none) infinite; }
+@keyframes radio-caret { to { opacity: 0; } }
+.radio-stack { display: grid; gap: var(--space-xs); justify-items: end; }
+.radio-stack > * { width: 100%; }
+/* While the guided tutorial's card sits across the top (it starts 120 px down and spans the width), the radio waits below it:
+ * the card is three or four lines tall on a phone, so the clearance is a fixed guess that errs a little tall. */
+@media (max-width: 560px) { body:has(.tut-card) .radio-stack { margin-top: 196px; } }
+@media (min-width: 561px) and (max-width: 840px) { body:has(.tut-card) .radio-stack { margin-top: 150px; } }
+.radio-log { display: grid; justify-items: end; gap: var(--space-xs); }
+.radio-log-btn { gap: var(--space-xs); min-height: 30px; padding: 2px 6px 2px var(--space-xs); border: 1px solid var(--k-edge-faint); color: var(--color-muted); font-weight: 700; cursor: pointer; }
+.radio-log-btn:hover, .radio-log-btn[aria-expanded="true"] { color: var(--color-ink); border-color: var(--k-edge-soft); }
+.radio-log-count { height: 18px; min-width: 18px; font-size: 0.625rem; }
+.radio-lines { display: grid; gap: var(--space-xs); width: 100%; margin: 0; padding: var(--space-sm); font-size: var(--text-xs); line-height: 1.4; color: var(--color-ink-2); }
+.radio-lines-head { font-size: 0.6875rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-muted); }
+.radio-lines-list { display: grid; gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
+.radio-lines-list li { display: grid; grid-template-columns: auto 1fr; gap: var(--space-xs); }
+.radio-stamp { color: var(--k-edge); font-weight: 800; }
+
+/* ---------- Notices: lit pills that drop in and lift away (Effects.tsx): above every panel and the tutorial card, below dialogs ---------- */
+.toast-layer { position: fixed; z-index: calc(var(--z-dialog) - 1); left: 50%; translate: -50% 0; top: max(calc(var(--safe-top) + var(--space-md)), 24vh); width: max-content; max-width: calc(100vw - 2 * var(--space-md)); }
+.toast-layer[data-hush="true"], .toast-layer[data-hold="true"] { visibility: hidden; }
+/* Phones: orders, tutorial card and radio fill the top; the notices float in the middle of the world, lower than the radio. */
+@media (max-width: 640px) { .toast-layer { top: calc(var(--safe-top) + 420px); } }
+/* Phones: the guided tutorial card sits from 120 px down, so the order stack stays above it (the stage pips wait for the tablet). */
+@media (max-width: 560px) { .stages { display: none; } .orders-head { min-height: 38px; } }
+
+/* ---------- The mark (menu header, loading screen) ---------- */
+.emblem-hex { fill: color-mix(in oklch, var(--k-edge) 14%, var(--k-slot)); }
+.emblem-rim { fill: none; stroke: var(--k-edge); stroke-width: 1.6; stroke-linejoin: round; }
+.emblem-mark { fill: none; stroke: var(--k-cta-top); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Choice cards (Customize and Settings share them): a lit plate behind the chosen one ---------- */
+.seg-field { min-width: 0; margin: 0; padding: 0; border: 0; }
+.seg-option {
+  position: relative; display: inline-flex; align-items: center; gap: var(--space-xs); min-height: var(--hit-min); padding: 0 var(--space-sm);
+  border: 1px solid var(--k-edge-faint); border-radius: var(--radius-control); background: linear-gradient(180deg, var(--k-slot-2), var(--k-slot));
+  box-shadow: inset 0 1px 0 var(--p-hi-1); font-size: var(--text-sm); font-weight: 700; cursor: pointer;
+}
+.seg-option:has(input:checked) { border-color: var(--k-edge); }
+.seg-option:has(input:focus-visible) { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.seg-option input[type="radio"] { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.seg-option[aria-disabled="true"] { cursor: not-allowed; border-style: dashed; color: var(--color-muted); }
+.seg-option[aria-disabled="true"] input { cursor: not-allowed; }
+.opt-card { justify-content: flex-start; gap: var(--space-sm); min-height: 56px; padding: var(--space-xs) var(--space-md) var(--space-xs) var(--space-sm); text-align: left; }
+.opt-body { display: grid; gap: 1px; min-width: 0; }
+.opt-name { display: inline-flex; align-items: center; gap: var(--space-xs); font-size: var(--text-sm); font-weight: 800; }
+.opt-sub { font-size: var(--text-xs); font-weight: 600; line-height: 1.35; color: var(--color-muted); }
+.opt-sub:empty { display: none; }
+.opt-soon { font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-muted); }
+.opt-card:has(input:checked)::after { content: ""; position: absolute; top: 9px; right: 9px; width: 8px; height: 8px; rotate: 45deg; border-radius: 2px; background: var(--k-edge); box-shadow: 0 0 8px var(--k-glow); --k-s: 0; animation: k-in var(--dur-short) var(--ease-pop) backwards; }
+.world-swatch { width: 40px; height: 40px; flex: none; border-radius: 10px; border: 1px solid var(--k-edge-faint); box-shadow: inset 0 0 0 1px var(--p-hi-2), 0 2px 0 var(--k-lip); }
+
+/* ---------- Main menu: a framed window, the mark and a big call to action ---------- */
+.menu-scrim { position: fixed; inset: 0; z-index: var(--z-dialog); display: grid; place-items: center; padding: var(--space-md); overflow: hidden; background: radial-gradient(120% 90% at 50% 40%, color-mix(in oklch, var(--k-face-2) 45%, transparent), var(--color-scrim) 72%); }
+.menu-scrim > * { grid-area: 1 / 1; }
+.menu {
+  position: relative; display: flex; flex-direction: column; width: min(720px, 100%); max-height: calc(100dvh - 2 * var(--space-md));
+  border: 1px solid var(--k-edge-soft); border-top-color: var(--k-edge); border-radius: var(--radius-panel);
+  background: var(--k-ticks), var(--k-grain), var(--k-plate); box-shadow: var(--k-frame-shadow); overflow: hidden;
+  /* coming back from the Blueprint window it waits a beat, so the two plates do not show through each other */
+  transition: opacity var(--dur-enter) var(--ease-out) 110ms, scale var(--dur-enter) var(--ease-out) 110ms, visibility 0s;
+}
+/* While the Blueprint window is open the menu sinks behind it. */
+.menu[data-behind="true"] { opacity: 0; scale: 0.96; visibility: hidden; pointer-events: none; transition: opacity var(--dur-exit) var(--ease-in), scale var(--dur-exit) var(--ease-in), visibility 0s linear var(--dur-exit); }
+.menu-scroll { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: var(--space-md); flex: 1; min-height: 0; padding: var(--space-lg); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--k-edge-soft) transparent; }
+.menu .button, .meta .button, .victory .button { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); }
+.menu-head { display: flex; align-items: center; gap: var(--space-md); }
+.menu-emblem { flex: none; filter: drop-shadow(0 0 14px var(--k-glow)); }
+.menu-title { font-size: 1.875rem; font-weight: 800; line-height: 1.1; letter-spacing: 0.14em; text-transform: uppercase; text-shadow: 0 0 22px var(--k-glow), 0 2px 0 var(--color-drop); }
+.menu-tag { margin-top: var(--space-2xs); font-size: var(--text-sm); }
+.menu-main { display: grid; gap: var(--space-sm); }
+@media (min-width: 640px) { .menu-main { grid-template-columns: 1.5fr 1fr; align-items: stretch; } }
+.menu-quick-wrap { position: relative; isolation: isolate; display: grid; gap: var(--space-xs); align-content: start; }
+.menu-quick-glow { position: absolute; inset: 4px 8px auto; z-index: -1; height: 92px; border-radius: var(--radius-control); background: var(--k-glow); filter: blur(18px); opacity: 0.5; animation: quick-glow 2800ms var(--ease-in-out) infinite alternate; }
+@keyframes quick-glow { to { opacity: 0.95; } }
+.menu .menu-quick { min-height: 92px; gap: var(--space-sm); font-size: var(--text-xl); font-weight: 800; letter-spacing: 0.12em; }
+.menu-esc { margin-left: var(--space-xs); padding: 2px 8px; border: 1px solid oklch(100% 0 0 / 0.35); border-radius: 6px; font: inherit; font-size: var(--text-xs); letter-spacing: 0.08em; opacity: 0.8; }
+@media (hover: none) { .menu-esc { display: none; } }
+.menu-paused, .menu-full, .cz-full { margin: 0; font-size: var(--text-sm); }
+.menu-recipe { display: flex; flex-wrap: wrap; gap: var(--space-2xs); margin: 0; padding: 0; list-style: none; }
+.menu-side { display: grid; gap: var(--space-xs); grid-auto-rows: 1fr; }
+.menu .menu-side .button { width: 100%; min-height: 48px; }
+.menu-chev { display: grid; place-items: center; transition: rotate var(--dur-short) var(--ease-out); }
+.menu-custom[aria-expanded="true"] .menu-chev { rotate: 180deg; }
+.k-badge.menu-points { background: linear-gradient(180deg, color-mix(in oklch, var(--color-prism) 70%, white), var(--color-prism)); box-shadow: 0 0 8px color-mix(in oklch, var(--color-prism) 55%, transparent), 0 1px 0 color-mix(in oklch, var(--color-prism) 40%, black); }
+.menu-section { display: grid; gap: var(--space-xs); }
+.menu-h { display: flex; align-items: center; gap: var(--space-xs); font-size: var(--text-xs); font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--k-edge); }
+.menu-h::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--k-edge-soft), transparent); }
+
+/* Customize: three groups of cards, the seed, the start button. */
+.customize { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-md); padding: var(--space-md); border: 1px solid var(--k-edge-faint); border-radius: var(--radius-card); background: linear-gradient(180deg, var(--p-well-top), var(--p-well-bot)); box-shadow: inset 0 1px 0 var(--p-hi-1); }
+.cz-group { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); min-width: 0; margin: 0; padding: 0; border: 0; }
+.cz-group > legend, .settings-grid legend { float: left; width: 100%; padding: 0; margin-bottom: var(--space-xs); font-size: var(--text-xs); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--k-edge); }
+.cz-group > legend + * { clear: both; }
+.cz-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: var(--space-xs); }
+.cz-group[data-wide="true"] .cz-options { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.field { display: grid; gap: var(--space-2xs); font-size: var(--text-sm); color: var(--color-ink-2); }
+.field input:not([type="range"]) { min-height: var(--hit-min); padding: 0 var(--space-sm); border: 1px solid var(--k-edge-faint); border-radius: var(--radius-control); font-weight: 700; letter-spacing: 0.08em; }
+.field input:not([type="range"]):hover { border-color: var(--k-edge-soft); }
+.field input:not([type="range"]):focus-visible { outline-offset: 0; border-color: var(--k-edge); }
+.seed-field > label { font-size: var(--text-xs); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--k-edge); }
+.seed-row { display: flex; gap: var(--space-xs); }
+.seed-row input { flex: 1; min-width: 0; }
+.menu .cz-start { min-height: 56px; font-size: var(--text-md); }
+/* ---------- Replace dialog: every slot is taken, the player picks which save the new round replaces (Replace.tsx) ---------- */
+.replace-layer { grid-area: auto; position: absolute; inset: 0; display: grid; place-items: center; padding: var(--space-md); overflow-y: auto; background: var(--color-scrim); }
+.replace {
+  display: grid; gap: var(--space-md); width: min(520px, 100%); max-height: 100%; padding: var(--space-lg); overflow-y: auto; overscroll-behavior: contain;
+  border: 1px solid var(--k-edge-soft); border-top-color: var(--k-edge); border-radius: var(--radius-panel);
+  background: var(--k-ticks), var(--k-grain), var(--k-plate); box-shadow: var(--k-frame-shadow);
+}
+.replace-title { font-size: var(--text-xl); font-weight: 800; letter-spacing: 0.04em; text-shadow: 0 0 18px var(--k-glow); }
+.replace-text { font-size: var(--text-sm); }
+.replace-list { display: grid; gap: var(--space-xs); min-width: 0; margin: 0; padding: 0; border: 0; }
+.replace-slot { align-items: center; }
+.replace-num { width: 44px; height: 44px; font-size: var(--text-xl); font-weight: 800; }
+.replace-slot .slot-facts { margin-block: var(--space-3xs); }
+.replace-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-xs); }
+.replace .button { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: var(--hit-min); }
+/* A phone on its side: one line per save, no filler. */
+@media (max-height: 520px) {
+  .replace { gap: var(--space-sm); padding: var(--space-md); }
+  .replace-title { font-size: var(--text-lg); }
+  .replace-slot { min-height: 0; padding-block: 6px; }
+  .replace-slot .opt-body { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3xs) var(--space-sm); }
+  .replace-slot .opt-sub { display: none; }
+  .replace-slot .slot-facts { margin: 0; }
+  .replace-num { width: 34px; height: 34px; font-size: var(--text-md); }
+}
+@media (max-width: 480px) { .replace { padding: var(--space-md); } .replace-actions .button { flex: 1 1 100%; } .replace-actions .button-danger-go { order: -1; } }
+
+/* The play mark on the two big starts is solid. */
+.menu-quick svg path, .cz-start svg path { fill: currentColor; }
+
+/* Save slots: a numbered plaque, the facts as chips, the actions to the right. */
+.slots { display: grid; gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
+.slot {
+  position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--space-sm); padding: var(--space-xs) var(--space-sm) var(--space-xs) var(--space-xs);
+  border: 1px solid var(--k-edge-faint); border-radius: var(--radius-card); background: linear-gradient(180deg, var(--p-card-top), var(--p-card-bot));
+  box-shadow: inset 0 1px 0 var(--color-rule-soft), 0 2px 0 var(--color-outline-dark); transition: border-color var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+}
+.slot-num { width: 52px; height: 52px; font-size: 1.375rem; font-weight: 800; color: var(--color-ink-2); }
+.slot-text { display: grid; gap: var(--space-2xs); min-width: 0; font-size: var(--text-sm); }
+.slot-name { display: flex; align-items: center; gap: var(--space-xs); font-weight: 800; }
+.slot-facts { display: flex; flex-wrap: wrap; gap: var(--space-2xs); margin: 0; padding: 0; list-style: none; }
+.slot-when, .slot-sub { font-size: var(--text-xs); }
+.slot-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-2xs); }
+.slot-error { --k-delay: 0ms; flex: 1 1 100%; display: flex; align-items: center; justify-content: flex-end; gap: var(--space-2xs); color: var(--color-short); font-size: var(--text-xs); font-weight: 700; }
+.slot:hover { border-color: var(--k-edge-soft); }
+.slot-actions .k-enter { --k-delay: 0ms; }
+.slot[data-empty="true"] { border-style: dashed; background: transparent; box-shadow: none; }
+.slot[data-empty="true"] .slot-num { opacity: 0.55; }
+.slot[data-empty="true"] .slot-name { color: var(--color-muted); }
+.slot[data-current="true"] { border-color: var(--k-edge); box-shadow: inset 0 1px 0 var(--p-hi-2), inset 0 0 22px var(--k-glow-soft), 0 0 18px var(--k-glow-soft), 0 2px 0 var(--color-outline-dark); }
+.slot[data-current="true"] .slot-num { color: var(--k-edge); }
+.slot-tag { display: inline-flex; align-items: center; gap: 5px; padding: 1px var(--space-xs) 1px 6px; border-radius: var(--radius-pill); background: var(--color-accent-soft); color: var(--color-accent); font-size: 0.625rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.slot-tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); box-shadow: 0 0 8px var(--color-accent-glow); }
+@media (max-width: 560px) {
+  .slot { grid-template-columns: auto 1fr; }
+  .slot-actions { grid-column: 1 / -1; justify-content: stretch; }
+  .slot-actions .button { flex: 1 1 0; }
+  /* An empty slot stays one slim row: the number, its name, the two actions. */
+  .slot[data-empty="true"] { grid-template-columns: auto 1fr auto; }
+  .slot[data-empty="true"] .slot-num { width: 40px; height: 40px; font-size: 1.125rem; }
+  .slot[data-empty="true"] .slot-sub { display: none; }
+  .slot[data-empty="true"] .slot-actions { grid-column: auto; }
+  .slot[data-empty="true"] .slot-actions .button { flex: none; padding-inline: var(--space-sm); }
+  .slot[data-empty="true"] .slot-name { white-space: nowrap; }
+}
+
+/* ---------- Settings: a toggle row, then cards of controls (other parts' controls land in the same cards) ---------- */
+.settings { display: grid; gap: var(--space-sm); }
+.settings-toggle {
+  display: grid; grid-template-columns: auto 1fr auto; grid-template-areas: "ico name chev" "ico sum chev"; column-gap: var(--space-sm); align-items: center; width: 100%;
+  padding: var(--space-xs) var(--space-sm) var(--space-xs) var(--space-xs); border: 1px solid var(--k-edge-faint); border-radius: var(--radius-card); text-align: left; color: inherit; font: inherit;
+  background: linear-gradient(180deg, var(--p-card-top), var(--p-card-bot)); box-shadow: inset 0 1px 0 var(--color-rule-soft), 0 2px 0 var(--color-outline-dark);
+}
+.settings-toggle[aria-expanded="true"] { border-color: var(--k-edge-soft); }
+.settings-ico { grid-area: ico; width: 40px; height: 40px; }
+.settings-name { grid-area: name; align-self: end; font-size: var(--text-sm); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; font-kerning: none; }
+.settings-sum { grid-area: sum; align-self: start; font-size: var(--text-xs); }
+.settings-chev { grid-area: chev; display: grid; place-items: center; color: var(--k-edge); transition: rotate var(--dur-short) var(--ease-out); }
+.settings-toggle[aria-expanded="true"] .settings-chev { rotate: 180deg; }
+.settings-body, .menu-custom-wrap { display: block; --k-delay: 0ms; }
+.settings-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-xs); }
+@media (min-width: 640px) { .settings-grid { grid-template-columns: 1fr 1fr; } }
+.settings-grid > fieldset, .settings-grid > .settings-group, .settings-grid > .field {
+  display: flex; flex-flow: row wrap; align-items: stretch; align-content: flex-start; gap: var(--space-2xs); min-width: 0; margin: 0; padding: var(--space-sm);
+  border: 1px solid var(--k-edge-faint); border-radius: var(--radius-card); background: linear-gradient(180deg, var(--p-well-top), var(--p-well-bot)); box-shadow: inset 0 1px 0 var(--p-hi-1);
+}
+.settings-grid > .field { display: grid; align-content: center; }
+.settings-options { display: flex; flex-wrap: wrap; flex: 1 1 100%; gap: var(--space-2xs); }
+.settings-hint, .settings-check { flex: 1 1 100%; }
+.settings-hint { font-size: var(--text-xs); }
+.settings-check { align-items: center; gap: var(--space-sm); margin-top: var(--space-2xs); padding: var(--space-xs) var(--space-sm); }
+.settings-grid > fieldset > .seg-option { flex: 0 1 auto; }
+.settings-grid > fieldset > .seg-option:has(input[type="checkbox"]) { flex: 1 1 100%; }
+/* Choices other parts draw straight into a card (quick bar On / Off) stand as full rows, like the switches. */
+.settings-grid > fieldset:not(.settings-group) > .seg-option:has(input[type="radio"]) { flex: 1 1 100%; }
+.volume-row { flex: 1 1 100%; grid-template-columns: 5.5rem 1fr 3rem; align-items: center; gap: var(--space-xs); }
+.volume-name { font-weight: 700; }
+.volume-value { text-align: right; color: var(--color-ink); font-size: var(--text-xs); }
+.settings-sound .sound-track { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px var(--space-sm); }
+.settings-sound .sound-track > span:first-child { grid-column: 1 / -1; font-size: var(--text-xs); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--k-edge); }
+.settings-sound .sound-track > .num { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-ink); }
+.settings-grid > .settings-sound { display: grid; }
+.settings-sound .sound-track { grid-template-columns: minmax(0, 1fr); }
+.settings-sound .sound-track > .num { overflow: visible; text-overflow: clip; white-space: normal; overflow-wrap: anywhere; font-size: var(--text-sm); }
+.settings-sound .sound-track > .button { justify-self: start; }
+/* Quick bar: the on/off choice and the slots slider share one wide card, borderless inside. */
+.settings-grid > .settings-pal { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-sm) var(--space-md); align-items: start; }
+.settings-pal > fieldset, .settings-pal > .field { display: flex; flex-flow: row wrap; gap: var(--space-2xs); min-width: 0; margin: 0; padding: 0; border: 0; background: none; box-shadow: none; }
+.settings-pal > .field { display: grid; align-content: start; gap: var(--space-xs); }
+.settings-pal > .field > span { font-size: var(--text-sm); font-weight: 700; color: var(--color-ink-2); line-height: 1.35; }
+.settings-pal > fieldset > .seg-option { flex: 1 1 100%; padding-left: var(--space-xs); gap: var(--space-xs); }
+/* Radio rows get a round lit dot, the twin of the check box of the switches beside them. */
+.settings-pal > fieldset > .seg-option::after {
+  content: ""; order: -1; position: static; inset: auto; flex: none; align-self: center; box-sizing: border-box; width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--k-edge-soft); background: var(--k-slot);
+  box-shadow: inset 0 0 0 4px var(--k-slot); transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+}
+.settings-pal > fieldset > .seg-option:has(input:checked)::after { border-color: var(--k-edge); background: var(--k-cta-top); box-shadow: inset 0 0 0 4px var(--k-slot), 0 0 8px var(--k-glow); }
+.settings-grid > .field > span { font-size: var(--text-xs); font-weight: 700; color: var(--color-ink-2); }
+/* The skip button of the sound card is a real button, not grey text. */
+.settings-sound .sound-track > .button:not(:disabled) { color: var(--color-ink); border-color: var(--k-edge-faint); border-top-color: var(--k-edge-soft); background: linear-gradient(180deg, var(--k-face-3), var(--k-face)); box-shadow: var(--k-raised); text-shadow: 0 1px 0 var(--color-press-shade); }
+.settings-sound .sound-track > .button:disabled { border-color: var(--k-edge-faint); }
+/* Sliders: a recessed track with a lit fill (--fill is set from Settings.tsx while it moves) and the kit's chunky knob. */
+.settings input[type="range"] { --fill: 0%; appearance: none; width: 100%; height: 24px; margin: 0; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; cursor: pointer; }
+.settings input[type="range"]::-webkit-slider-runnable-track { height: 8px; border-radius: 6px; background: linear-gradient(90deg, var(--k-cta-bot) var(--fill), transparent var(--fill)), linear-gradient(180deg, var(--k-slot), var(--k-slot-2)); box-shadow: var(--k-recessed); }
+.settings input[type="range"]::-moz-range-track { height: 8px; border-radius: 6px; background: linear-gradient(180deg, var(--k-slot), var(--k-slot-2)); box-shadow: var(--k-recessed); }
+.settings input[type="range"]::-moz-range-progress { height: 8px; border-radius: 6px; background: var(--k-cta-bot); }
+.settings input[type="range"]::-webkit-slider-thumb { appearance: none; width: 20px; height: 20px; margin-top: -6px; border-radius: 50%; border: 2px solid var(--k-lip); background: radial-gradient(circle at 50% 35%, var(--color-ink), var(--k-cta-bot) 70%); box-shadow: 0 0 0 2px var(--k-edge), 0 2px 0 var(--k-lip), 0 0 12px var(--k-glow); transition: scale var(--dur-micro) var(--ease-pop); }
+.settings input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--k-lip); background: radial-gradient(circle at 50% 35%, var(--color-ink), var(--k-cta-bot) 70%); box-shadow: 0 0 0 2px var(--k-edge), 0 2px 0 var(--k-lip), 0 0 12px var(--k-glow); }
+.settings input[type="range"]:hover::-webkit-slider-thumb { scale: 1.12; }
+.settings input[type="range"]:active::-webkit-slider-thumb { scale: 0.94; }
+.settings input[type="range"]:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ---------- Blueprint tree: its own window over the menu ---------- */
+.meta-window {
+  --k-delay: 50ms; /* the menu sinks first, then the window rises */
+  position: relative; display: flex; flex-direction: column; width: min(1240px, 100%); max-height: calc(100dvh - 2 * var(--space-md));
+  border: 1px solid var(--k-edge-soft); border-top-color: var(--k-edge); border-radius: var(--radius-panel);
+  background: var(--k-ticks), var(--k-grain), var(--k-plate); box-shadow: var(--k-frame-shadow); overflow: hidden;
+}
+.meta { display: flex; flex-direction: column; flex: 1; gap: var(--space-sm); min-height: 0; padding-bottom: var(--space-lg); }
+.meta > :not(.meta-head) { margin-inline: var(--space-lg); }
+.meta-head { display: grid; grid-template-columns: 1fr auto 1fr; padding-block: var(--space-xs); }
+.meta-head .button-quiet { justify-self: start; }
+.meta-title { justify-self: center; }
+.meta-points { justify-self: end; gap: var(--space-xs); padding: 4px var(--space-sm); color: var(--color-prism); font-size: var(--text-sm); }
+.meta-points .num { color: var(--color-ink); font-size: var(--text-md); }
+.meta-points-name { color: var(--color-muted); font-weight: 700; }
+.meta-sub { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs) var(--space-sm); font-size: var(--text-sm); }
+.meta-stats { display: inline-flex; flex-wrap: wrap; gap: var(--space-2xs); }
+.tree-scroll { flex: 1 1 auto; min-height: 140px; padding: var(--space-sm); overflow: auto; border: 1px solid var(--k-edge-faint); border-radius: var(--radius-card); background: var(--k-grain), linear-gradient(180deg, var(--k-slot), var(--k-slot-2)); box-shadow: var(--k-recessed); }
+.tree-wrap { position: relative; display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; }
+.tree-swipe { display: none; }
+/* The tree is wider than the window (any size): fade the cut edge and say it scrolls. A touch screen swipes, a mouse scrolls. */
+.tree-scroll[data-more="true"] { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 44px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 44px), transparent); }
+.tree-scroll[data-more="true"] ~ .tree-swipe { display: flex; align-items: center; justify-content: center; gap: var(--space-2xs); margin: var(--space-xs) 0 0; font-size: var(--text-xs); font-weight: 700; color: var(--color-muted); }
+.tree-swipe svg { rotate: -90deg; color: var(--k-edge); }
+.tree-swipe-touch { display: none; }
+@media (hover: none) { .tree-swipe-touch { display: inline; } .tree-swipe-mouse { display: none; } }
+.tree { position: relative; margin-inline: auto; }
+.tree-svg { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
+.tree-links path { fill: none; stroke-width: 2; stroke-linecap: round; }
+.tree-links path[data-state="off"] { stroke: var(--k-edge-faint); }
+.tree-links path[data-state="open"] { stroke: var(--k-edge); stroke-opacity: 0.75; stroke-dasharray: 3 6; }
+.tree-links path[data-state="on"] { stroke: var(--color-prism); filter: drop-shadow(0 0 4px color-mix(in oklch, var(--color-prism) 60%, transparent)); }
+.tree-node {
+  position: absolute; display: flex; align-items: center; gap: var(--space-xs); padding: 0 var(--space-xs); border: 1px solid var(--k-edge-faint); border-top-color: var(--k-edge-soft);
+  border-radius: var(--radius-control); background: linear-gradient(180deg, var(--k-face-2), var(--k-face)); box-shadow: var(--k-raised); color: var(--color-ink); text-align: left;
+}
+.tree-node[aria-pressed="true"] { border-color: var(--k-edge); box-shadow: var(--k-raised), inset 0 0 14px var(--k-glow-soft), 0 0 14px var(--k-glow-soft); }
+.tree-node[data-state="ready"] { border-color: var(--color-accent); }
+.tree-node[data-state="owned"] { border-color: color-mix(in oklch, var(--color-prism) 70%, transparent); box-shadow: var(--k-raised), inset 0 0 16px color-mix(in oklch, var(--color-prism) 18%, transparent); }
+.tree-node[data-state="locked"] { color: var(--color-muted); background: linear-gradient(180deg, var(--k-slot-2), var(--k-slot)); box-shadow: var(--k-recessed); }
+.tree-node[data-state="locked"][aria-pressed="true"] { border-color: var(--k-edge-soft); }
+.tree-icon { width: 36px; height: 36px; border-radius: 10px; }
+.tree-node[data-state="owned"] .tree-icon { color: var(--color-prism); box-shadow: var(--k-recessed), inset 0 0 0 1px color-mix(in oklch, var(--color-prism) 55%, transparent), 0 0 12px color-mix(in oklch, var(--color-prism) 30%, transparent); }
+.tree-node[data-state="locked"] .tree-icon { color: var(--color-muted); }
+.tree-text { display: grid; gap: 2px; min-width: 0; }
+.tree-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--text-sm); font-weight: 800; }
+.tree-cost { display: inline-flex; align-items: center; gap: 4px; font-size: var(--text-xs); font-weight: 800; color: var(--color-muted); }
+.tree-node[data-state="ready"] .tree-cost, .tree-node[data-state="owned"] .tree-cost { color: var(--color-prism); }
+.tree-node[data-state="poor"] .tree-cost { color: var(--color-short); }
+.tree-node[data-fresh="true"] { animation: node-bought 640ms var(--ease-pop) both; }
+.tree-node[data-fresh="true"]::before { content: ""; position: absolute; inset: -2px; border: 2px solid var(--color-prism); border-radius: inherit; pointer-events: none; animation: node-ring 720ms var(--ease-out) both; }
+@keyframes node-bought { 35% { scale: 1.08; } }
+@keyframes node-ring { from { opacity: 1; } to { opacity: 0; scale: 1.22 1.5; } }
+.meta-head, .meta-sub, .tree-detail { flex: none; }
+/* The detail well keeps the height of its fullest state (a node picked, two lines of text, the buy button), so picking a node never moves the window. */
+.tree-detail { min-height: 112px; padding: var(--space-sm); }
+.tree-detail-body { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--space-sm); }
+.tree-detail-icon { width: 52px; height: 52px; border-radius: 14px; }
+.tree-detail-text { display: grid; gap: 2px; min-width: 0; }
+.tree-detail-name { font-size: var(--text-lg); font-weight: 800; }
+.tree-kind { margin-top: var(--space-2xs); }
+.tree-hint { align-self: center; }
+.meta .tree-buy { min-width: 168px; min-height: 52px; }
+@media (max-width: 560px) {
+  .meta > :not(.meta-head) { margin-inline: var(--space-md); }
+  .meta-head { grid-template-columns: auto 1fr; }
+  .meta-title { grid-column: 1; grid-row: 2; justify-self: start; }
+  .meta-points { grid-column: 2; grid-row: 1; }
+  .tree-detail-body { grid-template-columns: auto 1fr; }
+  .tree-detail { min-height: 200px; }
+  .meta .tree-buy { grid-column: 1 / -1; }
+}
+
+/* ---------- Loading screen (plain DOM, see loading.ts): the mark, a ring that keeps turning, the bar ---------- */
+.loading { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: radial-gradient(60% 50% at 50% 46%, color-mix(in oklch, var(--k-go-lip) 60%, transparent), transparent 70%), var(--k-grain), var(--color-paper); animation: k-in-fade var(--dur-enter) var(--ease-out) both; transition: opacity 320ms var(--ease-out); }
+.loading-instant { animation: none; }
+.loading-out { opacity: 0; pointer-events: none; }
+.loading-out .loading-box { scale: 1.05; transition: scale 380ms var(--ease-out); }
+.loading-box { display: grid; gap: var(--space-sm); justify-items: center; width: min(360px, 80vw); }
+.loading-mark-wrap { position: relative; display: grid; place-items: center; width: 96px; height: 96px; margin-bottom: var(--space-xs); }
+.loading-mark-wrap .emblem { filter: drop-shadow(0 0 16px var(--k-glow)); }
+.loading-ring { position: absolute; inset: 0; border: 2px solid var(--k-edge-faint); border-top-color: var(--k-edge); border-radius: 50%; animation: loading-spin 1300ms linear infinite; }
+@keyframes loading-spin { to { rotate: 360deg; } }
+.loading-mark { font-size: var(--text-lg); font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-ink); text-shadow: 0 0 18px var(--k-glow); }
+.loading-bar { position: relative; width: 100%; height: 10px; overflow: hidden; border: 1px solid var(--k-edge-faint); border-radius: var(--radius-pill); background: linear-gradient(180deg, var(--k-slot), var(--k-slot-2)); box-shadow: var(--k-recessed); }
+.loading-fill { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(90deg, var(--k-cta-bot), var(--k-cta-top)); box-shadow: 0 0 14px var(--k-glow); transform: scaleX(0.1); transform-origin: left; transition: transform 700ms var(--ease-out); }
+.loading-shine { position: absolute; inset: 0; width: 40%; border-radius: inherit; background: linear-gradient(90deg, transparent, color-mix(in oklch, var(--color-ink) 50%, transparent), transparent); animation: loading-slide 1100ms linear infinite; }
+@keyframes loading-slide { from { translate: -110% 0; } to { translate: 260% 0; } }
+.loading-label { min-height: 1.4em; font-size: var(--text-sm); color: var(--color-muted); }
+
+/* ---------- Victory: rays, a card that pops, numbers that count up, confetti that falls once ---------- */
+.victory { position: fixed; inset: 0; z-index: var(--z-dialog); display: grid; place-items: center; padding: var(--space-md); overflow: hidden; background: radial-gradient(circle at 50% 42%, color-mix(in oklch, var(--k-face-3) 55%, transparent), var(--color-scrim) 72%); }
+.victory-rays { position: absolute; left: 50%; top: 50%; width: 150vmax; height: 150vmax; translate: -50% -50%; border-radius: 50%; pointer-events: none; background: repeating-conic-gradient(from 0deg, transparent 0deg, color-mix(in oklch, var(--k-edge) 15%, transparent) 4deg, transparent 8deg, transparent 14deg); animation: rays-in 900ms var(--ease-out) backwards, rays-spin 90s linear infinite; }
+@keyframes rays-in { from { opacity: 0; } }
+@keyframes rays-spin { to { rotate: 360deg; } }
+.victory-glow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 50% 44%, color-mix(in oklch, var(--k-edge) 14%, transparent) 0, transparent 38%), radial-gradient(circle at 50% 44%, transparent 0 16%, var(--color-scrim) 72%); }
+.victory-card {
+  position: relative; display: grid; gap: var(--space-sm); justify-items: center; width: min(540px, 100%); max-height: calc(100dvh - 2 * var(--space-md)); overflow-y: auto;
+  padding: var(--space-lg); border: 1px solid var(--k-edge-soft); border-top-color: var(--k-edge); border-radius: var(--radius-panel);
+  background: var(--k-ticks), var(--k-grain), var(--k-plate); box-shadow: var(--k-frame-shadow), 0 0 60px var(--k-glow-soft); text-align: center;
+}
+.victory-medal { position: relative; isolation: isolate; display: grid; place-items: center; width: 76px; height: 76px; color: var(--k-ink-dark); filter: drop-shadow(0 0 16px var(--k-glow)) drop-shadow(0 4px 0 var(--k-cta-lip)); }
+.victory-medal::before { content: ""; position: absolute; inset: 0; z-index: -1; clip-path: polygon(25% 2%, 75% 2%, 99% 50%, 75% 98%, 25% 98%, 1% 50%); background: linear-gradient(180deg, var(--k-cta-top), var(--k-cta-bot)); }
+.victory-kicker { font-size: var(--text-xs); font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--k-edge); text-shadow: 0 0 12px var(--k-glow); }
+.victory-title { font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; text-shadow: 0 0 22px var(--k-glow), 0 2px 0 var(--color-drop); }
+.victory-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xs); width: 100%; margin: var(--space-xs) 0 0; }
+.victory-stat { display: grid; grid-template-columns: auto 1fr; grid-template-areas: "icon label" "icon value"; column-gap: var(--space-sm); align-items: center; padding: var(--space-xs) var(--space-sm) var(--space-xs) var(--space-xs); border: 1px solid var(--k-edge-faint); border-radius: var(--radius-card); background: linear-gradient(180deg, var(--k-slot-2), var(--k-slot)); box-shadow: var(--k-recessed); text-align: left; }
+.victory-stat-icon { grid-area: icon; width: 44px; height: 44px; }
+.victory-stat dt { grid-area: label; font-size: var(--text-xs); font-weight: 700; color: var(--color-muted); }
+.victory-stat dd { grid-area: value; margin: 0; font-size: var(--text-xl); font-weight: 800; line-height: 1.2; }
+.victory-stat[data-tone="prism"] { border-color: color-mix(in oklch, var(--color-prism) 55%, transparent); background: radial-gradient(90% 140% at 0% 50%, color-mix(in oklch, var(--color-prism) 18%, transparent), transparent 70%), linear-gradient(180deg, var(--k-slot-2), var(--k-slot)); }
+.victory-stat[data-tone="prism"] .victory-stat-icon, .victory-stat[data-tone="prism"] dd { color: var(--color-prism); }
+.victory-bonus { font-size: var(--text-sm); }
+.victory-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-xs); margin-top: var(--space-xs); }
+.confetti { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.confetti-piece { position: absolute; top: -24px; width: 9px; height: 16px; border-radius: 2px; background: var(--k-edge); animation: confetti-fall 5s linear 1 both; }
+.confetti-piece:nth-child(6n + 2) { background: var(--color-prism); }
+.confetti-piece:nth-child(6n + 3) { background: var(--color-warn); }
+.confetti-piece:nth-child(6n + 4) { background: var(--color-short); }
+.confetti-piece:nth-child(6n + 5) { background: var(--color-success); }
+.confetti-piece:nth-child(6n) { background: var(--color-ink-2); }
+.confetti-piece:nth-child(4n) { width: 10px; height: 10px; border-radius: 50%; }
+.confetti-piece:nth-child(7n) { width: 5px; height: 18px; }
+@keyframes confetti-fall { from { translate: 0 0; rotate: 0deg; } to { translate: var(--drift, 0) 112vh; rotate: var(--spin, 360deg); } }
+:root[data-motion="reduce"] .confetti, :root[data-motion="reduce"] .victory-rays { display: none; }
+/* A phone on its side (about 390 px high): the cards give up their ornaments and gaps so the content has room. */
+@media (max-height: 520px) {
+  .menu-scroll { gap: var(--space-sm); padding: var(--space-md); }
+  .menu-title { font-size: 1.375rem; }
+  .menu .menu-quick { min-height: 64px; }
+  .menu-quick-glow { height: 64px; }
+  .meta { gap: var(--space-xs); padding-bottom: var(--space-sm); }
+  .tree-scroll { min-height: 88px; }
+  .tree-detail { min-height: 72px; padding: var(--space-xs) var(--space-sm); }
+  .tree-kind { display: none; }
+  .meta .tree-buy { min-height: 44px; }
+  .victory-card { gap: var(--space-xs); padding: var(--space-md); }
+  .victory-medal, .victory-line { display: none; }
+  .victory-stat dd { font-size: var(--text-lg); }
+  .victory-stat-icon { width: 36px; height: 36px; }
+}
+/* The tree is wider than a phone: fade the cut edge, say it scrolls, and let the card hug the nodes instead of leaving a void. */
+@media (max-width: 760px) {
+  .tree-wrap { flex: 0 1 auto; }
+  .tree-scroll { flex: 0 1 auto; }
+}
+@media (max-width: 560px) {
+  .menu-scroll { padding: var(--space-md); }
+  .menu-title { font-size: 1.375rem; letter-spacing: 0.1em; }
+  .menu-emblem svg { width: 48px; height: 48px; }
+  .menu .menu-quick { min-height: 72px; }
+  .menu-quick-glow { height: 72px; }
+  .victory-card { padding: var(--space-md); }
+  .victory-stats { grid-template-columns: 1fr; }
+  .victory-stat { grid-template-columns: auto 1fr auto; grid-template-areas: "icon label value"; }
+  .victory-stat dd { text-align: right; }
+}

@@ -1,0 +1,135 @@
+/* HUD stack: ONE layout for every module's cards on small screens, so no module guesses a fixed top.
+ * hud/hudStack.ts measures the cards (--ph-*-h, --ph-pal-w; 0px while a card is absent; ResizeObserver, never per
+ * frame) and sets html[data-hud-stack]: "phone" (portrait), "landscape" (a phone on its side) or "narrow" (a tablet).
+ * Every selector carries the attribute, so it wins over the module's own rule wherever that sheet loads.
+ * A gate `min(x, h * 1000)` is x while that card is there and 0 while it is not. Only positions change here; the modules'
+ * motion (k-enter, Presence) stays theirs. */
+
+:root[data-hud-stack] {
+  --ph-edge: var(--space-xs);
+  --ph-gap: var(--space-xs);
+  --ph-top: calc(var(--safe-top) + var(--ph-edge));
+  --ph-pal-bottom: calc(var(--safe-bottom) + var(--ph-edge));
+  --ph-hot-row: max(var(--ph-hot-h, 0px), 56px);
+}
+
+/* ======================= Phone (portrait) =======================
+ * Top down: orders beside the corner buttons, the core as one row, the tutorial card, the radio.
+ * Bottom up: the palette across the width, above it the quick bar (right) with the drone chip and the tool plate (left). */
+:root[data-hud-stack="phone"] {
+  --ph-row: max(var(--ph-orders-h, 0px), var(--hud-control));
+  --ph-core-top: calc(var(--ph-top) + var(--ph-row) + var(--ph-gap));
+  --ph-tut-top: calc(var(--ph-core-top) + var(--ph-core-h, 0px) + var(--ph-gap));
+  --ph-radio-top: calc(var(--ph-tut-top) + var(--ph-tut-h, 0px) + min(var(--ph-gap), var(--ph-tut-h, 0px) * 1000));
+  --ph-open-top: calc(var(--ph-radio-top) + var(--ph-radio-h, 0px) + min(var(--ph-gap), var(--ph-radio-h, 0px) * 1000));
+  --ph-row-bottom: calc(var(--ph-pal-bottom) + var(--ph-pal-h, 0px) + var(--ph-gap));
+  --ph-open-bottom: calc(var(--ph-row-bottom) + var(--ph-hot-row) + var(--ph-gap));
+}
+[data-hud-stack="phone"] .hud .corner-buttons,
+[data-hud-stack="landscape"] .hud .corner-buttons { top: var(--ph-top); right: calc(var(--safe-right) + var(--ph-edge)); }
+
+/* Orders. While the tutorial card is up it IS the current order, so the orders shrink to their header row. */
+[data-hud-stack="phone"] .hud .dock-orders { top: var(--ph-top); left: calc(var(--safe-left) + var(--ph-edge)); right: calc(var(--safe-right) + var(--ph-edge) + var(--corner-w) + var(--ph-gap)); width: auto; max-width: none; }
+[data-hud-stack="phone"] body:has(.tut-card) .hud .orders-body,
+[data-hud-stack="phone"] body:has(.tut-card) .hud .orders-chev { display: none; }
+[data-hud-stack="phone"] body:has(.tut-card) .hud .orders-head { pointer-events: none; }
+
+/* Core: one row, the materials scroll sideways; the fill meters under the numbers show the room left. */
+:is([data-hud-stack="phone"], [data-hud-stack="landscape"]) .hud :is(.resources, .resources[data-open]) {
+  position: fixed; top: var(--ph-core-top); left: calc(var(--safe-left) + var(--ph-edge)); right: var(--ph-core-right, calc(var(--safe-right) + var(--ph-edge)));
+  display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; width: auto; padding: 4px;
+}
+:is([data-hud-stack="phone"], [data-hud-stack="landscape"]) .hud .res-head.k-head { flex-direction: column; align-items: flex-start; gap: 2px; padding: 0 6px 0 4px; border-radius: 0; background: none; box-shadow: none; }
+:is([data-hud-stack="phone"], [data-hud-stack="landscape"]) .hud .res-head.k-head::after { display: none; }
+:is([data-hud-stack="phone"], [data-hud-stack="landscape"]) .hud :is(.res-list, .resources[data-open] .res-list) {
+  grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(70px, max-content);
+  max-height: none; padding: 0; overflow: auto hidden; overscroll-behavior: contain; scrollbar-width: none;
+}
+:is([data-hud-stack="phone"], [data-hud-stack="landscape"]) .hud .res-foot { display: none; }
+
+/* Tutorial card and radio: one under the other; the radio and its log stop above the quick bar row (they scroll). */
+:is([data-hud-stack="phone"], [data-hud-stack="landscape"]) .tut-card {
+  top: var(--ph-tut-top); left: calc(var(--safe-left) + var(--ph-edge)); right: var(--ph-col-right, calc(var(--safe-right) + var(--ph-edge)));
+  width: auto; max-width: 460px; transform: none; gap: 6px; padding-bottom: var(--space-xs);
+}
+:is([data-hud-stack="phone"], [data-hud-stack="landscape"]) .tut-card .tut-body,
+:is([data-hud-stack="phone"], [data-hud-stack="landscape"]) .tut-card .tut-foot { padding: 0 var(--space-sm); }
+:is([data-hud-stack="phone"], [data-hud-stack="landscape"]) .tut-card .tut-title { font-size: var(--text-md); }
+:is([data-hud-stack="phone"], [data-hud-stack="landscape"]) .hud .radio-stack {
+  position: fixed; top: var(--ph-radio-top); left: calc(var(--safe-left) + var(--ph-edge)); right: var(--ph-col-right, calc(var(--safe-right) + var(--ph-edge)));
+  width: auto; max-width: 460px; max-height: max(0px, calc(100dvh - var(--ph-open-bottom) - var(--ph-radio-top))); margin: 0;
+  overflow: hidden auto; overscroll-behavior: contain; scrollbar-width: thin;
+}
+
+/* Notices: in the open map between the top stack and the quick bar row, never over a card. */
+:is([data-hud-stack="phone"], [data-hud-stack="landscape"]) .toast-layer { top: min(var(--ph-open-top), calc(100dvh - var(--ph-open-bottom) - 2 * var(--hit-min))); }
+
+/* Palette across the bottom; the quick bar row above it. */
+[data-hud-stack="phone"] .hud .dock-palette { left: calc(var(--safe-left) + var(--ph-edge)); right: calc(var(--safe-right) + var(--ph-edge)); bottom: var(--ph-pal-bottom); max-width: none; gap: var(--ph-gap); }
+[data-hud-stack="phone"] .hud .hotbar { max-width: calc(100% - 2 * var(--hud-control) - 2 * var(--ph-gap)); }
+:is([data-hud-stack="phone"], [data-hud-stack="landscape"]) .hud .dock-drones { left: calc(var(--safe-left) + var(--ph-edge)); top: auto; bottom: var(--ph-row-bottom); max-height: none; }
+:is([data-hud-stack="phone"], [data-hud-stack="landscape"]) .hud .dock-tools { left: calc(var(--safe-left) + var(--ph-edge) + var(--hud-control) + var(--ph-gap)); bottom: var(--ph-row-bottom); }
+[data-hud-stack="phone"] .hud .palette {
+  --pal-cell: 46px; --pal-gap: 4px; --pal-thumb-scale: 0.82;
+  align-self: stretch; grid-template-columns: minmax(0, 1fr); grid-template-areas: "tabs" "grid" "info"; gap: 6px; padding: 6px;
+}
+/* The category tabs become one row of icons; the lit plate glides sideways (translate only). */
+[data-hud-stack="phone"] .hud .pal-tabs { flex-direction: row; gap: 3px; }
+[data-hud-stack="phone"] .hud .pal-glide { top: 4px; bottom: 4px; right: auto; width: calc((100% - 8px - (var(--n) - 1) * 3px) / var(--n)); height: auto; translate: calc(var(--i) * (100% + 3px)) 0; }
+[data-hud-stack="phone"] .hud .pal-tab { justify-content: center; min-height: 40px; padding: 0; }
+[data-hud-stack="phone"] .hud :is(.pal-tab-name, .pal-tab-n) { display: none; }
+/* Two rows of buildings at most (a longer tab scrolls), no filler plates. */
+[data-hud-stack="phone"] .hud .pal-grid { grid-template-columns: repeat(auto-fill, var(--pal-cell)); justify-content: space-between; max-height: calc(2 * var(--pal-cell) + var(--pal-gap)); overflow: hidden auto; overscroll-behavior: contain; scrollbar-width: none; }
+[data-hud-stack="phone"] .hud .pal-empty-cell { display: none; }
+[data-hud-stack="phone"] .hud .pal-info { min-height: 40px; padding: 4px 10px; }
+
+/* ======================= Landscape (a phone on its side) =======================
+ * Top row: core strip (left), orders, corner buttons. Left column under it: tutorial card, radio. Bottom row: drone chip,
+ * tool plate, quick bar, then the palette in the bottom right corner (its short-window look stays palette.css's). */
+:root[data-hud-stack="landscape"] {
+  --ph-orders-w: 220px;
+  --ph-core-top: var(--ph-top);
+  --ph-corner-w: calc(3 * var(--hud-control) + 2 * var(--space-xs)); /* = .hud's --corner-w, which :root cannot see */
+  --ph-core-right: calc(var(--safe-right) + var(--ph-edge) + var(--ph-corner-w) + var(--ph-gap) + var(--ph-orders-w) + var(--ph-gap));
+  /* the tutorial card and the radio end where the palette begins, and left of the orders and the corner buttons above it */
+  --ph-col-right: calc(var(--safe-right) + var(--ph-edge) + max(var(--ph-pal-w, 0px), var(--ph-corner-w) + var(--ph-gap) + var(--ph-orders-w)) + var(--ph-gap));
+  --ph-tut-top: calc(var(--ph-core-top) + var(--ph-core-h, 0px) + var(--ph-gap));
+  --ph-radio-top: calc(var(--ph-tut-top) + var(--ph-tut-h, 0px) + min(var(--ph-gap), var(--ph-tut-h, 0px) * 1000));
+  --ph-open-top: calc(var(--ph-radio-top) + var(--ph-radio-h, 0px) + min(var(--ph-gap), var(--ph-radio-h, 0px) * 1000));
+  --ph-row-bottom: var(--ph-pal-bottom);
+  --ph-open-bottom: calc(var(--ph-pal-bottom) + var(--ph-hot-row) + var(--ph-gap));
+}
+[data-hud-stack="landscape"] .hud .dock-orders { top: var(--ph-top); right: calc(var(--safe-right) + var(--ph-edge) + var(--corner-w) + var(--ph-gap)); width: var(--ph-orders-w); max-width: none; }
+/* The orders end above the palette; a long list scrolls inside the card. */
+[data-hud-stack="landscape"] .hud .orders { max-height: max(var(--hit-min), calc(100dvh - var(--ph-top) - var(--ph-pal-bottom) - var(--ph-pal-h, 0px) - var(--ph-gap))); overflow: hidden auto; scrollbar-width: none; }
+[data-hud-stack="landscape"] .hud .stages { display: none; }
+[data-hud-stack="landscape"] .hud .dock-palette {
+  left: calc(var(--safe-left) + var(--ph-edge) + 2 * (var(--hud-control) + var(--ph-gap))); right: calc(var(--safe-right) + var(--ph-edge)); bottom: var(--ph-pal-bottom);
+  flex-direction: row; align-items: flex-end; justify-content: flex-end; max-width: none; gap: var(--ph-gap);
+}
+[data-hud-stack="landscape"] .hud .hotbar { flex: 0 1 auto; min-width: 0; overflow: hidden; }
+/* While the tutorial card is up on a phone on its side there is no room for the radio under it (the card grows by a row
+ * once a tool is in hand), and it only repeats the card: it waits until the card is gone. */
+[data-hud-stack="landscape"] body:has(.tut-card) .hud .radio-stack { display: none; }
+/* A phone on its side has room for one or two lines under the tutorial card: the radio drops its header row, the antenna
+ * and the dismiss button sit beside the text instead (the card stays as short as its text). */
+[data-hud-stack="landscape"] .hud .radio { display: flex; align-items: flex-start; gap: var(--space-xs); padding: var(--space-xs); }
+[data-hud-stack="landscape"] .hud .radio-head { display: contents; }
+[data-hud-stack="landscape"] .hud :is(.radio-from, .radio-wave) { display: none; }
+[data-hud-stack="landscape"] .hud .radio-text { order: 1; flex: 1 1 auto; min-width: 0; padding: 0; }
+[data-hud-stack="landscape"] .hud .radio-typed { inset: 0; }
+[data-hud-stack="landscape"] .hud .radio-x { order: 2; margin: -4px -4px 0 0; }
+[data-hud-stack="landscape"] .toast-layer { left: calc((var(--safe-left) + var(--ph-edge) + 100vw - var(--ph-col-right)) / 2); max-width: calc(100vw - var(--ph-col-right) - var(--safe-left) - 2 * var(--ph-edge)); }
+
+/* ======================= Narrow (a tablet in portrait) =======================
+ * The modules' own layout stays; only the tutorial card (top left, across the core) and the radio under the orders
+ * learn each other's height, so they stop overlapping. */
+:root[data-hud-stack="narrow"] {
+  --ph-top: calc(var(--safe-top) + var(--space-sm));
+  --ph-tut-top: calc(var(--ph-top) + max(var(--ph-core-h, 0px), var(--ph-orders-h, 0px)) + var(--ph-gap));
+}
+[data-hud-stack="narrow"] .tut-card { top: var(--ph-tut-top); }
+/* The radio sits under the orders (dock-orders flow); while the card is up it starts below the card instead. */
+[data-hud-stack="narrow"] body:has(.tut-card) .hud .radio-stack {
+  margin-top: min(max(0px, calc(var(--ph-tut-top) + var(--ph-tut-h, 0px) + var(--ph-gap) - var(--ph-top) - var(--ph-orders-h, 0px) - var(--space-xs))), var(--ph-tut-h, 0px) * 1000);
+}

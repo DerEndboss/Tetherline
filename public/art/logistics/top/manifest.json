@@ -1,0 +1,3535 @@
+{
+ "version": 1,
+ "category": "logistics",
+ "sprites": {
+  "building-bridge-conveyor": {
+   "file": "building-bridge-conveyor.webp",
+   "w": 109,
+   "h": 106,
+   "ax": 0.51376,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "20d35712ac",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    }
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-bridge-conveyor-r0": {
+   "file": "building-bridge-conveyor-r0.webp",
+   "w": 109,
+   "h": 106,
+   "ax": 0.51376,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "ecd02e968c",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    }
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-bridge-conveyor-r1": {
+   "file": "building-bridge-conveyor-r1.webp",
+   "w": 107,
+   "h": 108,
+   "ax": 0.50467,
+   "ay": 0.50926,
+   "scale": 5,
+   "hash": "1de3c8d983",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    }
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-bridge-conveyor-r2": {
+   "file": "building-bridge-conveyor-r2.webp",
+   "w": 110,
+   "h": 106,
+   "ax": 0.49091,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "62c8be0937",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    }
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-bridge-conveyor-r3": {
+   "file": "building-bridge-conveyor-r3.webp",
+   "w": 107,
+   "h": 109,
+   "ax": 0.50467,
+   "ay": 0.48624,
+   "scale": 5,
+   "hash": "ae91c5452e",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    }
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-bridge-conveyor-w0": {
+   "file": "building-bridge-conveyor-w0.webp",
+   "w": 35,
+   "h": 31,
+   "ax": -0.14286,
+   "ay": 0.41935,
+   "scale": 5,
+   "hash": "6a91cb9169",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": 5.799999999999997,
+    "y": -12.799999999999997,
+    "w": 33.8,
+    "h": 30
+   }
+  },
+  "building-bridge-conveyor-w1": {
+   "file": "building-bridge-conveyor-w1.webp",
+   "w": 35,
+   "h": 31,
+   "ax": -0.14286,
+   "ay": 0.41935,
+   "scale": 5,
+   "hash": "8283b41635",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": 5.799999999999997,
+    "y": -12.799999999999997,
+    "w": 33.8,
+    "h": 30
+   }
+  },
+  "building-bridge-conveyor-w10": {
+   "file": "building-bridge-conveyor-w10.webp",
+   "w": 35,
+   "h": 31,
+   "ax": -0.14286,
+   "ay": 0.41935,
+   "scale": 5,
+   "hash": "4bc5cffede",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": 5.799999999999997,
+    "y": -12.799999999999997,
+    "w": 33.8,
+    "h": 30
+   }
+  },
+  "building-bridge-conveyor-w11": {
+   "file": "building-bridge-conveyor-w11.webp",
+   "w": 34,
+   "h": 30,
+   "ax": -0.17647,
+   "ay": 0.43333,
+   "scale": 5,
+   "hash": "90ac128639",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": 6,
+    "y": -12.799999999999997,
+    "w": 33.6,
+    "h": 29.8
+   }
+  },
+  "building-bridge-conveyor-w2": {
+   "file": "building-bridge-conveyor-w2.webp",
+   "w": 35,
+   "h": 31,
+   "ax": -0.14286,
+   "ay": 0.41935,
+   "scale": 5,
+   "hash": "4bc5cffede",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": 5.799999999999997,
+    "y": -12.799999999999997,
+    "w": 33.8,
+    "h": 30
+   }
+  },
+  "building-bridge-conveyor-w3": {
+   "file": "building-bridge-conveyor-w3.webp",
+   "w": 34,
+   "h": 30,
+   "ax": -0.17647,
+   "ay": 0.43333,
+   "scale": 5,
+   "hash": "29f440ce9f",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": 6,
+    "y": -12.799999999999997,
+    "w": 33.6,
+    "h": 29.8
+   }
+  },
+  "building-bridge-conveyor-w4": {
+   "file": "building-bridge-conveyor-w4.webp",
+   "w": 35,
+   "h": 31,
+   "ax": -0.14286,
+   "ay": 0.41935,
+   "scale": 5,
+   "hash": "66bbe0909c",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": 5.799999999999997,
+    "y": -12.799999999999997,
+    "w": 33.8,
+    "h": 30
+   }
+  },
+  "building-bridge-conveyor-w5": {
+   "file": "building-bridge-conveyor-w5.webp",
+   "w": 35,
+   "h": 31,
+   "ax": -0.14286,
+   "ay": 0.41935,
+   "scale": 5,
+   "hash": "4b853e93d9",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": 5.799999999999997,
+    "y": -12.799999999999997,
+    "w": 33.8,
+    "h": 30
+   }
+  },
+  "building-bridge-conveyor-w6": {
+   "file": "building-bridge-conveyor-w6.webp",
+   "w": 35,
+   "h": 31,
+   "ax": -0.14286,
+   "ay": 0.41935,
+   "scale": 5,
+   "hash": "d71f7f222d",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": 5.799999999999997,
+    "y": -12.799999999999997,
+    "w": 33.8,
+    "h": 30
+   }
+  },
+  "building-bridge-conveyor-w7": {
+   "file": "building-bridge-conveyor-w7.webp",
+   "w": 34,
+   "h": 30,
+   "ax": -0.17647,
+   "ay": 0.43333,
+   "scale": 5,
+   "hash": "29f440ce9f",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": 6,
+    "y": -12.799999999999997,
+    "w": 33.6,
+    "h": 29.8
+   }
+  },
+  "building-bridge-conveyor-w8": {
+   "file": "building-bridge-conveyor-w8.webp",
+   "w": 35,
+   "h": 31,
+   "ax": -0.14286,
+   "ay": 0.41935,
+   "scale": 5,
+   "hash": "66bbe0909c",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": 5.799999999999997,
+    "y": -12.799999999999997,
+    "w": 33.8,
+    "h": 30
+   }
+  },
+  "building-bridge-conveyor-w9": {
+   "file": "building-bridge-conveyor-w9.webp",
+   "w": 35,
+   "h": 31,
+   "ax": -0.14286,
+   "ay": 0.41935,
+   "scale": 5,
+   "hash": "4b853e93d9",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": 5.799999999999997,
+    "y": -12.799999999999997,
+    "w": 33.8,
+    "h": 30
+   }
+  },
+  "building-bridge-conveyor-wb": {
+   "file": "building-bridge-conveyor-wb.webp",
+   "w": 109,
+   "h": 106,
+   "ax": 0.51376,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "165b7b9cfb",
+   "meta": {
+    "top": 11,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": 11.5,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ],
+    "wire": {
+     "x": 11.5,
+     "y": 11.5
+    }
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-conveyor": {
+   "file": "building-conveyor.webp",
+   "w": 110,
+   "h": 106,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "0568cbb93f",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-conveyor-curve-l-r0": {
+   "file": "building-conveyor-curve-l-r0.webp",
+   "w": 110,
+   "h": 109,
+   "ax": 0.48182,
+   "ay": 0.51376,
+   "scale": 5,
+   "hash": "62263d1808",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48.8,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-conveyor-curve-l-r1": {
+   "file": "building-conveyor-curve-l-r1.webp",
+   "w": 109,
+   "h": 109,
+   "ax": 0.48624,
+   "ay": 0.48624,
+   "scale": 5,
+   "hash": "522b333c06",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-conveyor-curve-l-r2": {
+   "file": "building-conveyor-curve-l-r2.webp",
+   "w": 109,
+   "h": 110,
+   "ax": 0.51376,
+   "ay": 0.48182,
+   "scale": 5,
+   "hash": "b9e7bb11d8",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48.8,
+    "y": -48,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-conveyor-curve-l-r3": {
+   "file": "building-conveyor-curve-l-r3.webp",
+   "w": 109,
+   "h": 109,
+   "ax": 0.51376,
+   "ay": 0.51376,
+   "scale": 5,
+   "hash": "9e01824ba1",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48.8,
+    "y": -48.8,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-conveyor-curve-r-r0": {
+   "file": "building-conveyor-curve-r-r0.webp",
+   "w": 109,
+   "h": 109,
+   "ax": 0.48624,
+   "ay": 0.48624,
+   "scale": 5,
+   "hash": "cb1e59d731",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-conveyor-curve-r-r1": {
+   "file": "building-conveyor-curve-r-r1.webp",
+   "w": 109,
+   "h": 110,
+   "ax": 0.51376,
+   "ay": 0.48182,
+   "scale": 5,
+   "hash": "d9bfde8776",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48.8,
+    "y": -48,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-conveyor-curve-r-r2": {
+   "file": "building-conveyor-curve-r-r2.webp",
+   "w": 109,
+   "h": 109,
+   "ax": 0.51376,
+   "ay": 0.51376,
+   "scale": 5,
+   "hash": "934566be55",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48.8,
+    "y": -48.8,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-conveyor-curve-r-r3": {
+   "file": "building-conveyor-curve-r-r3.webp",
+   "w": 110,
+   "h": 109,
+   "ax": 0.48182,
+   "ay": 0.51376,
+   "scale": 5,
+   "hash": "72e417f1ff",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48.8,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-conveyor-r0": {
+   "file": "building-conveyor-r0.webp",
+   "w": 110,
+   "h": 106,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "0568cbb93f",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-conveyor-r1": {
+   "file": "building-conveyor-r1.webp",
+   "w": 106,
+   "h": 109,
+   "ax": 0.5,
+   "ay": 0.49541,
+   "scale": 5,
+   "hash": "1ee13a9f2c",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-conveyor-r2": {
+   "file": "building-conveyor-r2.webp",
+   "w": 110,
+   "h": 106,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "d03fa17a75",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-conveyor-r3": {
+   "file": "building-conveyor-r3.webp",
+   "w": 106,
+   "h": 109,
+   "ax": 0.5,
+   "ay": 0.49541,
+   "scale": 5,
+   "hash": "d9962048b3",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-fast-conveyor": {
+   "file": "building-fast-conveyor.webp",
+   "w": 110,
+   "h": 106,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "ca29b48add",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-fast-conveyor-curve-l-r0": {
+   "file": "building-fast-conveyor-curve-l-r0.webp",
+   "w": 110,
+   "h": 109,
+   "ax": 0.48182,
+   "ay": 0.51376,
+   "scale": 5,
+   "hash": "f163094f23",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48.8,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-fast-conveyor-curve-l-r1": {
+   "file": "building-fast-conveyor-curve-l-r1.webp",
+   "w": 109,
+   "h": 109,
+   "ax": 0.48624,
+   "ay": 0.48624,
+   "scale": 5,
+   "hash": "9716182b69",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-fast-conveyor-curve-l-r2": {
+   "file": "building-fast-conveyor-curve-l-r2.webp",
+   "w": 109,
+   "h": 110,
+   "ax": 0.51376,
+   "ay": 0.48182,
+   "scale": 5,
+   "hash": "a265958e1a",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48.8,
+    "y": -48,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-fast-conveyor-curve-l-r3": {
+   "file": "building-fast-conveyor-curve-l-r3.webp",
+   "w": 109,
+   "h": 109,
+   "ax": 0.51376,
+   "ay": 0.51376,
+   "scale": 5,
+   "hash": "0d9442de55",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48.8,
+    "y": -48.8,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-fast-conveyor-curve-r-r0": {
+   "file": "building-fast-conveyor-curve-r-r0.webp",
+   "w": 109,
+   "h": 109,
+   "ax": 0.48624,
+   "ay": 0.48624,
+   "scale": 5,
+   "hash": "9b8487f3cc",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-fast-conveyor-curve-r-r1": {
+   "file": "building-fast-conveyor-curve-r-r1.webp",
+   "w": 109,
+   "h": 110,
+   "ax": 0.51376,
+   "ay": 0.48182,
+   "scale": 5,
+   "hash": "5aa49017f3",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48.8,
+    "y": -48,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-fast-conveyor-curve-r-r2": {
+   "file": "building-fast-conveyor-curve-r-r2.webp",
+   "w": 109,
+   "h": 109,
+   "ax": 0.51376,
+   "ay": 0.51376,
+   "scale": 5,
+   "hash": "c70819d771",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48.8,
+    "y": -48.8,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-fast-conveyor-curve-r-r3": {
+   "file": "building-fast-conveyor-curve-r-r3.webp",
+   "w": 110,
+   "h": 109,
+   "ax": 0.48182,
+   "ay": 0.51376,
+   "scale": 5,
+   "hash": "8b4e77dac2",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48.8,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-fast-conveyor-r0": {
+   "file": "building-fast-conveyor-r0.webp",
+   "w": 110,
+   "h": 106,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "ca29b48add",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-fast-conveyor-r1": {
+   "file": "building-fast-conveyor-r1.webp",
+   "w": 106,
+   "h": 109,
+   "ax": 0.5,
+   "ay": 0.49541,
+   "scale": 5,
+   "hash": "9245377492",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-fast-conveyor-r2": {
+   "file": "building-fast-conveyor-r2.webp",
+   "w": 110,
+   "h": 106,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "bfa2e6fa3a",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-fast-conveyor-r3": {
+   "file": "building-fast-conveyor-r3.webp",
+   "w": 106,
+   "h": 109,
+   "ax": 0.5,
+   "ay": 0.49541,
+   "scale": 5,
+   "hash": "ade0d41349",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-junction": {
+   "file": "building-junction.webp",
+   "w": 111,
+   "h": 111,
+   "ax": 0.4955,
+   "ay": 0.4955,
+   "scale": 5,
+   "hash": "0ba926a4fe",
+   "meta": {
+    "top": 2,
+    "wire": {
+     "x": 0,
+     "y": 0
+    }
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-junction-w0": {
+   "file": "building-junction-w0.webp",
+   "w": 88,
+   "h": 85,
+   "ax": 0.5,
+   "ay": 0.49412,
+   "scale": 5,
+   "hash": "efb46d5e4e",
+   "meta": {
+    "top": 2,
+    "wire": {
+     "x": 0,
+     "y": 0
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -43.6,
+    "y": -42,
+    "w": 87.2,
+    "h": 84.2
+   }
+  },
+  "building-junction-w1": {
+   "file": "building-junction-w1.webp",
+   "w": 88,
+   "h": 85,
+   "ax": 0.5,
+   "ay": 0.49412,
+   "scale": 5,
+   "hash": "bb4ed314f1",
+   "meta": {
+    "top": 2,
+    "wire": {
+     "x": 0,
+     "y": 0
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -43.2,
+    "y": -42,
+    "w": 86.4,
+    "h": 84.2
+   }
+  },
+  "building-junction-w10": {
+   "file": "building-junction-w10.webp",
+   "w": 86,
+   "h": 85,
+   "ax": 0.5,
+   "ay": 0.49412,
+   "scale": 5,
+   "hash": "ce894032a3",
+   "meta": {
+    "top": 2,
+    "wire": {
+     "x": 0,
+     "y": 0
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -42.4,
+    "y": -42,
+    "w": 84.8,
+    "h": 84.2
+   }
+  },
+  "building-junction-w11": {
+   "file": "building-junction-w11.webp",
+   "w": 88,
+   "h": 85,
+   "ax": 0.5,
+   "ay": 0.49412,
+   "scale": 5,
+   "hash": "bb4ed314f1",
+   "meta": {
+    "top": 2,
+    "wire": {
+     "x": 0,
+     "y": 0
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -43.2,
+    "y": -42,
+    "w": 86.4,
+    "h": 84.2
+   }
+  },
+  "building-junction-w2": {
+   "file": "building-junction-w2.webp",
+   "w": 86,
+   "h": 85,
+   "ax": 0.5,
+   "ay": 0.49412,
+   "scale": 5,
+   "hash": "ce894032a3",
+   "meta": {
+    "top": 2,
+    "wire": {
+     "x": 0,
+     "y": 0
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -42.4,
+    "y": -42,
+    "w": 84.8,
+    "h": 84.2
+   }
+  },
+  "building-junction-w3": {
+   "file": "building-junction-w3.webp",
+   "w": 85,
+   "h": 85,
+   "ax": 0.49412,
+   "ay": 0.49412,
+   "scale": 5,
+   "hash": "1f93f1edab",
+   "meta": {
+    "top": 2,
+    "wire": {
+     "x": 0,
+     "y": 0
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -42,
+    "y": -42,
+    "w": 84.2,
+    "h": 84.2
+   }
+  },
+  "building-junction-w4": {
+   "file": "building-junction-w4.webp",
+   "w": 85,
+   "h": 86,
+   "ax": 0.49412,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "01295b8b0b",
+   "meta": {
+    "top": 2,
+    "wire": {
+     "x": 0,
+     "y": 0
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -42,
+    "y": -42.4,
+    "w": 84.2,
+    "h": 84.8
+   }
+  },
+  "building-junction-w5": {
+   "file": "building-junction-w5.webp",
+   "w": 85,
+   "h": 88,
+   "ax": 0.49412,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "1b71243e96",
+   "meta": {
+    "top": 2,
+    "wire": {
+     "x": 0,
+     "y": 0
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -42,
+    "y": -43.2,
+    "w": 84.2,
+    "h": 86.6
+   }
+  },
+  "building-junction-w6": {
+   "file": "building-junction-w6.webp",
+   "w": 85,
+   "h": 88,
+   "ax": 0.49412,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "47bf10113d",
+   "meta": {
+    "top": 2,
+    "wire": {
+     "x": 0,
+     "y": 0
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -42,
+    "y": -43.6,
+    "w": 84.2,
+    "h": 87.2
+   }
+  },
+  "building-junction-w7": {
+   "file": "building-junction-w7.webp",
+   "w": 85,
+   "h": 88,
+   "ax": 0.49412,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "1b71243e96",
+   "meta": {
+    "top": 2,
+    "wire": {
+     "x": 0,
+     "y": 0
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -42,
+    "y": -43.2,
+    "w": 84.2,
+    "h": 86.6
+   }
+  },
+  "building-junction-w8": {
+   "file": "building-junction-w8.webp",
+   "w": 85,
+   "h": 86,
+   "ax": 0.49412,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "01295b8b0b",
+   "meta": {
+    "top": 2,
+    "wire": {
+     "x": 0,
+     "y": 0
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -42,
+    "y": -42.4,
+    "w": 84.2,
+    "h": 84.8
+   }
+  },
+  "building-junction-w9": {
+   "file": "building-junction-w9.webp",
+   "w": 85,
+   "h": 85,
+   "ax": 0.49412,
+   "ay": 0.49412,
+   "scale": 5,
+   "hash": "1f93f1edab",
+   "meta": {
+    "top": 2,
+    "wire": {
+     "x": 0,
+     "y": 0
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -42,
+    "y": -42,
+    "w": 84.2,
+    "h": 84.2
+   }
+  },
+  "building-junction-wb": {
+   "file": "building-junction-wb.webp",
+   "w": 111,
+   "h": 111,
+   "ax": 0.4955,
+   "ay": 0.4955,
+   "scale": 5,
+   "hash": "dae6b4441a",
+   "meta": {
+    "top": 2,
+    "wire": {
+     "x": 0,
+     "y": 0
+    }
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-mass-driver": {
+   "file": "building-mass-driver.webp",
+   "w": 370,
+   "h": 312,
+   "ax": 0.42162,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "2f865cfc48",
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": -19.2,
+      "y": 0,
+      "color": "#ff6b6b",
+      "r": 14,
+      "phase": 0.2
+     }
+    ],
+    "goods": {
+     "x": 19.2,
+     "y": 0
+    },
+    "wire": {
+     "x": -52.8,
+     "y": -48
+    }
+   },
+   "body": {
+    "x": -144,
+    "y": -144,
+    "w": 288,
+    "h": 288
+   }
+  },
+  "building-mass-driver-w0": {
+   "file": "building-mass-driver-w0.webp",
+   "w": 230,
+   "h": 89,
+   "ax": 0.09565,
+   "ay": 0.58427,
+   "scale": 5,
+   "hash": "18c8b72d26",
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": -19.2,
+      "y": 0,
+      "color": "#ff6b6b",
+      "r": 14,
+      "phase": 0.2
+     }
+    ],
+    "goods": {
+     "x": 19.2,
+     "y": 0
+    },
+    "wire": {
+     "x": -52.8,
+     "y": -48
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -21.80000000000001,
+    "y": -41.599999999999994,
+    "w": 151.2,
+    "h": 78
+   }
+  },
+  "building-mass-driver-w1": {
+   "file": "building-mass-driver-w1.webp",
+   "w": 230,
+   "h": 89,
+   "ax": 0.09565,
+   "ay": 0.58427,
+   "scale": 5,
+   "hash": "8ddb6f2565",
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": -19.2,
+      "y": 0,
+      "color": "#ff6b6b",
+      "r": 14,
+      "phase": 0.2
+     }
+    ],
+    "goods": {
+     "x": 19.2,
+     "y": 0
+    },
+    "wire": {
+     "x": -52.8,
+     "y": -48
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -21.80000000000001,
+    "y": -41.599999999999994,
+    "w": 151.2,
+    "h": 78
+   }
+  },
+  "building-mass-driver-w10": {
+   "file": "building-mass-driver-w10.webp",
+   "w": 230,
+   "h": 89,
+   "ax": 0.09565,
+   "ay": 0.58427,
+   "scale": 5,
+   "hash": "b358ec2c4c",
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": -19.2,
+      "y": 0,
+      "color": "#ff6b6b",
+      "r": 14,
+      "phase": 0.2
+     }
+    ],
+    "goods": {
+     "x": 19.2,
+     "y": 0
+    },
+    "wire": {
+     "x": -52.8,
+     "y": -48
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -21.80000000000001,
+    "y": -41.599999999999994,
+    "w": 155,
+    "h": 78
+   }
+  },
+  "building-mass-driver-w11": {
+   "file": "building-mass-driver-w11.webp",
+   "w": 230,
+   "h": 89,
+   "ax": 0.09565,
+   "ay": 0.58427,
+   "scale": 5,
+   "hash": "5505cbdfaa",
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": -19.2,
+      "y": 0,
+      "color": "#ff6b6b",
+      "r": 14,
+      "phase": 0.2
+     }
+    ],
+    "goods": {
+     "x": 19.2,
+     "y": 0
+    },
+    "wire": {
+     "x": -52.8,
+     "y": -48
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -21.80000000000001,
+    "y": -41.599999999999994,
+    "w": 154.6,
+    "h": 78
+   }
+  },
+  "building-mass-driver-w2": {
+   "file": "building-mass-driver-w2.webp",
+   "w": 230,
+   "h": 89,
+   "ax": 0.09565,
+   "ay": 0.58427,
+   "scale": 5,
+   "hash": "b64db7ac2e",
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": -19.2,
+      "y": 0,
+      "color": "#ff6b6b",
+      "r": 14,
+      "phase": 0.2
+     }
+    ],
+    "goods": {
+     "x": 19.2,
+     "y": 0
+    },
+    "wire": {
+     "x": -52.8,
+     "y": -48
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -21.80000000000001,
+    "y": -41.599999999999994,
+    "w": 151.2,
+    "h": 78
+   }
+  },
+  "building-mass-driver-w3": {
+   "file": "building-mass-driver-w3.webp",
+   "w": 230,
+   "h": 89,
+   "ax": 0.09565,
+   "ay": 0.58427,
+   "scale": 5,
+   "hash": "3508efd2fc",
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": -19.2,
+      "y": 0,
+      "color": "#ff6b6b",
+      "r": 14,
+      "phase": 0.2
+     }
+    ],
+    "goods": {
+     "x": 19.2,
+     "y": 0
+    },
+    "wire": {
+     "x": -52.8,
+     "y": -48
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -21.80000000000001,
+    "y": -41.599999999999994,
+    "w": 151.2,
+    "h": 78
+   }
+  },
+  "building-mass-driver-w4": {
+   "file": "building-mass-driver-w4.webp",
+   "w": 230,
+   "h": 89,
+   "ax": 0.09565,
+   "ay": 0.58427,
+   "scale": 5,
+   "hash": "1a511b9509",
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": -19.2,
+      "y": 0,
+      "color": "#ff6b6b",
+      "r": 14,
+      "phase": 0.2
+     }
+    ],
+    "goods": {
+     "x": 19.2,
+     "y": 0
+    },
+    "wire": {
+     "x": -52.8,
+     "y": -48
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -21.80000000000001,
+    "y": -41.599999999999994,
+    "w": 151.2,
+    "h": 78
+   }
+  },
+  "building-mass-driver-w5": {
+   "file": "building-mass-driver-w5.webp",
+   "w": 230,
+   "h": 89,
+   "ax": 0.09565,
+   "ay": 0.58427,
+   "scale": 5,
+   "hash": "b0a0c41855",
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": -19.2,
+      "y": 0,
+      "color": "#ff6b6b",
+      "r": 14,
+      "phase": 0.2
+     }
+    ],
+    "goods": {
+     "x": 19.2,
+     "y": 0
+    },
+    "wire": {
+     "x": -52.8,
+     "y": -48
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -21.80000000000001,
+    "y": -41.599999999999994,
+    "w": 151.2,
+    "h": 78
+   }
+  },
+  "building-mass-driver-w6": {
+   "file": "building-mass-driver-w6.webp",
+   "w": 230,
+   "h": 89,
+   "ax": 0.09565,
+   "ay": 0.58427,
+   "scale": 5,
+   "hash": "d4ff88b2a8",
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": -19.2,
+      "y": 0,
+      "color": "#ff6b6b",
+      "r": 14,
+      "phase": 0.2
+     }
+    ],
+    "goods": {
+     "x": 19.2,
+     "y": 0
+    },
+    "wire": {
+     "x": -52.8,
+     "y": -48
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -21.80000000000001,
+    "y": -41.599999999999994,
+    "w": 151.2,
+    "h": 78
+   }
+  },
+  "building-mass-driver-w7": {
+   "file": "building-mass-driver-w7.webp",
+   "w": 230,
+   "h": 89,
+   "ax": 0.09565,
+   "ay": 0.58427,
+   "scale": 5,
+   "hash": "315e7a05ab",
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": -19.2,
+      "y": 0,
+      "color": "#ff6b6b",
+      "r": 14,
+      "phase": 0.2
+     }
+    ],
+    "goods": {
+     "x": 19.2,
+     "y": 0
+    },
+    "wire": {
+     "x": -52.8,
+     "y": -48
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -21.80000000000001,
+    "y": -41.599999999999994,
+    "w": 151.2,
+    "h": 78
+   }
+  },
+  "building-mass-driver-w8": {
+   "file": "building-mass-driver-w8.webp",
+   "w": 230,
+   "h": 89,
+   "ax": 0.09565,
+   "ay": 0.58427,
+   "scale": 5,
+   "hash": "e30098285b",
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": -19.2,
+      "y": 0,
+      "color": "#ff6b6b",
+      "r": 14,
+      "phase": 0.2
+     }
+    ],
+    "goods": {
+     "x": 19.2,
+     "y": 0
+    },
+    "wire": {
+     "x": -52.8,
+     "y": -48
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -21.80000000000001,
+    "y": -41.599999999999994,
+    "w": 151.2,
+    "h": 78
+   }
+  },
+  "building-mass-driver-w9": {
+   "file": "building-mass-driver-w9.webp",
+   "w": 230,
+   "h": 89,
+   "ax": 0.09565,
+   "ay": 0.58427,
+   "scale": 5,
+   "hash": "5d1a16c67a",
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": -19.2,
+      "y": 0,
+      "color": "#ff6b6b",
+      "r": 14,
+      "phase": 0.2
+     }
+    ],
+    "goods": {
+     "x": 19.2,
+     "y": 0
+    },
+    "wire": {
+     "x": -52.8,
+     "y": -48
+    },
+    "fps": 12
+   },
+   "body": {
+    "x": -21.80000000000001,
+    "y": -41.599999999999994,
+    "w": 155,
+    "h": 78
+   }
+  },
+  "building-mass-driver-wb": {
+   "file": "building-mass-driver-wb.webp",
+   "w": 366,
+   "h": 312,
+   "ax": 0.42623,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "66b6f8a535",
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": -19.2,
+      "y": 0,
+      "color": "#ff6b6b",
+      "r": 14,
+      "phase": 0.2
+     }
+    ],
+    "goods": {
+     "x": 19.2,
+     "y": 0
+    },
+    "wire": {
+     "x": -52.8,
+     "y": -48
+    }
+   },
+   "body": {
+    "x": -144,
+    "y": -144,
+    "w": 288,
+    "h": 288
+   }
+  },
+  "building-overflow-gate": {
+   "file": "building-overflow-gate.webp",
+   "w": 112,
+   "h": 111,
+   "ax": 0.5,
+   "ay": 0.4955,
+   "scale": 5,
+   "hash": "5879989e91",
+   "meta": {
+    "top": 4
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-overflow-gate-w0": {
+   "file": "building-overflow-gate-w0.webp",
+   "w": 88,
+   "h": 87,
+   "ax": 0.48864,
+   "ay": 0.49425,
+   "scale": 5,
+   "hash": "2fcb7bec93",
+   "meta": {
+    "top": 4,
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -43,
+    "w": 87.6,
+    "h": 86.2
+   }
+  },
+  "building-overflow-gate-w1": {
+   "file": "building-overflow-gate-w1.webp",
+   "w": 88,
+   "h": 87,
+   "ax": 0.48864,
+   "ay": 0.49425,
+   "scale": 5,
+   "hash": "1d86436aa4",
+   "meta": {
+    "top": 4,
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -43,
+    "w": 87.2,
+    "h": 86.4
+   }
+  },
+  "building-overflow-gate-w10": {
+   "file": "building-overflow-gate-w10.webp",
+   "w": 87,
+   "h": 89,
+   "ax": 0.49425,
+   "ay": 0.50562,
+   "scale": 5,
+   "hash": "5523c0c949",
+   "meta": {
+    "top": 4,
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -44.2,
+    "w": 86.4,
+    "h": 87.4
+   }
+  },
+  "building-overflow-gate-w11": {
+   "file": "building-overflow-gate-w11.webp",
+   "w": 88,
+   "h": 88,
+   "ax": 0.48864,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "0362f1c019",
+   "meta": {
+    "top": 4,
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -43.2,
+    "w": 87.2,
+    "h": 86.4
+   }
+  },
+  "building-overflow-gate-w2": {
+   "file": "building-overflow-gate-w2.webp",
+   "w": 87,
+   "h": 88,
+   "ax": 0.49425,
+   "ay": 0.48864,
+   "scale": 5,
+   "hash": "1a5d8679f1",
+   "meta": {
+    "top": 4,
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -43,
+    "w": 86.4,
+    "h": 87.2
+   }
+  },
+  "building-overflow-gate-w3": {
+   "file": "building-overflow-gate-w3.webp",
+   "w": 86,
+   "h": 88,
+   "ax": 0.5,
+   "ay": 0.48864,
+   "scale": 5,
+   "hash": "19af7d550b",
+   "meta": {
+    "top": 4,
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -43,
+    "w": 86,
+    "h": 87.6
+   }
+  },
+  "building-overflow-gate-w4": {
+   "file": "building-overflow-gate-w4.webp",
+   "w": 87,
+   "h": 88,
+   "ax": 0.50575,
+   "ay": 0.48864,
+   "scale": 5,
+   "hash": "c5a2ffdade",
+   "meta": {
+    "top": 4,
+    "fps": 12
+   },
+   "body": {
+    "x": -43.4,
+    "y": -43,
+    "w": 86.4,
+    "h": 87.2
+   }
+  },
+  "building-overflow-gate-w5": {
+   "file": "building-overflow-gate-w5.webp",
+   "w": 88,
+   "h": 87,
+   "ax": 0.51136,
+   "ay": 0.49425,
+   "scale": 5,
+   "hash": "20d33010a9",
+   "meta": {
+    "top": 4,
+    "fps": 12
+   },
+   "body": {
+    "x": -44.2,
+    "y": -43,
+    "w": 87.2,
+    "h": 86.4
+   }
+  },
+  "building-overflow-gate-w6": {
+   "file": "building-overflow-gate-w6.webp",
+   "w": 88,
+   "h": 87,
+   "ax": 0.51136,
+   "ay": 0.49425,
+   "scale": 5,
+   "hash": "1a8bb34429",
+   "meta": {
+    "top": 4,
+    "fps": 12
+   },
+   "body": {
+    "x": -44.6,
+    "y": -43,
+    "w": 87.6,
+    "h": 86.2
+   }
+  },
+  "building-overflow-gate-w7": {
+   "file": "building-overflow-gate-w7.webp",
+   "w": 88,
+   "h": 88,
+   "ax": 0.51136,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "e142c7edb3",
+   "meta": {
+    "top": 4,
+    "fps": 12
+   },
+   "body": {
+    "x": -44.2,
+    "y": -43.2,
+    "w": 87.2,
+    "h": 86.4
+   }
+  },
+  "building-overflow-gate-w8": {
+   "file": "building-overflow-gate-w8.webp",
+   "w": 87,
+   "h": 89,
+   "ax": 0.50575,
+   "ay": 0.50562,
+   "scale": 5,
+   "hash": "a5b6ea5d29",
+   "meta": {
+    "top": 4,
+    "fps": 12
+   },
+   "body": {
+    "x": -43.4,
+    "y": -44.2,
+    "w": 86.4,
+    "h": 87.4
+   }
+  },
+  "building-overflow-gate-w9": {
+   "file": "building-overflow-gate-w9.webp",
+   "w": 86,
+   "h": 89,
+   "ax": 0.5,
+   "ay": 0.50562,
+   "scale": 5,
+   "hash": "205de5840e",
+   "meta": {
+    "top": 4,
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -44.4,
+    "w": 86,
+    "h": 87.6
+   }
+  },
+  "building-overflow-gate-wb": {
+   "file": "building-overflow-gate-wb.webp",
+   "w": 112,
+   "h": 111,
+   "ax": 0.5,
+   "ay": 0.4955,
+   "scale": 5,
+   "hash": "0e913dca3c",
+   "meta": {
+    "top": 4
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-phase-conveyor": {
+   "file": "building-phase-conveyor.webp",
+   "w": 110,
+   "h": 106,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "f25888f16b",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-phase-conveyor-curve-l-r0": {
+   "file": "building-phase-conveyor-curve-l-r0.webp",
+   "w": 110,
+   "h": 109,
+   "ax": 0.48182,
+   "ay": 0.51376,
+   "scale": 5,
+   "hash": "ce206ae9c7",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48.8,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-phase-conveyor-curve-l-r1": {
+   "file": "building-phase-conveyor-curve-l-r1.webp",
+   "w": 109,
+   "h": 109,
+   "ax": 0.48624,
+   "ay": 0.48624,
+   "scale": 5,
+   "hash": "2df84cc0e3",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-phase-conveyor-curve-l-r2": {
+   "file": "building-phase-conveyor-curve-l-r2.webp",
+   "w": 109,
+   "h": 110,
+   "ax": 0.51376,
+   "ay": 0.48182,
+   "scale": 5,
+   "hash": "e26d256d21",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48.8,
+    "y": -48,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-phase-conveyor-curve-l-r3": {
+   "file": "building-phase-conveyor-curve-l-r3.webp",
+   "w": 109,
+   "h": 109,
+   "ax": 0.51376,
+   "ay": 0.51376,
+   "scale": 5,
+   "hash": "0f54257876",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48.8,
+    "y": -48.8,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-phase-conveyor-curve-r-r0": {
+   "file": "building-phase-conveyor-curve-r-r0.webp",
+   "w": 109,
+   "h": 109,
+   "ax": 0.48624,
+   "ay": 0.48624,
+   "scale": 5,
+   "hash": "b4e5aff264",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-phase-conveyor-curve-r-r1": {
+   "file": "building-phase-conveyor-curve-r-r1.webp",
+   "w": 109,
+   "h": 110,
+   "ax": 0.51376,
+   "ay": 0.48182,
+   "scale": 5,
+   "hash": "f606c71942",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48.8,
+    "y": -48,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-phase-conveyor-curve-r-r2": {
+   "file": "building-phase-conveyor-curve-r-r2.webp",
+   "w": 109,
+   "h": 109,
+   "ax": 0.51376,
+   "ay": 0.51376,
+   "scale": 5,
+   "hash": "b293057722",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48.8,
+    "y": -48.8,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-phase-conveyor-curve-r-r3": {
+   "file": "building-phase-conveyor-curve-r-r3.webp",
+   "w": 110,
+   "h": 109,
+   "ax": 0.48182,
+   "ay": 0.51376,
+   "scale": 5,
+   "hash": "e554e981bd",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48.8,
+    "w": 96.8,
+    "h": 96.8
+   }
+  },
+  "building-phase-conveyor-r0": {
+   "file": "building-phase-conveyor-r0.webp",
+   "w": 110,
+   "h": 106,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "f25888f16b",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-phase-conveyor-r1": {
+   "file": "building-phase-conveyor-r1.webp",
+   "w": 106,
+   "h": 109,
+   "ax": 0.5,
+   "ay": 0.49541,
+   "scale": 5,
+   "hash": "f9673ebce4",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-phase-conveyor-r2": {
+   "file": "building-phase-conveyor-r2.webp",
+   "w": 110,
+   "h": 106,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "2d869d0c26",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-phase-conveyor-r3": {
+   "file": "building-phase-conveyor-r3.webp",
+   "w": 106,
+   "h": 109,
+   "ax": 0.5,
+   "ay": 0.49541,
+   "scale": 5,
+   "hash": "5d10de07ec",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-router": {
+   "file": "building-router.webp",
+   "w": 112,
+   "h": 111,
+   "ax": 0.5,
+   "ay": 0.4955,
+   "scale": 5,
+   "hash": "34a21afe46",
+   "meta": {
+    "top": 6,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.1
+     }
+    ]
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-router-w0": {
+   "file": "building-router-w0.webp",
+   "w": 88,
+   "h": 87,
+   "ax": 0.48864,
+   "ay": 0.49425,
+   "scale": 5,
+   "hash": "0fe2e58793",
+   "meta": {
+    "top": 6,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.1
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -43,
+    "w": 87.6,
+    "h": 86.2
+   }
+  },
+  "building-router-w1": {
+   "file": "building-router-w1.webp",
+   "w": 88,
+   "h": 87,
+   "ax": 0.48864,
+   "ay": 0.49425,
+   "scale": 5,
+   "hash": "4942040ecd",
+   "meta": {
+    "top": 6,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.1
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -43,
+    "w": 87.2,
+    "h": 86.4
+   }
+  },
+  "building-router-w10": {
+   "file": "building-router-w10.webp",
+   "w": 87,
+   "h": 89,
+   "ax": 0.49425,
+   "ay": 0.50562,
+   "scale": 5,
+   "hash": "2a203671b1",
+   "meta": {
+    "top": 6,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.1
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -44.2,
+    "w": 86.4,
+    "h": 87.4
+   }
+  },
+  "building-router-w11": {
+   "file": "building-router-w11.webp",
+   "w": 88,
+   "h": 88,
+   "ax": 0.48864,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "3b8b95393c",
+   "meta": {
+    "top": 6,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.1
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -43.4,
+    "w": 87.2,
+    "h": 86.6
+   }
+  },
+  "building-router-w2": {
+   "file": "building-router-w2.webp",
+   "w": 87,
+   "h": 88,
+   "ax": 0.49425,
+   "ay": 0.48864,
+   "scale": 5,
+   "hash": "d35cb49ccf",
+   "meta": {
+    "top": 6,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.1
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -43,
+    "w": 86.4,
+    "h": 87.2
+   }
+  },
+  "building-router-w3": {
+   "file": "building-router-w3.webp",
+   "w": 86,
+   "h": 88,
+   "ax": 0.5,
+   "ay": 0.48864,
+   "scale": 5,
+   "hash": "09d8bb55a9",
+   "meta": {
+    "top": 6,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.1
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -43,
+    "w": 86,
+    "h": 87.6
+   }
+  },
+  "building-router-w4": {
+   "file": "building-router-w4.webp",
+   "w": 87,
+   "h": 88,
+   "ax": 0.50575,
+   "ay": 0.48864,
+   "scale": 5,
+   "hash": "39ebc6b915",
+   "meta": {
+    "top": 6,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.1
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43.4,
+    "y": -43,
+    "w": 86.4,
+    "h": 87.2
+   }
+  },
+  "building-router-w5": {
+   "file": "building-router-w5.webp",
+   "w": 88,
+   "h": 87,
+   "ax": 0.51136,
+   "ay": 0.49425,
+   "scale": 5,
+   "hash": "88e92cc32b",
+   "meta": {
+    "top": 6,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.1
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -44.2,
+    "y": -43,
+    "w": 87.2,
+    "h": 86.4
+   }
+  },
+  "building-router-w6": {
+   "file": "building-router-w6.webp",
+   "w": 88,
+   "h": 87,
+   "ax": 0.51136,
+   "ay": 0.49425,
+   "scale": 5,
+   "hash": "260a883e46",
+   "meta": {
+    "top": 6,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.1
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -44.6,
+    "y": -43,
+    "w": 87.6,
+    "h": 86.2
+   }
+  },
+  "building-router-w7": {
+   "file": "building-router-w7.webp",
+   "w": 88,
+   "h": 88,
+   "ax": 0.51136,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "490d619683",
+   "meta": {
+    "top": 6,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.1
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -44.2,
+    "y": -43.4,
+    "w": 87.2,
+    "h": 86.6
+   }
+  },
+  "building-router-w8": {
+   "file": "building-router-w8.webp",
+   "w": 87,
+   "h": 89,
+   "ax": 0.50575,
+   "ay": 0.50562,
+   "scale": 5,
+   "hash": "aa3b89da54",
+   "meta": {
+    "top": 6,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.1
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43.4,
+    "y": -44.2,
+    "w": 86.4,
+    "h": 87.4
+   }
+  },
+  "building-router-w9": {
+   "file": "building-router-w9.webp",
+   "w": 86,
+   "h": 89,
+   "ax": 0.5,
+   "ay": 0.50562,
+   "scale": 5,
+   "hash": "51d73446e0",
+   "meta": {
+    "top": 6,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.1
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -44.4,
+    "w": 86,
+    "h": 87.6
+   }
+  },
+  "building-router-wb": {
+   "file": "building-router-wb.webp",
+   "w": 112,
+   "h": 111,
+   "ax": 0.5,
+   "ay": 0.4955,
+   "scale": 5,
+   "hash": "82501defb7",
+   "meta": {
+    "top": 6,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.1
+     }
+    ]
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-sorter": {
+   "file": "building-sorter.webp",
+   "w": 112,
+   "h": 111,
+   "ax": 0.5,
+   "ay": 0.4955,
+   "scale": 5,
+   "hash": "b716cbe0bc",
+   "meta": {
+    "top": 5,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.5
+     }
+    ]
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-sorter-w0": {
+   "file": "building-sorter-w0.webp",
+   "w": 88,
+   "h": 87,
+   "ax": 0.48864,
+   "ay": 0.49425,
+   "scale": 5,
+   "hash": "7ac77d7753",
+   "meta": {
+    "top": 5,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.5
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -43,
+    "w": 87.6,
+    "h": 86.2
+   }
+  },
+  "building-sorter-w1": {
+   "file": "building-sorter-w1.webp",
+   "w": 88,
+   "h": 88,
+   "ax": 0.48864,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "1d349987c8",
+   "meta": {
+    "top": 5,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.5
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -43.4,
+    "w": 87.2,
+    "h": 86.6
+   }
+  },
+  "building-sorter-w10": {
+   "file": "building-sorter-w10.webp",
+   "w": 87,
+   "h": 88,
+   "ax": 0.49425,
+   "ay": 0.48864,
+   "scale": 5,
+   "hash": "fd02f24c63",
+   "meta": {
+    "top": 5,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.5
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -43,
+    "w": 86.4,
+    "h": 87.2
+   }
+  },
+  "building-sorter-w11": {
+   "file": "building-sorter-w11.webp",
+   "w": 88,
+   "h": 87,
+   "ax": 0.48864,
+   "ay": 0.49425,
+   "scale": 5,
+   "hash": "47b4dc7053",
+   "meta": {
+    "top": 5,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.5
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -43,
+    "w": 87.2,
+    "h": 86.4
+   }
+  },
+  "building-sorter-w2": {
+   "file": "building-sorter-w2.webp",
+   "w": 87,
+   "h": 89,
+   "ax": 0.49425,
+   "ay": 0.50562,
+   "scale": 5,
+   "hash": "070b723835",
+   "meta": {
+    "top": 5,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.5
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -44.2,
+    "w": 86.4,
+    "h": 87.4
+   }
+  },
+  "building-sorter-w3": {
+   "file": "building-sorter-w3.webp",
+   "w": 86,
+   "h": 89,
+   "ax": 0.5,
+   "ay": 0.50562,
+   "scale": 5,
+   "hash": "458d8165fd",
+   "meta": {
+    "top": 5,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.5
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -44.4,
+    "w": 86,
+    "h": 87.6
+   }
+  },
+  "building-sorter-w4": {
+   "file": "building-sorter-w4.webp",
+   "w": 87,
+   "h": 89,
+   "ax": 0.50575,
+   "ay": 0.50562,
+   "scale": 5,
+   "hash": "ac7e4ee2d7",
+   "meta": {
+    "top": 5,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.5
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43.2,
+    "y": -44.2,
+    "w": 86.2,
+    "h": 87.4
+   }
+  },
+  "building-sorter-w5": {
+   "file": "building-sorter-w5.webp",
+   "w": 88,
+   "h": 88,
+   "ax": 0.51136,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "3e8c00eaae",
+   "meta": {
+    "top": 5,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.5
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -44.2,
+    "y": -43.4,
+    "w": 87.2,
+    "h": 86.6
+   }
+  },
+  "building-sorter-w6": {
+   "file": "building-sorter-w6.webp",
+   "w": 88,
+   "h": 87,
+   "ax": 0.51136,
+   "ay": 0.49425,
+   "scale": 5,
+   "hash": "8ef79ce249",
+   "meta": {
+    "top": 5,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.5
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -44.6,
+    "y": -43,
+    "w": 87.6,
+    "h": 86.2
+   }
+  },
+  "building-sorter-w7": {
+   "file": "building-sorter-w7.webp",
+   "w": 88,
+   "h": 87,
+   "ax": 0.51136,
+   "ay": 0.49425,
+   "scale": 5,
+   "hash": "060f724847",
+   "meta": {
+    "top": 5,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.5
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -44.2,
+    "y": -43,
+    "w": 87.2,
+    "h": 86.4
+   }
+  },
+  "building-sorter-w8": {
+   "file": "building-sorter-w8.webp",
+   "w": 87,
+   "h": 88,
+   "ax": 0.50575,
+   "ay": 0.48864,
+   "scale": 5,
+   "hash": "c9440c820d",
+   "meta": {
+    "top": 5,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.5
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43.2,
+    "y": -43,
+    "w": 86.2,
+    "h": 87.2
+   }
+  },
+  "building-sorter-w9": {
+   "file": "building-sorter-w9.webp",
+   "w": 86,
+   "h": 88,
+   "ax": 0.5,
+   "ay": 0.48864,
+   "scale": 5,
+   "hash": "7199c0158c",
+   "meta": {
+    "top": 5,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.5
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -43,
+    "y": -43,
+    "w": 86,
+    "h": 87.6
+   }
+  },
+  "building-sorter-wb": {
+   "file": "building-sorter-wb.webp",
+   "w": 112,
+   "h": 111,
+   "ax": 0.5,
+   "ay": 0.4955,
+   "scale": 5,
+   "hash": "4360222683",
+   "meta": {
+    "top": 5,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#6fe8dc",
+      "r": 10,
+      "phase": 0.5
+     }
+    ]
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-unloader": {
+   "file": "building-unloader.webp",
+   "w": 106,
+   "h": 106,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "912753aaa1",
+   "meta": {
+    "top": 8,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#ff9a4d",
+      "r": 10,
+      "phase": 0.7
+     }
+    ]
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  },
+  "building-unloader-w0": {
+   "file": "building-unloader-w0.webp",
+   "w": 56,
+   "h": 15,
+   "ax": 0.125,
+   "ay": 0.46667,
+   "scale": 5,
+   "hash": "610b35aa1d",
+   "meta": {
+    "top": 8,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#ff9a4d",
+      "r": 10,
+      "phase": 0.7
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -6.399999999999999,
+    "y": -7,
+    "w": 52,
+    "h": 14.2
+   }
+  },
+  "building-unloader-w1": {
+   "file": "building-unloader-w1.webp",
+   "w": 55,
+   "h": 17,
+   "ax": 0.10909,
+   "ay": 0.52941,
+   "scale": 5,
+   "hash": "76b85edf2a",
+   "meta": {
+    "top": 8,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#ff9a4d",
+      "r": 10,
+      "phase": 0.7
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -6,
+    "y": -8.600000000000001,
+    "w": 51.6,
+    "h": 15.8
+   }
+  },
+  "building-unloader-w10": {
+   "file": "building-unloader-w10.webp",
+   "w": 58,
+   "h": 30,
+   "ax": 0.15517,
+   "ay": 0.73333,
+   "scale": 5,
+   "hash": "cdcb4dcdc5",
+   "meta": {
+    "top": 8,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#ff9a4d",
+      "r": 10,
+      "phase": 0.7
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -8.600000000000001,
+    "y": -21.200000000000003,
+    "w": 54.2,
+    "h": 28.4
+   }
+  },
+  "building-unloader-w11": {
+   "file": "building-unloader-w11.webp",
+   "w": 60,
+   "h": 29,
+   "ax": 0.18333,
+   "ay": 0.72414,
+   "scale": 5,
+   "hash": "9b3e7bb920",
+   "meta": {
+    "top": 8,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#ff9a4d",
+      "r": 10,
+      "phase": 0.7
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -11,
+    "y": -20.6,
+    "w": 56.6,
+    "h": 27.8
+   }
+  },
+  "building-unloader-w2": {
+   "file": "building-unloader-w2.webp",
+   "w": 55,
+   "h": 19,
+   "ax": 0.10909,
+   "ay": 0.57895,
+   "scale": 5,
+   "hash": "bfecc4a5f8",
+   "meta": {
+    "top": 8,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#ff9a4d",
+      "r": 10,
+      "phase": 0.7
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -5.799999999999997,
+    "y": -10.600000000000001,
+    "w": 51.4,
+    "h": 17.8
+   }
+  },
+  "building-unloader-w3": {
+   "file": "building-unloader-w3.webp",
+   "w": 55,
+   "h": 21,
+   "ax": 0.10909,
+   "ay": 0.61905,
+   "scale": 5,
+   "hash": "bf8c7937c3",
+   "meta": {
+    "top": 8,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#ff9a4d",
+      "r": 10,
+      "phase": 0.7
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -5.799999999999997,
+    "y": -12.799999999999997,
+    "w": 51.4,
+    "h": 20
+   }
+  },
+  "building-unloader-w4": {
+   "file": "building-unloader-w4.webp",
+   "w": 55,
+   "h": 23,
+   "ax": 0.10909,
+   "ay": 0.65217,
+   "scale": 5,
+   "hash": "bb12a2b0fa",
+   "meta": {
+    "top": 8,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#ff9a4d",
+      "r": 10,
+      "phase": 0.7
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -5.799999999999997,
+    "y": -15,
+    "w": 51.4,
+    "h": 22.2
+   }
+  },
+  "building-unloader-w5": {
+   "file": "building-unloader-w5.webp",
+   "w": 55,
+   "h": 24,
+   "ax": 0.10909,
+   "ay": 0.70833,
+   "scale": 5,
+   "hash": "7ad344b10e",
+   "meta": {
+    "top": 8,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#ff9a4d",
+      "r": 10,
+      "phase": 0.7
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -5.799999999999997,
+    "y": -16.4,
+    "w": 51.4,
+    "h": 23.4
+   }
+  },
+  "building-unloader-w6": {
+   "file": "building-unloader-w6.webp",
+   "w": 55,
+   "h": 27,
+   "ax": 0.10909,
+   "ay": 0.7037,
+   "scale": 5,
+   "hash": "1fdb429374",
+   "meta": {
+    "top": 8,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#ff9a4d",
+      "r": 10,
+      "phase": 0.7
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -5.799999999999997,
+    "y": -18.200000000000003,
+    "w": 51.4,
+    "h": 25.4
+   }
+  },
+  "building-unloader-w7": {
+   "file": "building-unloader-w7.webp",
+   "w": 55,
+   "h": 28,
+   "ax": 0.10909,
+   "ay": 0.75,
+   "scale": 5,
+   "hash": "0e993798d2",
+   "meta": {
+    "top": 8,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#ff9a4d",
+      "r": 10,
+      "phase": 0.7
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -5.799999999999997,
+    "y": -20.6,
+    "w": 51.4,
+    "h": 27.6
+   }
+  },
+  "building-unloader-w8": {
+   "file": "building-unloader-w8.webp",
+   "w": 55,
+   "h": 29,
+   "ax": 0.10909,
+   "ay": 0.72414,
+   "scale": 5,
+   "hash": "ed488c916f",
+   "meta": {
+    "top": 8,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#ff9a4d",
+      "r": 10,
+      "phase": 0.7
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -5.799999999999997,
+    "y": -21,
+    "w": 51.4,
+    "h": 28.2
+   }
+  },
+  "building-unloader-w9": {
+   "file": "building-unloader-w9.webp",
+   "w": 56,
+   "h": 30,
+   "ax": 0.125,
+   "ay": 0.73333,
+   "scale": 5,
+   "hash": "3f442b6076",
+   "meta": {
+    "top": 8,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#ff9a4d",
+      "r": 10,
+      "phase": 0.7
+     }
+    ],
+    "fps": 12
+   },
+   "body": {
+    "x": -6.399999999999999,
+    "y": -21.200000000000003,
+    "w": 52,
+    "h": 28.4
+   }
+  },
+  "building-unloader-wb": {
+   "file": "building-unloader-wb.webp",
+   "w": 106,
+   "h": 106,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "be17900a07",
+   "meta": {
+    "top": 8,
+    "lights": [
+     {
+      "x": 0,
+      "y": 0,
+      "color": "#ff9a4d",
+      "r": 10,
+      "phase": 0.7
+     }
+    ]
+   },
+   "body": {
+    "x": -48,
+    "y": -48,
+    "w": 96,
+    "h": 96
+   }
+  }
+ },
+ "view": "top"
+}

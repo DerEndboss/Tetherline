@@ -1,0 +1,169 @@
+{
+ "version": 1,
+ "category": "deco",
+ "sprites": {
+  "deco-board-0": {
+   "file": "deco-board-0.webp",
+   "w": 64,
+   "h": 38,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "dad744e617",
+   "meta": {
+    "top": 7,
+    "lights": [
+     {
+      "x": 23,
+      "y": 7,
+      "color": "#ffb347",
+      "r": 5,
+      "phase": 0.5
+     }
+    ]
+   },
+   "body": {
+    "x": -26.8,
+    "y": -18.6,
+    "w": 53.6,
+    "h": 32.6
+   }
+  },
+  "deco-board-1": {
+   "file": "deco-board-1.webp",
+   "w": 71,
+   "h": 54,
+   "ax": 0.4507,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "31b71976a2",
+   "meta": {
+    "top": 14
+   },
+   "body": {
+    "x": -25,
+    "y": -26.2,
+    "w": 51.2,
+    "h": 43.8
+   }
+  },
+  "deco-chip-0": {
+   "file": "deco-chip-0.webp",
+   "w": 62,
+   "h": 48,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "f65056adc5",
+   "meta": {
+    "top": 10,
+    "lights": [
+     {
+      "x": 0,
+      "y": -9.7,
+      "color": "#6fe8dc",
+      "r": 7,
+      "phase": 0.2
+     }
+    ]
+   },
+   "body": {
+    "x": -25.8,
+    "y": -23,
+    "w": 51.8,
+    "h": 41.4
+   }
+  },
+  "deco-motherboard-0": {
+   "file": "deco-motherboard-0.webp",
+   "w": 82,
+   "h": 58,
+   "ax": 0.47561,
+   "ay": 0.51724,
+   "scale": 5,
+   "hash": "aa1e2ddac5",
+   "meta": {
+    "top": 15
+   },
+   "body": {
+    "x": -33.8,
+    "y": -29.2,
+    "w": 67.4,
+    "h": 52
+   }
+  },
+  "deco-motherboard-1": {
+   "file": "deco-motherboard-1.webp",
+   "w": 75,
+   "h": 57,
+   "ax": 0.45333,
+   "ay": 0.52632,
+   "scale": 5,
+   "hash": "9971edf107",
+   "meta": {
+    "top": 15
+   },
+   "body": {
+    "x": -28.8,
+    "y": -29,
+    "w": 57.6,
+    "h": 49.6
+   }
+  },
+  "deco-ram-0": {
+   "file": "deco-ram-0.webp",
+   "w": 70,
+   "h": 54,
+   "ax": 0.5,
+   "ay": 0.55556,
+   "scale": 5,
+   "hash": "45dfc29ff7",
+   "meta": {
+    "top": 15,
+    "lights": [
+     {
+      "x": 25.9,
+      "y": 11.4,
+      "color": "#7dffa8",
+      "r": 5,
+      "phase": 0
+     }
+    ]
+   },
+   "body": {
+    "x": -29.8,
+    "y": -29,
+    "w": 59.6,
+    "h": 46.6
+   }
+  },
+  "deco-ram-1": {
+   "file": "deco-ram-1.webp",
+   "w": 70,
+   "h": 58,
+   "ax": 0.5,
+   "ay": 0.55172,
+   "scale": 5,
+   "hash": "cad76a0cfa",
+   "meta": {
+    "top": 18,
+    "lights": [
+     {
+      "x": 25.9,
+      "y": 11.4,
+      "color": "#ffb347",
+      "r": 5,
+      "phase": 0.3
+     }
+    ]
+   },
+   "body": {
+    "x": -29.8,
+    "y": -31.4,
+    "w": 59.6,
+    "h": 49
+   }
+  }
+ },
+ "view": "steep"
+}

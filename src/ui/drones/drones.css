@@ -1,0 +1,97 @@
+/* drones: the chip under the core window and the drone window it opens. Kit surfaces; motion by Presence (index.tsx). */
+.dock-drones { position: absolute; left: calc(var(--safe-left) + var(--space-sm)); top: calc(var(--safe-top) + 224px); display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-xs); max-height: calc(100dvh - var(--safe-top) - 224px - 122px); }
+
+/* ---------- Chip ---------- */
+.dr-chip { display: flex; align-items: center; gap: var(--space-xs); flex: none; min-height: var(--hud-control); padding: 0 var(--space-sm) 0 5px; color: var(--color-ink); font-size: var(--text-md); font-weight: 800; cursor: pointer; }
+.dr-chip:hover { border-color: var(--k-edge-soft); }
+.dr-chip[aria-expanded="true"] { border-color: var(--k-edge); box-shadow: inset 0 0 16px var(--k-glow), 0 0 0 1px var(--color-outline-dark), 0 3px 0 var(--k-lip), 0 0 18px var(--k-glow), 0 12px 28px var(--color-drop); }
+.dr-chip-icon { width: 36px; height: 36px; position: relative; }
+.dr-chip[aria-expanded="true"] .dr-chip-icon { box-shadow: var(--k-recessed), inset 0 0 0 1px var(--k-edge), 0 0 10px var(--k-glow); }
+.dr-chip-count { display: inline-flex; align-items: baseline; font-size: var(--text-lg); line-height: 1; text-shadow: 0 1px 0 var(--color-press-shade); }
+.dr-chip-max { color: var(--color-muted); font-size: var(--text-sm); }
+.dr-chip-badge { position: absolute; top: -7px; right: -7px; z-index: 1; animation: dr-badge-in var(--dur-emph) var(--ease-pop) backwards; }
+/* A lit dot on the icon while a drone is at work: static, so nothing pulses all the time. */
+.dr-chip[data-busy="true"] .dr-chip-icon::after { content: ""; position: absolute; right: 3px; top: 3px; width: 7px; height: 7px; border-radius: 50%; background: var(--k-edge); box-shadow: 0 0 8px var(--k-glow); }
+@keyframes dr-badge-in { from { opacity: 0; scale: 0.4; } }
+
+/* ---------- Window ---------- */
+.dr-panel { display: flex; flex-direction: column; width: min(332px, calc(100vw - 2 * var(--space-sm))); min-height: 0; overflow: hidden; font-size: var(--text-sm); }
+.dr-head { flex: none; padding-block: var(--space-xs); }
+.dr-body {
+  min-height: 0; padding: var(--space-2xs) var(--space-sm) var(--space-lg); touch-action: pan-y;
+  /* more to see above or below: the edges fade out instead of ending in a hard cut */
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 10px, #000 calc(100% - 26px), transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 10px, #000 calc(100% - 26px), transparent 100%);
+}
+.dr-title { display: flex; justify-content: flex-start; align-items: center; gap: var(--space-xs); margin: var(--space-sm) 0 var(--space-xs); font-size: var(--text-xs); font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--k-edge); }
+.dr-title::before { content: ""; order: -1; width: 7px; height: 7px; flex: none; rotate: 45deg; border-radius: 2px; background: linear-gradient(135deg, var(--k-cta-top), var(--k-cta-bot)); box-shadow: 0 0 8px var(--k-glow); }
+.dr-title .k-chip { margin-left: auto; letter-spacing: 0; }
+.dr-section { display: grid; gap: var(--space-xs); margin-top: var(--space-xs); padding-top: var(--space-2xs); border-top: 1px solid var(--k-edge-faint); }
+.dr-section:first-child { margin-top: 0; }
+
+/* Fleet: one row per drone, its line tinted by what it does. */
+.dr-fleet { display: grid; gap: var(--space-2xs); margin: var(--space-xs) 0 0; padding: 0; list-style: none; }
+.dr-drone { display: grid; grid-template-columns: 30px auto 1fr; align-items: center; gap: var(--space-xs); min-height: 34px; }
+.dr-drone-icon { width: 30px; height: 30px; border-radius: 10px; color: var(--color-muted); }
+.dr-drone-icon.player { color: var(--k-edge); box-shadow: var(--k-recessed), inset 0 0 0 1px var(--k-edge-soft), 0 0 10px var(--k-glow-soft); }
+.dr-drone-name { font-weight: 800; }
+.dr-drone-state { color: var(--color-muted); text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dr-drone[data-tone="work"] .dr-drone-state { color: var(--k-edge); }
+.dr-drone[data-tone="wait"] .dr-drone-state { color: var(--color-warn); }
+
+/* Upgrade card: icon plaque, name + pips + effect, then the price and the button. */
+.dr-upgrade {
+  display: grid; grid-template-columns: 44px 1fr; gap: var(--space-xs) var(--space-sm); align-items: center;
+  padding: var(--space-xs); border: 1px solid var(--k-edge-faint); border-radius: var(--radius-card);
+  background: linear-gradient(180deg, oklch(24% 0.065 254 / 0.7), oklch(17% 0.055 262 / 0.7)); box-shadow: inset 0 1px 0 oklch(100% 0 0 / 0.07), 0 2px 0 oklch(8% 0.04 266 / 0.8);
+  transition: border-color var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+}
+.dr-upgrade[data-state="ready"] { border-color: var(--k-edge-soft); box-shadow: inset 0 1px 0 oklch(100% 0 0 / 0.1), inset 0 0 18px var(--k-glow-soft), 0 2px 0 oklch(8% 0.04 266 / 0.8); }
+.dr-upgrade[data-state="max"] .dr-up-icon { color: var(--color-success); }
+.dr-up-icon { width: 44px; height: 44px; }
+.dr-up-main { display: grid; gap: 2px; min-width: 0; }
+.dr-up-line { display: flex; align-items: center; justify-content: space-between; gap: var(--space-xs); }
+.dr-up-name { font-weight: 800; font-size: var(--text-md); }
+.dr-up-effect { color: var(--color-muted); font-size: var(--text-xs); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dr-upgrade > .dr-buy, .dr-upgrade > .dr-maxed { grid-column: 1 / -1; }
+.dr-pips { display: inline-flex; gap: 4px; }
+.dr-pips i { width: 16px; height: 7px; border-radius: var(--radius-pill); background: var(--color-track); box-shadow: var(--k-recessed); transition: background-color var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out); }
+.dr-pips i.on { background: linear-gradient(180deg, var(--k-cta-top), var(--k-cta-bot)); box-shadow: 0 0 8px var(--k-glow); }
+.dr-buy { display: flex; justify-content: space-between; align-items: center; gap: var(--space-xs); min-width: 0; }
+.dr-cost { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-sm); margin: 0; padding: 0; list-style: none; font-weight: 800; }
+.dr-cost-item { display: inline-flex; align-items: center; gap: 5px; }
+.dr-cost-text { display: grid; line-height: 1.15; }
+.dr-cost-name { color: var(--color-muted); font-size: 0.6875rem; font-weight: 700; }
+.dr-cost-n { font-size: var(--text-sm); }
+.dr-cost-item .game-icon, .dr-cost-item .item-chip { flex: none; }
+.dr-cost-item.short { color: var(--color-short); }
+.dr-have { font-weight: 700; opacity: 0.85; }
+.dr-maxed { justify-self: start; color: var(--color-success); }
+.dr-button { min-height: 36px; padding: 0 var(--space-sm); font-size: var(--text-xs); flex: none; }
+.dr-grow { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2xs); }
+
+/* Helpers: five slots in a row. */
+.dr-slots { display: flex; gap: var(--space-xs); }
+.dr-slot { display: grid; place-items: center; flex: 1; height: 40px; border: 1px dashed var(--k-edge-faint); border-radius: 12px; color: var(--color-muted); background: linear-gradient(180deg, var(--k-slot), var(--k-slot-2)); box-shadow: var(--k-recessed); }
+.dr-slot.on { border-style: solid; border-color: var(--k-edge-soft); color: var(--k-edge); background: radial-gradient(circle at 50% 60%, var(--k-glow), transparent 72%), linear-gradient(180deg, var(--k-slot-2), var(--k-slot)); }
+.dr-note { margin: 0; color: var(--color-muted); font-size: var(--text-xs); line-height: 1.4; }
+.dr-picking { color: var(--k-edge); }
+
+/* Orders. */
+.dr-row { display: flex; align-items: center; gap: var(--space-xs); min-height: 36px; }
+.dr-field { justify-content: space-between; }
+.dr-select { flex: 0 1 164px; min-width: 0; }
+body.drone-picking #world { cursor: crosshair; }
+
+/* Phones and narrow windows: a square plate at the left edge above the tools, the window is a bottom sheet. */
+@media (hover: none), (max-width: 760px) {
+  .dock-drones { left: calc(var(--safe-left) + 6px); top: auto; bottom: calc(var(--safe-bottom) + var(--space-sm) + 64px); max-height: none; }
+  .dr-chip { flex-direction: column; justify-content: center; gap: 1px; width: 48px; min-height: 56px; padding: 4px 0; }
+  .dr-chip-icon { width: 30px; height: 30px; }
+  .dr-chip-icon svg { width: 18px; height: 18px; }
+  .dr-chip-count { font-size: var(--text-sm); }
+  .dr-chip-max { font-size: var(--text-xs); }
+  .dr-chip-badge { right: -5px; top: -5px; }
+  .dr-panel { position: fixed; left: calc(var(--safe-left) + var(--space-xs)); right: calc(var(--safe-right) + var(--space-xs)); bottom: calc(var(--safe-bottom) + var(--space-xs)); width: auto; max-height: min(72dvh, 620px); z-index: var(--z-panel); }
+}
+@media (hover: none) and (max-height: 520px) { .dr-panel { max-height: calc(100dvh - 2 * var(--space-xs) - var(--safe-top)); } }

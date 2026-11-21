@@ -1,0 +1,42 @@
+{
+ "version": 1,
+ "category": "units",
+ "sprites": {
+  "drone-build-drone-0": {
+   "file": "drone-build-drone-0.webp",
+   "w": 74,
+   "h": 43,
+   "ax": 0.5,
+   "ay": 0.48837,
+   "scale": 5,
+   "hash": "e0ff86d96f",
+   "meta": {
+    "top": 13
+   },
+   "body": {
+    "x": -36.4,
+    "y": -20.6,
+    "w": 73,
+    "h": 42.4
+   }
+  },
+  "drone-build-drone-1": {
+   "file": "drone-build-drone-1.webp",
+   "w": 74,
+   "h": 43,
+   "ax": 0.5,
+   "ay": 0.48837,
+   "scale": 5,
+   "hash": "6a46424d1b",
+   "meta": {
+    "top": 13
+   },
+   "body": {
+    "x": -36.4,
+    "y": -20.6,
+    "w": 73,
+    "h": 42.4
+   }
+  }
+ }
+}

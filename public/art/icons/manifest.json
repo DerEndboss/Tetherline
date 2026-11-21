@@ -1,0 +1,2730 @@
+{
+ "version": 1,
+ "category": "icons",
+ "sprites": {
+  "fx-no-power": {
+   "file": "fx-no-power.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "c8f2f440aa",
+   "half": {
+    "file": "fx-no-power.half.png",
+    "hash": "d2f82ac8f9",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -9.125,
+    "y": -9,
+    "w": 18.125,
+    "h": 18.875
+   }
+  },
+  "icon-aluminium": {
+   "file": "icon-aluminium.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "2c9d262a33",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -9,
+    "y": -6.125,
+    "w": 18,
+    "h": 12.25
+   }
+  },
+  "icon-aluminium-bronze": {
+   "file": "icon-aluminium-bronze.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "485ec597cc",
+   "half": {
+    "file": "icon-aluminium-bronze.half.png",
+    "hash": "ba9ba1321b",
+    "scale": 4
+   },
+   "meta": {
+    "top": 4
+   },
+   "body": {
+    "x": -12.125,
+    "y": -8.375,
+    "w": 23.875,
+    "h": 17.625
+   }
+  },
+  "icon-battery-cell": {
+   "file": "icon-battery-cell.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "d832f23b3f",
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -6.5,
+    "y": -9.875,
+    "w": 13.375,
+    "h": 21.375
+   }
+  },
+  "icon-bauxite": {
+   "file": "icon-bauxite.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "01277a5481",
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -8.5,
+    "y": -4.625,
+    "w": 18,
+    "h": 11.75
+   }
+  },
+  "icon-bell-metal": {
+   "file": "icon-bell-metal.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "186185471d",
+   "half": {
+    "file": "icon-bell-metal.half.png",
+    "hash": "c6242efb7e",
+    "scale": 4
+   },
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -11.25,
+    "y": -4.625,
+    "w": 20,
+    "h": 14
+   }
+  },
+  "icon-bronze": {
+   "file": "icon-bronze.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "ec151aeb6f",
+   "half": {
+    "file": "icon-bronze.half.png",
+    "hash": "370a08e3ff",
+    "scale": 4
+   },
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -11.25,
+    "y": -4.625,
+    "w": 20,
+    "h": 14
+   }
+  },
+  "icon-cast-iron": {
+   "file": "icon-cast-iron.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "5cb63ce653",
+   "half": {
+    "file": "icon-cast-iron.half.png",
+    "hash": "87c3b08172",
+    "scale": 4
+   },
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -11.25,
+    "y": -4.625,
+    "w": 20,
+    "h": 14
+   }
+  },
+  "icon-circuit": {
+   "file": "icon-circuit.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "b2601d48de",
+   "meta": {
+    "top": 1
+   },
+   "body": {
+    "x": -9.625,
+    "y": -4.75,
+    "w": 19.25,
+    "h": 10.875
+   }
+  },
+  "icon-coal": {
+   "file": "icon-coal.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "3fd7136416",
+   "meta": {
+    "top": 5
+   },
+   "body": {
+    "x": -9.5,
+    "y": -5.625,
+    "w": 15.75,
+    "h": 14.75
+   }
+  },
+  "icon-conductor": {
+   "file": "icon-conductor.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "7e5409485e",
+   "half": {
+    "file": "icon-conductor.half.png",
+    "hash": "237ff2153e",
+    "scale": 4
+   },
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -8.5,
+    "y": -10.75,
+    "w": 17,
+    "h": 22.25
+   }
+  },
+  "icon-copper-bar": {
+   "file": "icon-copper-bar.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "48956018ea",
+   "half": {
+    "file": "icon-copper-bar.half.png",
+    "hash": "de683cdbbc",
+    "scale": 4
+   },
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -8,
+    "y": -6,
+    "w": 16,
+    "h": 13.625
+   }
+  },
+  "icon-copper-ore": {
+   "file": "icon-copper-ore.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "5769cf4d57",
+   "meta": {
+    "top": 4
+   },
+   "body": {
+    "x": -11.875,
+    "y": -5,
+    "w": 18.5,
+    "h": 14
+   }
+  },
+  "icon-copper-wire": {
+   "file": "icon-copper-wire.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "7a17b5b3d7",
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -8.5,
+    "y": -10.75,
+    "w": 17,
+    "h": 22.25
+   }
+  },
+  "icon-core": {
+   "file": "icon-core.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "df844b9cc2",
+   "half": {
+    "file": "icon-core.half.png",
+    "hash": "3f00cfe6be",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.125,
+    "y": -9,
+    "w": 16.25,
+    "h": 19.375
+   }
+  },
+  "icon-core-chip": {
+   "file": "icon-core-chip.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "512ee1b86a",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -9.625,
+    "y": -4,
+    "w": 19.25,
+    "h": 10.25
+   }
+  },
+  "icon-credits": {
+   "file": "icon-credits.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "e71ebf0cea",
+   "half": {
+    "file": "icon-credits.half.png",
+    "hash": "6a743d9425",
+    "scale": 4
+   },
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -9.125,
+    "y": -5.125,
+    "w": 16.375,
+    "h": 11.875
+   }
+  },
+  "icon-duralumin": {
+   "file": "icon-duralumin.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "4d85c68bda",
+   "half": {
+    "file": "icon-duralumin.half.png",
+    "hash": "eedcbe1b05",
+    "scale": 4
+   },
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -11.25,
+    "y": -4.625,
+    "w": 20,
+    "h": 14
+   }
+  },
+  "icon-elevator-segment": {
+   "file": "icon-elevator-segment.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "a3752477bd",
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -7,
+    "y": -12.25,
+    "w": 14,
+    "h": 24.375
+   }
+  },
+  "icon-emberite": {
+   "file": "icon-emberite.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "8d67509a5b",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.875,
+    "y": -7.625,
+    "w": 16.625,
+    "h": 19.125
+   }
+  },
+  "icon-frame": {
+   "file": "icon-frame.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "0f659bf0de",
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -11.125,
+    "y": -11.375,
+    "w": 22.25,
+    "h": 22.875
+   }
+  },
+  "icon-frostine": {
+   "file": "icon-frostine.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "786544626f",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -6.875,
+    "y": -7.625,
+    "w": 13.75,
+    "h": 19.375
+   }
+  },
+  "icon-glass": {
+   "file": "icon-glass.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "89924b2d67",
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -5.25,
+    "y": -12.25,
+    "w": 10.625,
+    "h": 24.5
+   }
+  },
+  "icon-graphite": {
+   "file": "icon-graphite.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "71c7638892",
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -6.875,
+    "y": -9.625,
+    "w": 14.25,
+    "h": 21.25
+   }
+  },
+  "icon-iron-bar": {
+   "file": "icon-iron-bar.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "7fc4237588",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -8,
+    "y": -6,
+    "w": 16,
+    "h": 13.75
+   }
+  },
+  "icon-iron-ore": {
+   "file": "icon-iron-ore.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "ad65cbd6aa",
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -10.875,
+    "y": -7.875,
+    "w": 21.625,
+    "h": 18.625
+   }
+  },
+  "icon-lead-ingot": {
+   "file": "icon-lead-ingot.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "56780c59b0",
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -8,
+    "y": -6,
+    "w": 16,
+    "h": 13.75
+   }
+  },
+  "icon-lead-ore": {
+   "file": "icon-lead-ore.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "e167572439",
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -13.125,
+    "y": -7.625,
+    "w": 24.125,
+    "h": 19
+   }
+  },
+  "icon-liquid-coolant": {
+   "file": "icon-liquid-coolant.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "814616a1b5",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.25,
+    "y": -7.75,
+    "w": 16.625,
+    "h": 19.375
+   }
+  },
+  "icon-liquid-fuel": {
+   "file": "icon-liquid-fuel.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "4e1de813b8",
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -6.75,
+    "y": -8.625,
+    "w": 14,
+    "h": 20.5
+   }
+  },
+  "icon-liquid-gas": {
+   "file": "icon-liquid-gas.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "d93539c6a8",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -9.125,
+    "y": -7.75,
+    "w": 16.75,
+    "h": 18.875
+   }
+  },
+  "icon-liquid-oil": {
+   "file": "icon-liquid-oil.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "b42e6bdeb8",
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -7.125,
+    "y": -8.625,
+    "w": 14.25,
+    "h": 20.75
+   }
+  },
+  "icon-liquid-slag": {
+   "file": "icon-liquid-slag.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "daa040ba44",
+   "meta": {
+    "top": 5
+   },
+   "body": {
+    "x": -10.25,
+    "y": -5.125,
+    "w": 21,
+    "h": 13.75
+   }
+  },
+  "icon-liquid-water": {
+   "file": "icon-liquid-water.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "59caae6168",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -7.625,
+    "y": -8,
+    "w": 15.375,
+    "h": 19.25
+   }
+  },
+  "icon-lithium": {
+   "file": "icon-lithium.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "0b5eb9612f",
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -8.75,
+    "y": -8.25,
+    "w": 17.5,
+    "h": 18.875
+   }
+  },
+  "icon-lithium-salt": {
+   "file": "icon-lithium-salt.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "e6d7103b77",
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -9.375,
+    "y": -7.75,
+    "w": 18.25,
+    "h": 19.25
+   }
+  },
+  "icon-lumen-glass": {
+   "file": "icon-lumen-glass.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "db876e60c4",
+   "half": {
+    "file": "icon-lumen-glass.half.png",
+    "hash": "75b430ed69",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -5.375,
+    "y": -12.25,
+    "w": 10.75,
+    "h": 24.5
+   }
+  },
+  "icon-lumenite": {
+   "file": "icon-lumenite.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "73564de404",
+   "half": {
+    "file": "icon-lumenite.half.png",
+    "hash": "83e1617f1d",
+    "scale": 4
+   },
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -7.75,
+    "y": -6.875,
+    "w": 17,
+    "h": 18
+   }
+  },
+  "icon-motor": {
+   "file": "icon-motor.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "b5291ba86c",
+   "meta": {
+    "top": 4
+   },
+   "body": {
+    "x": -8.75,
+    "y": -9,
+    "w": 15.5,
+    "h": 17.5
+   }
+  },
+  "icon-obsidion": {
+   "file": "icon-obsidion.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "fc9f24492b",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8,
+    "y": -7.375,
+    "w": 14.625,
+    "h": 19.625
+   }
+  },
+  "icon-pewter": {
+   "file": "icon-pewter.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "75aa2ceecb",
+   "half": {
+    "file": "icon-pewter.half.png",
+    "hash": "bfe02a7852",
+    "scale": 4
+   },
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -11.25,
+    "y": -4.625,
+    "w": 20,
+    "h": 14
+   }
+  },
+  "icon-plastic": {
+   "file": "icon-plastic.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "eba99c32e1",
+   "meta": {
+    "top": 5
+   },
+   "body": {
+    "x": -8.75,
+    "y": -8.25,
+    "w": 17.5,
+    "h": 17.25
+   }
+  },
+  "icon-prism-lens": {
+   "file": "icon-prism-lens.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "da8d31a276",
+   "meta": {
+    "top": 5
+   },
+   "body": {
+    "x": -5.625,
+    "y": -9.625,
+    "w": 13.625,
+    "h": 17.875
+   }
+  },
+  "icon-prismite": {
+   "file": "icon-prismite.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "a97eda7dd9",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -7.875,
+    "y": -7.5,
+    "w": 15.25,
+    "h": 20.375
+   }
+  },
+  "icon-prisms": {
+   "file": "icon-prisms.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "d26284a6d4",
+   "half": {
+    "file": "icon-prisms.half.png",
+    "hash": "82ac6c512d",
+    "scale": 4
+   },
+   "meta": {
+    "top": 5
+   },
+   "body": {
+    "x": -5.625,
+    "y": -9.625,
+    "w": 13.625,
+    "h": 17.875
+   }
+  },
+  "icon-quartz-sand": {
+   "file": "icon-quartz-sand.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "be3122a2ce",
+   "half": {
+    "file": "icon-quartz-sand.half.png",
+    "hash": "54403928c5",
+    "scale": 4
+   },
+   "meta": {
+    "top": 4
+   },
+   "body": {
+    "x": -9.625,
+    "y": -4,
+    "w": 18,
+    "h": 13
+   }
+  },
+  "icon-research": {
+   "file": "icon-research.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "c9354ff0e2",
+   "half": {
+    "file": "icon-research.half.png",
+    "hash": "2a0b4594e5",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -7.5,
+    "y": -9,
+    "w": 15,
+    "h": 20.5
+   }
+  },
+  "icon-sand": {
+   "file": "icon-sand.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "abb5a65aa5",
+   "meta": {
+    "top": 4
+   },
+   "body": {
+    "x": -9.625,
+    "y": -4,
+    "w": 18,
+    "h": 13.125
+   }
+  },
+  "icon-scrap": {
+   "file": "icon-scrap.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "1f381dc824",
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -12.25,
+    "y": -3.375,
+    "w": 22.125,
+    "h": 10.75
+   }
+  },
+  "icon-silicon": {
+   "file": "icon-silicon.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "c322d6c8c3",
+   "meta": {
+    "top": 1
+   },
+   "body": {
+    "x": -9.625,
+    "y": -5.75,
+    "w": 19.25,
+    "h": 11.875
+   }
+  },
+  "icon-silicon-bronze": {
+   "file": "icon-silicon-bronze.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "e42f248077",
+   "half": {
+    "file": "icon-silicon-bronze.half.png",
+    "hash": "75fa740d40",
+    "scale": 4
+   },
+   "meta": {
+    "top": 4
+   },
+   "body": {
+    "x": -12.125,
+    "y": -8.375,
+    "w": 23.875,
+    "h": 17.625
+   }
+  },
+  "icon-silicon-carbide": {
+   "file": "icon-silicon-carbide.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "cb50b7ba23",
+   "half": {
+    "file": "icon-silicon-carbide.half.png",
+    "hash": "68d40b20db",
+    "scale": 4
+   },
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -11.875,
+    "y": -11,
+    "w": 23.75,
+    "h": 23.25
+   }
+  },
+  "icon-silicon-steel": {
+   "file": "icon-silicon-steel.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "84b47045cc",
+   "half": {
+    "file": "icon-silicon-steel.half.png",
+    "hash": "083b8379d1",
+    "scale": 4
+   },
+   "meta": {
+    "top": 4
+   },
+   "body": {
+    "x": -12.125,
+    "y": -8.375,
+    "w": 23.875,
+    "h": 17.625
+   }
+  },
+  "icon-singularity": {
+   "file": "icon-singularity.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "d2cb2ce136",
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -9,
+    "y": -8.75,
+    "w": 18,
+    "h": 18.5
+   }
+  },
+  "icon-slag": {
+   "file": "icon-slag.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "4679e7e9c6",
+   "half": {
+    "file": "icon-slag.half.png",
+    "hash": "22e2f64b4a",
+    "scale": 4
+   },
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -10.5,
+    "y": -4.375,
+    "w": 20.125,
+    "h": 11.125
+   }
+  },
+  "icon-speculum": {
+   "file": "icon-speculum.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "0552c81e27",
+   "half": {
+    "file": "icon-speculum.half.png",
+    "hash": "aed20862b3",
+    "scale": 4
+   },
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -11.25,
+    "y": -4.625,
+    "w": 20,
+    "h": 14
+   }
+  },
+  "icon-star-alloy": {
+   "file": "icon-star-alloy.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "501e9d4d02",
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -8,
+    "y": -8.25,
+    "w": 16,
+    "h": 19.125
+   }
+  },
+  "icon-steel": {
+   "file": "icon-steel.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "2fff60d498",
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -11.125,
+    "y": -4.625,
+    "w": 20,
+    "h": 14
+   }
+  },
+  "icon-tin-bar": {
+   "file": "icon-tin-bar.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "bfe3baaeb2",
+   "half": {
+    "file": "icon-tin-bar.half.png",
+    "hash": "70f3c79185",
+    "scale": 4
+   },
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -8,
+    "y": -5.75,
+    "w": 16,
+    "h": 13.625
+   }
+  },
+  "icon-tin-ingot": {
+   "file": "icon-tin-ingot.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "d0e8fceab1",
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -8,
+    "y": -5.75,
+    "w": 16,
+    "h": 13.75
+   }
+  },
+  "icon-tin-ore": {
+   "file": "icon-tin-ore.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "95fdef6f1e",
+   "meta": {
+    "top": 4
+   },
+   "body": {
+    "x": -9.5,
+    "y": -4.5,
+    "w": 17.5,
+    "h": 13
+   }
+  },
+  "icon-tinplate": {
+   "file": "icon-tinplate.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "f41616565a",
+   "half": {
+    "file": "icon-tinplate.half.png",
+    "hash": "0d23a4607d",
+    "scale": 4
+   },
+   "meta": {
+    "top": 4
+   },
+   "body": {
+    "x": -12.125,
+    "y": -8.375,
+    "w": 23.875,
+    "h": 17.625
+   }
+  },
+  "icon-titanium-ore": {
+   "file": "icon-titanium-ore.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "9ba8e9f587",
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -9.25,
+    "y": -6.25,
+    "w": 19.875,
+    "h": 17.625
+   }
+  },
+  "icon-titanium-plate": {
+   "file": "icon-titanium-plate.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "6bae20800a",
+   "meta": {
+    "top": 4
+   },
+   "body": {
+    "x": -12.125,
+    "y": -8.375,
+    "w": 23.875,
+    "h": 17.625
+   }
+  },
+  "icon-tungsten-carbide": {
+   "file": "icon-tungsten-carbide.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "1ee14f7395",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -10,
+    "y": -5.5,
+    "w": 20,
+    "h": 11.5
+   }
+  },
+  "icon-tungsten-ore": {
+   "file": "icon-tungsten-ore.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "7ed254e302",
+   "meta": {
+    "top": 4
+   },
+   "body": {
+    "x": -8.5,
+    "y": -5.5,
+    "w": 16.625,
+    "h": 12.625
+   }
+  },
+  "icon-verdite": {
+   "file": "icon-verdite.webp",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "a30099e2a9",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.5,
+    "y": -7.75,
+    "w": 15.125,
+    "h": 19.125
+   }
+  },
+  "relic-brass-cog": {
+   "file": "relic-brass-cog.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "f85ccdd622",
+   "half": {
+    "file": "relic-brass-cog.half.png",
+    "hash": "454bc56947",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.375,
+    "y": -8.625,
+    "w": 16.75,
+    "h": 20.375
+   }
+  },
+  "relic-crown-tablet": {
+   "file": "relic-crown-tablet.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "113f82be99",
+   "half": {
+    "file": "relic-crown-tablet.half.png",
+    "hash": "34ef8c86a5",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -6.75,
+    "y": -8.875,
+    "w": 13.5,
+    "h": 20.875
+   }
+  },
+  "relic-drill-saint": {
+   "file": "relic-drill-saint.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "d419875dc8",
+   "half": {
+    "file": "relic-drill-saint.half.png",
+    "hash": "fff3408ba9",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.75,
+    "y": -8.25,
+    "w": 17.5,
+    "h": 20
+   }
+  },
+  "relic-ember-shard": {
+   "file": "relic-ember-shard.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "6214a37d67",
+   "half": {
+    "file": "relic-ember-shard.half.png",
+    "hash": "e6830d7a46",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -8.625,
+    "y": -8.25,
+    "w": 16.625,
+    "h": 19.875
+   }
+  },
+  "relic-humming-shard": {
+   "file": "relic-humming-shard.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "edc0f41de8",
+   "half": {
+    "file": "relic-humming-shard.half.png",
+    "hash": "08cf14db5b",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -8.375,
+    "y": -8.625,
+    "w": 16.375,
+    "h": 20.25
+   }
+  },
+  "relic-pilot-beacon": {
+   "file": "relic-pilot-beacon.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "fb7534e92b",
+   "half": {
+    "file": "relic-pilot-beacon.half.png",
+    "hash": "6d2eb5847b",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.25,
+    "y": -8.125,
+    "w": 16.375,
+    "h": 19.75
+   }
+  },
+  "relic-rune-tablet": {
+   "file": "relic-rune-tablet.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "555b2be543",
+   "half": {
+    "file": "relic-rune-tablet.half.png",
+    "hash": "9c93297450",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -7.75,
+    "y": -8.375,
+    "w": 15.5,
+    "h": 20.125
+   }
+  },
+  "relic-seed-vault": {
+   "file": "relic-seed-vault.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "bb193cc63d",
+   "half": {
+    "file": "relic-seed-vault.half.png",
+    "hash": "26c1b17bdb",
+    "scale": 4
+   },
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -8.875,
+    "y": -9.75,
+    "w": 17.75,
+    "h": 21.25
+   }
+  },
+  "relic-spare-cell": {
+   "file": "relic-spare-cell.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "94243be157",
+   "half": {
+    "file": "relic-spare-cell.half.png",
+    "hash": "a6d6f8d17d",
+    "scale": 4
+   },
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -8.75,
+    "y": -8.125,
+    "w": 17.5,
+    "h": 19.625
+   }
+  },
+  "relic-star-seed": {
+   "file": "relic-star-seed.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "f84ed617be",
+   "half": {
+    "file": "relic-star-seed.half.png",
+    "hash": "8d9e10e070",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -7.75,
+    "y": -8.625,
+    "w": 15.5,
+    "h": 16.625
+   }
+  },
+  "relic-survey-lens": {
+   "file": "relic-survey-lens.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "37acff5e50",
+   "half": {
+    "file": "relic-survey-lens.half.png",
+    "hash": "022e8d6373",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -7.75,
+    "y": -8.5,
+    "w": 15.5,
+    "h": 20.25
+   }
+  },
+  "relic-tide-lens": {
+   "file": "relic-tide-lens.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "ceddd29903",
+   "half": {
+    "file": "relic-tide-lens.half.png",
+    "hash": "a3a63c4774",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -7.75,
+    "y": -8.5,
+    "w": 15.5,
+    "h": 20.25
+   }
+  },
+  "skill-arc-furnaces": {
+   "file": "skill-arc-furnaces.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "daa95756e1",
+   "half": {
+    "file": "skill-arc-furnaces.half.png",
+    "hash": "016fb1a916",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -7.125,
+    "y": -8.375,
+    "w": 14.25,
+    "h": 19.75
+   }
+  },
+  "skill-big-crates": {
+   "file": "skill-big-crates.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "c7bec18258",
+   "half": {
+    "file": "skill-big-crates.half.png",
+    "hash": "52f5929726",
+    "scale": 4
+   },
+   "meta": {
+    "top": 5
+   },
+   "body": {
+    "x": -8.5,
+    "y": -8.125,
+    "w": 17,
+    "h": 17.125
+   }
+  },
+  "skill-branch-clearing": {
+   "file": "skill-branch-clearing.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "81554ddd00",
+   "half": {
+    "file": "skill-branch-clearing.half.png",
+    "hash": "eeceef0572",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.375,
+    "y": -8.25,
+    "w": 18.875,
+    "h": 19
+   }
+  },
+  "skill-branch-crafting": {
+   "file": "skill-branch-crafting.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "b4b2d1bbb9",
+   "half": {
+    "file": "skill-branch-crafting.half.png",
+    "hash": "53a3c8a1d0",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -6.625,
+    "y": -8.875,
+    "w": 13.25,
+    "h": 20.75
+   }
+  },
+  "skill-branch-drones": {
+   "file": "skill-branch-drones.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "75fb1b259f",
+   "half": {
+    "file": "skill-branch-drones.half.png",
+    "hash": "0469dbfc33",
+    "scale": 4
+   },
+   "meta": {
+    "top": 5
+   },
+   "body": {
+    "x": -9.5,
+    "y": -8.625,
+    "w": 19,
+    "h": 16.5
+   }
+  },
+  "skill-branch-mining": {
+   "file": "skill-branch-mining.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "00e1eca948",
+   "half": {
+    "file": "skill-branch-mining.half.png",
+    "hash": "b7d0185069",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -7.5,
+    "y": -9.25,
+    "w": 16.25,
+    "h": 20.75
+   }
+  },
+  "skill-branch-power": {
+   "file": "skill-branch-power.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "0ecb0ca93b",
+   "half": {
+    "file": "skill-branch-power.half.png",
+    "hash": "54f4080561",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -5.875,
+    "y": -10,
+    "w": 12,
+    "h": 22.125
+   }
+  },
+  "skill-branch-start": {
+   "file": "skill-branch-start.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "d69f4157a0",
+   "half": {
+    "file": "skill-branch-start.half.png",
+    "hash": "7ec2d498a1",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -7.25,
+    "y": -8.875,
+    "w": 14.625,
+    "h": 19.625
+   }
+  },
+  "skill-cheap-hulls": {
+   "file": "skill-cheap-hulls.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "9a03fed5b8",
+   "half": {
+    "file": "skill-cheap-hulls.half.png",
+    "hash": "39b747114f",
+    "scale": 4
+   },
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -9.5,
+    "y": -9,
+    "w": 19,
+    "h": 18.875
+   }
+  },
+  "skill-clean-burn": {
+   "file": "skill-clean-burn.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "f46fa69a72",
+   "half": {
+    "file": "skill-clean-burn.half.png",
+    "hash": "d9b16d750a",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -7.125,
+    "y": -8.375,
+    "w": 14.25,
+    "h": 19.75
+   }
+  },
+  "skill-cleared-landing": {
+   "file": "skill-cleared-landing.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "b7ce458261",
+   "half": {
+    "file": "skill-cleared-landing.half.png",
+    "hash": "fc1c948bdd",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.5,
+    "y": -8.125,
+    "w": 19.375,
+    "h": 18.75
+   }
+  },
+  "skill-core-drill": {
+   "file": "skill-core-drill.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "b935e13e3c",
+   "half": {
+    "file": "skill-core-drill.half.png",
+    "hash": "825b672475",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8,
+    "y": -7.75,
+    "w": 16,
+    "h": 18
+   }
+  },
+  "skill-deep-bore": {
+   "file": "skill-deep-bore.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "d67da0a1cd",
+   "half": {
+    "file": "skill-deep-bore.half.png",
+    "hash": "426f91495c",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.25,
+    "y": -7.625,
+    "w": 16.5,
+    "h": 18.5
+   }
+  },
+  "skill-dense-cells": {
+   "file": "skill-dense-cells.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "2897869fbf",
+   "half": {
+    "file": "skill-dense-cells.half.png",
+    "hash": "2e329d8388",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -7,
+    "y": -9.25,
+    "w": 14,
+    "h": 20.5
+   }
+  },
+  "skill-diamond-heads": {
+   "file": "skill-diamond-heads.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "88fba6a350",
+   "half": {
+    "file": "skill-diamond-heads.half.png",
+    "hash": "742103526e",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.25,
+    "y": -7.625,
+    "w": 16.5,
+    "h": 18.5
+   }
+  },
+  "skill-fine-tolerances": {
+   "file": "skill-fine-tolerances.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "2de26cbff4",
+   "half": {
+    "file": "skill-fine-tolerances.half.png",
+    "hash": "3570c1b846",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.375,
+    "y": -8.625,
+    "w": 16.75,
+    "h": 19.625
+   }
+  },
+  "skill-first-mine": {
+   "file": "skill-first-mine.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "bf9282738a",
+   "half": {
+    "file": "skill-first-mine.half.png",
+    "hash": "c0bf602ad6",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.25,
+    "y": -7.625,
+    "w": 16.5,
+    "h": 18.5
+   }
+  },
+  "skill-fleet-in-orbit": {
+   "file": "skill-fleet-in-orbit.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "08b33f40d7",
+   "half": {
+    "file": "skill-fleet-in-orbit.half.png",
+    "hash": "3c2e7ae297",
+    "scale": 4
+   },
+   "meta": {
+    "top": 5
+   },
+   "body": {
+    "x": -9.5,
+    "y": -8.625,
+    "w": 19,
+    "h": 16.75
+   }
+  },
+  "skill-grid-surge": {
+   "file": "skill-grid-surge.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "34c02b79c5",
+   "half": {
+    "file": "skill-grid-surge.half.png",
+    "hash": "e95adb62f2",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -7,
+    "y": -9.25,
+    "w": 14,
+    "h": 20.5
+   }
+  },
+  "skill-guild-prices": {
+   "file": "skill-guild-prices.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "04e4eb49db",
+   "half": {
+    "file": "skill-guild-prices.half.png",
+    "hash": "e978c2eff2",
+    "scale": 4
+   },
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -9,
+    "y": -8.875,
+    "w": 18,
+    "h": 17.75
+   }
+  },
+  "skill-heavy-hands": {
+   "file": "skill-heavy-hands.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "bab59c262d",
+   "half": {
+    "file": "skill-heavy-hands.half.png",
+    "hash": "fcd35d448e",
+    "scale": 4
+   },
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -9.5,
+    "y": -6.875,
+    "w": 19,
+    "h": 16.375
+   }
+  },
+  "skill-hot-crucibles": {
+   "file": "skill-hot-crucibles.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "913ce3967f",
+   "half": {
+    "file": "skill-hot-crucibles.half.png",
+    "hash": "e9b466afe0",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -7.125,
+    "y": -8.375,
+    "w": 14.25,
+    "h": 19.75
+   }
+  },
+  "skill-hot-lasers": {
+   "file": "skill-hot-lasers.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "6817caa0d4",
+   "half": {
+    "file": "skill-hot-lasers.half.png",
+    "hash": "af4c685270",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.5,
+    "y": -8.125,
+    "w": 19.375,
+    "h": 18.75
+   }
+  },
+  "skill-iron-fists": {
+   "file": "skill-iron-fists.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "738132df82",
+   "half": {
+    "file": "skill-iron-fists.half.png",
+    "hash": "57bee02a97",
+    "scale": 4
+   },
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -9.375,
+    "y": -6.75,
+    "w": 18.75,
+    "h": 16.125
+   }
+  },
+  "skill-lucky-finds": {
+   "file": "skill-lucky-finds.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "e47fb42d36",
+   "half": {
+    "file": "skill-lucky-finds.half.png",
+    "hash": "f4962f9885",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.375,
+    "y": -8.625,
+    "w": 16.75,
+    "h": 19.75
+   }
+  },
+  "skill-motherlode": {
+   "file": "skill-motherlode.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "67fe7ae980",
+   "half": {
+    "file": "skill-motherlode.half.png",
+    "hash": "ae23afcc80",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8,
+    "y": -7.5,
+    "w": 16,
+    "h": 18.75
+   }
+  },
+  "skill-prism-lens": {
+   "file": "skill-prism-lens.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "01badf423e",
+   "half": {
+    "file": "skill-prism-lens.half.png",
+    "hash": "09c5c09cee",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -7.75,
+    "y": -7.625,
+    "w": 15.5,
+    "h": 18.25
+   }
+  },
+  "skill-quick-rotors": {
+   "file": "skill-quick-rotors.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "51866d76b6",
+   "half": {
+    "file": "skill-quick-rotors.half.png",
+    "hash": "d3950fbce1",
+    "scale": 4
+   },
+   "meta": {
+    "top": 5
+   },
+   "body": {
+    "x": -9.5,
+    "y": -8.625,
+    "w": 19,
+    "h": 16.75
+   }
+  },
+  "skill-rapid-assembly": {
+   "file": "skill-rapid-assembly.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "39e612c6cd",
+   "half": {
+    "file": "skill-rapid-assembly.half.png",
+    "hash": "0d671c8a9c",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.25,
+    "y": -8.75,
+    "w": 16.5,
+    "h": 19.125
+   }
+  },
+  "skill-rich-veins": {
+   "file": "skill-rich-veins.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "f6efc5fcc0",
+   "half": {
+    "file": "skill-rich-veins.half.png",
+    "hash": "b4fc4979d5",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8,
+    "y": -7.5,
+    "w": 16,
+    "h": 18.75
+   }
+  },
+  "skill-salvage-rights": {
+   "file": "skill-salvage-rights.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "c5fc3de396",
+   "half": {
+    "file": "skill-salvage-rights.half.png",
+    "hash": "b7d7fb1a0c",
+    "scale": 4
+   },
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -9,
+    "y": -5.25,
+    "w": 18,
+    "h": 13.625
+   }
+  },
+  "skill-scavenger": {
+   "file": "skill-scavenger.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "0e9e9459f8",
+   "half": {
+    "file": "skill-scavenger.half.png",
+    "hash": "26deac0693",
+    "scale": 4
+   },
+   "meta": {
+    "top": 5
+   },
+   "body": {
+    "x": -9.5,
+    "y": -5.125,
+    "w": 19,
+    "h": 14.5
+   }
+  },
+  "skill-seed-money": {
+   "file": "skill-seed-money.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "c85d00ffc3",
+   "half": {
+    "file": "skill-seed-money.half.png",
+    "hash": "b3191fa55d",
+    "scale": 4
+   },
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -9.375,
+    "y": -8.875,
+    "w": 18.75,
+    "h": 18.5
+   }
+  },
+  "skill-slow-burn": {
+   "file": "skill-slow-burn.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "f86794956c",
+   "half": {
+    "file": "skill-slow-burn.half.png",
+    "hash": "1dab076eb7",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -7.125,
+    "y": -8.375,
+    "w": 14.25,
+    "h": 19.75
+   }
+  },
+  "skill-superconductors": {
+   "file": "skill-superconductors.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "ec5d902ea2",
+   "half": {
+    "file": "skill-superconductors.half.png",
+    "hash": "53ecf2f543",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -6.75,
+    "y": -9.375,
+    "w": 13.5,
+    "h": 20.125
+   }
+  },
+  "skill-swarm-logic": {
+   "file": "skill-swarm-logic.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "1fc3a82e62",
+   "half": {
+    "file": "skill-swarm-logic.half.png",
+    "hash": "f75e53356f",
+    "scale": 4
+   },
+   "meta": {
+    "top": 5
+   },
+   "body": {
+    "x": -9.5,
+    "y": -8.625,
+    "w": 19,
+    "h": 16.75
+   }
+  },
+  "skill-trade-contacts": {
+   "file": "skill-trade-contacts.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "9b67dfb9c0",
+   "half": {
+    "file": "skill-trade-contacts.half.png",
+    "hash": "cff47e66bc",
+    "scale": 4
+   },
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -9.5,
+    "y": -9,
+    "w": 19,
+    "h": 18.875
+   }
+  },
+  "skill-treasure-sense": {
+   "file": "skill-treasure-sense.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "65628d0585",
+   "half": {
+    "file": "skill-treasure-sense.half.png",
+    "hash": "39b4563204",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -8.25,
+    "y": -8.75,
+    "w": 16.5,
+    "h": 19.375
+   }
+  },
+  "tech-aluminium-smelting": {
+   "file": "tech-aluminium-smelting.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "b05f76a145",
+   "half": {
+    "file": "tech-aluminium-smelting.half.png",
+    "hash": "674217265e",
+    "scale": 4
+   },
+   "meta": {
+    "top": 5
+   },
+   "body": {
+    "x": -9.875,
+    "y": -8.375,
+    "w": 20,
+    "h": 16.125
+   }
+  },
+  "tech-cargo-drones": {
+   "file": "tech-cargo-drones.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "bea25902aa",
+   "half": {
+    "file": "tech-cargo-drones.half.png",
+    "hash": "d60f4b2ea2",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -7.125,
+    "y": -10.125,
+    "w": 14.25,
+    "h": 21.25
+   }
+  },
+  "tech-deep-survey": {
+   "file": "tech-deep-survey.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "089d036fe4",
+   "half": {
+    "file": "tech-deep-survey.half.png",
+    "hash": "cc1a4ae65c",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -8.375,
+    "y": -8.125,
+    "w": 16.75,
+    "h": 18.25
+   }
+  },
+  "tech-focused-lasers": {
+   "file": "tech-focused-lasers.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "e714d6e4ec",
+   "half": {
+    "file": "tech-focused-lasers.half.png",
+    "hash": "758e7f9d63",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -8.375,
+    "y": -8.75,
+    "w": 17.5,
+    "h": 20.5
+   }
+  },
+  "tech-high-voltage": {
+   "file": "tech-high-voltage.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "1cc3a9b178",
+   "half": {
+    "file": "tech-high-voltage.half.png",
+    "hash": "131c3e65b6",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -7.875,
+    "y": -8.875,
+    "w": 17,
+    "h": 20.125
+   }
+  },
+  "tech-long-range-survey": {
+   "file": "tech-long-range-survey.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "bfd23db160",
+   "half": {
+    "file": "tech-long-range-survey.half.png",
+    "hash": "4968ef0697",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -7.5,
+    "y": -8.5,
+    "w": 17.125,
+    "h": 20.125
+   }
+  },
+  "tech-lumen-refining": {
+   "file": "tech-lumen-refining.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "41a36f5380",
+   "half": {
+    "file": "tech-lumen-refining.half.png",
+    "hash": "e35cb538d2",
+    "scale": 4
+   },
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -9,
+    "y": -7.125,
+    "w": 18,
+    "h": 18.5
+   }
+  },
+  "tech-machine-tuning": {
+   "file": "tech-machine-tuning.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "2248ed9c92",
+   "half": {
+    "file": "tech-machine-tuning.half.png",
+    "hash": "fc038a1f18",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -10.125,
+    "y": -9.125,
+    "w": 18.875,
+    "h": 19.5
+   }
+  },
+  "tech-megastructures": {
+   "file": "tech-megastructures.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "bc87820159",
+   "half": {
+    "file": "tech-megastructures.half.png",
+    "hash": "d0d8a44667",
+    "scale": 4
+   },
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -7.125,
+    "y": -8.75,
+    "w": 14.25,
+    "h": 20.625
+   }
+  },
+  "tech-overclocked-drones": {
+   "file": "tech-overclocked-drones.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "f758b350c7",
+   "half": {
+    "file": "tech-overclocked-drones.half.png",
+    "hash": "245726cb56",
+    "scale": 4
+   },
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -9.5,
+    "y": -8.375,
+    "w": 20.25,
+    "h": 16.375
+   }
+  },
+  "tech-solar-power": {
+   "file": "tech-solar-power.png",
+   "w": 32,
+   "h": 32,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 8,
+   "hash": "2ef9caf04a",
+   "half": {
+    "file": "tech-solar-power.half.png",
+    "hash": "d15dbfeee9",
+    "scale": 4
+   },
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -7.375,
+    "y": -9.25,
+    "w": 15.875,
+    "h": 20.125
+   }
+  }
+ }
+}

@@ -1,0 +1,497 @@
+{
+ "version": 1,
+ "category": "deco",
+ "sprites": {
+  "deco-antenna-0": {
+   "file": "deco-antenna-0.png",
+   "w": 65,
+   "h": 77,
+   "ax": 0.4,
+   "ay": 0.83117,
+   "scale": 5,
+   "hash": "46ec976d3f",
+   "half": {
+    "file": "deco-antenna-0.half.png",
+    "hash": "f14cedf42e",
+    "scale": 2.5
+   },
+   "meta": {
+    "top": 63,
+    "lights": [
+     {
+      "x": 0,
+      "y": -58.8,
+      "color": "#ff6b6b",
+      "r": 7,
+      "phase": 0.2
+     }
+    ]
+   },
+   "body": {
+    "x": -21,
+    "y": -62.6,
+    "w": 42,
+    "h": 72.4
+   }
+  },
+  "deco-board-0": {
+   "file": "deco-board-0.webp",
+   "w": 69,
+   "h": 37,
+   "ax": 0.49275,
+   "ay": 0.54054,
+   "scale": 5,
+   "hash": "8cd19331fe",
+   "meta": {
+    "top": 8,
+    "lights": [
+     {
+      "x": 5.1,
+      "y": 6.7,
+      "color": "#ffb347",
+      "r": 5,
+      "phase": 0.5
+     }
+    ]
+   },
+   "body": {
+    "x": -31,
+    "y": -19.6,
+    "w": 62,
+    "h": 33.6
+   }
+  },
+  "deco-board-1": {
+   "file": "deco-board-1.webp",
+   "w": 75,
+   "h": 39,
+   "ax": 0.49333,
+   "ay": 0.53846,
+   "scale": 5,
+   "hash": "93e856a3e7",
+   "meta": {
+    "top": 18
+   },
+   "body": {
+    "x": -32.8,
+    "y": -20.6,
+    "w": 65.6,
+    "h": 35.6
+   }
+  },
+  "deco-bollard": {
+   "file": "deco-bollard.png",
+   "w": 27,
+   "h": 24,
+   "ax": 0.48148,
+   "ay": 0.79167,
+   "scale": 5,
+   "hash": "24c4d27eef",
+   "half": {
+    "file": "deco-bollard.half.png",
+    "hash": "2682438658",
+    "scale": 2.5
+   },
+   "meta": {
+    "top": 18,
+    "lights": [
+     {
+      "x": 0,
+      "y": -15.3,
+      "color": "#ffa040",
+      "r": 6,
+      "phase": 0.4
+     }
+    ]
+   },
+   "body": {
+    "x": -4,
+    "y": -18.4,
+    "w": 8,
+    "h": 20.2
+   }
+  },
+  "deco-chip-0": {
+   "file": "deco-chip-0.webp",
+   "w": 76,
+   "h": 41,
+   "ax": 0.5,
+   "ay": 0.53659,
+   "scale": 5,
+   "hash": "eee4ed5107",
+   "meta": {
+    "top": 12,
+    "lights": [
+     {
+      "x": 0,
+      "y": -12.4,
+      "color": "#6fe8dc",
+      "r": 7,
+      "phase": 0.2
+     }
+    ]
+   },
+   "body": {
+    "x": -34.2,
+    "y": -21.2,
+    "w": 68.4,
+    "h": 36.8
+   }
+  },
+  "deco-dish-0": {
+   "file": "deco-dish-0.png",
+   "w": 71,
+   "h": 59,
+   "ax": 0.49296,
+   "ay": 0.69492,
+   "scale": 5,
+   "hash": "cee881b5f8",
+   "half": {
+    "file": "deco-dish-0.half.png",
+    "hash": "e9b8cf59b4",
+    "scale": 2.5
+   },
+   "meta": {
+    "top": 37,
+    "lights": [
+     {
+      "x": 0,
+      "y": -4.4,
+      "color": "#6fe8dc",
+      "r": 5,
+      "phase": 0.5
+     }
+    ]
+   },
+   "body": {
+    "x": -24.8,
+    "y": -40,
+    "w": 49.6,
+    "h": 51.8
+   }
+  },
+  "deco-junction": {
+   "file": "deco-junction.png",
+   "w": 56,
+   "h": 37,
+   "ax": 0.5,
+   "ay": 0.62162,
+   "scale": 5,
+   "hash": "1fc8c6faf3",
+   "half": {
+    "file": "deco-junction.half.png",
+    "hash": "f71bdea8a3",
+    "scale": 2.5
+   },
+   "meta": {
+    "top": 13
+   },
+   "body": {
+    "x": -22.2,
+    "y": -22.2,
+    "w": 44.4,
+    "h": 33
+   }
+  },
+  "deco-lamp-0": {
+   "file": "deco-lamp-0.png",
+   "w": 68,
+   "h": 70,
+   "ax": 0.41176,
+   "ay": 0.82857,
+   "scale": 5,
+   "hash": "8e912d274c",
+   "half": {
+    "file": "deco-lamp-0.half.png",
+    "hash": "242332acf5",
+    "scale": 2.5
+   },
+   "meta": {
+    "top": 57,
+    "lights": [
+     {
+      "x": 0,
+      "y": -52.5,
+      "color": "#ffd59a",
+      "r": 13,
+      "phase": 0.6
+     }
+    ]
+   },
+   "body": {
+    "x": -7.600000000000001,
+    "y": -57.4,
+    "w": 15.2,
+    "h": 60.8
+   }
+  },
+  "deco-motherboard-0": {
+   "file": "deco-motherboard-0.webp",
+   "w": 94,
+   "h": 52,
+   "ax": 0.5,
+   "ay": 0.53846,
+   "scale": 5,
+   "hash": "cec9f07f8b",
+   "meta": {
+    "top": 20
+   },
+   "body": {
+    "x": -43,
+    "y": -27.8,
+    "w": 86,
+    "h": 48
+   }
+  },
+  "deco-motherboard-1": {
+   "file": "deco-motherboard-1.webp",
+   "w": 84,
+   "h": 45,
+   "ax": 0.5,
+   "ay": 0.53333,
+   "scale": 5,
+   "hash": "83479c63e0",
+   "meta": {
+    "top": 20
+   },
+   "body": {
+    "x": -38,
+    "y": -23.8,
+    "w": 76,
+    "h": 41.4
+   }
+  },
+  "deco-rack-0": {
+   "file": "deco-rack-0.webp",
+   "w": 103,
+   "h": 93,
+   "ax": 0.47573,
+   "ay": 0.64516,
+   "scale": 5,
+   "hash": "96fbbd7159",
+   "meta": {
+    "top": 52,
+    "lights": [
+     {
+      "x": 3.8,
+      "y": -56.7,
+      "color": "#6fe8dc",
+      "r": 7,
+      "phase": 0
+     }
+    ]
+   },
+   "body": {
+    "x": -33.2,
+    "y": -59.6,
+    "w": 66.4,
+    "h": 75.6
+   }
+  },
+  "deco-rack-1": {
+   "file": "deco-rack-1.png",
+   "w": 97,
+   "h": 88,
+   "ax": 0.47423,
+   "ay": 0.73864,
+   "scale": 5,
+   "hash": "3b1b5d4d4e",
+   "half": {
+    "file": "deco-rack-1.half.png",
+    "hash": "14af1a09cc",
+    "scale": 2.5
+   },
+   "meta": {
+    "top": 57,
+    "lights": [
+     {
+      "x": 3.8,
+      "y": -61.4,
+      "color": "#6fe8dc",
+      "r": 7,
+      "phase": 0.4
+     }
+    ]
+   },
+   "body": {
+    "x": -33.2,
+    "y": -64.2,
+    "w": 66.4,
+    "h": 80.2
+   }
+  },
+  "deco-ram-0": {
+   "file": "deco-ram-0.webp",
+   "w": 80,
+   "h": 47,
+   "ax": 0.5,
+   "ay": 0.57447,
+   "scale": 5,
+   "hash": "1931c87613",
+   "meta": {
+    "top": 20,
+    "lights": [
+     {
+      "x": 3.2,
+      "y": 9.6,
+      "color": "#7dffa8",
+      "r": 5,
+      "phase": 0
+     }
+    ]
+   },
+   "body": {
+    "x": -36,
+    "y": -26.6,
+    "w": 72,
+    "h": 43.2
+   }
+  },
+  "deco-ram-1": {
+   "file": "deco-ram-1.webp",
+   "w": 80,
+   "h": 54,
+   "ax": 0.5,
+   "ay": 0.62963,
+   "scale": 5,
+   "hash": "5f851e24e5",
+   "meta": {
+    "top": 23,
+    "lights": [
+     {
+      "x": 3.2,
+      "y": 9.6,
+      "color": "#ffb347",
+      "r": 5,
+      "phase": 0.3
+     }
+    ]
+   },
+   "body": {
+    "x": -36,
+    "y": -32.2,
+    "w": 72,
+    "h": 48.8
+   }
+  },
+  "deco-terminal-0": {
+   "file": "deco-terminal-0.png",
+   "w": 80,
+   "h": 68,
+   "ax": 0.475,
+   "ay": 0.75,
+   "scale": 5,
+   "hash": "c846b018fe",
+   "half": {
+    "file": "deco-terminal-0.half.png",
+    "hash": "0c2c05442f",
+    "scale": 2.5
+   },
+   "meta": {
+    "top": 43
+   },
+   "body": {
+    "x": -29.4,
+    "y": -50.2,
+    "w": 58.8,
+    "h": 64.2
+   }
+  },
+  "deco-terminal-1": {
+   "file": "deco-terminal-1.png",
+   "w": 80,
+   "h": 68,
+   "ax": 0.475,
+   "ay": 0.75,
+   "scale": 5,
+   "hash": "76bc80723b",
+   "half": {
+    "file": "deco-terminal-1.half.png",
+    "hash": "d1ece0b493",
+    "scale": 2.5
+   },
+   "meta": {
+    "top": 43,
+    "lights": [
+     {
+      "x": -1.3,
+      "y": -41.6,
+      "color": "#ff6b6b",
+      "r": 6,
+      "phase": 0.7
+     }
+    ]
+   },
+   "body": {
+    "x": -29.4,
+    "y": -50.2,
+    "w": 58.8,
+    "h": 64.2
+   }
+  },
+  "deco-transformer-0": {
+   "file": "deco-transformer-0.png",
+   "w": 78,
+   "h": 61,
+   "ax": 0.52564,
+   "ay": 0.70492,
+   "scale": 5,
+   "hash": "6b5d3c83fb",
+   "half": {
+    "file": "deco-transformer-0.half.png",
+    "hash": "e7a4f58cd4",
+    "scale": 2.5
+   },
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": 1.3,
+      "y": -22.6,
+      "color": "#ffb347",
+      "r": 7,
+      "phase": 0.1
+     }
+    ]
+   },
+   "body": {
+    "x": -32.6,
+    "y": -42,
+    "w": 65.2,
+    "h": 57.6
+   }
+  },
+  "deco-transformer-1": {
+   "file": "deco-transformer-1.png",
+   "w": 78,
+   "h": 63,
+   "ax": 0.52564,
+   "ay": 0.68254,
+   "scale": 5,
+   "hash": "8f27191986",
+   "half": {
+    "file": "deco-transformer-1.half.png",
+    "hash": "e55d53db00",
+    "scale": 2.5
+   },
+   "meta": {
+    "top": 35,
+    "lights": [
+     {
+      "x": 1.3,
+      "y": -22.6,
+      "color": "#ffb347",
+      "r": 7,
+      "phase": 0.1
+     }
+    ]
+   },
+   "body": {
+    "x": -32.6,
+    "y": -42,
+    "w": 65.2,
+    "h": 57.6
+   }
+  }
+ }
+}

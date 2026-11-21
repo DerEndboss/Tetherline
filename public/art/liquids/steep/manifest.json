@@ -1,0 +1,452 @@
+{
+ "version": 1,
+ "category": "liquids",
+ "sprites": {
+  "building-conduit": {
+   "file": "building-conduit.webp",
+   "w": 134,
+   "h": 82,
+   "ax": 0.48507,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "ee4e2fc962",
+   "meta": {
+    "top": 19
+   },
+   "body": {
+    "x": -48,
+    "y": -39,
+    "w": 96,
+    "h": 75.2
+   }
+  },
+  "building-conduit-bridge": {
+   "file": "building-conduit-bridge.webp",
+   "w": 118,
+   "h": 82,
+   "ax": 0.55085,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "46a7dd83e1",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": -22,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ]
+   },
+   "body": {
+    "x": -48,
+    "y": -39,
+    "w": 96,
+    "h": 75.2
+   }
+  },
+  "building-conduit-bridge-r0": {
+   "file": "building-conduit-bridge-r0.webp",
+   "w": 118,
+   "h": 82,
+   "ax": 0.55085,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "46a7dd83e1",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": -22,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ]
+   },
+   "body": {
+    "x": -48,
+    "y": -39,
+    "w": 96,
+    "h": 75.2
+   }
+  },
+  "building-conduit-bridge-r1": {
+   "file": "building-conduit-bridge-r1.webp",
+   "w": 107,
+   "h": 97,
+   "ax": 0.50467,
+   "ay": 0.57732,
+   "scale": 5,
+   "hash": "64d83fcc71",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": -22,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ]
+   },
+   "body": {
+    "x": -48,
+    "y": -55,
+    "w": 96,
+    "h": 91.2
+   }
+  },
+  "building-conduit-bridge-r2": {
+   "file": "building-conduit-bridge-r2.webp",
+   "w": 123,
+   "h": 83,
+   "ax": 0.43902,
+   "ay": 0.50602,
+   "scale": 5,
+   "hash": "b55b607173",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": -22,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ]
+   },
+   "body": {
+    "x": -48,
+    "y": -42,
+    "w": 96,
+    "h": 78.2
+   }
+  },
+  "building-conduit-bridge-r3": {
+   "file": "building-conduit-bridge-r3.webp",
+   "w": 107,
+   "h": 94,
+   "ax": 0.50467,
+   "ay": 0.44681,
+   "scale": 5,
+   "hash": "2041e93165",
+   "meta": {
+    "top": 32,
+    "lights": [
+     {
+      "x": 11.5,
+      "y": -22,
+      "color": "#ff6b6b",
+      "r": 9,
+      "phase": 0.2
+     }
+    ]
+   },
+   "body": {
+    "x": -48,
+    "y": -41.8,
+    "w": 96,
+    "h": 78
+   }
+  },
+  "building-conduit-curve-l-r0": {
+   "file": "building-conduit-curve-l-r0.webp",
+   "w": 122,
+   "h": 97,
+   "ax": 0.43443,
+   "ay": 0.57732,
+   "scale": 5,
+   "hash": "63c404f56c",
+   "meta": {
+    "top": 19
+   },
+   "body": {
+    "x": -48,
+    "y": -55,
+    "w": 96.4,
+    "h": 91.2
+   }
+  },
+  "building-conduit-curve-l-r1": {
+   "file": "building-conduit-curve-l-r1.webp",
+   "w": 122,
+   "h": 93,
+   "ax": 0.43443,
+   "ay": 0.44086,
+   "scale": 5,
+   "hash": "6d46fee43a",
+   "meta": {
+    "top": 19
+   },
+   "body": {
+    "x": -48,
+    "y": -39,
+    "w": 96.6,
+    "h": 75.2
+   }
+  },
+  "building-conduit-curve-l-r2": {
+   "file": "building-conduit-curve-l-r2.webp",
+   "w": 118,
+   "h": 93,
+   "ax": 0.55085,
+   "ay": 0.44086,
+   "scale": 5,
+   "hash": "1fd0b73308",
+   "meta": {
+    "top": 19
+   },
+   "body": {
+    "x": -48.6,
+    "y": -39,
+    "w": 96.6,
+    "h": 75.2
+   }
+  },
+  "building-conduit-curve-l-r3": {
+   "file": "building-conduit-curve-l-r3.webp",
+   "w": 118,
+   "h": 97,
+   "ax": 0.55085,
+   "ay": 0.57732,
+   "scale": 5,
+   "hash": "0b00e0e811",
+   "meta": {
+    "top": 19
+   },
+   "body": {
+    "x": -48.4,
+    "y": -55,
+    "w": 96.4,
+    "h": 91.2
+   }
+  },
+  "building-conduit-curve-r-r0": {
+   "file": "building-conduit-curve-r-r0.webp",
+   "w": 122,
+   "h": 93,
+   "ax": 0.43443,
+   "ay": 0.44086,
+   "scale": 5,
+   "hash": "8fe1814d30",
+   "meta": {
+    "top": 19
+   },
+   "body": {
+    "x": -48,
+    "y": -39,
+    "w": 96.6,
+    "h": 75.2
+   }
+  },
+  "building-conduit-curve-r-r1": {
+   "file": "building-conduit-curve-r-r1.webp",
+   "w": 118,
+   "h": 93,
+   "ax": 0.55085,
+   "ay": 0.44086,
+   "scale": 5,
+   "hash": "69441b0fca",
+   "meta": {
+    "top": 19
+   },
+   "body": {
+    "x": -48.6,
+    "y": -39,
+    "w": 96.6,
+    "h": 75.2
+   }
+  },
+  "building-conduit-curve-r-r2": {
+   "file": "building-conduit-curve-r-r2.webp",
+   "w": 118,
+   "h": 97,
+   "ax": 0.55085,
+   "ay": 0.57732,
+   "scale": 5,
+   "hash": "235fc0b64d",
+   "meta": {
+    "top": 19
+   },
+   "body": {
+    "x": -48.4,
+    "y": -55,
+    "w": 96.4,
+    "h": 91.2
+   }
+  },
+  "building-conduit-curve-r-r3": {
+   "file": "building-conduit-curve-r-r3.webp",
+   "w": 122,
+   "h": 97,
+   "ax": 0.43443,
+   "ay": 0.57732,
+   "scale": 5,
+   "hash": "0cda7e3034",
+   "meta": {
+    "top": 19
+   },
+   "body": {
+    "x": -48,
+    "y": -55,
+    "w": 96.4,
+    "h": 91.2
+   }
+  },
+  "building-conduit-junction": {
+   "file": "building-conduit-junction.webp",
+   "w": 134,
+   "h": 109,
+   "ax": 0.48507,
+   "ay": 0.51376,
+   "scale": 5,
+   "hash": "b57da9aa3f",
+   "meta": {
+    "top": 20
+   },
+   "body": {
+    "x": -48,
+    "y": -55,
+    "w": 96,
+    "h": 91.2
+   }
+  },
+  "building-conduit-r0": {
+   "file": "building-conduit-r0.webp",
+   "w": 134,
+   "h": 82,
+   "ax": 0.48507,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "ee4e2fc962",
+   "meta": {
+    "top": 19
+   },
+   "body": {
+    "x": -48,
+    "y": -39,
+    "w": 96,
+    "h": 75.2
+   }
+  },
+  "building-conduit-r1": {
+   "file": "building-conduit-r1.webp",
+   "w": 106,
+   "h": 109,
+   "ax": 0.5,
+   "ay": 0.51376,
+   "scale": 5,
+   "hash": "b5c6fdde64",
+   "meta": {
+    "top": 19
+   },
+   "body": {
+    "x": -48,
+    "y": -55,
+    "w": 96,
+    "h": 91.2
+   }
+  },
+  "building-conduit-r2": {
+   "file": "building-conduit-r2.webp",
+   "w": 134,
+   "h": 82,
+   "ax": 0.48507,
+   "ay": 0.5,
+   "scale": 5,
+   "hash": "a20d4af113",
+   "meta": {
+    "top": 19
+   },
+   "body": {
+    "x": -48,
+    "y": -39,
+    "w": 96,
+    "h": 75.2
+   }
+  },
+  "building-conduit-r3": {
+   "file": "building-conduit-r3.webp",
+   "w": 106,
+   "h": 109,
+   "ax": 0.5,
+   "ay": 0.51376,
+   "scale": 5,
+   "hash": "e0f5ae7bf7",
+   "meta": {
+    "top": 19
+   },
+   "body": {
+    "x": -48,
+    "y": -55,
+    "w": 96,
+    "h": 91.2
+   }
+  },
+  "building-liquid-router": {
+   "file": "building-liquid-router.webp",
+   "w": 134,
+   "h": 108,
+   "ax": 0.48507,
+   "ay": 0.51852,
+   "scale": 5,
+   "hash": "8e1807c399",
+   "meta": {
+    "top": 30,
+    "lights": [
+     {
+      "x": 0,
+      "y": -25.9,
+      "color": "#7cc8ee",
+      "r": 9,
+      "phase": 0.3
+     }
+    ]
+   },
+   "body": {
+    "x": -48,
+    "y": -55,
+    "w": 96,
+    "h": 91.2
+   }
+  },
+  "building-tank": {
+   "file": "building-tank.webp",
+   "w": 349,
+   "h": 278,
+   "ax": 0.47564,
+   "ay": 0.52518,
+   "scale": 5,
+   "hash": "3df2f57454",
+   "meta": {
+    "top": 84,
+    "lights": [
+     {
+      "x": 0,
+      "y": -81.5,
+      "color": "#7cc8ee",
+      "r": 12,
+      "phase": 0.4
+     }
+    ],
+    "wire": {
+     "x": -48,
+     "y": -102.8
+    }
+   },
+   "body": {
+    "x": -145.8,
+    "y": -145.4,
+    "w": 291.8,
+    "h": 255.2
+   }
+  }
+ },
+ "view": "steep"
+}

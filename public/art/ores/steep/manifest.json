@@ -1,0 +1,1231 @@
+{
+ "version": 1,
+ "category": "ores",
+ "sprites": {
+  "field-ore-bauxite-0": {
+   "file": "field-ore-bauxite-0.webp",
+   "w": 80,
+   "h": 58,
+   "ax": 0.4875,
+   "ay": 0.48276,
+   "scale": 4,
+   "hash": "588ebeab08",
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -36.5,
+    "y": -27.5,
+    "w": 77.25,
+    "h": 57
+   }
+  },
+  "field-ore-bauxite-1": {
+   "file": "field-ore-bauxite-1.webp",
+   "w": 74,
+   "h": 65,
+   "ax": 0.5,
+   "ay": 0.49231,
+   "scale": 4,
+   "hash": "7d3031ff1a",
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -35.75,
+    "y": -29.75,
+    "w": 70.5,
+    "h": 60.25
+   }
+  },
+  "field-ore-bauxite-2": {
+   "file": "field-ore-bauxite-2.webp",
+   "w": 84,
+   "h": 66,
+   "ax": 0.5119,
+   "ay": 0.5,
+   "scale": 4,
+   "hash": "f5eb4f0b7a",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -40.75,
+    "y": -32.75,
+    "w": 81,
+    "h": 64
+   }
+  },
+  "field-ore-bauxite-3": {
+   "file": "field-ore-bauxite-3.webp",
+   "w": 75,
+   "h": 61,
+   "ax": 0.42667,
+   "ay": 0.42623,
+   "scale": 4,
+   "hash": "4551e63505",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -29.75,
+    "y": -25.25,
+    "w": 71.25,
+    "h": 57.5
+   }
+  },
+  "field-ore-coal-0": {
+   "file": "field-ore-coal-0.webp",
+   "w": 79,
+   "h": 71,
+   "ax": 0.46835,
+   "ay": 0.47887,
+   "scale": 4,
+   "hash": "24a9b0455f",
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -35.25,
+    "y": -33.75,
+    "w": 77,
+    "h": 69.75
+   }
+  },
+  "field-ore-coal-1": {
+   "file": "field-ore-coal-1.webp",
+   "w": 92,
+   "h": 60,
+   "ax": 0.52174,
+   "ay": 0.51667,
+   "scale": 4,
+   "hash": "fc23c8b4f1",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -46.75,
+    "y": -30.5,
+    "w": 88.5,
+    "h": 59
+   }
+  },
+  "field-ore-coal-2": {
+   "file": "field-ore-coal-2.webp",
+   "w": 73,
+   "h": 65,
+   "ax": 0.57534,
+   "ay": 0.49231,
+   "scale": 4,
+   "hash": "d7d98b89e5",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -41,
+    "y": -31.75,
+    "w": 71.5,
+    "h": 63.75
+   }
+  },
+  "field-ore-coal-3": {
+   "file": "field-ore-coal-3.webp",
+   "w": 83,
+   "h": 69,
+   "ax": 0.49398,
+   "ay": 0.49275,
+   "scale": 4,
+   "hash": "765e2f201d",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -40.5,
+    "y": -33.25,
+    "w": 77,
+    "h": 67.75
+   }
+  },
+  "field-ore-copper-0": {
+   "file": "field-ore-copper-0.webp",
+   "w": 73,
+   "h": 63,
+   "ax": 0.52055,
+   "ay": 0.50794,
+   "scale": 4,
+   "hash": "0bc29ee5cf",
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -36.75,
+    "y": -30.75,
+    "w": 68.75,
+    "h": 60.75
+   }
+  },
+  "field-ore-copper-1": {
+   "file": "field-ore-copper-1.webp",
+   "w": 72,
+   "h": 63,
+   "ax": 0.48611,
+   "ay": 0.52381,
+   "scale": 4,
+   "hash": "c03014f5b7",
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -34.5,
+    "y": -32,
+    "w": 69,
+    "h": 61.25
+   }
+  },
+  "field-ore-copper-2": {
+   "file": "field-ore-copper-2.webp",
+   "w": 81,
+   "h": 62,
+   "ax": 0.51852,
+   "ay": 0.51613,
+   "scale": 4,
+   "hash": "e45359ea2e",
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -39,
+    "y": -31.5,
+    "w": 77.5,
+    "h": 61.25
+   }
+  },
+  "field-ore-copper-3": {
+   "file": "field-ore-copper-3.webp",
+   "w": 83,
+   "h": 65,
+   "ax": 0.51807,
+   "ay": 0.49231,
+   "scale": 4,
+   "hash": "40fda118e8",
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -39.5,
+    "y": -30.5,
+    "w": 78.75,
+    "h": 62.75
+   }
+  },
+  "field-ore-emberite-0": {
+   "file": "field-ore-emberite-0.webp",
+   "w": 72,
+   "h": 63,
+   "ax": 0.45833,
+   "ay": 0.47619,
+   "scale": 4,
+   "hash": "2efd806fde",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -28.5,
+    "y": -28,
+    "w": 66,
+    "h": 58.75
+   }
+  },
+  "field-ore-emberite-1": {
+   "file": "field-ore-emberite-1.webp",
+   "w": 73,
+   "h": 58,
+   "ax": 0.42466,
+   "ay": 0.51724,
+   "scale": 4,
+   "hash": "9c87b9639a",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -31,
+    "y": -29,
+    "w": 72.75,
+    "h": 56
+   }
+  },
+  "field-ore-emberite-2": {
+   "file": "field-ore-emberite-2.webp",
+   "w": 80,
+   "h": 69,
+   "ax": 0.5125,
+   "ay": 0.47826,
+   "scale": 4,
+   "hash": "91963c0d00",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -36.75,
+    "y": -32.25,
+    "w": 74.25,
+    "h": 65.25
+   }
+  },
+  "field-ore-emberite-3": {
+   "file": "field-ore-emberite-3.webp",
+   "w": 81,
+   "h": 68,
+   "ax": 0.51852,
+   "ay": 0.51471,
+   "scale": 4,
+   "hash": "24523f1e8f",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -40.75,
+    "y": -33.25,
+    "w": 79,
+    "h": 64
+   }
+  },
+  "field-ore-frostine-0": {
+   "file": "field-ore-frostine-0.webp",
+   "w": 75,
+   "h": 68,
+   "ax": 0.49333,
+   "ay": 0.5,
+   "scale": 4,
+   "hash": "1a746de16a",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -35.25,
+    "y": -32.75,
+    "w": 72.75,
+    "h": 60.75
+   }
+  },
+  "field-ore-frostine-1": {
+   "file": "field-ore-frostine-1.webp",
+   "w": 82,
+   "h": 67,
+   "ax": 0.4878,
+   "ay": 0.52239,
+   "scale": 4,
+   "hash": "0fbd858d5a",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -39.75,
+    "y": -33.25,
+    "w": 77,
+    "h": 63.5
+   }
+  },
+  "field-ore-frostine-2": {
+   "file": "field-ore-frostine-2.webp",
+   "w": 83,
+   "h": 69,
+   "ax": 0.45783,
+   "ay": 0.56522,
+   "scale": 4,
+   "hash": "d638913ff2",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -34.75,
+    "y": -38,
+    "w": 75,
+    "h": 67.75
+   }
+  },
+  "field-ore-frostine-3": {
+   "file": "field-ore-frostine-3.webp",
+   "w": 82,
+   "h": 74,
+   "ax": 0.53659,
+   "ay": 0.51351,
+   "scale": 4,
+   "hash": "e947498a17",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -40.25,
+    "y": -37.25,
+    "w": 73.5,
+    "h": 68
+   }
+  },
+  "field-ore-iron-0": {
+   "file": "field-ore-iron-0.webp",
+   "w": 73,
+   "h": 68,
+   "ax": 0.54795,
+   "ay": 0.5,
+   "scale": 4,
+   "hash": "2a3eecf3e9",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -37.5,
+    "y": -33.5,
+    "w": 69.75,
+    "h": 66.5
+   }
+  },
+  "field-ore-iron-1": {
+   "file": "field-ore-iron-1.webp",
+   "w": 78,
+   "h": 59,
+   "ax": 0.51282,
+   "ay": 0.52542,
+   "scale": 4,
+   "hash": "8ed4138668",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -39,
+    "y": -30.75,
+    "w": 76.25,
+    "h": 58.25
+   }
+  },
+  "field-ore-iron-2": {
+   "file": "field-ore-iron-2.webp",
+   "w": 70,
+   "h": 62,
+   "ax": 0.52857,
+   "ay": 0.51613,
+   "scale": 4,
+   "hash": "2b7deb5380",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -36.25,
+    "y": -31,
+    "w": 68.5,
+    "h": 60
+   }
+  },
+  "field-ore-iron-3": {
+   "file": "field-ore-iron-3.webp",
+   "w": 82,
+   "h": 62,
+   "ax": 0.47561,
+   "ay": 0.5,
+   "scale": 4,
+   "hash": "77ed8310bd",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -37,
+    "y": -31,
+    "w": 76.25,
+    "h": 61
+   }
+  },
+  "field-ore-lead-0": {
+   "file": "field-ore-lead-0.webp",
+   "w": 86,
+   "h": 64,
+   "ax": 0.51163,
+   "ay": 0.53125,
+   "scale": 4,
+   "hash": "2a3747e70f",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -37.25,
+    "y": -33.75,
+    "w": 75.25,
+    "h": 56.5
+   }
+  },
+  "field-ore-lead-1": {
+   "file": "field-ore-lead-1.webp",
+   "w": 84,
+   "h": 66,
+   "ax": 0.53571,
+   "ay": 0.51515,
+   "scale": 4,
+   "hash": "465c3543bb",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -39,
+    "y": -33,
+    "w": 77.25,
+    "h": 64
+   }
+  },
+  "field-ore-lead-2": {
+   "file": "field-ore-lead-2.webp",
+   "w": 81,
+   "h": 70,
+   "ax": 0.44444,
+   "ay": 0.52857,
+   "scale": 4,
+   "hash": "9c3104e79d",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -35.75,
+    "y": -36.25,
+    "w": 73,
+    "h": 62.75
+   }
+  },
+  "field-ore-lead-3": {
+   "file": "field-ore-lead-3.webp",
+   "w": 88,
+   "h": 65,
+   "ax": 0.5,
+   "ay": 0.50769,
+   "scale": 4,
+   "hash": "61fe78000b",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -37.5,
+    "y": -32.5,
+    "w": 79.75,
+    "h": 61
+   }
+  },
+  "field-ore-lithium-0": {
+   "file": "field-ore-lithium-0.webp",
+   "w": 79,
+   "h": 60,
+   "ax": 0.55696,
+   "ay": 0.56667,
+   "scale": 4,
+   "hash": "e69253bdcf",
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -42,
+    "y": -32.5,
+    "w": 76.5,
+    "h": 55
+   }
+  },
+  "field-ore-lithium-1": {
+   "file": "field-ore-lithium-1.webp",
+   "w": 73,
+   "h": 70,
+   "ax": 0.49315,
+   "ay": 0.35714,
+   "scale": 4,
+   "hash": "4d93a8aa08",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -35.75,
+    "y": -23,
+    "w": 70.5,
+    "h": 65.75
+   }
+  },
+  "field-ore-lithium-2": {
+   "file": "field-ore-lithium-2.webp",
+   "w": 86,
+   "h": 84,
+   "ax": 0.40698,
+   "ay": 0.4881,
+   "scale": 4,
+   "hash": "a742f3291a",
+   "meta": {
+    "top": 12
+   },
+   "body": {
+    "x": -33.75,
+    "y": -40,
+    "w": 81.25,
+    "h": 81.75
+   }
+  },
+  "field-ore-lithium-3": {
+   "file": "field-ore-lithium-3.webp",
+   "w": 103,
+   "h": 67,
+   "ax": 0.41748,
+   "ay": 0.46269,
+   "scale": 4,
+   "hash": "363fb3b61f",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -42.5,
+    "y": -30,
+    "w": 98.75,
+    "h": 65
+   }
+  },
+  "field-ore-obsidion-0": {
+   "file": "field-ore-obsidion-0.webp",
+   "w": 86,
+   "h": 59,
+   "ax": 0.48837,
+   "ay": 0.45763,
+   "scale": 4,
+   "hash": "75e8e9adc5",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -37.75,
+    "y": -26.25,
+    "w": 78.25,
+    "h": 57.5
+   }
+  },
+  "field-ore-obsidion-1": {
+   "file": "field-ore-obsidion-1.webp",
+   "w": 85,
+   "h": 68,
+   "ax": 0.50588,
+   "ay": 0.54412,
+   "scale": 4,
+   "hash": "ebc63a91df",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -40.5,
+    "y": -36.25,
+    "w": 82.25,
+    "h": 66.75
+   }
+  },
+  "field-ore-obsidion-2": {
+   "file": "field-ore-obsidion-2.webp",
+   "w": 82,
+   "h": 66,
+   "ax": 0.5,
+   "ay": 0.5,
+   "scale": 4,
+   "hash": "0e1c0e8add",
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -36.25,
+    "y": -32.25,
+    "w": 76.5,
+    "h": 64.25
+   }
+  },
+  "field-ore-obsidion-3": {
+   "file": "field-ore-obsidion-3.webp",
+   "w": 77,
+   "h": 61,
+   "ax": 0.55844,
+   "ay": 0.45902,
+   "scale": 4,
+   "hash": "9a5c98e9f9",
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -40.75,
+    "y": -27.25,
+    "w": 74.25,
+    "h": 59.75
+   }
+  },
+  "field-ore-prismite-0": {
+   "file": "field-ore-prismite-0.webp",
+   "w": 84,
+   "h": 71,
+   "ax": 0.53571,
+   "ay": 0.5493,
+   "scale": 4,
+   "hash": "ab4376173f",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -42,
+    "y": -38.25,
+    "w": 78.5,
+    "h": 69.75
+   }
+  },
+  "field-ore-prismite-1": {
+   "file": "field-ore-prismite-1.webp",
+   "w": 81,
+   "h": 71,
+   "ax": 0.48148,
+   "ay": 0.53521,
+   "scale": 4,
+   "hash": "86f02bd282",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -38,
+    "y": -37,
+    "w": 75.75,
+    "h": 68
+   }
+  },
+  "field-ore-prismite-2": {
+   "file": "field-ore-prismite-2.webp",
+   "w": 80,
+   "h": 67,
+   "ax": 0.5,
+   "ay": 0.50746,
+   "scale": 4,
+   "hash": "1d8eb3c3dd",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -38,
+    "y": -32,
+    "w": 73.5,
+    "h": 60.25
+   }
+  },
+  "field-ore-prismite-3": {
+   "file": "field-ore-prismite-3.webp",
+   "w": 86,
+   "h": 68,
+   "ax": 0.52326,
+   "ay": 0.54412,
+   "scale": 4,
+   "hash": "c037c5c233",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -40.75,
+    "y": -36.25,
+    "w": 77.25,
+    "h": 66.5
+   }
+  },
+  "field-ore-tin-0": {
+   "file": "field-ore-tin-0.webp",
+   "w": 83,
+   "h": 65,
+   "ax": 0.50602,
+   "ay": 0.49231,
+   "scale": 4,
+   "hash": "b4c9448c1d",
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -40.5,
+    "y": -31,
+    "w": 81,
+    "h": 63.5
+   }
+  },
+  "field-ore-tin-1": {
+   "file": "field-ore-tin-1.webp",
+   "w": 84,
+   "h": 61,
+   "ax": 0.47619,
+   "ay": 0.5082,
+   "scale": 4,
+   "hash": "3114a07258",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -37,
+    "y": -30.25,
+    "w": 80,
+    "h": 58.5
+   }
+  },
+  "field-ore-tin-2": {
+   "file": "field-ore-tin-2.webp",
+   "w": 77,
+   "h": 61,
+   "ax": 0.51948,
+   "ay": 0.5082,
+   "scale": 4,
+   "hash": "3aa106689e",
+   "meta": {
+    "top": 9
+   },
+   "body": {
+    "x": -39.25,
+    "y": -30.5,
+    "w": 74.75,
+    "h": 60.25
+   }
+  },
+  "field-ore-tin-3": {
+   "file": "field-ore-tin-3.webp",
+   "w": 80,
+   "h": 59,
+   "ax": 0.5,
+   "ay": 0.47458,
+   "scale": 4,
+   "hash": "134e85fde1",
+   "meta": {
+    "top": 8
+   },
+   "body": {
+    "x": -38.75,
+    "y": -27.75,
+    "w": 78,
+    "h": 58.75
+   }
+  },
+  "field-ore-titanium-0": {
+   "file": "field-ore-titanium-0.webp",
+   "w": 84,
+   "h": 63,
+   "ax": 0.45238,
+   "ay": 0.46032,
+   "scale": 4,
+   "hash": "72f695b021",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -37.75,
+    "y": -28.25,
+    "w": 80,
+    "h": 60.5
+   }
+  },
+  "field-ore-titanium-1": {
+   "file": "field-ore-titanium-1.webp",
+   "w": 81,
+   "h": 61,
+   "ax": 0.46914,
+   "ay": 0.44262,
+   "scale": 4,
+   "hash": "3651e065e7",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -35.75,
+    "y": -26.25,
+    "w": 78.5,
+    "h": 56.5
+   }
+  },
+  "field-ore-titanium-2": {
+   "file": "field-ore-titanium-2.webp",
+   "w": 77,
+   "h": 71,
+   "ax": 0.51948,
+   "ay": 0.5493,
+   "scale": 4,
+   "hash": "08597662fa",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -37.25,
+    "y": -38.75,
+    "w": 73.5,
+    "h": 68.75
+   }
+  },
+  "field-ore-titanium-3": {
+   "file": "field-ore-titanium-3.webp",
+   "w": 82,
+   "h": 62,
+   "ax": 0.4878,
+   "ay": 0.45161,
+   "scale": 4,
+   "hash": "25282ce357",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -39.25,
+    "y": -27.75,
+    "w": 79.75,
+    "h": 58.75
+   }
+  },
+  "field-ore-tungsten-0": {
+   "file": "field-ore-tungsten-0.webp",
+   "w": 81,
+   "h": 70,
+   "ax": 0.46914,
+   "ay": 0.5,
+   "scale": 4,
+   "hash": "23205836dc",
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -32.25,
+    "y": -34.25,
+    "w": 71.5,
+    "h": 67
+   }
+  },
+  "field-ore-tungsten-1": {
+   "file": "field-ore-tungsten-1.webp",
+   "w": 79,
+   "h": 56,
+   "ax": 0.50633,
+   "ay": 0.42857,
+   "scale": 4,
+   "hash": "eee6275405",
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -38,
+    "y": -23,
+    "w": 71,
+    "h": 53.5
+   }
+  },
+  "field-ore-tungsten-2": {
+   "file": "field-ore-tungsten-2.webp",
+   "w": 78,
+   "h": 62,
+   "ax": 0.53846,
+   "ay": 0.46774,
+   "scale": 4,
+   "hash": "b9ad0191c5",
+   "meta": {
+    "top": 7
+   },
+   "body": {
+    "x": -41.25,
+    "y": -28.25,
+    "w": 70.5,
+    "h": 60.25
+   }
+  },
+  "field-ore-tungsten-3": {
+   "file": "field-ore-tungsten-3.webp",
+   "w": 86,
+   "h": 65,
+   "ax": 0.5,
+   "ay": 0.52308,
+   "scale": 4,
+   "hash": "41374889f8",
+   "meta": {
+    "top": 6
+   },
+   "body": {
+    "x": -39,
+    "y": -33.75,
+    "w": 81.25,
+    "h": 64.25
+   }
+  },
+  "field-ore-verdite-0": {
+   "file": "field-ore-verdite-0.webp",
+   "w": 90,
+   "h": 58,
+   "ax": 0.5,
+   "ay": 0.48276,
+   "scale": 4,
+   "hash": "a564ad10eb",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -40.5,
+    "y": -26.75,
+    "w": 82,
+    "h": 55
+   }
+  },
+  "field-ore-verdite-1": {
+   "file": "field-ore-verdite-1.webp",
+   "w": 90,
+   "h": 69,
+   "ax": 0.47778,
+   "ay": 0.52174,
+   "scale": 4,
+   "hash": "aa23b304f9",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -42.75,
+    "y": -35.75,
+    "w": 82.75,
+    "h": 68.5
+   }
+  },
+  "field-ore-verdite-2": {
+   "file": "field-ore-verdite-2.webp",
+   "w": 86,
+   "h": 66,
+   "ax": 0.52326,
+   "ay": 0.51515,
+   "scale": 4,
+   "hash": "d80a022632",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -41.5,
+    "y": -32.25,
+    "w": 81.75,
+    "h": 61
+   }
+  },
+  "field-ore-verdite-3": {
+   "file": "field-ore-verdite-3.webp",
+   "w": 86,
+   "h": 68,
+   "ax": 0.45349,
+   "ay": 0.48529,
+   "scale": 4,
+   "hash": "236a31398b",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -38,
+    "y": -32,
+    "w": 79.5,
+    "h": 63
+   }
+  },
+  "field-sand-0": {
+   "file": "field-sand-0.webp",
+   "w": 99,
+   "h": 65,
+   "ax": 0.49495,
+   "ay": 0.52308,
+   "scale": 4,
+   "hash": "0a8a7f5c31",
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -48.75,
+    "y": -33.5,
+    "w": 98,
+    "h": 64
+   }
+  },
+  "field-sand-1": {
+   "file": "field-sand-1.webp",
+   "w": 96,
+   "h": 61,
+   "ax": 0.48958,
+   "ay": 0.44262,
+   "scale": 4,
+   "hash": "78845534a1",
+   "meta": {
+    "top": 2
+   },
+   "body": {
+    "x": -46.25,
+    "y": -26.75,
+    "w": 94.25,
+    "h": 59.75
+   }
+  },
+  "field-sand-2": {
+   "file": "field-sand-2.webp",
+   "w": 92,
+   "h": 62,
+   "ax": 0.53261,
+   "ay": 0.51613,
+   "scale": 4,
+   "hash": "6246d6c389",
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -48,
+    "y": -31.75,
+    "w": 90.25,
+    "h": 61.75
+   }
+  },
+  "field-sand-3": {
+   "file": "field-sand-3.webp",
+   "w": 91,
+   "h": 62,
+   "ax": 0.46154,
+   "ay": 0.43548,
+   "scale": 4,
+   "hash": "7e5f624442",
+   "meta": {
+    "top": 3
+   },
+   "body": {
+    "x": -41.5,
+    "y": -26.75,
+    "w": 89.5,
+    "h": 61.25
+   }
+  },
+  "field-scrap-pile-0": {
+   "file": "field-scrap-pile-0.webp",
+   "w": 75,
+   "h": 68,
+   "ax": 0.49333,
+   "ay": 0.51471,
+   "scale": 4,
+   "hash": "5f026306a3",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -34,
+    "y": -34.25,
+    "w": 71,
+    "h": 65.5
+   }
+  },
+  "field-scrap-pile-1": {
+   "file": "field-scrap-pile-1.webp",
+   "w": 88,
+   "h": 59,
+   "ax": 0.47727,
+   "ay": 0.49153,
+   "scale": 4,
+   "hash": "c9603b1a3d",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -41.5,
+    "y": -27.75,
+    "w": 81,
+    "h": 55.75
+   }
+  },
+  "field-scrap-pile-2": {
+   "file": "field-scrap-pile-2.webp",
+   "w": 87,
+   "h": 62,
+   "ax": 0.45977,
+   "ay": 0.53226,
+   "scale": 4,
+   "hash": "0d01343849",
+   "meta": {
+    "top": 11
+   },
+   "body": {
+    "x": -40,
+    "y": -32.5,
+    "w": 82.5,
+    "h": 58.25
+   }
+  },
+  "field-scrap-pile-3": {
+   "file": "field-scrap-pile-3.webp",
+   "w": 86,
+   "h": 65,
+   "ax": 0.48837,
+   "ay": 0.47692,
+   "scale": 4,
+   "hash": "018f09ddc8",
+   "meta": {
+    "top": 10
+   },
+   "body": {
+    "x": -41.75,
+    "y": -30.75,
+    "w": 78.25,
+    "h": 60.5
+   }
+  },
+  "ridge-0": {
+   "file": "ridge-0.webp",
+   "w": 123,
+   "h": 96,
+   "ax": 0.50407,
+   "ay": 0.51042,
+   "scale": 4,
+   "hash": "3ad2373d67",
+   "meta": {
+    "top": 20
+   },
+   "body": {
+    "x": -48,
+    "y": -48.75,
+    "w": 96,
+    "h": 85.5
+   }
+  },
+  "ridge-1": {
+   "file": "ridge-1.webp",
+   "w": 123,
+   "h": 98,
+   "ax": 0.49593,
+   "ay": 0.5102,
+   "scale": 4,
+   "hash": "e4fda31ae3",
+   "meta": {
+    "top": 25
+   },
+   "body": {
+    "x": -48,
+    "y": -49.25,
+    "w": 96,
+    "h": 86
+   }
+  },
+  "ridge-2": {
+   "file": "ridge-2.webp",
+   "w": 125,
+   "h": 99,
+   "ax": 0.504,
+   "ay": 0.50505,
+   "scale": 4,
+   "hash": "e2d8a4a596",
+   "meta": {
+    "top": 22
+   },
+   "body": {
+    "x": -48,
+    "y": -50,
+    "w": 96,
+    "h": 86.75
+   }
+  },
+  "ridge-3": {
+   "file": "ridge-3.webp",
+   "w": 128,
+   "h": 101,
+   "ax": 0.5,
+   "ay": 0.50495,
+   "scale": 4,
+   "hash": "f3ee7e680d",
+   "meta": {
+    "top": 21
+   },
+   "body": {
+    "x": -48,
+    "y": -50.5,
+    "w": 96,
+    "h": 87.25
+   }
+  }
+ },
+ "view": "steep"
+}
