@@ -87,7 +87,7 @@ export function activeRecipe(w: World, b: Building): number {
 function missingInputs(w: World, r: RecipeDef): string | null {
   const missing = r.inputs.filter((s) => !seen(w, w.content.materials.indexOf(s.item)));
   if (!missing.length) return null;
-  return `Not had yet: ${missing.map((s) => w.content.materials.find(s.item)?.name ?? s.item).join(', ')}`;
+  return `Not found yet: ${missing.map((s) => w.content.materials.find(s.item)?.name ?? s.item).join(', ')}`;
 }
 
 export function recipeOptions(w: World, b: Building): ConfigOption[] {

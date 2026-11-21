@@ -73,9 +73,8 @@ Interaction tools, snapshot, autopilot), `src/save` (3 IndexedDB slots), `src/re
 - UI motion goes through src/ui/components/Presence.tsx (panels in and out), AnimatedNumber and the shared kit
   tooltip (`data-tip`); see the comment at the top of src/ui/styles/kit.css. A presence element must not keep an
   animation of its own, or its exit never plays.
-- Public repository: everything is English (code, comments, test names, docs); no personal names, local paths,
-  hostnames or deployment details in files or commit messages; no `repository` field in package.json; do not commit
-  generated output that contains absolute paths (`.vitest/`, logs). Do not change the Git identity; commits are signed.
+- Everything is English (code, comments, test names, docs). Do not commit generated output (`.vitest/`, logs, `dist/`).
+  Commits are signed.
 
 ## Traps
 - ESLint runs with `--max-warnings 0` and `complexity: 10`: split long functions early.

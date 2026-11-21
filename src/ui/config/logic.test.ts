@@ -72,9 +72,9 @@ describe('the options', () => {
   it('a recipe is dim, with the reason, while an input has never been seen; once it is in the core it is not', () => {
     const w = withCore();
     const f = placeNow(w, 'steel-foundry', 10, 10);
-    expect(recipeOptions(w, f)[1]!.reason).toBe('Not had yet: Titanium Ore, Graphite');
+    expect(recipeOptions(w, f)[1]!.reason).toBe('Not found yet: Titanium Ore, Graphite');
     w.state.stock[M('titanium-ore')] = 1;
-    expect(recipeOptions(w, f)[1]!.reason).toBe('Not had yet: Graphite');
+    expect(recipeOptions(w, f)[1]!.reason).toBe('Not found yet: Graphite');
     w.state.stats.made[M('graphite')] = 1;
     expect(recipeOptions(w, f)[1]!.reason).toBeNull();
   });

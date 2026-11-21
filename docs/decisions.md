@@ -188,7 +188,7 @@ to an earlier game design that no longer exists are not listed. Where code and t
     the pointer wins. With a tool in hand deco is never picked. A removed piece is kept in `deco.removed` (saved with the run).
 - **The horizon band is drawn behind the world** and shows only past the map's edge.
 - **Performance, measured** (`npm run perf`, production build, stress scene of 500 drones and 2,000 items on 672 belts, 459
-  obstacles, 1440x900, zoom 0.5, GTX 1660-class GPU): oblique 67.7 fps (14.4 ms per frame, p95 16.1); top-down 106 fps (9.1 ms).
+  obstacles, 1440x900, zoom 0.5, mid-range desktop GPU): oblique 67.7 fps (14.4 ms per frame, p95 16.1); top-down 106 fps (9.1 ms).
   Under 4x CPU throttle the oblique view reaches 17 fps, so a weak laptop does not hold 60 fps with the 3D sprites; Pixi's own
   sprite collect is the cost, not the simulation at 0.1 ms. A building's picture is chosen before its sprite is taken from the
   pool, so each sprite gets one texture per frame (600 working machines cost about 4 ms when set twice).

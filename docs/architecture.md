@@ -6,7 +6,7 @@ disagree, the code wins and this file gets fixed.
 
 A reference point for performance: 3,000 buildings with 7,200 to 10,000 items on belts cost the simulation about
 0.5 ms per tick (`npm run bench`); drawing the whole stress scene zoomed out costs about 3 ms of JavaScript per frame
-on a GTX 1660-class GPU (`npm run perf`).
+on a mid-range desktop GPU (`npm run perf`).
 
 ## 1. Principles
 
@@ -289,6 +289,6 @@ What spans several areas, so later work builds on it:
 ## 7. Known gaps
 
 The map paint at a new round is synchronous (`paintMapAsync` exists in ground.ts but is not wired to the loading bar);
-`src/legacy` and the first design's `production` art category are still there for the art kit; items inside junctions,
-routers and bridges are not drawn; undo of a building placed over belts does not bring the belts back. The broader list
+`src/legacy` and the first design's `production` art category are still there for the art kit; undo of a building
+placed over belts does not bring the belts back. The broader list
 is in `docs/ROADMAP.md`.
